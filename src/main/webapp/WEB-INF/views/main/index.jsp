@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>insert title here</title>
+<title>프라이브 피부과</title>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/full-page-scroll.css" />
 <%-- <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/examples.css" /> --%>
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/jquery-1.12.4.min.js"></script>
@@ -15,6 +15,113 @@
 <%-- <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/examples.js"></script> --%>
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0, viewport-fit=cover">
 <style type="text/css">
+	/* common css */
+	ul{
+		padding: 0;
+	}
+	ul li{
+		list-style: none;
+	}
+	a{
+		color: black;
+		text-decoration: none;
+	}
+	#quick-menu{
+		position: fixed;
+		bottom: 25px;
+		right: 25px;
+		z-index: 9;
+	}
+	#quick-menu > ul{
+	
+	}
+	#quick-menu > ul > li{
+		float: right;
+		width: 30px;
+		height: 30px;
+		padding: 10px;
+		border-radius: 50%;
+		background: #efefef;
+		text-align: center;
+		margin-left: 10px;
+	}
+	#quick-menu > ul > li > a{
+		width: 100%;
+	}
+	#quick-menu > ul > li > a > img{
+		width: 100%;
+	}
+	/* common css end */
+	/* pc css */
+	body{
+		position: relative;
+	}
+	#header{
+		position:fixed;
+		width: 100%;
+		top: 20px;
+		z-index: 999;
+	}
+	#pc-header{
+		width: 100%;
+	}
+	#pc-header > .logo-wrap{
+		width: 180px;
+		margin: 0 auto;
+	}
+	#pc-header > .logo-wrap > a{
+		width: 100%;
+	}
+	#pc-header > .logo-wrap > a > img{
+		width: 100%;
+	}
+	.pc-menu-wrap{
+		width: 100%;
+	}
+	.pc-menu-wrap > .gnb-wrap{
+		width: 1085px;
+		margin: 0 auto;
+		overflow: hidden;
+		text-align: center;
+	}
+	
+	.pc-menu-wrap > .gnb-wrap > .gnb{
+		float: left; 
+		width: 155px;
+		padding: 20px 0;
+		cursor: pointer;
+		font-size: 17px;
+	}
+	.pc-menu-wrap > .gnb-wrap:hover{
+		color: #fff;
+		transition-duration: 200ms;
+		transition-property: color;
+		transition-timing-function: ease;
+	}
+	.pc-menu-wrap > .gnb-wrap > .gnb > .lnb-wrap{
+		padding: 0;
+		width: 100%;
+		padding-top: 25px;
+		display: none;
+	}
+	.pc-menu-wrap > .gnb-wrap > .gnb > .lnb-wrap > .lnb{
+		padding: 5px 0;
+	}
+	
+	.pc-menu-wrap > .gnb-wrap > .gnb > .lnb-wrap > .lnb > a{
+		color: #fff;
+	}
+	
+	#menu-bg{
+		display: none;
+		position: fixed;
+		width: 100%;
+		height: 100%;
+		background: #333;
+		opacity: 0.7;
+		z-index: 9;
+	}
+	
 	.inner{
 		width: 100%;
 		height: 100%;
@@ -53,18 +160,91 @@
 	.section5 {
 		background-color:  #D2C598;
 	}
-	
-	span {
-		font-size: 4em;
-		font-style: normal;
-		color: #fff;
-	}
-
-
 </style>
+<script>
+$(function(){
+	$(".pc-menu-wrap > .gnb-wrap > .gnb").hover(function(){
+		$("#menu-bg").stop().fadeIn(200);
+		$(this).find(".lnb-wrap").stop().fadeIn(100);
+		$("#pc-header > .logo-wrap > a > img").prop("src","${pageContext.request.contextPath}/resources/img/main/logo-white.png");
+	},function(){
+		$("#menu-bg").stop().fadeOut(200);
+		$(this).find(".lnb-wrap").stop().fadeOut(100);
+		$("#pc-header > .logo-wrap > a > img").prop("src","${pageContext.request.contextPath}/resources/img/main/logo.png");
+		
+	});
+});
+</script>
 </head>
-<body style="background:black;">
-	<div id="main" class="scroll-container" style="background:red;">
+<body>
+	<div id="header">
+		<div id="pc-header">
+			<div class="logo-wrap">
+				<a href="${pageContext.request.contextPath}/"><img src="${pageContext.request.contextPath}/resources/img/main/logo.png"></a>
+			</div>
+			<div class="pc-menu-wrap">
+				<ul class="gnb-wrap">
+					<li class="gnb">
+						<span class="gnb-txt">Face lifting</span>
+						<ul class="lnb-wrap">
+							<li class="lnb"><a href="${pageContext.request.contextPath}/">레이저리프팅</a></li>
+							<li class="lnb"><a href="${pageContext.request.contextPath}/">실리프팅</a></li>
+						</ul>
+					</li>
+					<li class="gnb">
+						<span class="gnb-txt">Skin balancing</span>
+						<ul class="lnb-wrap">
+							<li class="lnb"><a href="${pageContext.request.contextPath}/">화이트닝, 점</a></li>
+						</ul>
+					</li>
+					<li class="gnb">
+						<span class="gnb-txt">Volume</span>
+						<ul class="lnb-wrap">
+							<li class="lnb"><a href="${pageContext.request.contextPath}/">볼륨감소</a></li>
+						</ul>
+					</li>
+					<li class="gnb">
+						<span class="gnb-txt">Soft surgery</span>
+						<ul class="lnb-wrap">
+							<li class="lnb"><a href="${pageContext.request.contextPath}/">Beauty balance</a></li>
+						</ul>
+					</li>
+					<li class="gnb">
+						<span class="gnb-txt">Medical skin care</span>
+						<ul class="lnb-wrap">
+							<li class="lnb"><a href="${pageContext.request.contextPath}/">퍼스널스킨케어</a></li>
+						</ul>
+					</li>
+					<li class="gnb">
+						<span class="gnb-txt">Prvie 소개</span>
+						<ul class="lnb-wrap">
+							<li class="lnb"><a href="${pageContext.request.contextPath}/">Prive란?</a></li>
+							<li class="lnb"><a href="${pageContext.request.contextPath}/">피부과전문 의료진</a></li>
+							<li class="lnb"><a href="${pageContext.request.contextPath}/">진료시간/위치</a></li>
+							<li class="lnb"><a href="${pageContext.request.contextPath}/">Prive공간</a></li>
+						</ul>
+					</li>
+					<li class="gnb">
+						<span class="gnb-txt">Community</span>
+						<ul class="lnb-wrap">
+							<li class="lnb"><a href="${pageContext.request.contextPath}/">온라인상담</a></li>
+							<li class="lnb"><a href="${pageContext.request.contextPath}/">카카오상담</a></li>
+							<li class="lnb"><a href="${pageContext.request.contextPath}/">공지사항</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div><!-- pc-menu-wrap -->
+		</div><!-- pc-header end -->
+		<div id="m-header" style="display:none;"></div>
+	</div>
+	<div id="menu-bg"></div>
+	<div id="quick-menu">
+		<ul>
+			<li style="background:yellow;"><a href=""><img src="${pageContext.request.contextPath}/resources/img/common/icon_kakao.png"></a></li>
+			<li><a href="tel:1800-5475"><img src="${pageContext.request.contextPath}/resources/img/common/icon_phone.png"></a></li>
+		</ul>
+	</div>
+	<div id="main" class="scroll-container">
 		<section class="section1">
 			<div class="inner">
 				<div id="video_wrap">
