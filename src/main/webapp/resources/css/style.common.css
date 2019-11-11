@@ -16,19 +16,274 @@
 /**********************************************************************/
 
 
-
 /**********************************************************************
-* Descript : IE 낮은 버전(IE 9이하)에서 브라우저 업그레이드 공지 안내 스타일
+* Descript : header 메뉴 스타일
 ***********************************************************************/
-#old-browser-popup{position:fixed; width:100%; height:100%; left:0; top:0; background:url(../img/common/bg.png) repeat; z-index:9999; font-family: '맑은 고딕', 'Malgun Gothic', 'Noto Sans', sans-serif;}
-.old-browser-container{width:100%; margin:0 auto; text-align:center;}
-.old-browser-container div{color:#fff; font-size:13px; line-height:22px;}
-.old-browser-container div b{color:#fc0; font-weight:700;}
-.old-browser-container p{background:#fff; border-radius:5px; color:#222; font-weight:700; margin:25px auto 50px auto; height:30px; line-height:30px; width:700px;}
-.old-browser-container a{color:#fff; font-weight:700; padding:0 10px; display:inline-block; font-size:12px; text-decoration:none;}
-.old-browser-container a:hover{text-decoration:underline; color:#fc0;}
+#header{
+	position:fixed;
+	width: 100%;
+	top: 20px;
+	z-index: 999;
+}
+#pc-header{
+	display: none;
+	width: 100%;
+}
+#pc-header > .logo-wrap{
+	width: 180px;
+	margin: 0 auto;
+}
+#pc-header > .logo-wrap > a{
+	width: 100%;
+}
+#pc-header > .logo-wrap > a > img{
+	width: 100%;
+}
+.pc-menu-wrap{
+	width: 100%;
+}
+.pc-menu-wrap > .gnb-wrap{
+	width: 1085px;
+	margin: 0 auto;
+	overflow: hidden;
+	text-align: center;
+}
+
+.pc-menu-wrap > .gnb-wrap > .gnb{
+	float: left; 
+	width: 155px;
+	padding: 20px 0;
+	cursor: pointer;
+	font-size: 17px;
+}
+.pc-menu-wrap > .gnb-wrap:hover{
+	color: #fff;
+	transition-duration: 200ms;
+	transition-property: color;
+	transition-timing-function: ease;
+}
+.pc-menu-wrap > .gnb-wrap > .gnb > .lnb-wrap{
+	padding: 0;
+	width: 100%;
+	padding-top: 25px;
+	display: none;
+}
+.pc-menu-wrap > .gnb-wrap > .gnb > .lnb-wrap > .lnb{
+	padding: 5px 0;
+}
+
+.pc-menu-wrap > .gnb-wrap > .gnb > .lnb-wrap > .lnb > a{
+	color: #fff;
+}
+
+#m-header{
+	width: 100%;
+}
+#m-header > .logo-wrap{
+	width: 200px;
+	margin-left: 15px;
+}
+#m-header > .logo-wrap > a{
+	width: 100%;
+}
+#m-header > .logo-wrap > a > img{
+	width: 100%;
+}
+/* 햄버거 버튼 스타일 및 트랜지션 */
+.hamburger {
+	position: absolute;
+	top: 50%;
+	right: 10px;
+	transform: translate(0, -50%);
+	z-index: 11;
+	cursor: pointer;
+}
+
+.hamburger:hover {
+	opacity: 0.7;
+}
+
+.box {
+	width: 40px;
+	height: 24px;
+	display: inline-block;
+	position: relative;
+}
+
+.bar {
+	display: block;
+	top: 50%;
+}
+
+.bar, .bar::before, .bar::after {
+	width: 35px;
+	height: 3px;
+	border-radius: 5px;
+	background-color: #262626;
+	position: absolute;
+	transition-property: transform;
+	transition-duration: 0.15s;
+	transition-timing-function: ease;
+}
+
+.bar::before, .bar::after {
+	content: "";
+	display: block;
+}
+
+.bar::before {
+	top: -13px;
+}
+
+.bar::after {
+	bottom: -13px;
+}
+
+.spin .bar {
+	-webkit-transition: all 0.2s ease-in-out;
+	-moz-transition: all 0.2s ease-in-out;
+	-ms-transition: all 0.2s ease-in-out;
+	-o-transition: all 0.2s ease-in-out;
+	transition: all 0.2s ease-in-out;
+	transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+.spin .bar::before {
+	transition: top 0.1s 0.25s ease-in, opacity 0.1s ease-in;
+}
+
+.spin .bar::after {
+	transition: bottom 0.1s 0.25s ease-in, transform 0.22s
+		cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+.spin.active .bar {
+	background-color: #fff;
+	transform: rotate(225deg);
+	transition-delay: 0.12s;
+	transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.spin.active .bar::before {
+	background-color: #fff;
+	top: 0;
+	opacity: 0;
+	transition: top 0.1s ease-out, opacity 0.1s 0.12s ease-out;
+}
+
+.spin.active .bar::after {
+	background-color: #fff;
+	bottom: 0;
+	transform: rotate(-90deg);
+	transition: bottom 0.1s ease-out, transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+#menu-bg{
+	display: none;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background: #333;
+	opacity: 0.7;
+	z-index: 9;
+}
+.m-menu-wrap{
+	position: fixed;
+	top: 50px;
+	width: 100%;
+	display: none;
+}
+.m-menu-wrap > .gnb-wrap > .gnb{
+	padding: 10px 30px;
+	color: #fff;
+}
+.arrow{
+	float: right;
+	margin-right: 20px;
+	font-weight: bold;
+}
+.m-menu-wrap > .gnb-wrap > .gnb > .lnb-wrap{
+	display: none;
+}
+.m-menu-wrap > .gnb-wrap > .gnb > .lnb-wrap > .lnb > a{
+	color: #fff;
+}
+.m-menu-wrap > .gnb-wrap > .gnb > .lnb-wrap{
+	padding: 10px 0;
+}
+.m-menu-wrap > .gnb-wrap > .gnb > .lnb-wrap > .lnb{
+	padding: 5px 0;
+	padding-left: 20px;
+}
 /**********************************************************************/
 
+
+/* ****************************************************************** */
+@media only screen and (min-width:1100px){
+	#pc-header{
+		display: block;
+	}
+	#m-header{
+		display: none;
+	}
+	
+}
+
+@media only screen and (min-width:320px) and (max-width:1099px){
+	#pc-header{
+		display: none;
+	}
+	#m-header{
+		display: block;
+	}
+	
+}
+
+/**********************************************************************
+* Descript : 탭키를 사용한 바로가기 메뉴 스타일
+***********************************************************************/
+/* common css */
+	ul{
+		padding: 0;
+	}
+	ul li{
+		list-style: none;
+	}
+	a{
+		color: black;
+		text-decoration: none;
+	}
+	#quick-menu{
+		position: fixed;
+		bottom: 25px;
+		right: 25px;
+		z-index: 9;
+	}
+	#quick-menu > ul{
+	
+	}
+	#quick-menu > ul > li{
+		float: right;
+		width: 30px;
+		height: 30px;
+		padding: 10px;
+		border-radius: 50%;
+		background: #efefef;
+		text-align: center;
+		margin-left: 10px;
+	}
+	#quick-menu > ul > li > a{
+		width: 100%;
+	}
+	#quick-menu > ul > li > a > img{
+		width: 100%;
+	}
+	/* common css end */
+	/* pc css */
+	body{
+		position: relative;
+	}
+/**********************************************************************/
 
 
 /**********************************************************************
@@ -553,29 +808,4 @@ button{cursor:pointer;}														/* 버튼은 기본 포인터 */
 .cm{cursor:move;}
 .ct{cursor:text;}
 .cw{cursor:wait;}
-/**********************************************************************/
-
-
-
-/**********************************************************************
-* Descript : 프로젝트 HTML 초기화
-***********************************************************************/
-input, label, select, button, textarea{box-sizing:border-box;}
-
-caption, legend {position:fixed; top:-5000px; width:0; height:0; text-indent:-5000px; overflow:hidden; visibility:hidden; font-size:0; line-height:0;}
-html, body {width:100%; height:100%; font-family: 'Nanum Gothic', '나눔고딕', sans-serif; line-height:1em;}
-/**********************************************************************/
-
-
-
-/**********************************************************************
-* Descript : 프로젝트 HTML 로딩 Jquery Function과 함께 사용합니다.
-***********************************************************************/
-#loader-wrapper {position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 1000; background:rgba(255,255,255,1) url(../img/landing/logo.png) no-repeat center center;}
-#loading {position:absolute; left:50%; top:50%; margin:-100px 0 0 -25px; display: inline-block; width: 50px; height: 50px; border: 3px solid rgba(0,0,0,0.3); border-radius: 50%; border-top-color: #2c3d96; animation: spin 1s ease-in-out infinite;}
-@-webkit-keyframes spin {to {transform: rotate(360deg);}}
-@-moz-keyframes spin {to {transform: rotate(360deg);}}
-@-ms-keyframes spin {to {transform: rotate(360deg);}}
-@-o-keyframes spin {to {transform: rotate(360deg);}}
-@keyframes spin {to {transform: rotate(360deg);}}
 /**********************************************************************/
