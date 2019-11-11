@@ -113,55 +113,6 @@
 		color: #fff;
 	}
 	
-	#menu-bg{
-		display: none;
-		position: fixed;
-		width: 100%;
-		height: 100%;
-		background: #333;
-		opacity: 0.7;
-		z-index: 9;
-	}
-	
-	.inner{
-		width: 100%;
-		height: 100%;
-		overflow:hidden;
-	}
-	.section1 {
-		background-color: #7DBCD4;
-	}
-	#video_wrap{
-		width: 100%;
-		height: 100%;
-		position: relative;
-	}
-	#video_wrap > #main_video{
-		position: absolute;
-	    top: 50%;
-	    left: 50%;
-	    min-width: 100%;
-	    min-height: 100%;
-	    transform: translate(-50%, -50%);
-	    z-index: 1;
-	}
-		
-	.section2 {
-		background-color: #98C19F; 
-	}
-	
-	.section3 {
-		background-color:  #A199E2;
-	}
-	
-	.section4 {
-		background-color:  #CC938E;
-	}
-	
-	.section5 {
-		background-color:  #D2C598;
-	}
-	
 	#m-header{
 		width: 100%;
 	}
@@ -202,8 +153,8 @@
 	}
 	
 	.bar, .bar::before, .bar::after {
-		width: 40px;
-		height: 5px;
+		width: 35px;
+		height: 3px;
 		border-radius: 5px;
 		background-color: #262626;
 		position: absolute;
@@ -263,6 +214,83 @@
 		transform: rotate(-90deg);
 		transition: bottom 0.1s ease-out, transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
 	}
+	
+	#menu-bg{
+		display: none;
+		position: fixed;
+		width: 100%;
+		height: 100%;
+		background: #333;
+		opacity: 0.7;
+		z-index: 9;
+	}
+	
+	.inner{
+		width: 100%;
+		height: 100%;
+		overflow:hidden;
+	}
+	.section1 {
+		background-color: #7DBCD4;
+	}
+	#video_wrap{
+		width: 100%;
+		height: 100%;
+		position: relative;
+	}
+	#video_wrap > #main_video{
+		position: absolute;
+	    top: 50%;
+	    left: 50%;
+	    min-width: 100%;
+	    min-height: 100%;
+	    transform: translate(-50%, -50%);
+	    z-index: 1;
+	}
+		
+	.section2 {
+		background-color: #98C19F; 
+	}
+	
+	.section3 {
+		background-color:  #A199E2;
+	}
+	
+	.section4 {
+		background-color:  #CC938E;
+	}
+	
+	.section5 {
+		background-color:  #D2C598;
+	}
+	
+	.m-menu-wrap{
+		position: fixed;
+		top: 50px;
+		width: 100%;
+		display: none;
+	}
+	.m-menu-wrap > .gnb-wrap > .gnb{
+		padding: 13px 30px;
+		color: #fff;
+	}
+	.arrow{
+		float: right;
+		margin-right: 20px;
+	}
+	.m-menu-wrap > .gnb-wrap > .gnb > .lnb-wrap{
+		display: none;
+	}
+	.m-menu-wrap > .gnb-wrap > .gnb > .lnb-wrap > .lnb > a{
+		color: #fff;
+	}
+	.m-menu-wrap > .gnb-wrap > .gnb > .lnb-wrap{
+		padding: 10px 0;
+	}
+	.m-menu-wrap > .gnb-wrap > .gnb > .lnb-wrap > .lnb{
+		padding: 5px 0;
+		padding-left: 20px;
+	}
 </style>
 <script>
 $(function(){
@@ -285,7 +313,11 @@ $(function(){
 		}else{
 			$("#m-header > .logo-wrap > a > img").prop("src","${pageContext.request.contextPath}/resources/img/m/main/logo-tr.png");
 		}
+		$(".m-menu-wrap").slideToggle();
 		
+	});
+	$(".m-menu-wrap > .gnb-wrap > .gnb").click(function(){
+		$(this).find(".lnb-wrap").slideToggle();
 	});
 });
 </script>
@@ -358,6 +390,58 @@ $(function(){
 					<div class="bar"></div>
 				</div>
 			</div>
+			<div class="m-menu-wrap">
+				<ul class="gnb-wrap">
+					<li class="gnb">
+						<span class="gnb-txt">Face lifting</span><span class="arrow">∨</span>
+						<ul class="lnb-wrap">
+							<li class="lnb"><a href="${pageContext.request.contextPath}/">레이저리프팅</a></li>
+							<li class="lnb"><a href="${pageContext.request.contextPath}/">실리프팅</a></li>
+						</ul>
+					</li>
+					<li class="gnb">
+						<span class="gnb-txt">Skin balancing</span><span class="arrow">∨</span>
+						<ul class="lnb-wrap">
+							<li class="lnb"><a href="${pageContext.request.contextPath}/">화이트닝, 점</a></li>
+						</ul>
+					</li>
+					<li class="gnb">
+						<span class="gnb-txt">Volume</span><span class="arrow">∨</span>
+						<ul class="lnb-wrap">
+							<li class="lnb"><a href="${pageContext.request.contextPath}/">볼륨감소</a></li>
+						</ul>
+					</li>
+					<li class="gnb">
+						<span class="gnb-txt">Soft surgery</span><span class="arrow">∨</span>
+						<ul class="lnb-wrap">
+							<li class="lnb"><a href="${pageContext.request.contextPath}/">Beauty balance</a></li>
+						</ul>
+					</li>
+					<li class="gnb">
+						<span class="gnb-txt">Medical skin care</span><span class="arrow">∨</span>
+						<ul class="lnb-wrap">
+							<li class="lnb"><a href="${pageContext.request.contextPath}/">퍼스널스킨케어</a></li>
+						</ul>
+					</li>
+					<li class="gnb">
+						<span class="gnb-txt">Prvie 소개</span><span class="arrow">∨</span>
+						<ul class="lnb-wrap">
+							<li class="lnb"><a href="${pageContext.request.contextPath}/">Prive란?</a></li>
+							<li class="lnb"><a href="${pageContext.request.contextPath}/">피부과전문 의료진</a></li>
+							<li class="lnb"><a href="${pageContext.request.contextPath}/">진료시간/위치</a></li>
+							<li class="lnb"><a href="${pageContext.request.contextPath}/">Prive공간</a></li>
+						</ul>
+					</li>
+					<li class="gnb">
+						<span class="gnb-txt">Community</span><span class="arrow">∨</span>
+						<ul class="lnb-wrap">
+							<li class="lnb"><a href="${pageContext.request.contextPath}/">온라인상담</a></li>
+							<li class="lnb"><a href="${pageContext.request.contextPath}/">카카오상담</a></li>
+							<li class="lnb"><a href="${pageContext.request.contextPath}/">공지사항</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div><!-- pc-menu-wrap -->
 		</div><!-- m-header end -->
 	</div><!-- header end -->
 	<div id="menu-bg"></div>
