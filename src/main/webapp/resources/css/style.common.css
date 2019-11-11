@@ -189,7 +189,7 @@
 }
 .m-menu-wrap{
 	position: fixed;
-	top: 50px;
+	top: 60px;
 	width: 100%;
 	display: none;
 }
@@ -240,9 +240,11 @@
 }
 
 /**********************************************************************
-* Descript : 탭키를 사용한 바로가기 메뉴 스타일
+* Descript : 공통 스타일
 ***********************************************************************/
-/* common css */
+	body{
+		position: relative;
+	}
 	ul{
 		padding: 0;
 	}
@@ -278,11 +280,7 @@
 	#quick-menu > ul > li > a > img{
 		width: 100%;
 	}
-	/* common css end */
-	/* pc css */
-	body{
-		position: relative;
-	}
+	
 /**********************************************************************/
 
 

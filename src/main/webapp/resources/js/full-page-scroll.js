@@ -32,9 +32,10 @@
 			maxPosition: sections.length - 1,
 			currentPosition: 0,
 			displayDots: typeof params.displayDots != 'undefined' ? params.displayDots : true,
-			dotsPosition: params.dotsPosition || 'left'
+			dotsPosition: params.dotsPosition || 'left',
+			footer: params.footer || -1
 		};
-
+		
 		this.defaults = defaults;
 		/**
 		 * Init build
@@ -204,7 +205,11 @@
 			var animateTime = this.defaults.animateTime;
 			var animateFunction = this.defaults.animateFunction;
 			var position = this.defaults.currentPosition * 100;
-
+			var footerPosition = (this.defaults.footer-1) * 100;
+			if(position == footerPosition){
+				position = position-70;
+			}
+			
 			this.defaults.container.style.webkitTransform = 'translateY(-' + position + '%)';
 			this.defaults.container.style.mozTransform = 'translateY(-' + position + '%)';
 			this.defaults.container.style.msTransform = 'translateY(-' + position + '%)';
