@@ -63,6 +63,7 @@
 		z-index: 999;
 	}
 	#pc-header{
+		display: none;
 		width: 100%;
 	}
 	#pc-header > .logo-wrap{
@@ -160,6 +161,108 @@
 	.section5 {
 		background-color:  #D2C598;
 	}
+	
+	#m-header{
+		width: 100%;
+	}
+	#m-header > .logo-wrap{
+		width: 200px;
+		margin-left: 15px;
+	}
+	#m-header > .logo-wrap > a{
+		width: 100%;
+	}
+	#m-header > .logo-wrap > a > img{
+		width: 100%;
+	}
+	/* 햄버거 버튼 스타일 및 트랜지션 */
+	.hamburger {
+		position: absolute;
+		top: 50%;
+		right: 10px;
+		transform: translate(0, -50%);
+		z-index: 11;
+		cursor: pointer;
+	}
+	
+	.hamburger:hover {
+		opacity: 0.7;
+	}
+	
+	.box {
+		width: 40px;
+		height: 24px;
+		display: inline-block;
+		position: relative;
+	}
+	
+	.bar {
+		display: block;
+		top: 50%;
+	}
+	
+	.bar, .bar::before, .bar::after {
+		width: 40px;
+		height: 5px;
+		border-radius: 5px;
+		background-color: #262626;
+		position: absolute;
+		transition-property: transform;
+		transition-duration: 0.15s;
+		transition-timing-function: ease;
+	}
+	
+	.bar::before, .bar::after {
+		content: "";
+		display: block;
+	}
+	
+	.bar::before {
+		top: -13px;
+	}
+	
+	.bar::after {
+		bottom: -13px;
+	}
+	
+	.spin .bar {
+		-webkit-transition: all 0.2s ease-in-out;
+		-moz-transition: all 0.2s ease-in-out;
+		-ms-transition: all 0.2s ease-in-out;
+		-o-transition: all 0.2s ease-in-out;
+		transition: all 0.2s ease-in-out;
+		transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+	}
+	
+	.spin .bar::before {
+		transition: top 0.1s 0.25s ease-in, opacity 0.1s ease-in;
+	}
+	
+	.spin .bar::after {
+		transition: bottom 0.1s 0.25s ease-in, transform 0.22s
+			cubic-bezier(0.55, 0.055, 0.675, 0.19);
+	}
+	
+	.spin.active .bar {
+		background-color: #fff;
+		transform: rotate(225deg);
+		transition-delay: 0.12s;
+		transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+	}
+	
+	.spin.active .bar::before {
+		background-color: #fff;
+		top: 0;
+		opacity: 0;
+		transition: top 0.1s ease-out, opacity 0.1s 0.12s ease-out;
+	}
+	
+	.spin.active .bar::after {
+		background-color: #fff;
+		bottom: 0;
+		transform: rotate(-90deg);
+		transition: bottom 0.1s ease-out, transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
+	}
 </style>
 <script>
 $(function(){
@@ -171,6 +274,17 @@ $(function(){
 		$("#menu-bg").stop().fadeOut(200);
 		$(this).find(".lnb-wrap").stop().fadeOut(100);
 		$("#pc-header > .logo-wrap > a > img").prop("src","${pageContext.request.contextPath}/resources/img/main/logo.png");
+		
+	});
+	$('#hamburger').click(function(){
+		$(this).toggleClass('active');
+		$("#menu-bg").stop().fadeToggle(200);
+		var txt = $(this).prop("class");
+		if(txt.indexOf("active") > -1){
+			$("#m-header > .logo-wrap > a > img").prop("src","${pageContext.request.contextPath}/resources/img/m/main/logo-tr-white.png");
+		}else{
+			$("#m-header > .logo-wrap > a > img").prop("src","${pageContext.request.contextPath}/resources/img/m/main/logo-tr.png");
+		}
 		
 	});
 });
@@ -235,8 +349,17 @@ $(function(){
 				</ul>
 			</div><!-- pc-menu-wrap -->
 		</div><!-- pc-header end -->
-		<div id="m-header" style="display:none;"></div>
-	</div>
+		<div id="m-header">
+			<div class="logo-wrap">
+				<a href="${pageContext.request.contextPath}/"><img src="${pageContext.request.contextPath}/resources/img/m/main/logo-tr.png"></a>
+			</div>
+			<div id="hamburger" class="hamburger spin">
+				<div class="box">
+					<div class="bar"></div>
+				</div>
+			</div>
+		</div><!-- m-header end -->
+	</div><!-- header end -->
 	<div id="menu-bg"></div>
 	<div id="quick-menu">
 		<ul>
@@ -249,7 +372,7 @@ $(function(){
 			<div class="inner">
 				<div id="video_wrap">
 					<video id="main_video" muted="" loop="" playsinline="" autoplay="">
-						<source src="${pageContext.request.contextPath}/resources/video/testVideo.mp4" type="video/mp4">
+						<source src="${pageContext.request.contextPath}/resources/video/video1.mp4" type="video/mp4">
 					</video>
 				</div>
 			</div>
@@ -269,12 +392,15 @@ $(function(){
 				<span>Page #4</span>				
 			</div>
 		</section>
-		<section class="section5">
+		<section id="footer" class="section5">
 			<div class="inner">
 				<span>Page #5</span>				
 			</div>
 		</section>
 	</div>
+	<footer>
+	
+	</footer>
 	<script type="text/javascript">
 		new fullScroll({
 			displayDots: true,
