@@ -10,107 +10,82 @@
 <title>프라이브 피부과</title>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/full-page-scroll.css" />
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/style.common.css" />
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/main.css" />
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/slick/slick.css"/>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/slick/slick-theme.css"/>
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/main.css" />
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/jquery-1.12.4.min.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/common.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/full-page-scroll.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/slick/slick.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0, viewport-fit=cover">
 <style type="text/css">
-	*{
-		font-family: sans-serif;
-	}
-	.section2{
-		background: #fcfbf7;
-	}
-	.main_slider_wrap{
+*{
+	font-family: sans-serif;
+}
+@media only screen and (min-width:320px) and (max-width:767px){
+	.footer-wrap{
 		width: 100%;
-		height: 100%;
+		margin: 0 auto;
 	}
-	.main_slider_wrap > .main_slider{
+	.footer-wrap > .foot{
+		/* width: 25%;
+		float: left; */
+	}
+	.footer-wrap > .foot > .f_logo{
+		width: 60%;
+		margin: 0 auto;
+		margin-top: 10px;
+	}
+	.footer-wrap > .foot > .f_logo > a{
+		display: none;
+	}
+	.footer-wrap > .foot > .f_logo > .f_m_logo{
+		display: block;
 		width: 100%;
-		height: 100%;
-		/* position: relative; */
 	}
-	.main_slider_wrap > .main_slider div{
+	.footer-wrap > .foot > .f_logo > a > img{
 		width: 100%;
-		height: 100%;
-	}
-	.main_slider_wrap  .main_slider .slider_img{
-		width: 100%;
-		height: 100%;
-	}
-	.main_slider_wrap  .main_slider .slider_img img{
-		max-width: none;
-		height: 90%;
-		position: absolute;
-		bottom:0;
-		right:0;
-	}
-	.main_slider_wrap  .main_slider .slider_img .s_num{
-		position: absolute;
-		bottom:200px;
-		left: 360px;
-		font-size: 40px;
-		margin: 0;
-		color: #555555;
-	}
-	.main_slider_wrap  .main_slider .slider_img .s_title{
-		position: absolute;
-		bottom:210px;
-		left: 550px;
-		font-size: 28px;
-		margin: 0;
-		color: #555555;
-	}
-	.main_slider_wrap  .main_slider .slider_img .s_content{
-		position: absolute;
-		bottom:160px;
-		left: 550px;
-		font-size: 15px;
-		margin: 0;
-		color: #555555;
-	}
-	.main_slider_wrap  .main_slider .slider_img .s_more_btn{
-		position: absolute;
-		bottom:130px;
-		left: 550px;
-		font-size: 15px;
-		margin: 0;
-	}
-	.main_slider_wrap  .main_slider .slider_img .s_more_btn > a{
-		color: #aaaaaa;
 	}
 	
-	.slick-prev, .slick-next {
-		bottom: 120px;
-		width: 35px;
-		height: 35px;
-		
+	.footer-wrap > .foot > .f_info_txt{
+		width: 100%;
+		text-align: center;
 	}
-	.slick-prev{
-		left:360px;
-		background: url("/prive/resources/img/main/arrow_l.png") no-repeat;
-		background-size: contain;
+	.footer-wrap > .foot > .f_time{
+		display: none;
 	}
-	.slick-next{
-		left: 435px;
-		background: url("/prive/resources/img/main/arrow_r.png") no-repeat;
-		background-size: contain;
+	.footer-wrap > .foot > .f_traffic{
+		display: none;
 	}
-	.imgNav{
-		position: absolute;
-		bottom: 200px;
-		left: 400px;
-		
-	}
-	.imgNav > p{
-		font-size: 40px;
-		color: #888888;
+	.footer-wrap > .foot p{
+		font-size: 13px;
 		margin: 0;
+		line-height: 20px;
 	}
+	
+	
+	.f_bottom{
+		width: 100%;
+		text-align: center;
+		margin-top: 15px;
+	}
+	.f_bottom > ul{
+		width: 100%;
+		margin: 0 auto;
+		overflow: hidden;
+	}
+	.f_bottom > ul > li{
+		display: inline-block;
+		padding-left: 5px;
+	}
+	.f_bottom > ul > li > a{
+		font-size: 13px;
+	}
+	.f_bottom p{
+		font-size: 13px;
+	}
+	
+}
 </style>
 <script>
 $(function(){
@@ -162,42 +137,42 @@ $(function(){
 							<img src="${pageContext.request.contextPath}/resources/img/main/slidetest1.jpg">
 							<p class="s_num">1</p>
 							<h2 class="s_title">리프팅</h2>
-							<p class="s_content">활력과 생기를 불어 넣어 젊음을 만들어주는 케어 </p>
+							<p class="s_content">하이엔드 레이저, 새롭게 탄력을 표현합니다.</p>
 							<p class="s_more_btn"><a href="${pageContext.request.contextPath}/">더보기</a></p>
 						</div>
 						<div class="slider_img">
 							<img src="${pageContext.request.contextPath}/resources/img/main/slidetest2.jpg">
 							<p class="s_num">2</p>
 							<h2 class="s_title">스킨밸런스</h2>
-							<p class="s_content">피부 균형을 잡아 라이프스타일을 표현하는 케어</p>
+							<p class="s_content">근본적으로 과하지않게 피부밸런스를 찾아갑니다.</p>
 							<p class="s_more_btn"><a href="${pageContext.request.contextPath}/">더보기</a></p>
 						</div>
 						<div class="slider_img">
 							<img src="${pageContext.request.contextPath}/resources/img/main/slidetest2.jpg">
 							<p class="s_num">3</p>
 							<h2 class="s_title">맨즈케어</h2>
-							<p class="s_content">남자의 젠틀함을 피부에 표현하는 케어</p>
+							<p class="s_content">당신의 가장 멋진모습, 프라이브 맨즈케어</p>
 							<p class="s_more_btn"><a href="${pageContext.request.contextPath}/">더보기</a></p>
 						</div>
 						<div class="slider_img">
 							<img src="${pageContext.request.contextPath}/resources/img/main/slidetest2.jpg">
 							<p class="s_num">4</p>
 							<h2 class="s_title">볼륨</h2>
-							<p class="s_content">미적 요소와 어우러진 자연스럽고 건강한 아름다움을 만드는 케어</p>
+							<p class="s_content">좋은재료로 더 건강하게 아름다움을 채웁니다.</p>
 							<p class="s_more_btn"><a href="${pageContext.request.contextPath}/">더보기</a></p>
 						</div>
 						<div class="slider_img">
 							<img src="${pageContext.request.contextPath}/resources/img/main/slidetest2.jpg">
 							<p class="s_num">5</p>
 							<h2 class="s_title">소프트성형</h2>
-							<p class="s_content">잊고 지냈던 나의 선을 돋보이게 하는 케어</p>
+							<p class="s_content">더 아름다워진 나자신과 만나는 시간. 소프트성형</p>
 							<p class="s_more_btn"><a href="${pageContext.request.contextPath}/">더보기</a></p>
 						</div>
 						<div class="slider_img">
 							<img src="${pageContext.request.contextPath}/resources/img/main/slidetest2.jpg">
 							<p class="s_num">6</p>
 							<h2 class="s_title">메디컬스킨케어</h2>
-							<p class="s_content">프리미엄 뷰티 프로그램 1:1 퍼스널스킨케어</p>
+							<p class="s_content">프리미엄제품으로 더 특별한 스킨케어시간</p>
 							<p class="s_more_btn"><a href="${pageContext.request.contextPath}/">더보기</a></p>
 						</div>
 					</div>
@@ -225,7 +200,8 @@ $(function(){
 				<div class="footer-wrap">
 					<div class="foot">
 						<div class="f_logo">
-							<a href=""><img src="${pageContext.request.contextPath}/resources/img/main/logo.png"></a>
+							<a class="f_m_logo" href="${pageContext.request.contextPath}/"><img src="${pageContext.request.contextPath}/resources/img/m/main/logo-tr.png"></a>
+							<a href="${pageContext.request.contextPath}/"><img src="${pageContext.request.contextPath}/resources/img/main/logo.png"></a>
 						</div>
 					</div>
 					<div class="foot">
@@ -244,7 +220,7 @@ $(function(){
 						</div>
 					</div>
 					<div class="foot">
-						<div class="f_trafic">
+						<div class="f_traffic">
 							<p>주차: 건물 뒷편 전용 주차공간</p>
 							<p>지하철: 도시철도 3호선 어린이 회관역, 도보3분</p>
 							

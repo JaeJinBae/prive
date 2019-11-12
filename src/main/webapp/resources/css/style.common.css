@@ -216,7 +216,9 @@
 	padding-left: 20px;
 }
 /**********************************************************************/
-
+.section4 {
+	background-color:  #efede5;
+}
 
 /* ****************************************************************** */
 @media only screen and (min-width:1200px){
@@ -226,10 +228,125 @@
 	#m-header{
 		display: none;
 	}
+/* ********************************************************************
+  Descript: footer
+********************************************************************* */	
+	.footer-wrap{
+		width: 1200px;
+		margin: 0 auto;
+		display: flex;
+	    flex-wrap: wrap;
+	    justify-content: space-between;
+	    padding: 50px 70px;
+	}
+	.footer-wrap > .foot{
+		/* width: 25%;
+		float: left; */
+	}
+	.footer-wrap > .foot > .f_logo{
+		width: 250px;
+	}
+	.footer-wrap > .foot > .f_logo > a{
+		width: 100%;
+	}
+	.footer-wrap > .foot > .f_logo > .f_m_logo{
+		display: none;
+	}
+	.footer-wrap > .foot > .f_logo > a > img{
+		width: 100%;
+	}
+	
+	.footer-wrap > .foot > .f_info_txt{
+		width: 100%;
+	}
+	.footer-wrap > .foot p{
+		font-size: 13px;
+		margin: 0;
+		line-height: 30px;
+	}
+	
+	
+	.f_bottom{
+		width: 100%;
+		text-align: center;
+	}
+	.f_bottom > ul{
+		width: 455px;
+		margin: 0 auto;
+		overflow: hidden;
+	}
+	.f_bottom > ul > li{
+		float: left;
+		padding: 0 10px;
+	}
+	.f_bottom > ul > li > a{
+		font-size: 13px;
+	}
+	.f_bottom p{
+		font-size: 13px;
+	}
+}
+@media only screen and (min-width:768px) and (max-width:1199px){
+	.footer-wrap{
+		width: 100%;
+		margin: 0 auto;
+		display: flex;
+	    flex-wrap: wrap;
+	    justify-content: space-between;
+	    padding: 50px 10px;
+	}
+	.footer-wrap > .foot{
+		/* width: 25%;
+		float: left; */
+	}
+	.footer-wrap > .foot > .f_logo{
+		width: 250px;
+	}
+	.footer-wrap > .foot > .f_logo > a{
+		width: 100%;
+	}
+	.footer-wrap > .foot > .f_logo > .f_m_logo{
+		display: none;
+	}
+	.footer-wrap > .foot > .f_logo > a > img{
+		width: 100%;
+	}
+	
+	.footer-wrap > .foot > .f_info_txt{
+		width: 100%;
+	}
+	.footer-wrap > .foot > .f_traffic{
+		display: none;
+	}
+	.footer-wrap > .foot p{
+		font-size: 13px;
+		margin: 0;
+		line-height: 30px;
+	}
+	
+	
+	.f_bottom{
+		width: 100%;
+		text-align: center;
+	}
+	.f_bottom > ul{
+		width: 455px;
+		margin: 0 auto;
+		overflow: hidden;
+	}
+	.f_bottom > ul > li{
+		display: inline-block;
+		padding: 0 10px;
+	}
+	.f_bottom > ul > li > a{
+		font-size: 13px;
+	}
+	.f_bottom p{
+		font-size: 13px;
+	}
 	
 }
-
-@media only screen and (min-width:320px) and (max-width:1199px){
+@media only screen and (min-width:320px) and (max-width:767px){
 	#pc-header{
 		display: none;
 	}
@@ -239,64 +356,7 @@
 	
 }
 
-/* ********************************************************************
-  Descript: footer
-********************************************************************* */
-.section4 {
-	background-color:  #efede5;
-}
 
-.footer-wrap{
-	width: 1200px;
-	margin: 0 auto;
-	display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    padding: 50px 70px;
-}
-.footer-wrap > .foot{
-	/* width: 25%;
-	float: left; */
-}
-.footer-wrap > .foot > .f_logo{
-	width: 250px;
-}
-.footer-wrap > .foot > .f_logo > a{
-	width: 100%;
-}
-.footer-wrap > .foot > .f_logo > a > img{
-	width: 100%;
-}
-
-.footer-wrap > .foot > .f_info_txt{
-	width: 100%;
-}
-.footer-wrap > .foot p{
-	font-size: 13px;
-	margin: 0;
-	line-height: 30px;
-}
-
-
-.f_bottom{
-	width: 100%;
-	text-align: center;
-}
-.f_bottom > ul{
-	width: 455px;
-	margin: 0 auto;
-	overflow: hidden;
-}
-.f_bottom > ul > li{
-	float: left;
-	padding: 0 10px;
-}
-.f_bottom > ul > li > a{
-	font-size: 13px;
-}
-.f_bottom p{
-	font-size: 13px;
-}
 
 
 /**********************************************************************
