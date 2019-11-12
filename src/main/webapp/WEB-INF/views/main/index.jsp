@@ -72,7 +72,20 @@
 	.section3 {
 		background-color:  #A199E2;
 	}
-	
+	.s3_txt{
+		position: absolute;
+		bottom: 45px;
+		left: 80px;
+		z-index: 2;
+		width: 100%;
+		max-width: 800px;
+	}
+	.s3_txt > h2{
+		font-size: 35px;
+	}
+	.s3_txt > p{
+		line-height: 1.65;
+	}
 	.section4 {
 		background-color:  #CC938E;
 	}
@@ -114,7 +127,7 @@ $(function(){
 		<section class="section2">
 			<div class="inner">
 				<div class="s2_txt">
-					<h1>Prive Dermatology</h1>
+					<h2>Prive Dermatology</h2>
 					<p>
 						새롭게 발전하는 의료시술을 안정성에 초점을 두어 <br>피부 본연의 기능을 회복하며 스킨밸런스를 찾아갑니다.<br>
 						여유로움이 가득한 공간에서 프리미엄 뷰티 프로그램으로 <br>피부, 라이프스타일을 새롭게 변화시킵니다.
@@ -127,12 +140,22 @@ $(function(){
 		</section>
 		<section class="section3">
 			<div class="inner">
-				<span>Page #3</span>
+				<div class="s3_txt">
+					<h1>특별한 공간, 특별한 시간 PRIVE</h1>
+					<p>
+						‘과하지 않게 그리고 안전하게‘ <br>
+						PRIVE는 피부 본연의 기능회복과 스킨밸런스를 높이기 위해 노력합니다.<br>
+						여유로운 공간에서 시작되는 PRIVE 프리미엄 뷰티 프로그램
+						
+					</p>
+				</div>
 			</div>
 		</section>
 		<section id="footer" class="section4">
 			<div class="inner">
-				<span>Page #5</span>
+				<div class="">
+					
+				</div>
 			</div>
 		</section>
 	</div>
