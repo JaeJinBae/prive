@@ -32,11 +32,11 @@ section{
 	height: 100%;
 	position: relative;
 }
+.inner{
+	width: 100%;
+	height: 100%;
+}
 @media only screen and (min-width:1200px){
-	.inner{
-		width: 100%;
-		height: 100%;
-	}
 	.section1{
 		background: red;
 	}
@@ -66,7 +66,7 @@ section{
 		font-size: 40px;
 	}
 	.s2_txt > .cv_div_wrap{
-		width: 1200px;
+		width: 100%;
 		margin: 0 auto;
 		overflow: hidden;
 	}
@@ -85,10 +85,6 @@ section{
 	
 }
 @media only screen and (min-width:768px) and (max-width:1199px){
-	.inner{
-		width: 100%;
-		height: 100%;
-	}
 	.section1{
 		background: red;
 	}
@@ -136,10 +132,6 @@ section{
 	}
 }
 @media only screen and (min-width:320px) and (max-width:767px){	
-	.inner{
-		width: 100%;
-		height: 100%;
-	}
 	.section1{
 		background: red;
 	}
