@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<section id="footer" class="section3">
+<section id="footer" class="">
 	<div class="inner">
 		<div class="footer-wrap">
 			<div class="foot">
