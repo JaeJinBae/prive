@@ -8,6 +8,15 @@
 		<div class="pc-menu-wrap">
 			<ul class="gnb-wrap">
 				<li class="gnb">
+					<span class="gnb-txt">Prvie 소개</span>
+					<ul class="lnb-wrap">
+						<li class="lnb"><a href="${pageContext.request.contextPath}/">Prive란?</a></li>
+						<li class="lnb"><a href="${pageContext.request.contextPath}/">피부과전문 의료진</a></li>
+						<li class="lnb"><a href="${pageContext.request.contextPath}/">진료시간/위치</a></li>
+						<li class="lnb"><a href="${pageContext.request.contextPath}/">Prive공간</a></li>
+					</ul>
+				</li>
+				<li class="gnb">
 					<span class="gnb-txt">Face lifting</span>
 					<ul class="lnb-wrap">
 						<li class="lnb"><a href="${pageContext.request.contextPath}/">레이저리프팅</a></li>
@@ -18,6 +27,12 @@
 					<span class="gnb-txt">Skin balancing</span>
 					<ul class="lnb-wrap">
 						<li class="lnb"><a href="${pageContext.request.contextPath}/">화이트닝, 점</a></li>
+					</ul>
+				</li>
+				<li class="gnb">
+					<span class="gnb-txt">Man's care</span>
+					<ul class="lnb-wrap">
+						<li class="lnb"><a href="${pageContext.request.contextPath}/">맨즈케어</a></li>
 					</ul>
 				</li>
 				<li class="gnb">
@@ -36,15 +51,6 @@
 					<span class="gnb-txt">Medical skin care</span>
 					<ul class="lnb-wrap">
 						<li class="lnb"><a href="${pageContext.request.contextPath}/">퍼스널스킨케어</a></li>
-					</ul>
-				</li>
-				<li class="gnb">
-					<span class="gnb-txt">Prvie 소개</span>
-					<ul class="lnb-wrap">
-						<li class="lnb"><a href="${pageContext.request.contextPath}/">Prive란?</a></li>
-						<li class="lnb"><a href="${pageContext.request.contextPath}/">피부과전문 의료진</a></li>
-						<li class="lnb"><a href="${pageContext.request.contextPath}/">진료시간/위치</a></li>
-						<li class="lnb"><a href="${pageContext.request.contextPath}/">Prive공간</a></li>
 					</ul>
 				</li>
 				<li class="gnb">
@@ -70,6 +76,15 @@
 		<div class="m-menu-wrap">
 			<ul class="gnb-wrap">
 				<li class="gnb">
+					<span class="gnb-txt">Prvie 소개</span><span class="arrow">∨</span>
+					<ul class="lnb-wrap">
+						<li class="lnb"><a href="${pageContext.request.contextPath}/">Prive란?</a></li>
+						<li class="lnb"><a href="${pageContext.request.contextPath}/">피부과전문 의료진</a></li>
+						<li class="lnb"><a href="${pageContext.request.contextPath}/">진료시간/위치</a></li>
+						<li class="lnb"><a href="${pageContext.request.contextPath}/">Prive공간</a></li>
+					</ul>
+				</li>
+				<li class="gnb">
 					<span class="gnb-txt">Face lifting</span><span class="arrow">∨</span>
 					<ul class="lnb-wrap">
 						<li class="lnb"><a href="${pageContext.request.contextPath}/">레이저리프팅</a></li>
@@ -80,6 +95,12 @@
 					<span class="gnb-txt">Skin balancing</span><span class="arrow">∨</span>
 					<ul class="lnb-wrap">
 						<li class="lnb"><a href="${pageContext.request.contextPath}/">화이트닝, 점</a></li>
+					</ul>
+				</li>
+				<li class="gnb">
+					<span class="gnb-txt">Man's care</span><span class="arrow">∨</span>
+					<ul class="lnb-wrap">
+						<li class="lnb"><a href="${pageContext.request.contextPath}/">맨즈케어</a></li>
 					</ul>
 				</li>
 				<li class="gnb">
@@ -98,15 +119,6 @@
 					<span class="gnb-txt">Medical skin care</span><span class="arrow">∨</span>
 					<ul class="lnb-wrap">
 						<li class="lnb"><a href="${pageContext.request.contextPath}/">퍼스널스킨케어</a></li>
-					</ul>
-				</li>
-				<li class="gnb">
-					<span class="gnb-txt">Prvie 소개</span><span class="arrow">∨</span>
-					<ul class="lnb-wrap">
-						<li class="lnb"><a href="${pageContext.request.contextPath}/">Prive란?</a></li>
-						<li class="lnb"><a href="${pageContext.request.contextPath}/">피부과전문 의료진</a></li>
-						<li class="lnb"><a href="${pageContext.request.contextPath}/">진료시간/위치</a></li>
-						<li class="lnb"><a href="${pageContext.request.contextPath}/">Prive공간</a></li>
 					</ul>
 				</li>
 				<li class="gnb">
