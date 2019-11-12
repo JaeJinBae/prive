@@ -40,7 +40,7 @@ $(function(){
 		cssEase:'linear',
 		autoplay:true,
 		autoplaySpeed:4000,
-		dots:false,
+		dots:false
 	})
 });
 </script>
