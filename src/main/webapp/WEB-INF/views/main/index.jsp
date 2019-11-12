@@ -19,71 +19,14 @@
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/slick/slick.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0, viewport-fit=cover">
 <style type="text/css">
-*{
-	font-family: sans-serif;
+
+@media only screen and (min-width:1200px){
+
 }
-@media only screen and (min-width:320px) and (max-width:767px){
-	.footer-wrap{
-		width: 100%;
-		margin: 0 auto;
-	}
-	.footer-wrap > .foot{
-		/* width: 25%;
-		float: left; */
-	}
-	.footer-wrap > .foot > .f_logo{
-		width: 60%;
-		margin: 0 auto;
-		margin-top: 10px;
-	}
-	.footer-wrap > .foot > .f_logo > a{
-		display: none;
-	}
-	.footer-wrap > .foot > .f_logo > .f_m_logo{
-		display: block;
-		width: 100%;
-	}
-	.footer-wrap > .foot > .f_logo > a > img{
-		width: 100%;
-	}
-	
-	.footer-wrap > .foot > .f_info_txt{
-		width: 100%;
-		text-align: center;
-	}
-	.footer-wrap > .foot > .f_time{
-		display: none;
-	}
-	.footer-wrap > .foot > .f_traffic{
-		display: none;
-	}
-	.footer-wrap > .foot p{
-		font-size: 13px;
-		margin: 0;
-		line-height: 20px;
-	}
-	
-	
-	.f_bottom{
-		width: 100%;
-		text-align: center;
-		margin-top: 15px;
-	}
-	.f_bottom > ul{
-		width: 100%;
-		margin: 0 auto;
-		overflow: hidden;
-	}
-	.f_bottom > ul > li{
-		display: inline-block;
-		padding-left: 5px;
-	}
-	.f_bottom > ul > li > a{
-		font-size: 13px;
-	}
-	.f_bottom p{
-		font-size: 13px;
-	}
+@media only screen and (min-width:768px) and (max-width:1199px){
+
+}
+@media only screen and (min-width:320px) and (max-width:767px){	
 	
 }
 </style>
