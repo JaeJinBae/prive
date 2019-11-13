@@ -175,31 +175,29 @@ section{
 	
 	.section2{
 		background: #f3efe3;
-		height: 85%
+		height: 140%
 	}
 	.s2_content_wrap{
 		position: absolute; 
 		width: 96%;
-		top: 18%;
+		top: 10%;
 		left: 50%;
 		margin-left: -48%;
 	}
 	.s2_txt{
-		float:left;
-		width: 38%;
+		width: 100%;
 		padding-top:15px;
 	}
 	.s2_txt > h2{
-		font-size: 30px;
+		font-size: 28px;
 		margin-bottom: 60px;
 	}
 	.s2_txt > p{
-		line-height: 35px;
-		font-size: 17px;
+		line-height: 25px;
+		font-size: 15px;
 	}
 	.s2_img{
-		float:right;
-		width: 62%;
+		width: 100%;
 	}
 	.s2_img > img{
 		border-radius: 10%;
@@ -227,7 +225,7 @@ section{
 		
 	}
 	.slick-prev{
-		right:15% !important;
+		right:25% !important;
 		background: url("/prive/resources/img/main/arrow_l.png") no-repeat;
 		background-size: contain;
 	}
@@ -236,25 +234,25 @@ section{
 		background: url("/prive/resources/img/main/arrow_r.png") no-repeat;
 		background-size: contain;
 	}
-	
+	 
 	.section3{
 		background: #fff;
-		height: 1140px;
+		height: 830px;
 	}
 	.s3_txt{
 		position: absolute;
-		top: 13%;
+		top: 10%;
 		left: 10%;
 	}
 	.s3_txt > h2{
-		font-size: 30px;
+		font-size: 28px;
 	}
 	.banner_wrap2{
 		position: absolute;
-		width: 86%; 
+		width: 96%; 
 		bottom: 0; 
 		left: 50%;
-		margin-left: -43%;
+		margin-left: -48%;
 		
 	}
 	.equip{
@@ -262,8 +260,8 @@ section{
 	}
 	.equip > p{
 		line-height: 22px;
-		height: 175px;
 	}
+	
 	
 	#footer{
 		height: 30%;

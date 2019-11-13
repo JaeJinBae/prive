@@ -192,35 +192,55 @@ section{
 @media only screen and (min-width:320px) and (max-width:767px){	
 	.section1{
 		background: #e5ddc9;
-		
+		height: 1200px;
 	}
 	.s1_txt{
 		position: absolute;
-		top: 20%;
-		left: 2%;
 		width: 95%;
+		top: 10%;
+		left: 50%;
+		margin-left: -47.5%;
 	}
 	.s1_txt > p{
-		line-height: 19px;
+		line-height: 25px;
+		font-size: 15px;
+		float:left;
+		padding-top: 40px;
+	}
+	.s1_txt > img{
+		float: right;
+		width: 100%;
+	}
+	.s1_txt > p > span{ 
+		display: inline-block;
+		font-size: 23px;
+		font-weight: 700;
 	}
 	
 	.section2{
 		background: #f3efe3;
-		height: 80%;
+		height: 700px;
 	}
 	.s2_txt{
 		position: absolute;
 		top: 10%;
-		left: 15%;
+		left: 10%;
 	}
+	.s2_txt > h2{
+		font-size: 40px;
+	}
+	.s2_txt > p{
+		font-size: 17px;
+	}
+	
 	.banner_wrap{
 		position: absolute;
-		bottom: 60px;
+		bottom: 140px;
 		right: 0;
 		width: 100%;
 	} 
 	.banner_wrap img{
-		width: 95%; 
+		width: 92%;
 	}
 	.slick-prev, .slick-next {
 		top: -70px !important;
@@ -229,12 +249,12 @@ section{
 		
 	}
 	.slick-prev{
-		right:17% !important;
+		right:25% !important;
 		background: url("/prive/resources/img/main/arrow_l.png") no-repeat;
 		background-size: contain;
 	}
 	.slick-next{
-		right: 6%;
+		right: 10%;
 		background: url("/prive/resources/img/main/arrow_r.png") no-repeat;
 		background-size: contain;
 	}
