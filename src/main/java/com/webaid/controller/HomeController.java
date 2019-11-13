@@ -176,8 +176,6 @@ public class HomeController {
 		vo.setContent(mtfReq.getParameter("content"));
 		vo.setReply("");
 		vo.setMemo("");
-		vo.setIp(mtfReq.getParameter("ip"));
-		vo.setAccess_url(mtfReq.getParameter("access_url"));
 		vo.setReply_date("");
 		
 		aService.insert(vo);
@@ -263,6 +261,14 @@ public class HomeController {
 		pageMaker.setTotalCount(aService.listSearchCount(cri));
 
 		rtts.addAttribute("page", page);
+		return "redirect:/menu08_01";
+	}
+	
+	@RequestMapping(value = "/menu08_01delete", method = RequestMethod.GET)
+	public String menu08_01delete(int no, @ModelAttribute("cri") SearchCriteria cri, Model model, HttpServletRequest req) throws Exception {
+		logger.info("menu08_01delete GET");
+		
+		aService.delete(no);
 		return "redirect:/menu08_01";
 	}
 	

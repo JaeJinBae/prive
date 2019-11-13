@@ -10,7 +10,6 @@ public interface AdviceDao {
 	public List<AdviceVO> selectNonComplete();
 	public void insert(AdviceVO vo);
 	public void update(AdviceVO vo);
-	public void updateUpload(AdviceVO vo);
 	public void delete(int no);
 	public List<AdviceVO> listSearch(SearchCriteria cri);
 	public int listSearchCount(SearchCriteria cri);

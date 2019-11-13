@@ -36,11 +36,6 @@ public class AdviceServiceImpl implements AdviceService {
 	}
 
 	@Override
-	public void updateUpload(AdviceVO vo) {
-		dao.updateUpload(vo);
-	}
-
-	@Override
 	public void delete(int no) {
 		dao.delete(no);
 	}

@@ -43,15 +43,55 @@ section{
 	.inner{
 		width: 1200px;
 		margin: 0 auto;
+		margin-bottom: 100px;
 	}
 	.s1_txt{
 		margin-bottom: 50px;
 	}
-	.m-list{
+	.m{
 		display: none;
 	}
+	.board-counsel-view{width:100%;border-top: 2px solid gray; }
+	.board-counsel-view thead{background:#f8f8f8; border-top:2px solid #858585; border-bottom:1px solid #cfd1d4;}
+	.board-counsel-view thead th{text-align:center; font-size:14px; font-weight:700; color:#222; padding:15px 0;}
 	
+	.board-counsel-view tbody td{background:#fff;  border-bottom:1px solid #cfd1d4; text-align:center; padding:15px; font-size:13px; line-height:23px;}
+	.board-counsel-view tbody td i.notice{display:inline-block; padding:5px; background:#172b4d; color:#fff; border-radius:2px; font-size:11px; font-weight:700;}
+	.board-counsel-view tbody td.subject{text-align:left;}
+	.board-counsel-view tbody td.subject a{color:#222;}
+	.board-counsel-view tbody td.date{font-size:12px;}
+	.board-counsel-view tbody td.con{padding:25px 15px; font-size:13px; line-height:21px; text-align:left;}
+	.board-counsel-view tbody td.con img{max-width:100%;}
+	.board-counsel-view tbody td i.state{display:inline-block; padding:10px 20px; color:#fff; font-size:12px; font-weight:700;}
+	.board-counsel-view tbody td i.com{background:#f39800; }
+	.board-counsel-view tbody td i.ready{background:#cbcbcb; }
+	.board-counsel-view tbody td a{color:#999;}
 	
+	.board-counsel-content{padding:25px;}
+	
+	.board-counsel-reply{padding:25px; background:#f4f4f4; border-top:1px solid #cfd1d4; border-bottom:1px solid #cfd1d4;}
+	.board-counsel-reply .reply-title{position:relative; display:inline-block; width:100%; height:30px; line-height:30px;  padding-left:100px; box-sizing:border-box; font-weight:700; margin-bottom:25px;}
+	.board-counsel-reply .reply-title i{position:absolute; left:0; top:0; display:inline-block; width:80px; height:30px; line-height:30px; text-align:center; color:#fff; background:#444444; font-size:13px;}
+	.board-counsel-reply .reply-txt{font-size:13px; line-height:20px;}
+	/**********************************************************************/
+	
+	/**********************************************************************
+	* Descript : 버튼 스타일
+	***********************************************************************/
+	.btn-group {display:inline-block; width:100%; height:36px; margin:25px 0; text-align:right;}
+	.btn-group-center {display:inline-block; width:100%; height:36px; margin:25px 0; text-align:center;}
+	button.btn, a.btn{display:inline-block; width:100px; height:36px; line-height:36px; vertical-align:middle; font-size:13px; font-weighT:700; box-sizing:border-box; text-align:center;}
+	button.btn:hover, a.btn:hover{text-decoration:none;}
+	.btn-list{background:#aaaaaa; color:#fff;}
+	.btn-submit{background:#687095; color:#fff;}
+	.btn-my-list{background:#333; color:#fff;}
+	.btn-del{background:#aaaaaa; color:#fff;}
+	.btn-update{background:#aaaaaa; color:#fff;}
+	.btn-view-list{background:#aaaaaa; color:#fff;}
+	.btn-cancel{background:#aaaaaa; color:#fff;}
+	
+	/**********************************************************************/
+
 	#footer{
 		height: 30%;
 	}
@@ -62,16 +102,55 @@ section{
 		padding-top: 150px;
 	}
 	.inner{
-		width: 768px;
+		width: 95%;
 		margin: 0 auto;
 	}
 	.s1_txt{
 		margin-bottom: 50px;
 	}
-	.m-list{
+	.m{
 		display: none;
 	}
+	.board-counsel-view{width:100%;border-top: 2px solid gray; }
+	.board-counsel-view thead{background:#f8f8f8; border-top:2px solid #858585; border-bottom:1px solid #cfd1d4;}
+	.board-counsel-view thead th{text-align:center; font-size:14px; font-weight:700; color:#222; padding:15px 0;}
 	
+	.board-counsel-view tbody td{background:#fff;  border-bottom:1px solid #cfd1d4; text-align:center; padding:15px; font-size:13px; line-height:23px;}
+	.board-counsel-view tbody td i.notice{display:inline-block; padding:5px; background:#172b4d; color:#fff; border-radius:2px; font-size:11px; font-weight:700;}
+	.board-counsel-view tbody td.subject{text-align:left;}
+	.board-counsel-view tbody td.subject a{color:#222;}
+	.board-counsel-view tbody td.date{font-size:12px;}
+	.board-counsel-view tbody td.con{padding:25px 15px; font-size:13px; line-height:21px; text-align:left;}
+	.board-counsel-view tbody td.con img{max-width:100%;}
+	.board-counsel-view tbody td i.state{display:inline-block; padding:10px 20px; color:#fff; font-size:12px; font-weight:700;}
+	.board-counsel-view tbody td i.com{background:#f39800; }
+	.board-counsel-view tbody td i.ready{background:#cbcbcb; }
+	.board-counsel-view tbody td a{color:#999;}
+	
+	.board-counsel-content{padding:25px;}
+	
+	.board-counsel-reply{padding:25px; background:#f4f4f4; border-top:1px solid #cfd1d4; border-bottom:1px solid #cfd1d4;}
+	.board-counsel-reply .reply-title{position:relative; display:inline-block; width:100%; height:30px; line-height:30px;  padding-left:100px; box-sizing:border-box; font-weight:700; margin-bottom:25px;}
+	.board-counsel-reply .reply-title i{position:absolute; left:0; top:0; display:inline-block; width:80px; height:30px; line-height:30px; text-align:center; color:#fff; background:#444444; font-size:13px;}
+	.board-counsel-reply .reply-txt{font-size:13px; line-height:20px;}
+	/**********************************************************************/
+	
+	/**********************************************************************
+	* Descript : 버튼 스타일
+	***********************************************************************/
+	.btn-group {display:inline-block; width:100%; height:36px; margin:25px 0; text-align:right;}
+	.btn-group-center {display:inline-block; width:100%; height:36px; margin:25px 0; text-align:center;}
+	button.btn, a.btn{display:inline-block; width:100px; height:36px; line-height:36px; vertical-align:middle; font-size:13px; font-weighT:700; box-sizing:border-box; text-align:center;}
+	button.btn:hover, a.btn:hover{text-decoration:none;}
+	.btn-list{background:#aaaaaa; color:#fff;}
+	.btn-submit{background:#687095; color:#fff;}
+	.btn-my-list{background:#333; color:#fff;}
+	.btn-del{background:#aaaaaa; color:#fff;}
+	.btn-update{background:#aaaaaa; color:#fff;}
+	.btn-view-list{background:#aaaaaa; color:#fff;}
+	.btn-cancel{background:#aaaaaa; color:#fff;}
+	
+	/**********************************************************************/
 	
 	#footer{
 		height: 30%;
@@ -82,10 +161,58 @@ section{
 		padding: 0 5px;
 		padding-top: 100px;
 	}
-	.pc-list{
+	.pc{
 		display: none;
 	}
+	.board-counsel-view{width:100%;border-top: 2px solid gray; }
+	.board-counsel-view ul.full{border-top:2px solid #858585;}
+	.board-counsel-view ul li{position:relative;}
+	
+	.board-counsel-view ul li div.title{padding:15px; border-bottom:1px solid #cfd1d4; color:#222; background:#eee; font-size:1em; line-height:1.5em; font-weight:700;}
+	.board-counsel-view ul li p.info{position:relative;  padding:15px; border-bottom:1px solid #cfd1d4;}
+	
+	.board-counsel-view ul li p.info span.answer{position:absolute; display:inline-block; top:50%; right:10px; transform:translate(0, -50%);}
+	.board-counsel-view ul li p.info i.state{display:inline-block; padding:10px 20px; color:#fff; font-size:12px; font-weight:700;}
+	.board-counsel-view ul li p.info i.com{background:#f39800; }
+	.board-counsel-view ul li p.info i.ready{background:#cbcbcb; }
+	
+	.board-counsel-view ul li p.info i.notice{left:0; top:0; display:inline-block; padding:5px 10px; background:#f39800; color:#fff; font-size:11px; font-weight:700;}
+	.board-counsel-view ul li p.info i.name{font-size:12px; color:#777;}
+	.board-counsel-view ul li p.info i.date{font-size:12px; color:#777;}
+	.board-counsel-view ul li p.info i.hit{font-size:12px; color:#777;}
+	.board-counsel-view ul li p.info span.line{display:inline-block; font-size:11px; color:#ccc; padding:0 10px;}
+	
+	
+	.board-counsel-view ul li.con{padding:15px; border-bottom:1px solid #cfd1d4; font-size:1em; line-height:1.5em;}
+	
+	
+	
+	.board-counsel-content{padding:15px; font-size:1em; line-height:1.5em;}
+	
+	.board-counsel-reply{padding:25px; background:#f4f4f4; border-top:1px solid #cfd1d4; border-bottom:1px solid #cfd1d4;}
+	.board-counsel-reply .reply-title{position:relative; display:inline-block; width:100%; height:30px; line-height:30px;  padding-left:100px; box-sizing:border-box; font-weight:700; margin-bottom:25px;}
+	.board-counsel-reply .reply-title i{position:absolute; left:0; top:0; display:inline-block; width:80px; height:30px; line-height:30px; text-align:center; color:#fff; background:#0ca9b3; font-size:13px;}
+	.board-counsel-reply .reply-txt{font-size:13px; line-height:20px;}
+	/**********************************************************************/
 	 
+	 /**********************************************************************
+	* Descript : 버튼 스타일
+	***********************************************************************/
+	.btn-group {display:inline-block; width:100%; height:36px; margin:25px 0; text-align:right;}
+	.btn-group-center {display:inline-block; width:100%; height:36px; margin:25px 0; text-align:center;}
+	button.btn, a.btn{display:inline-block; width:100px; height:36px; line-height:36px; vertical-align:middle; font-size:13px; font-weighT:700; box-sizing:border-box; text-align:center;}
+	button.btn:hover, a.btn:hover{text-decoration:none;}
+	.btn-list{background:#aaaaaa; color:#fff;}
+	.btn-submit{background:#687095; color:#fff;}
+	.btn-my-list{background:#333; color:#fff;}
+	.btn-del{background:#aaaaaa; color:#fff;}
+	.btn-update{background:#aaaaaa; color:#fff;}
+	.btn-view-list{background:#aaaaaa; color:#fff;}
+	.btn-cancel{background:#aaaaaa; color:#fff;}
+	
+	/**********************************************************************/
+	
+	
 	#footer{ 
 		height: 30%;
 	}
@@ -118,14 +245,13 @@ $(function(){
 				</div>
 				<div class="form_wrap">
 					<!-- privacy -->
-					<form name="inquire" id="inquire" method="post" action="" enctype="multipart/form-data" onsubmit="return false">
+					<form name="inquire" class="pc" id="inquire" method="post" action="" enctype="multipart/form-data" onsubmit="return false">
 						<input type="hidden" name="fparam" value="">
 						<input type="hidden" name="distinction" value="proc">
 						<input type="hidden" name="backpage" value="/html/index.html">
 						<input type="hidden" name="file_cnt" value="1">
 						
 						<table class="board-counsel-view">
-							<caption>상담게시판 상세</caption>
 							<colgroup>
 								<col style="width: 120px;">
 								<col>
@@ -170,6 +296,48 @@ $(function(){
 						</c:if>
 						
 					</form>
+					
+					<div class="board-counsel-view m">
+						<ul class="full">
+							<!-- privacy -->
+							<form name="inquire" id="inquire" method="post" action="" enctype="multipart/form-data" onsubmit="return false">
+								<input type="hidden" name="fparam" value="">
+								<input type="hidden" name="distinction" value="proc">
+								<input type="hidden" name="backpage" value="/m/index.html">
+								<input type="hidden" name="file_cnt" value="1">
+						
+								<li>
+									<div class="title">${item.title}</div>
+									<p class="info">
+										<i class="name">${item.name}</i><span class="line">|</span><i class="date">${item.regdate}</i><span class="line">|</span><i class="date">비공개</i>
+										<span class="answer">
+											<c:if test="${item.state == '상담완료'}"><td><i class="state com">답변완료</i></td></c:if>
+											<c:if test="${item.state != '상담완료'}"><td><i class="state ready">답변대기</i></td></c:if>
+										</span>
+									</p>
+								</li>
+									
+								<!-- 게시글 상세 내용 -->
+								<li class="board-counsel-content">
+									${item.content}
+								</li>
+							<!-- // 게시글 상세 내용 -->
+							</form>
+						</ul>
+					</div>
+					
+					<div class="full m">
+						<c:if test="${item.state == '상담완료'}">
+							<div class="board-counsel-reply">
+								<div class="reply-title">
+									<i>답변</i> 온라인상담에 대한 답변입니다.
+								</div>
+								<div class="reply-txt">
+									${item.reply}
+								</div>
+							</div>
+						</c:if>
+					</div>
 				</div>
 				<div class="btn-group">
 					<div class="inner1">

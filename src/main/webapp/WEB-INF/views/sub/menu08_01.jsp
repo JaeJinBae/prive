@@ -98,7 +98,7 @@ section{
 ***********************************************************************/
 .board-tit{text-align:center; padding:100px 0 50px 0;}
 
-.board-counsel-list{width:100%;}
+.board-counsel-list{width:100%;border-top: 2px solid gray;}
 .board-counsel-list thead{background:#f8f8f8; border-top:2px solid #858585; border-bottom:1px solid #cfd1d4;}
 .board-counsel-list thead th{text-align:center; font-size:14px; font-weight:700; color:#222; padding:15px 0;}
 
@@ -113,29 +113,6 @@ section{
 .board-counsel-list tbody td i.ready{background:#cbcbcb; }
 .board-counsel-list tbody td a{color:#222;}
 
-
-.board-counsel-view{width:100%; }
-.board-counsel-view thead{background:#f8f8f8; border-top:2px solid #858585; border-bottom:1px solid #cfd1d4;}
-.board-counsel-view thead th{text-align:center; font-size:14px; font-weight:700; color:#222; padding:15px 0;}
-
-.board-counsel-view tbody td{background:#fff;  border-bottom:1px solid #cfd1d4; text-align:center; padding:15px; font-size:13px; line-height:23px;}
-.board-counsel-view tbody td i.notice{display:inline-block; padding:5px; background:#172b4d; color:#fff; border-radius:2px; font-size:11px; font-weight:700;}
-.board-counsel-view tbody td.subject{text-align:left;}
-.board-counsel-view tbody td.subject a{color:#222;}
-.board-counsel-view tbody td.date{font-size:12px;}
-.board-counsel-view tbody td.con{padding:25px 15px; font-size:13px; line-height:21px; text-align:left;}
-.board-counsel-view tbody td.con img{max-width:100%;}
-.board-counsel-view tbody td i.state{display:inline-block; padding:10px 20px; color:#fff; font-size:12px; font-weight:700;}
-.board-counsel-view tbody td i.com{background:#f39800; }
-.board-counsel-view tbody td i.ready{background:#cbcbcb; }
-.board-counsel-view tbody td a{color:#999;}
-
-.board-counsel-content{padding:25px;}
-
-.board-counsel-reply{padding:25px; background:#f4f4f4; border-top:1px solid #cfd1d4; border-bottom:1px solid #cfd1d4;}
-.board-counsel-reply .reply-title{position:relative; display:inline-block; width:100%; height:30px; line-height:30px;  padding-left:100px; box-sizing:border-box; font-weight:700; margin-bottom:25px;}
-.board-counsel-reply .reply-title i{position:absolute; left:0; top:0; display:inline-block; width:80px; height:30px; line-height:30px; text-align:center; color:#fff; background:#444444; font-size:13px;}
-.board-counsel-reply .reply-txt{font-size:13px; line-height:20px;}
 /**********************************************************************/
 	
 	#footer{
@@ -205,7 +182,7 @@ section{
 ***********************************************************************/
 .board-tit{text-align:center; padding:100px 0 50px 0;}
 
-.board-counsel-list{width:100%;}
+.board-counsel-list{width:100%;border-top: 2px solid gray;}
 .board-counsel-list thead{background:#f8f8f8; border-top:2px solid #858585; border-bottom:1px solid #cfd1d4;}
 .board-counsel-list thead th{text-align:center; font-size:14px; font-weight:700; color:#222; padding:15px 0;}
 
@@ -220,29 +197,6 @@ section{
 .board-counsel-list tbody td i.ready{background:#cbcbcb; }
 .board-counsel-list tbody td a{color:#222;}
 
-
-.board-counsel-view{width:100%; }
-.board-counsel-view thead{background:#f8f8f8; border-top:2px solid #858585; border-bottom:1px solid #cfd1d4;}
-.board-counsel-view thead th{text-align:center; font-size:14px; font-weight:700; color:#222; padding:15px 0;}
-
-.board-counsel-view tbody td{background:#fff;  border-bottom:1px solid #cfd1d4; text-align:center; padding:15px; font-size:13px; line-height:23px;}
-.board-counsel-view tbody td i.notice{display:inline-block; padding:5px; background:#172b4d; color:#fff; border-radius:2px; font-size:11px; font-weight:700;}
-.board-counsel-view tbody td.subject{text-align:left;}
-.board-counsel-view tbody td.subject a{color:#222;}
-.board-counsel-view tbody td.date{font-size:12px;}
-.board-counsel-view tbody td.con{padding:25px 15px; font-size:13px; line-height:21px; text-align:left;}
-.board-counsel-view tbody td.con img{max-width:100%;}
-.board-counsel-view tbody td i.state{display:inline-block; padding:10px 20px; color:#fff; font-size:12px; font-weight:700;}
-.board-counsel-view tbody td i.com{background:#f39800; }
-.board-counsel-view tbody td i.ready{background:#cbcbcb; }
-.board-counsel-view tbody td a{color:#999;}
-
-.board-counsel-content{padding:25px;}
-
-.board-counsel-reply{padding:25px; background:#f4f4f4; border-top:1px solid #cfd1d4; border-bottom:1px solid #cfd1d4;}
-.board-counsel-reply .reply-title{position:relative; display:inline-block; width:100%; height:30px; line-height:30px;  padding-left:100px; box-sizing:border-box; font-weight:700; margin-bottom:25px;}
-.board-counsel-reply .reply-title i{position:absolute; left:0; top:0; display:inline-block; width:80px; height:30px; line-height:30px; text-align:center; color:#fff; background:#444444; font-size:13px;}
-.board-counsel-reply .reply-txt{font-size:13px; line-height:20px;}
 /**********************************************************************/
 	
 	#footer{
@@ -306,7 +260,7 @@ section{
 .board-tit{text-align:center; padding:100px 0 50px 0;}
 
 
-.board-counsel-list{width:100%;}
+.board-counsel-list{width:100%;border-top: 2px solid gray;}
 .board-counsel-list ul.full{border-top:2px solid #858585;}
 .board-counsel-list ul li{position:relative;}
 .board-counsel-list ul li a{display:block; padding:15px; border-bottom:1px solid #cfd1d4; color:#222; }
@@ -320,37 +274,6 @@ section{
 .board-counsel-list ul li div.answer i.state{display:inline-block; padding:10px 20px; color:#fff; font-size:12px; font-weight:700;}
 .board-counsel-list ul li div.answer i.com{background:#f39800; }
 .board-counsel-list ul li div.answer i.ready{background:#cbcbcb; }
-
-
-.board-counsel-view{width:100%; }
-.board-counsel-view ul.full{border-top:2px solid #858585;}
-.board-counsel-view ul li{position:relative;}
-
-.board-counsel-view ul li div.title{padding:15px; border-bottom:1px solid #cfd1d4; color:#222; background:#eee; font-size:1em; line-height:1.5em; font-weight:700;}
-.board-counsel-view ul li p.info{position:relative;  padding:15px; border-bottom:1px solid #cfd1d4;}
-
-.board-counsel-view ul li p.info span.answer{position:absolute; display:inline-block; top:50%; right:10px; transform:translate(0, -50%);}
-.board-counsel-view ul li p.info i.state{display:inline-block; padding:10px 20px; color:#fff; font-size:12px; font-weight:700;}
-.board-counsel-view ul li p.info i.com{background:#f39800; }
-.board-counsel-view ul li p.info i.ready{background:#cbcbcb; }
-
-.board-counsel-view ul li p.info i.notice{left:0; top:0; display:inline-block; padding:5px 10px; background:#f39800; color:#fff; font-size:11px; font-weight:700;}
-.board-counsel-view ul li p.info i.name{font-size:12px; color:#777;}
-.board-counsel-view ul li p.info i.date{font-size:12px; color:#777;}
-.board-counsel-view ul li p.info i.hit{font-size:12px; color:#777;}
-.board-counsel-view ul li p.info span.line{display:inline-block; font-size:11px; color:#ccc; padding:0 10px;}
-
-
-.board-counsel-view ul li.con{padding:15px; border-bottom:1px solid #cfd1d4; font-size:1em; line-height:1.5em;}
-
-
-
-.board-counsel-content{padding:15px; font-size:1em; line-height:1.5em;}
-
-.board-counsel-reply{padding:25px; background:#f4f4f4; border-top:1px solid #cfd1d4; border-bottom:1px solid #cfd1d4;}
-.board-counsel-reply .reply-title{position:relative; display:inline-block; width:100%; height:30px; line-height:30px;  padding-left:100px; box-sizing:border-box; font-weight:700; margin-bottom:25px;}
-.board-counsel-reply .reply-title i{position:absolute; left:0; top:0; display:inline-block; width:80px; height:30px; line-height:30px; text-align:center; color:#fff; background:#0ca9b3; font-size:13px;}
-.board-counsel-reply .reply-txt{font-size:13px; line-height:20px;}
 /**********************************************************************/
 	#footer{ 
 		height: 30%;
@@ -432,7 +355,7 @@ $(function(){
 							        <c:forEach var="item" items="${list}">
 										<li>
 											<%-- <a href="${pageContext.request.contextPath}/m/menu09_02read${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}"> --%>
-											<a href="${pageContext.request.contextPath}/m/menu09_02pwChk${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}">
+											<a href="${pageContext.request.contextPath}/menu08_01pwChk${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}">
 												<b><!---->${item.title}</b>
 												<i class="name">${item.name}</i><span class="line">|</span><i class="date">${item.regdate}</i><span class="line">|</span><i class="date">비공개</i>
 											</a>

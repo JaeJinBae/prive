@@ -13,15 +13,11 @@
 	</select>
 	
 	<insert id="insert">
-		insert into advice values(0, #{name}, #{phone}, #{regdate}, #{email}, #{state}, #{secret}, #{pw}, #{title}, #{content}, #{reply}, #{memo}, #{ip}, #{access_url}, #{reply_date}, #{upload_origin}, #{upload_stored})
+		insert into advice values(0, #{name}, #{phone}, #{regdate}, #{email}, #{state}, #{secret}, #{pw}, #{title}, #{content}, #{reply}, #{memo}, #{reply_date})
 	</insert>
 	
 	<update id="update">
-		update advice set name=#{name}, phone=#{phone}, email=#{email}, state=#{state}, secret=#{secret}, title=#{title}, content=#{content}, reply=#{reply}, reply_date=#{reply_date}, memo=#{memo}, upload_origin=#{upload_origin}, upload_stored=#{upload_stored} where no=#{no}
-	</update>
-	
-	<update id="updateUpload">
-		update advice set upload_origin=#{upload_origin}, upload_stored=#{upload_stored} where no=#{no}
+		update advice set name=#{name}, phone=#{phone}, email=#{email}, state=#{state}, secret=#{secret}, title=#{title}, content=#{content}, reply=#{reply}, reply_date=#{reply_date}, memo=#{memo} where no=#{no}
 	</update>
 	
 	<delete id="delete">

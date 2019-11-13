@@ -36,12 +36,7 @@ public class AdviceDaoImpl implements AdviceDao {
 	public void update(AdviceVO vo) {
 		session.update(namespace + ".update", vo);
 	}
-
-	@Override
-	public void updateUpload(AdviceVO vo) {
-		session.update(namespace + ".updateUpload", vo);
-	}
-
+	
 	@Override
 	public void delete(int no) {
 		session.delete(namespace + ".delete", no);
