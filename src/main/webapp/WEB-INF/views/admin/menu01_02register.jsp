@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>다니엘성형외과의원 진료과목 피부과</title>
+<title>프라이브 피부과</title>
 <link rel="shortcut icon" href="${pageContext.request.contextPath}/resources/img/favicon.ico">
 <!-- ************************************************************************************************* -->
 <!-- @ = 스타일, # = 자바스크립트 -->
@@ -88,7 +88,7 @@ $(function(){
 			
 			
 			<div class="main_bottom_area">
-				<form id="form1" method="post" action="${pageContext.request.contextPath}/admin/menu01_01register${pageMaker.makeSearch(pageMaker.cri.page)}">
+				<form id="form1" method="post" action="${pageContext.request.contextPath}/admin/menu01_02register${pageMaker.makeSearch(pageMaker.cri.page)}">
 					<input type="hidden" name="no" value="0">
 					<div class="write_area">
 						<div class="write_box">
@@ -114,7 +114,7 @@ $(function(){
 								<tr class="cont">
 									<td class="title">작성자</td>
 									<td>
-										<input type="text" class="w_form_s" name="writer" value="다니엘성형외과">
+										<input type="text" class="w_form_s" name="writer" value="프라이브피부과">
 									</td>
 								</tr>
 								<tr class="cont">
@@ -149,11 +149,11 @@ $(function(){
 				
 						<div class="btn_area">
 							<p class="btn_left">
-								<button type="button" class="btn_gray" onclick="location.href='${pageContext.request.contextPath}/admin/menu01_01'">리스트</button>
+								<button type="button" class="btn_gray" onclick="location.href='${pageContext.request.contextPath}/admin/menu01_02'">리스트</button>
 							</p>
 							<p class="btn_right">
 								<input type="submit" class="btn_black" value="등록">&nbsp;
-								<button type="button" class="btn_gray" onclick="location.href='${pageContext.request.contextPath}/admin/menu01_01register'">취소</button>
+								<button type="button" class="btn_gray" onclick="location.href='${pageContext.request.contextPath}/admin/menu01_02register'">취소</button>
 							</p>
 						</div><!-- btn_area end -->
 					</div><!-- write_area end -->
@@ -166,7 +166,7 @@ $(function(){
     </div><!-- container 끝 -->
 
     <div id="admin_footer">
-        <div class="f_contents nanum_n">COPYRIGHT ⓒ <span class="txt_blue_b nanum_b">다니엘성형외과의원 진료과목 피부과</span> ALL RIGHT RESERVED</div>
+        <div class="f_contents nanum_n">COPYRIGHT ⓒ <span class="txt_blue_b nanum_b">프라이브 피부과</span> ALL RIGHT RESERVED</div>
     </div>
 </div><!-- wrap 끝 -->
 

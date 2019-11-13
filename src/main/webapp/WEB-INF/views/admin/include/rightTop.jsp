@@ -27,10 +27,10 @@
 		</li>
 		<li>
 			<p>
-				<a href="#none">
+				<%-- <a href="#none">
 					<img src="${pageContext.request.contextPath}/resources/admin/img/top_icon_logout.png" alt="정보수정">
 					<span class="txt_666_n">정보수정</span>
-				</a>
+				</a> --%>
 			</p>
 		</li>
 	</ul>

@@ -266,7 +266,7 @@ public class AdminController {
 	public String menu01_02(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
 		logger.info("menu01_02 GET");
 		
-		List<NoticeVO> topList = nService.selectTopNotice("");
+		List<NoticeVO> topList = nService.selectTopNotice("o");
 		List<NoticeVO> list = nService.listSearchAll(cri);
 		
 		PageMaker pageMaker = new PageMaker();

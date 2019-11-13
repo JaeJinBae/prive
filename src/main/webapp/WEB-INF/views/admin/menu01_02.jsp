@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>다니엘성형외과의원 진료과목 피부과</title>
+<title>프라이브 피부과</title>
 <link rel="shortcut icon" href="${pageContext.request.contextPath}/resources/img/favicon.ico">
 <!-- ************************************************************************************************* -->
 <!-- @ = 스타일, # = 자바스크립트 -->
@@ -125,7 +125,7 @@ $(function(){
 										<c:forEach var="item" items="${topList}">
 											<tr class="cont">
 												<td><input type="checkbox" name="" value="${item.no}"></td>
-												<c:choose>
+												<%-- <c:choose>
 													<c:when test="${item.use_state == 'o'}">
 														<td>
 															<img src="${pageContext.request.contextPath}/resources/img/admin/ck_img_on.png" class="cursor vimg" id="delflag_2036">
@@ -136,9 +136,9 @@ $(function(){
 					                                     	<img src="${pageContext.request.contextPath}/resources/img/admin/ck_img_none.png" class="cursor vimg" id="ismain_2036">
 					                                     </td>
 													</c:otherwise>
-												</c:choose>
+												</c:choose> --%>
 												<td>
-			                                     	<img src="${pageContext.request.contextPath}/resources/img/admin/ck_img_none.png" class="cursor vimg" id="ismain_2036">
+			                                     	<img src="${pageContext.request.contextPath}/resources/admin/img/ck_img_none.png" class="cursor vimg" id="ismain_2036">
 			                                     </td>
 												<td><i class="ico notice">공지</i></td>
 												<td>
@@ -222,7 +222,7 @@ $(function(){
     </div><!-- container 끝 -->
 
     <div id="admin_footer">
-        <div class="f_contents nanum_n">COPYRIGHT ⓒ <span class="txt_blue_b nanum_b">다니엘성형외과의원 진료과목 피부과</span> ALL RIGHT RESERVED</div>
+        <div class="f_contents nanum_n">COPYRIGHT ⓒ <span class="txt_blue_b nanum_b">프라이브 피부과</span> ALL RIGHT RESERVED</div>
     </div>
 </div><!-- wrap 끝 -->
 
