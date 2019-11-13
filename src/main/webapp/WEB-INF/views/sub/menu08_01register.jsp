@@ -94,7 +94,26 @@ section{
 </style>
 <script>
 $(function(){
-	
+	$("#form1").submit(function(){
+		var ndate = new Date();
+		var year = ndate.getFullYear();
+		var month = ndate.getMonth()+1;
+		var date = ndate.getDate();
+		
+		month = (month > 9) ? month+"":"0"+month;
+		date = (date > 9) ? date+"":"0"+date;
+		
+		$("#regdate").val(year+"-"+month+"-"+date);
+		
+		var phone1 = $("#phone1").val();
+		var phone2 = $("#phone2").val();
+		var phone3 = $("#phone3").val();
+		$("#phone").val(phone1+"-"+phone2+"-"+phone3);
+		
+		$("#ip").val(ip());
+		var oldURL = document.referrer;
+		$("#access_url").val(oldURL);
+	});
 });
 </script>
 </head>
@@ -191,7 +210,7 @@ $(function(){
 						<div class="inner">
 							<ul>
 								<li class="fl">
-									<a href="${pageContext.request.contextPath}/menu09_02" class="btn btn-view-list">목록으로</a>
+									<a href="${pageContext.request.contextPath}/menu08_01" class="btn btn-view-list">목록으로</a>
 								</li>
 								<li class="fr">
 									<input type="submit" class="btn btn-submit" style="width:100px;height:36px;line-height:36px;cursor:pointer;" value="확인">
