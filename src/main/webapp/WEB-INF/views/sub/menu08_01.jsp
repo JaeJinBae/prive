@@ -408,7 +408,7 @@ $(function(){
 										<td>${num}</td>
 										<td class="subject" data-state="비공개">
 											<%-- <a href="${pageContext.request.contextPath}/menu09_02read${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}">${item.title} <img src="${pageContext.request.contextPath}/resources/filedata/setting/20160111_EED6ADF963C23563.gif" alt="비공개" class="secret"></a> --%>
-											<a href="${pageContext.request.contextPath}/menu09_02pwChk${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}">${item.title} <img src="${pageContext.request.contextPath}/resources/img/common/20180807_FD7F4F2AEC4341BF.png" alt="비공개" class="secret"></a>
+											<a href="${pageContext.request.contextPath}/menu08_01pwChk${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}">${item.title} <img src="${pageContext.request.contextPath}/resources/img/common/20180807_FD7F4F2AEC4341BF.png" alt="비공개" class="secret"></a>
 										</td>
 										<c:if test="${item.state == '상담완료'}"><td><i class="state com">답변완료</i></td></c:if>
 										<c:if test="${item.state != '상담완료'}"><td><i class="state ready">답변대기</i></td></c:if>
@@ -451,7 +451,7 @@ $(function(){
 					<!-- 게시판 버튼 시작 -->
 					<div class="btn-group">
 						<div class="inner">
-							<a href="${pageContext.request.contextPath}/menu09_02register" class="btn btn-list">글쓰기</a>
+							<a href="${pageContext.request.contextPath}/menu08_01register" class="btn btn-list">글쓰기</a>
 						</div>
 					</div>
 					<!-- 게시판 버튼 끝 -->

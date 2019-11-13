@@ -136,14 +136,24 @@ public class HomeController {
 	}
 	
 	@RequestMapping(value = "/menu08_01read", method = RequestMethod.GET)
-	public String menu08_01read(Locale locale, Model model) {
+	public String menu08_01read(int no, @ModelAttribute("cri") SearchCriteria cri, Model model) {
 		logger.info("menu08_01read get");
+		
+		AdviceVO vo = aService.selectOne(no);
+		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(aService.listSearchCount(cri));
+
+		model.addAttribute("item", vo);
+		model.addAttribute("pageMaker", pageMaker);
 		
 		return "sub/menu08_01read";
 	}
 	
 	@RequestMapping(value = "/menu08_01register", method = RequestMethod.GET)
-	public String menu09_02register(Model model) {
+	public String menu08_01register(Model model) {
 		logger.info("menu08_01register GET");
 		
 		return "sub/menu08_01register";
@@ -189,7 +199,7 @@ public class HomeController {
 	}
 	
 	@RequestMapping(value = "/menu08_01pwChk", method = RequestMethod.POST)
-	public ResponseEntity<String> menu09_02pwChkPost(@RequestBody Map<String, String> info) {
+	public ResponseEntity<String> menu08_08pwChkPost(@RequestBody Map<String, String> info) {
 		logger.info("menu08_01pwChk GET");
 		ResponseEntity<String> entity = null;
 		AdviceVO vo = aService.selectOne(Integer.parseInt(info.get("no")));
