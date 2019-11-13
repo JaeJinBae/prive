@@ -24,8 +24,10 @@ import com.webaid.domain.AdviceVO;
 import com.webaid.domain.NoticeVO;
 import com.webaid.domain.PageMaker;
 import com.webaid.domain.SearchCriteria;
+import com.webaid.domain.StatisticVO;
 import com.webaid.service.AdviceService;
 import com.webaid.service.NoticeService;
+import com.webaid.service.StatisticService;
 
 /**
  * Handles requests for the application home page.
@@ -40,6 +42,9 @@ public class HomeController {
 	
 	@Autowired
 	private NoticeService nService;
+	
+	@Autowired
+	private StatisticService sService;
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Locale locale, Model model) {
@@ -315,5 +320,24 @@ public class HomeController {
 		model.addAttribute("pageMaker", pageMaker);
 		
 		return "sub/menu08_03read";
+	}
+	
+	@RequestMapping(value="/statisticRegister", method=RequestMethod.POST)
+	public ResponseEntity<String> statisticRegister(@RequestBody Map<String, String> info){
+		logger.info("statistic register");
+		ResponseEntity<String> entity = null;
+		
+		StatisticVO vo = new StatisticVO();
+		vo.setDate(info.get("date"));
+		vo.setDayofweek(info.get("dayofweek"));
+		vo.setHour(Integer.parseInt(info.get("hour")));
+		vo.setMinute(Integer.parseInt(info.get("minute")));
+		vo.setBrowser(info.get("browser"));
+		vo.setOs(info.get("os"));
+		vo.setPrev_url(info.get("prev_url"));
+		
+		sService.insert(vo);
+		entity = new ResponseEntity<String>("ok", HttpStatus.OK);
+		return entity;
 	}
 }
