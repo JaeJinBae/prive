@@ -260,7 +260,7 @@ section{
 .board-tit{text-align:center; padding:100px 0 50px 0;}
 
 
-.board-counsel-list{width:100%;border-top: 2px solid gray;}
+.board-counsel-list{width:100%;}
 .board-counsel-list ul.full{border-top:2px solid #858585;}
 .board-counsel-list ul li{position:relative;}
 .board-counsel-list ul li a{display:block; padding:15px; border-bottom:1px solid #cfd1d4; color:#222; }
@@ -330,7 +330,7 @@ $(function(){
 									<tr>
 										<td>${num}</td>
 										<td class="subject" data-state="비공개">
-											<%-- <a href="${pageContext.request.contextPath}/menu09_02read${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}">${item.title} <img src="${pageContext.request.contextPath}/resources/filedata/setting/20160111_EED6ADF963C23563.gif" alt="비공개" class="secret"></a> --%>
+											<%-- <a href="${pageContext.request.contextPath}/menu08_03read${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}">${item.title} <img src="${pageContext.request.contextPath}/resources/filedata/setting/20160111_EED6ADF963C23563.gif" alt="비공개" class="secret"></a> --%>
 											<a href="${pageContext.request.contextPath}/menu08_01pwChk${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}">${item.title} <img src="${pageContext.request.contextPath}/resources/img/common/20180807_FD7F4F2AEC4341BF.png" alt="비공개" class="secret"></a>
 										</td>
 										<c:if test="${item.state == '상담완료'}"><td><i class="state com">답변완료</i></td></c:if>

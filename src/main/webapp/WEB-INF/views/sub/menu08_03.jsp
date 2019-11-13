@@ -9,7 +9,6 @@
 <meta charset="UTF-8">
 <title>프라이브 피부과</title>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/style.common.css" />
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/style.board.css"/>
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/jquery-1.12.4.min.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/common.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0, viewport-fit=cover">
@@ -40,6 +39,9 @@ section{
 	.section1{
 		padding-top: 300px;
 	}
+	.m{
+		display: none;
+	}
 	.inner{
 		width: 1200px;
 		margin: 0 auto;
@@ -48,6 +50,61 @@ section{
 		margin-bottom: 50px;
 	}
 	
+	/**********************************************************************
+	* Descript : 버튼 스타일
+	***********************************************************************/
+	.btn-group {display:inline-block; width:100%; height:36px; margin:25px 0; text-align:right;}
+	.btn-group-center {display:inline-block; width:100%; height:36px; margin:25px 0; text-align:center;}
+		button.btn, a.btn{display:inline-block; width:100px; height:36px; line-height:36px; vertical-align:middle; font-size:13px; font-weighT:700; box-sizing:border-box; text-align:center;}
+		button.btn:hover, a.btn:hover{text-decoration:none;}
+		.btn-list{background:#172b4d; color:#fff;}
+		.btn-submit{background:#172b4d; color:#fff;}
+		.btn-my-list{background:#333; color:#fff;}
+		.btn-del{background:#f4f4f4; border:1px solid #ccc; color:#222;}
+		.btn-update{background:#172b4d; color:#fff;}
+		.btn-view-list{background:#858585; color:#fff;}
+		.btn-cancel{background:#cbcbcb; color:#fff;}
+	
+	/**********************************************************************/
+	
+	/**********************************************************************
+	* Descript : NEWS 게시판 스타일
+	***********************************************************************/
+	.board-tit{text-align:center; padding:100px 0 50px 0;}
+	
+	.board-notice-list{width:100%;border-top: 2px solid gray;}
+	.board-notice-list thead{background:#f8f8f8; border-top:2px solid #858585; border-bottom:1px solid #cfd1d4;}
+	.board-notice-list thead th{text-align:center; font-size:14px; font-weight:700; color:#222; padding:15px 0;}
+	
+	.board-notice-list tbody td{background:#fff; border-bottom:1px solid #cfd1d4; text-align:center; padding:15px 0; font-size:13px;}
+	.board-notice-list tbody td i.notice{display:inline-block; padding:10px; background:#172b4d; color:#fff; border-radius:25px; font-size:11px; font-weight:700;}
+	.board-notice-list tbody td.subject{text-align:left;}
+	.board-notice-list tbody td.subject a{color:#222;}
+	.board-notice-list tbody td.date{font-size:12px;}
+	.board-notice-list tbody td.hit{font-size:12px;}
+	
+	/**********************************************************************
+	* Descript : 페이징 스타일
+	***********************************************************************/
+	#board-pagenation{width:100%;}
+	#board-pagenation{width:100%; max-width:1200px; margin:30px auto 100px auto; text-align:center;}
+	#board-pagenation a{position:relative; display:inline-block; width:35px; height:35px; line-height:35px; border:1px solid #ddd; font-size:1em; color:#333; margin:0 2px; box-sizing:border-box;}
+	#board-pagenation a:hover{text-decoration:underline;}
+	#board-pagenation a.on{background:#172b4d; border:1px solid #172b4d; color:#fff; font-weight:700;}
+	/**********************************************************************/
+	
+	
+	
+	/**********************************************************************
+	* Descript : 검색 폼 스타일
+	***********************************************************************/
+	.search-box{width:640px; height:35px; margin:0 auto 100px auto;}
+	.search-box select, .search-box input, .search-box button{float:left; box-sizing:border-box; display:inline-block; height:35px; line-height:35px; font-size:13px;}
+	.search-box input[type="text"]{width:68%; margin:0 1%; border:1px solid #cfd1d4; text-align:left; padding:0 10px; background:url(../img/board/search.png) no-repeat 98% center; background-size:20px;}
+	.search-box button{width:15%; background:#172b4d; color:#fff; font-weight:700; cursor:pointer;}
+	.search-box select{width:15%; border:1px solid #cfd1d4; cursor:pointer; padding:0 10px; background:url(../img/common/arrow.png) no-repeat 98% center;}
+	/**********************************************************************/
+	
 	#footer{
 		height: 30%;
 	}
@@ -55,8 +112,73 @@ section{
 }
 @media only screen and (min-width:768px) and (max-width:1199px){
 	.section1{
-		background: lightgray;
+		padding-top: 300px;
 	}
+	.m{
+		display: none;
+	}
+	.inner{
+		width: 95%;
+		margin: 0 auto;
+		margin-bottom: 100px;
+	}
+	.s1_txt{
+		margin-bottom: 50px;
+	}
+	/**********************************************************************
+	* Descript : 버튼 스타일
+	***********************************************************************/
+	.btn-group {display:inline-block; width:100%; height:36px; margin:25px 0; text-align:right;}
+	.btn-group-center {display:inline-block; width:100%; height:36px; margin:25px 0; text-align:center;}
+		button.btn, a.btn{display:inline-block; width:100px; height:36px; line-height:36px; vertical-align:middle; font-size:13px; font-weighT:700; box-sizing:border-box; text-align:center;}
+		button.btn:hover, a.btn:hover{text-decoration:none;}
+		.btn-list{background:#172b4d; color:#fff;}
+		.btn-submit{background:#172b4d; color:#fff;}
+		.btn-my-list{background:#333; color:#fff;}
+		.btn-del{background:#f4f4f4; border:1px solid #ccc; color:#222;}
+		.btn-update{background:#172b4d; color:#fff;}
+		.btn-view-list{background:#858585; color:#fff;}
+		.btn-cancel{background:#cbcbcb; color:#fff;}
+	
+	/**********************************************************************/
+	
+	/**********************************************************************
+	* Descript : NEWS 게시판 스타일
+	***********************************************************************/
+	.board-tit{text-align:center; padding:100px 0 50px 0;}
+	
+	.board-notice-list{width:100%;border-top: 2px solid gray;}
+	.board-notice-list thead{background:#f8f8f8; border-top:2px solid #858585; border-bottom:1px solid #cfd1d4;}
+	.board-notice-list thead th{text-align:center; font-size:14px; font-weight:700; color:#222; padding:15px 0;}
+	
+	.board-notice-list tbody td{background:#fff; border-bottom:1px solid #cfd1d4; text-align:center; padding:15px 0; font-size:13px;}
+	.board-notice-list tbody td i.notice{display:inline-block; padding:10px; background:#172b4d; color:#fff; border-radius:25px; font-size:11px; font-weight:700;}
+	.board-notice-list tbody td.subject{text-align:left;}
+	.board-notice-list tbody td.subject a{color:#222;}
+	.board-notice-list tbody td.date{font-size:12px;}
+	.board-notice-list tbody td.hit{font-size:12px;}
+	
+	/**********************************************************************
+	* Descript : 페이징 스타일
+	***********************************************************************/
+	#board-pagenation{width:100%;}
+	#board-pagenation{width:100%; max-width:1200px; margin:30px auto 100px auto; text-align:center;}
+	#board-pagenation a{position:relative; display:inline-block; width:35px; height:35px; line-height:35px; border:1px solid #ddd; font-size:1em; color:#333; margin:0 2px; box-sizing:border-box;}
+	#board-pagenation a:hover{text-decoration:underline;}
+	#board-pagenation a.on{background:#172b4d; border:1px solid #172b4d; color:#fff; font-weight:700;}
+	/**********************************************************************/
+	
+	
+	
+	/**********************************************************************
+	* Descript : 검색 폼 스타일
+	***********************************************************************/
+	.search-box{width:640px; height:35px; margin:0 auto 100px auto;}
+	.search-box select, .search-box input, .search-box button{float:left; box-sizing:border-box; display:inline-block; height:35px; line-height:35px; font-size:13px;}
+	.search-box input[type="text"]{width:68%; margin:0 1%; border:1px solid #cfd1d4; text-align:left; padding:0 10px; background:url(../img/board/search.png) no-repeat 98% center; background-size:20px;}
+	.search-box button{width:15%; background:#172b4d; color:#fff; font-weight:700; cursor:pointer;}
+	.search-box select{width:15%; border:1px solid #cfd1d4; cursor:pointer; padding:0 10px; background:url(../img/common/arrow.png) no-repeat 98% center;}
+	/**********************************************************************/
 	
 	#footer{
 		height: 30%;
@@ -64,9 +186,67 @@ section{
 }
 @media only screen and (min-width:320px) and (max-width:767px){	
 	.section1{
-		background: lightgray;
+		padding: 0 5px;
+		padding-top: 100px;
 	}
+	.pc{
+		display: none;
+	}
+	/**********************************************************************
+	* Descript : NEWS 게시판 스타일
+	***********************************************************************/
+	.board-tit{text-align:center; padding:25px 0;}
 	
+	.board-notice-list{width:100%;}
+	.board-notice-list ul.full{border-top:2px solid #858585;}
+	.board-notice-list ul li{}
+	.board-notice-list ul li a{display:block; padding:15px; border-bottom:1px solid #cfd1d4; color:#222; }
+	.board-notice-list ul li a:hover{text-decoration:none;}
+	.board-notice-list ul li a b{position:relative; display:block;  padding:5px 0px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
+	.board-notice-list ul li a b i.notice{left:0; top:0; display:inline-block; padding:5px 10px; background:#2ab3bc; color:#fff; font-size:11px; font-weight:700;}
+	.board-notice-list ul li a i.name{font-size:12px; color:#aaa;}
+	.board-notice-list ul li a i.date{font-size:12px; color:#aaa;}
+	.board-notice-list ul li a span.line{display:inline-block; font-size:11px; color:#ccc; padding:0 10px;}
+	
+	/**********************************************************************
+	* Descript : 페이징 스타일
+	***********************************************************************/
+	#board-pagenation{width:100%;}
+	#board-pagenation{width:100%; max-width:1200px; margin:30px auto; text-align:center;}
+	#board-pagenation a{position:relative; display:inline-block; width:35px; height:35px; line-height:35px; font-size:1em; color:#333; margin:0 2px; box-sizing:border-box; border:1px solid #eee;}
+	#board-pagenation a:hover{text-decoration:underline;}
+	#board-pagenation a.on{color:#fff; font-weight:700; background:#222; border:1px solid #222;}
+	/**********************************************************************/
+	
+	
+	
+	/**********************************************************************
+	* Descript : 검색 폼 스타일
+	***********************************************************************/
+	.search-box{width:100%; max-width:640px; height:35px; margin:0 auto 25px auto;}
+	.search-box select, .search-box input, .search-box button{float:left; box-sizing:border-box; display:inline-block; height:35px; line-height:35px; font-size:13px;}
+	.search-box input[type="text"]{width:58%; margin:0 1%; border:1px solid #cfd1d4; text-align:left; padding:0 10px; background:url(../../img/board/search.png) no-repeat 98% center; background-size:20px;}
+	.search-box button{width:15%; background:#525c5d; color:#fff; font-weight:700; cursor:pointer;}
+	.search-box select{width:25%; border:1px solid #cfd1d4; cursor:pointer; padding:0 10px; background:url(../../img/common/arrow.png) no-repeat 98% center;}
+	/**********************************************************************/
+	
+	
+	/**********************************************************************
+	* Descript : 버튼 스타일
+	***********************************************************************/
+	.btn-group {display:inline-block; width:100%; height:36px; margin:25px 0; text-align:right;}
+	.btn-group-center {display:inline-block; width:100%; height:36px; margin:25px 0; text-align:center;}
+		button.btn, a.btn{display:inline-block; width:100px; height:36px; line-height:36px; vertical-align:middle; font-size:13px; font-weighT:700; box-sizing:border-box; text-align:center; margin:5px 0;}
+		button.btn:hover, a.btn:hover{text-decoration:none;}
+		.btn-list{background:#172b4d; color:#fff; width:100% !important;}
+		.btn-submit{background:#172b4d; color:#fff;}
+		.btn-my-list{background:#fff; color:#222; border:1px solid #aaa; width:100% !important;}
+		.btn-del{background:#f4f4f4; border:1px solid #ccc; color:#222;}
+		.btn-update{background:#172b4d; color:#fff;}
+		.btn-view-list{background:#858585; color:#fff;}
+		.btn-cancel{background:#cbcbcb; color:#fff;}
+	
+	/**********************************************************************/
 	
 	 
 	#footer{ 
@@ -77,7 +257,33 @@ section{
 </style>
 <script>
 $(function(){
+	//게시판 검색
+    $("#searchBtn").click(function(){
+    	var s=$("select[name='select_key']").val();
+		var searchType = encodeURIComponent(s);
+		var k=$("input[name='input_key']").val();
+		var keyword = encodeURIComponent(k);
+		location.href="${pageContext.request.contextPath}/menu08_03${pageMaker.makeQuery(1)}&searchType="+searchType+"&keyword="+keyword;
+	});
 	
+    $(document).on("click", ".subject > a", function(e){
+		e.preventDefault();
+		var link = $(this).prop("href").split("&");
+		var k = link[3].split("=");
+		var keyword = encodeURIComponent(k[1]);
+		location.href=link[0]+"&"+link[1]+"&"+link[2]+"&keyword="+keyword+"&"+link[4];
+	});
+    
+    $(document).on("click", "#board-pagenation > .inner > a",function(e){
+		e.preventDefault();
+		var link = $(this).prop("href").split("keyword=");
+		var browser =navigator.userAgent.toLowerCase();
+		if((navigator.appName == 'Netscape' && browser.indexOf('trident') != -1) || (browser.indexOf("msie") != -1)) {
+			location.href=link[0]+"keyword="+encodeURIComponent(link[1]);
+	    }else{
+	    	location.href=link[0]+"keyword="+link[1];
+	    }
+	})
 });
 </script>
 </head>
@@ -91,46 +297,57 @@ $(function(){
 		<section class="section1">
 			<div class="inner">
 				<div class="s1_txt">
-					<h2>온라인 상담</h2>
+					<h2>공지사항</h2>
 				</div>
 				<div class="formWrap">
-					<table class="board-counsel-list">
-						<caption></caption>
+					<!-- 공지사항 게시판 시작 -->
+					<table class="board-notice-list pc">
 						<colgroup>
 							<col style="width: 100px;">
 							<col>
-							<col style="width: 140px;">
-							<col style="width: 140px;">
-							<col style="width: 140px;">
+							<col style="width: 120px;">
+							<col style="width: 120px;">
 						</colgroup>
 						<thead>
 							<tr>
 								<th>번호</th>
 								<th>제목</th>
-								<th>답변여부</th>
-								<th>작성자</th>
-								<th>작성일</th>
+								<th>등록일</th>
+								<th>조회수</th>
 							</tr>
-						</thead>				
+						</thead>
+						<c:if test="${pageMaker.cri.page == 1}">
+						
+							<c:if test="${fn:length(topList) != 0}">
+								<c:forEach var="item" items="${topList}">
+									<tr class="noticeTop">
+										<td class=""><i class="ico notice">공지</i></td>
+										<td class="subject">
+											<a href="${pageContext.request.contextPath}/menu08_03read${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}">${item.title}</a>
+										</td>
+										<td class="date">${item.regdate}</td>
+										<td class="hit">${item.cnt}</td>
+									</tr>	
+								</c:forEach>
+							</c:if>
+						</c:if>
 						<c:choose>
 						    <c:when test="${fn:length(list) == 0}">
 					        	<tr>
-					        		<td colspan="5" style="text-align: center;">등록된 게시물이 없습니다.</td>
+					        		<td colspan="4" style=" text-align: center;">등록된 게시물이 없습니다.</td>
 					        	</tr>
 						    </c:when>
+						    
 						    <c:otherwise>
 						    	<c:set var="num" value="${pageMaker.totalCount - ((pageMaker.cri.page -1) *10)}"></c:set>
 						        <c:forEach var="item" items="${list}">
 									<tr>
 										<td>${num}</td>
-										<td class="subject" data-state="비공개">
-											<%-- <a href="${pageContext.request.contextPath}/menu09_02read${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}">${item.title} <img src="${pageContext.request.contextPath}/resources/filedata/setting/20160111_EED6ADF963C23563.gif" alt="비공개" class="secret"></a> --%>
-											<a href="${pageContext.request.contextPath}/menu09_02pwChk${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}">${item.title} <img src="${pageContext.request.contextPath}/resources/filedata/setting/20160111_EED6ADF963C23563.gif" alt="비공개" class="secret"></a>
+										<td class="subject">
+											<a href="${pageContext.request.contextPath}/menu08_03read${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}">${item.title}</a>
 										</td>
-										<c:if test="${item.state == '상담완료'}"><td><i class="state com">답변완료</i></td></c:if>
-										<c:if test="${item.state != '상담완료'}"><td><i class="state ready">답변대기</i></td></c:if>
-										<td>${item.name}</td>
-										<td>${item.regdate}</td>
+										<td class="date">${item.regdate}</td>
+										<td class="hit">${item.cnt}</td>
 									</tr>
 									<c:set var="num" value="${num-1}"></c:set>	
 								</c:forEach>
@@ -138,26 +355,78 @@ $(function(){
 						</c:choose>
 						
 					</table>
+					<!-- 공지사항 게시판 끝 -->
 					
-					<!-- 게시판 버튼 시작 -->
-					<div class="btn-group">
-						<div class="inner">
-							<a href="${pageContext.request.contextPath}/menu09_02register" class="btn btn-list">글쓰기</a>
-						</div>
+					<div class="board-notice-list m">
+						<ul class="full">
+							<c:if test="${pageMaker.cri.page == 1}">
+							
+								<c:if test="${fn:length(topList) != 0}">
+									<c:forEach var="item" items="${topList}">
+										<li>
+											<a href="${pageContext.request.contextPath}/menu08_03read${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}">
+												<b> ${item.title}</b>
+												<i class="date">${item.regdate}</i>
+											</a>
+										</li>
+									</c:forEach>
+								</c:if>
+							</c:if>
+							<c:choose>
+							    <c:when test="${fn:length(list) == 0}">
+						        	<tr>
+						        		<td colspan="4" style=" text-align: center;">등록된 게시물이 없습니다.</td>
+						        	</tr>
+							    </c:when>
+							    
+							    <c:otherwise>
+							    	<c:set var="num" value="${pageMaker.totalCount - ((pageMaker.cri.page -1) *10)}"></c:set>
+							        <c:forEach var="item" items="${list}">
+											<li>
+												<a href="${pageContext.request.contextPath}/menu08_03read${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}">
+													<b> ${item.title}</b>
+													<i class="date">${item.regdate}</i>
+												</a>
+											</li>
+										<c:set var="num" value="${num-1}"></c:set>	
+									</c:forEach>
+							    </c:otherwise> 
+							</c:choose>
+						</ul>
 					</div>
-					<!-- 게시판 버튼 끝 -->
-					
+				
 					<!-- 페이징 시작 -->
-					<div id="board-pagenation">
-						<div class="inner">
-						<a href="${pageMaker.makeSearch(1)}">
-							<svg class="svg-inline--fa fa-angle-double-left fa-w-14" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-double-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z"></path></svg><!-- <i class="fas fa-angle-double-left"></i> -->
-						</a>
+					<div id="board-pagenation" class="pc">
+						<div class="inner1">
+							<a href="${pageMaker.makeSearch(1)}">
+								<svg class="svg-inline--fa fa-angle-double-left fa-w-14" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-double-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z"></path></svg><!-- <i class="fas fa-angle-double-left"></i> -->
+							</a>
+							<c:if test="${pageMaker.prev}">
+								<a href="${pageMaker.makeSearch(pageMaker.startPage-1)}"><svg class="svg-inline--fa fa-angle-left fa-w-8" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"></path></svg><!-- <i class="fas fa-angle-left"></i> --></a>
+							</c:if>
+							<c:if test="${!pageMaker.prev}">
+								<a href="${pageMaker.makeSearch(pageMaker.cri.page) }"><svg class="svg-inline--fa fa-angle-left fa-w-8" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"></path></svg><!-- <i class="fas fa-angle-left"></i> --></a>
+							</c:if>
+							<c:forEach begin="${pageMaker.startPage}" end="${pageMaker.endPage}" var="idx">
+								<a href="${pageMaker.makeSearch(idx)}" ${pageMaker.cri.page == idx? 'class=on':''}>${idx}</a>
+							</c:forEach>
+							<c:if test="${pageMaker.next}">
+								<a href="${pageMaker.makeSearch(pageMaker.endPage+1)}"><svg class="svg-inline--fa fa-angle-right fa-w-8" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"></path></svg><!-- <i class="fas fa-angle-right"></i> --></a>
+							</c:if>
+							<c:if test="${!pageMaker.next}">
+								<a href="${pageMaker.makeSearch(pageMaker.cri.page)}"><svg class="svg-inline--fa fa-angle-right fa-w-8" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"></path></svg><!-- <i class="fas fa-angle-right"></i> --></a>
+							</c:if>
+							<a href="${pageMaker.makeSearch(pageMaker.finalPage+1)}">
+								<svg class="svg-inline--fa fa-angle-double-right fa-w-14" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-double-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z"></path></svg><!-- <i class="fas fa-angle-double-right"></i> -->
+							</a>
+						</div>
+					</div>	<!-- 페이징 끝 -->
+				
+					<!-- 페이징 시작 -->
+					<div id="board-pagenation" class="m">
+						<div class="inner1">
 						<c:if test="${pageMaker.prev}">
-							<a href="${pageMaker.makeSearch(pageMaker.startPage-1)}"><svg class="svg-inline--fa fa-angle-left fa-w-8" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"></path></svg><!-- <i class="fas fa-angle-left"></i> --></a>
-						</c:if>
-						<c:if test="${!pageMaker.prev}">
-							<a href="${pageMaker.makeSearch(pageMaker.cri.page) }"><svg class="svg-inline--fa fa-angle-left fa-w-8" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"></path></svg><!-- <i class="fas fa-angle-left"></i> --></a>
+							<a href="${pageMaker.makeSearch(pageMaker.startPage-1) }"><svg class="svg-inline--fa fa-angle-left fa-w-8" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"></path></svg><!-- <i class="fas fa-angle-left"></i> --></a>
 						</c:if>
 						<c:forEach begin="${pageMaker.startPage}" end="${pageMaker.endPage}" var="idx">
 							<a href="${pageMaker.makeSearch(idx)}" ${pageMaker.cri.page == idx? 'class=on':''}>${idx}</a>
@@ -165,15 +434,9 @@ $(function(){
 						<c:if test="${pageMaker.next}">
 							<a href="${pageMaker.makeSearch(pageMaker.endPage+1)}"><svg class="svg-inline--fa fa-angle-right fa-w-8" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"></path></svg><!-- <i class="fas fa-angle-right"></i> --></a>
 						</c:if>
-						<c:if test="${!pageMaker.next}">
-							<a href="${pageMaker.makeSearch(pageMaker.cri.page)}"><svg class="svg-inline--fa fa-angle-right fa-w-8" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"></path></svg><!-- <i class="fas fa-angle-right"></i> --></a>
-						</c:if>
-						<a href="${pageMaker.makeSearch(pageMaker.finalPage+1)}">
-							<svg class="svg-inline--fa fa-angle-double-right fa-w-14" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-double-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z"></path></svg><!-- <i class="fas fa-angle-double-right"></i> -->
-						</a>
 						</div>
 					</div>	<!-- 페이징 끝 -->
-					
+				
 					<div class="search-box">
 						<form name="board_search" onsubmit="return false;">
 							<select name="select_key" id="select_key">

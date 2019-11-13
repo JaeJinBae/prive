@@ -1,7 +1,5 @@
 package com.webaid.controller;
 
-import java.io.File;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
@@ -19,15 +17,15 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.webaid.domain.AdviceVO;
+import com.webaid.domain.NoticeVO;
 import com.webaid.domain.PageMaker;
 import com.webaid.domain.SearchCriteria;
 import com.webaid.service.AdviceService;
-import com.webaid.util.SmsSendUtil;
+import com.webaid.service.NoticeService;
 
 /**
  * Handles requests for the application home page.
@@ -39,6 +37,9 @@ public class HomeController {
 	
 	@Autowired
 	private AdviceService aService;
+	
+	@Autowired
+	private NoticeService nService;
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Locale locale, Model model) {
@@ -273,9 +274,46 @@ public class HomeController {
 	}
 	
 	@RequestMapping(value = "/menu08_03", method = RequestMethod.GET)
-	public String menu08_03(Locale locale, Model model) {
+	public String menu08_03(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
 		logger.info("menu08_03 get");
 		
+		List<NoticeVO> topList = nService.selectTopNotice("o");
+		List<NoticeVO> list = nService.listSearch(cri);
+		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(nService.listSearchCount(cri));
+		pageMaker.setFinalPage(nService.listSearchCount(cri));
+		
+		model.addAttribute("topList", topList);
+		model.addAttribute("list", list);
+		model.addAttribute("pageMaker", pageMaker);
+		
 		return "sub/menu08_03";
+	}
+	
+	@RequestMapping(value = "/menu08_03read", method = RequestMethod.GET)
+	public String menu08_03read(int no, @ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
+		logger.info("menu08_03read GET");
+		
+		NoticeVO vo=nService.selectOne(no);
+		NoticeVO beforeVO = nService.selectBefore(no);
+		NoticeVO afterVO = nService.selectAfter(no);
+		
+		nService.updateCnt(no);
+		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(nService.listSearchCount(cri));
+		pageMaker.setFinalPage(nService.listSearchCount(cri));
+		
+		model.addAttribute("item", vo);
+		model.addAttribute("beforeItem", beforeVO);
+		model.addAttribute("afterItem", afterVO);
+		model.addAttribute("pageMaker", pageMaker);
+		
+		return "sub/menu08_03read";
 	}
 }
