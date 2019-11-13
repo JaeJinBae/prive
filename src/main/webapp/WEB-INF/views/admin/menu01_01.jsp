@@ -219,9 +219,7 @@ $(function(){
 		</div><!-- admin_right 끝 -->
     </div><!-- container 끝 -->
 
-    <div id="admin_footer">
-        <div class="f_contents nanum_n">COPYRIGHT ⓒ <span class="txt_blue_b nanum_b">프라이브 피부과</span> ALL RIGHT RESERVED</div>
-    </div>
+    <jsp:include page="include/footer.jsp"></jsp:include>
 </div><!-- wrap 끝 -->
 
 </body>
