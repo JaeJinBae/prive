@@ -7,20 +7,20 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>다니엘성형외과의원 진료과목 피부과</title>
+<title>프라이브 피부과</title>
 <link rel="shortcut icon" href="${pageContext.request.contextPath}/resources/img/favicon.ico">
 <!-- ************************************************************************************************* -->
 <!-- @ = 스타일, # = 자바스크립트 -->
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/admin/style_admin.css"><!-- @1 스타일 초기화		**삭제/수정금지** -->
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/admin/css/style_admin.css"><!-- @1 스타일 초기화		**삭제/수정금지** -->
 <!-- ********************************************플러그인********************************************* -->
 <script src="${pageContext.request.contextPath}/resources/js/jquery-1.12.4.min.js"></script><!-- #1 1.12.4  -->
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/jquery-ui-1.11.1.js"></script><!-- #jquery UI  -->
 <!-- ************************************************************************************************* -->
 
 <!-- ************************************************************************************************* -->
-<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/function.admin.js"></script><!-- # 필수 함수 -->
-<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/function.default.js"></script><!-- # 필수 함수 -->
-<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/function.validate.js"></script><!-- # 필수 함수 -->
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/admin/js/function.admin.js"></script><!-- # 필수 함수 -->
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/admin/js/function.default.js"></script><!-- # 필수 함수 -->
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/admin/js/function.validate.js"></script><!-- # 필수 함수 -->
 <link href="https://ajax.googleapis.com/ajax/static/modules/gviz/1.0/core/tooltip.css" rel="stylesheet" type="text/css">
 <script src="https://www.google.com/uds/?file=visualization&amp;v=1&amp;packages=corechart" type="text/javascript"></script>
 <link href="https://www.google.com/uds/api/visualization/1.0/36558b280aac4fa99ed8215e60015cff/ui+ko.css" type="text/css" rel="stylesheet">
@@ -71,7 +71,7 @@ function draw_time_chart(info){
 
 function sttGet(type, d1, d2){
 	$.ajax({
-		url:"${pageContext.request.contextPath}/admin/menu07_01InfoGet/"+type+"/"+d1+"/"+d2,
+		url:"${pageContext.request.contextPath}/admin/menu03_01InfoGet/"+type+"/"+d1+"/"+d2,
 		type:"get",
 		contentType : "application/json; charset=UTF-8",
 		dataType:"json",
@@ -136,7 +136,7 @@ $(function(){
 						<div class="b01 board_layout">
 							<div class="board_top">
 								<h2>온라인상담</h2>
-								<a href="javascript:;" class="more_btn" onclick="location.href='${pageContext.request.contextPath}/admin/menu05_01'">더보기 &gt;</a>
+								<a href="javascript:;" class="more_btn" onclick="location.href='${pageContext.request.contextPath}/admin/menu01_01'">더보기 &gt;</a>
 							</div>
 							<table class="main_board">
 								<colgroup>
@@ -160,14 +160,8 @@ $(function(){
 										<c:set var="num" value="${pageMaker.totalCount - ((pageMaker.cri.page -1) *10)}"></c:set>
 									        <c:forEach var="item" items="${list}">
 												<tr class="cont">
-													<c:if test="${item.quick_state == 'x'}">
-														<td class="b_id"><a href="${pageContext.request.contextPath}/admin/menu05_01update?page=1&perPageNum=10&searchType&keyword&no=${item.no}">${item.name}</a></td>
-														<td class="b_id"><a href="${pageContext.request.contextPath}/admin/menu05_01update?page=1&perPageNum=10&searchType&keyword&no=${item.no}">${item.state}</a></td>
-													</c:if>
-													<c:if test="${item.quick_state == 'o'}">
-														<td class="b_id"><a href="${pageContext.request.contextPath}/admin/menu05_02update?page=1&perPageNum=10&searchType&keyword&no=${item.no}">${item.name}</a></td>
-														<td class="b_id"><a href="${pageContext.request.contextPath}/admin/menu05_02update?page=1&perPageNum=10&searchType&keyword&no=${item.no}">${item.state}</a></td>
-													</c:if>
+													<td class="b_id"><a href="${pageContext.request.contextPath}/admin/menu01_01update?page=1&perPageNum=10&searchType&keyword&no=${item.no}">${item.name}</a></td>
+													<td class="b_id"><a href="${pageContext.request.contextPath}/admin/menu01_01update?page=1&perPageNum=10&searchType&keyword&no=${item.no}">${item.state}</a></td>
 													<td class="b_id">${item.regdate}</td>
 													<td class="b_id">
 														<c:if test="${item.reply ==''}">미답변</c:if>
@@ -188,7 +182,7 @@ $(function(){
 					<div class="log_layout">
 						<div class="log_top">
 							<h2 id="chart1"><span></span> - 브라우저별 접속 통계</h2>
-							<a href="javascript:;" class="more_btn" onclick="location.href='${pageContext.request.contextPath}/admin/menu07_01'">더보기 &gt;</a>
+							<a href="javascript:;" class="more_btn" onclick="location.href='${pageContext.request.contextPath}/admin/menu03_01'">더보기 &gt;</a>
 						</div>
 						<div class="log1" id="log1"></div>
 					</div>
@@ -196,7 +190,7 @@ $(function(){
 					<div class="log_layout second">
 						<div class="log_top">
 							<h2 id="chart1"><span></span> - 시간별 접속 통계</h2>
-							<a href="javascript:;" class="more_btn" onclick="location.href='${pageContext.request.contextPath}/admin/menu07_01'">더보기 &gt;</a>
+							<a href="javascript:;" class="more_btn" onclick="location.href='${pageContext.request.contextPath}/admin/menu03_01'">더보기 &gt;</a>
 						</div>
 						<div class="log2" id="log2"></div>
 					</div>	
@@ -206,7 +200,7 @@ $(function(){
     </div><!-- container 끝 -->
 
     <div id="admin_footer">
-        <div class="f_contents nanum_n">COPYRIGHT ⓒ <span class="txt_blue_b nanum_b">다니엘성형외과의원 진료과목 피부과</span> ALL RIGHT RESERVED</div>
+        <div class="f_contents nanum_n">COPYRIGHT ⓒ <span class="txt_blue_b nanum_b">프라이브 피부과</span> ALL RIGHT RESERVED</div>
     </div>
 </div><!-- wrap 끝 -->
 

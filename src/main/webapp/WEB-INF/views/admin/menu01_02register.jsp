@@ -11,20 +11,23 @@
 <link rel="shortcut icon" href="${pageContext.request.contextPath}/resources/img/favicon.ico">
 <!-- ************************************************************************************************* -->
 <!-- @ = 스타일, # = 자바스크립트 -->
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/admin/style_admin.css"><!-- @1 스타일 초기화		**삭제/수정금지** -->
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/admin/css/style_admin.css"><!-- @1 스타일 초기화		**삭제/수정금지** -->
 <!-- ********************************************플러그인********************************************* -->
 <script src="${pageContext.request.contextPath}/resources/js/jquery-1.12.4.min.js"></script><!-- #1 1.12.4  -->
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/ckeditorFull/ckeditor.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/jquery-ui-1.11.1.js"></script><!-- #jquery UI  -->
 <!-- ************************************************************************************************* -->
 <!-- jQuery UI CSS파일 -->
 <link rel="stylesheet" href="http://code.jquery.com/ui/1.8.18/themes/base/jquery-ui.css" type="text/css" />
 <!-- ************************************************************************************************* -->
-<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/function.admin.js"></script><!-- # 필수 함수 -->
-<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/function.default.js"></script><!-- # 필수 함수 -->
-<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/function.validate.js"></script><!-- # 필수 함수 -->
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/admin/js/function.admin.js"></script><!-- # 필수 함수 -->
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/admin/js/function.default.js"></script><!-- # 필수 함수 -->
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/admin/js/function.validate.js"></script><!-- # 필수 함수 -->
+<%-- <script type="text/javascript" src="${pageContext.request.contextPath}/resources/ckeditor/ckeditor.js"></script> --%>
 <link href="https://ajax.googleapis.com/ajax/static/modules/gviz/1.0/core/tooltip.css" rel="stylesheet" type="text/css">
 <script>
 $(function(){
+	//$.ajaxSetup({cache:false});
 	
 	var ndate = new Date();
 	var year = ndate.getFullYear();
@@ -48,19 +51,6 @@ $(function(){
 	
 	//예외처리
 	$("#form1").submit(function(){
-		var clinic_type = $(".search_sel").val();
-		var writer = $(".write_table tr td > input[name='writer']").val();
-		var regdate = $(".write_table tr td > input[name='regdate']").val();
-		var cnt = $(".write_table tr td > input[name='cnt']").val();
-		var title = $(".write_table tr td > input[name='title']").val();
-		var content = $(".write_table tr td > textarea[name='content']").val();
-		var b_img = $(".write_table tr td > div > input[name='img_before']").val();
-		var a_img = $(".write_table tr td > div > input[name='img_after']").val();
-		
-		
-		console.log(clinic_type+"\n"+writer+"\n"+regdate+"\n"+cnt+"\n"+title+"\n"+content+"\n"+b_img+"\n"+a_img);
-		
-		
 		if($("input[name='writer']").val()==""){
 			alert("작성자를 입력해주세요.");
 			return false;
@@ -69,9 +59,7 @@ $(function(){
 			alert("제목을 입력해주세요.");
 			return false;
 		}
-		//return false;
 	});
-	
 });
 </script>
 </head>
@@ -88,21 +76,20 @@ $(function(){
 			<jsp:include page="include/rightTop.jsp"></jsp:include><!-- 오른쪽 상단 -->
 
 			<div class="naviText_area">
-				<h1>시술전/후사진</h1>
+				<h1>공지사항</h1>
 
 				<ul class="navi_area">
 					<li>관리자메인&nbsp;&gt;&nbsp;</li>
 					<li>게시판관리&nbsp;&gt;&nbsp;</li>
-					<li>시술전/후사진</li>
+					<li>공지사항</li>
 				</ul>
 			</div>
 			
-			<script type="text/javascript" src="${pageContext.request.contextPath}/resources/ckeditorFull/ckeditor.js"></script>
+			
 			
 			<div class="main_bottom_area">
-				<form name="board" id="form1" method="post" enctype="multipart/form-data" action="${pageContext.request.contextPath}/admin/menu01_02register">
+				<form id="form1" method="post" action="${pageContext.request.contextPath}/admin/menu01_01register${pageMaker.makeSearch(pageMaker.cri.page)}">
 					<input type="hidden" name="no" value="0">
-					<input type="hidden" name="use_state" value="o">
 					<div class="write_area">
 						<div class="write_box">
 							<table class="write_table" cellpadding="0">
@@ -111,20 +98,19 @@ $(function(){
 									<col width="*">
 								</colgroup>
 								<tr class="cont">
-									<td class="title">분류</td>
+									<td class="title">사용유무</td>
 									<td>
-										<select name="clinic_type" id="b_tap" class="search_sel">
-											<option value="동안·탄력 클리닉">동안·탄력 클리닉</option>
-											<option value="레이저클리닉">레이저클리닉</option>
-											<option value="흉터클리닉">흉터클리닉</option>
-											<option value="눈·코 성형">눈·코 성형</option>
-											<option value="프리미엄 쁘띠클리닉">프리미엄 쁘띠클리닉</option>
-											<option value="체형클리닉">체형클리닉</option>
-											<option value="두피클리닉">두피클리닉</option>
-										</select>
+										<label><input type="radio" name="use_state" id="b_notice1" value="o" checked="checked"><i></i>사용</label>&nbsp;&nbsp;&nbsp;&nbsp;
+										<label><input type="radio" name="use_state" id="b_notice2" value="x"><i></i>미사용</label>
 									</td>
 								</tr>
-										
+								<tr class="cont">
+									<td class="title">공지</td>
+									<td>
+										<label><input type="radio" name="top_state" id="b_notice1" value="o"><i></i>공지</label>&nbsp;&nbsp;&nbsp;&nbsp;
+										<label><input type="radio" name="top_state" id="b_notice2" value="x" checked="checked"><i></i>일반</label>
+									</td>
+								</tr>
 								<tr class="cont">
 									<td class="title">작성자</td>
 									<td>
@@ -153,14 +139,9 @@ $(function(){
 									<td class="title">내용</td>
 									<td>
 										<textarea id="b_content" name="content"></textarea>
-									</td>
-								</tr>
-								<tr class="cont">
-									<td class="title">첨부파일</td>
-									<td id="attach">
-										<div><input type="file" name="img_before"></div>
-										<div class="marginT10"><input type="file" name="img_after"></div>
-										<br><strong></strong>
+										<script type="text/javascript">
+											CKEDITOR.replace('content',{filebrowserUploadUrl:"${pageContext.request.contextPath}/admin/imgUpload/notice",height:500});
+										</script>
 									</td>
 								</tr>
 							</table>
@@ -168,23 +149,18 @@ $(function(){
 				
 						<div class="btn_area">
 							<p class="btn_left">
-								<button type="button" class="btn_gray" onclick="location.href='${pageContext.request.contextPath}/admin/menu01_02'">리스트</button>
+								<button type="button" class="btn_gray" onclick="location.href='${pageContext.request.contextPath}/admin/menu01_01'">리스트</button>
 							</p>
 							<p class="btn_right">
 								<input type="submit" class="btn_black" value="등록">&nbsp;
-								<button type="button" class="btn_gray" onclick="location.href='${pageContext.request.contextPath}/admin/menu01_02register'">취소</button>
+								<button type="button" class="btn_gray" onclick="location.href='${pageContext.request.contextPath}/admin/menu01_01register'">취소</button>
 							</p>
-						</div>
+						</div><!-- btn_area end -->
 					</div><!-- write_area end -->
 				</form>
-			</div><!-- main_bottom_area end -->
+			</div><!-- main_bottom_area -->
 			
 			
-			<script type="text/javascript">
-				$(function(){
-					CKEDITOR.replace('b_content', {filebrowserUploadUrl:"/admin/imgUpload/beforeAfter", width:'100%', height:'500px'});
-				});
-			</script>
 			
 		</div><!-- admin_right 끝 -->
     </div><!-- container 끝 -->
@@ -193,6 +169,7 @@ $(function(){
         <div class="f_contents nanum_n">COPYRIGHT ⓒ <span class="txt_blue_b nanum_b">다니엘성형외과의원 진료과목 피부과</span> ALL RIGHT RESERVED</div>
     </div>
 </div><!-- wrap 끝 -->
+
 
 </body>
 </html>

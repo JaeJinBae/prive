@@ -96,8 +96,8 @@ public class AdminController {
 		logger.info("loginIdPwChk");
 		ResponseEntity<String> entity = null;
 		
-		if(info.get("id").equals("danielclinic") && info.get("pw").equals("danielclinic1")){
-			session.setAttribute("id", "danielclinic");
+		if(info.get("id").equals("prive") && info.get("pw").equals("prive5475")){
+			session.setAttribute("id", "prive");
 			entity = new ResponseEntity<String>("ok", HttpStatus.OK);
 		}else{
 			entity = new ResponseEntity<String>("no", HttpStatus.OK);
@@ -164,89 +164,11 @@ public class AdminController {
 		return map;
 	}
 	
+	
+	
 	@RequestMapping(value = "/menu01_01", method = RequestMethod.GET)
 	public String menu01_01(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
 		logger.info("menu01_01 GET");
-		
-		List<NoticeVO> topList = nService.selectTopNotice("");
-		List<NoticeVO> list = nService.listSearchAll(cri);
-		
-		PageMaker pageMaker = new PageMaker();
-		pageMaker.setCri(cri);
-		pageMaker.makeSearch(cri.getPage());
-		pageMaker.setTotalCount(nService.listSearchCountAll(cri));
-		pageMaker.setFinalPage(nService.listSearchCountAll(cri));
-		
-		model.addAttribute("topList", topList);
-		model.addAttribute("list", list);
-		model.addAttribute("pageMaker", pageMaker);
-		
-		return "admin/menu01_01";
-	}
-	
-	@RequestMapping(value = "/menu01_01register", method = RequestMethod.GET)
-	public String menu01_01register(NoticeVO vo) {
-		logger.info("menu01_01register GET");
-
-		return "admin/menu01_01register";
-	}
-	
-	@RequestMapping(value = "/menu01_01register", method = RequestMethod.POST)
-	public String menu01_01registerPOST(NoticeVO vo) {
-		logger.info("menu01_01register POST");
-		System.out.println(vo);
-		nService.insert(vo);
-		return "redirect:/admin/menu01_01";
-	}
-	
-	@RequestMapping(value = "/menu01_01update", method = RequestMethod.GET)
-	public String menu01_01update(int no, @ModelAttribute("cri") SearchCriteria cri, Model model, HttpServletRequest req) throws Exception {
-		logger.info("menu01_01update GET");
-		
-		NoticeVO vo = nService.selectOne(no);
-
-		PageMaker pageMaker = new PageMaker();
-		pageMaker.setCri(cri);
-		pageMaker.makeSearch(cri.getPage());
-		pageMaker.setTotalCount(nService.listSearchCountAll(cri));
-
-		model.addAttribute("item", vo);
-		model.addAttribute("pageMaker", pageMaker);
-		
-		return "admin/menu01_01update";
-	}
-	
-	@RequestMapping(value = "/menu01_01update", method = RequestMethod.POST)
-	public String menu01_01updatePost(NoticeVO vo, int page, @ModelAttribute("cri") SearchCriteria cri, RedirectAttributes rtts, Model model, HttpServletRequest req) throws Exception {
-		logger.info("menu01_01update Post");
-		
-		nService.update(vo);
-
-		rtts.addAttribute("no", vo.getNo());
-
-		PageMaker pageMaker = new PageMaker();
-
-		pageMaker.setCri(cri);
-		pageMaker.makeSearch(page);
-		pageMaker.setTotalCount(nService.listSearchCountAll(cri));
-
-		rtts.addAttribute("page", page);
-
-		return "redirect:/admin/menu01_01update";
-	}
-	
-	@RequestMapping(value="/menu01_01delete/{no}", method=RequestMethod.GET)
-	public String menu01_01delete(@PathVariable("no") int no){
-		logger.info("notice delete");
-		
-		nService.delete(no);
-		
-		return "redirect:/admin/menu01_01";
-	}
-	
-	@RequestMapping(value = "/menu05_01", method = RequestMethod.GET)
-	public String menu05_01(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
-		logger.info("menu05_01 GET");
 
 		List<AdviceVO> list = aService.listSearch(cri);
 		
@@ -259,19 +181,19 @@ public class AdminController {
 		model.addAttribute("list", list);
 		model.addAttribute("pageMaker", pageMaker);
 		
-		return "admin/menu05_01";
+		return "admin/menu01_01";
 	}
 	
-	@RequestMapping(value = "/menu05_01register", method = RequestMethod.GET)
-	public String menu05_01register() throws Exception {
-		logger.info("menu05_01register GET");
+	@RequestMapping(value = "/menu01_01register", method = RequestMethod.GET)
+	public String menu01_01register() throws Exception {
+		logger.info("menu01_01register GET");
 		
-		return "admin/menu05_01register";
+		return "admin/menu01_01register";
 	}
 	
-	@RequestMapping(value = "/menu05_01register", method = RequestMethod.POST)
-	public String menu05_01registerPost(MultipartHttpServletRequest mtfReq, Model model) throws IOException {
-		logger.info("menu05_01register POST");
+	@RequestMapping(value = "/menu01_01register", method = RequestMethod.POST)
+	public String menu01_01registerPost(MultipartHttpServletRequest mtfReq, Model model) throws IOException {
+		logger.info("menu01_01register POST");
 		
 		AdviceVO vo = new AdviceVO();
 		
@@ -289,12 +211,12 @@ public class AdminController {
 		vo.setReply_date(mtfReq.getParameter("reply_date"));
 		
 		aService.insert(vo);
-		return "redirect:/admin/menu05_01";
+		return "redirect:/admin/menu01_01";
 	}
 	
-	@RequestMapping(value = "/menu05_01update", method = RequestMethod.GET)
-	public String menu05_01update(int no, @ModelAttribute("cri") SearchCriteria cri, Model model, HttpServletRequest req) throws Exception {
-		logger.info("menu05_01update GET");
+	@RequestMapping(value = "/menu01_01update", method = RequestMethod.GET)
+	public String menu01_01update(int no, @ModelAttribute("cri") SearchCriteria cri, Model model, HttpServletRequest req) throws Exception {
+		logger.info("menu01_01update GET");
 		
 		AdviceVO vo = aService.selectOne(no);
 
@@ -305,12 +227,12 @@ public class AdminController {
 
 		model.addAttribute("item", vo);
 		model.addAttribute("pageMaker", pageMaker);
-		return "admin/menu05_01update";
+		return "admin/menu01_01update";
 	}
 	
-	@RequestMapping(value = "/menu05_01update", method = RequestMethod.POST)
-	public String menu05_01updatePOST(MultipartHttpServletRequest mtfReq, int page, @ModelAttribute("cri") SearchCriteria cri, RedirectAttributes rtts) throws Exception {
-		logger.info("menu05_01update POST");		
+	@RequestMapping(value = "/menu01_01update", method = RequestMethod.POST)
+	public String menu01_01updatePOST(MultipartHttpServletRequest mtfReq, int page, @ModelAttribute("cri") SearchCriteria cri, RedirectAttributes rtts) throws Exception {
+		logger.info("menu01_01update POST");		
 		
 		AdviceVO vo = new AdviceVO();
 		
@@ -337,17 +259,97 @@ public class AdminController {
 		pageMaker.setTotalCount(aService.listSearchCount(cri));
 
 		rtts.addAttribute("page", page);
-		return "redirect:/admin/menu05_01update";
+		return "redirect:/admin/menu01_01update";
 	}
 	
-	@RequestMapping(value = "/menu07_01", method = RequestMethod.GET)
-	public String menu07_01(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
-		logger.info("menu07_01 GET");
+	@RequestMapping(value = "/menu01_02", method = RequestMethod.GET)
+	public String menu01_02(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
+		logger.info("menu01_02 GET");
 		
-		return "admin/menu07_01";
+		List<NoticeVO> topList = nService.selectTopNotice("");
+		List<NoticeVO> list = nService.listSearchAll(cri);
+		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(nService.listSearchCountAll(cri));
+		pageMaker.setFinalPage(nService.listSearchCountAll(cri));
+		
+		model.addAttribute("topList", topList);
+		model.addAttribute("list", list);
+		model.addAttribute("pageMaker", pageMaker);
+		
+		return "admin/menu01_02";
 	}
 	
-	@RequestMapping(value="/menu07_01InfoGet/{type}/{s_date}/{e_date}", method=RequestMethod.GET)
+	@RequestMapping(value = "/menu01_02register", method = RequestMethod.GET)
+	public String menu01_02register(NoticeVO vo) {
+		logger.info("menu01_02register GET");
+
+		return "admin/menu01_02register";
+	}
+	
+	@RequestMapping(value = "/menu01_02register", method = RequestMethod.POST)
+	public String menu01_02registerPOST(NoticeVO vo) {
+		logger.info("menu01_02register POST");
+		System.out.println(vo);
+		nService.insert(vo);
+		return "redirect:/admin/menu01_02";
+	}
+	
+	@RequestMapping(value = "/menu01_02update", method = RequestMethod.GET)
+	public String menu01_02update(int no, @ModelAttribute("cri") SearchCriteria cri, Model model, HttpServletRequest req) throws Exception {
+		logger.info("menu01_02update GET");
+		
+		NoticeVO vo = nService.selectOne(no);
+
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(nService.listSearchCountAll(cri));
+
+		model.addAttribute("item", vo);
+		model.addAttribute("pageMaker", pageMaker);
+		
+		return "admin/menu01_02update";
+	}
+	
+	@RequestMapping(value = "/menu01_02update", method = RequestMethod.POST)
+	public String menu01_02updatePost(NoticeVO vo, int page, @ModelAttribute("cri") SearchCriteria cri, RedirectAttributes rtts, Model model, HttpServletRequest req) throws Exception {
+		logger.info("menu01_02update Post");
+		
+		nService.update(vo);
+
+		rtts.addAttribute("no", vo.getNo());
+
+		PageMaker pageMaker = new PageMaker();
+
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(page);
+		pageMaker.setTotalCount(nService.listSearchCountAll(cri));
+
+		rtts.addAttribute("page", page);
+
+		return "redirect:/admin/menu01_02update";
+	}
+	
+	@RequestMapping(value="/menu01_02delete/{no}", method=RequestMethod.GET)
+	public String menu01_02delete(@PathVariable("no") int no){
+		logger.info("notice delete");
+		
+		nService.delete(no);
+		
+		return "redirect:/admin/menu01_02";
+	}
+	
+	@RequestMapping(value = "/menu03_01", method = RequestMethod.GET)
+	public String menu07_01(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
+		logger.info("menu03_01 GET");
+		
+		return "admin/menu03_01";
+	}
+	
+	@RequestMapping(value="/menu03_01InfoGet/{type}/{s_date}/{e_date}", method=RequestMethod.GET)
 	public ResponseEntity<List<List<String>>> menu07_01InfoGet(@PathVariable("type") String type, @PathVariable("s_date") String s_date, @PathVariable("e_date") String e_date) throws ParseException{
 		ResponseEntity<List<List<String>>> entity = null;
 		
@@ -676,9 +678,9 @@ public class AdminController {
 		return entity;
 	}
 
-	@RequestMapping(value = "/menu07_02", method = RequestMethod.GET)
-	public String menu07_02(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
-		logger.info("menu07_02 GET");
+	@RequestMapping(value = "/menu03_02", method = RequestMethod.GET)
+	public String menu03_02(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
+		logger.info("menu03_02 GET");
 		
 		List<StatisticVO> list = sService.listSearch(cri);
 		
@@ -691,7 +693,7 @@ public class AdminController {
 		model.addAttribute("list", list);
 		model.addAttribute("pageMaker", pageMaker);
 		
-		return "admin/menu07_02";
+		return "admin/menu03_02";
 	}
 	
 	/*@ResponseBody

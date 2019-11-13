@@ -16,34 +16,275 @@
 <script src="${pageContext.request.contextPath}/resources/js/jquery-1.12.4.min.js"></script><!-- #1 1.12.4  -->
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/jquery-ui-1.11.1.js"></script><!-- #jquery UI  -->
 <!-- ************************************************************************************************* -->
-
+<!-- jQuery UI CSS파일 -->
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.8.18/themes/base/jquery-ui.css" type="text/css" />
 <!-- ************************************************************************************************* -->
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/function.admin.js"></script><!-- # 필수 함수 -->
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/function.default.js"></script><!-- # 필수 함수 -->
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/function.validate.js"></script><!-- # 필수 함수 -->
 <link href="https://ajax.googleapis.com/ajax/static/modules/gviz/1.0/core/tooltip.css" rel="stylesheet" type="text/css">
+<script src="https://www.google.com/uds/?file=visualization&amp;v=1&amp;packages=corechart" type="text/javascript"></script>
+<link href="https://www.google.com/uds/api/visualization/1.0/36558b280aac4fa99ed8215e60015cff/ui+ko.css" type="text/css" rel="stylesheet">
+<script src="https://www.google.com/uds/api/visualization/1.0/36558b280aac4fa99ed8215e60015cff/format+ko,default+ko,ui+ko,corechart+ko.I.js" type="text/javascript"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<style type="text/css">
+.search_span{
+	display: none;
+}
+#time_span{
+	display: inline-block;
+}
+</style>
 <script>
-$(function(){
-	 $("#searchBtn").click(function(){
-    	var s=$("select[name='select_key']").val();
-		var searchType = encodeURIComponent(s);
-		var k=$("input[name='input_key']").val();
-		var keyword = encodeURIComponent(k);
-		location.href="${pageContext.request.contextPath}/admin/menu03_01${pageMaker.makeQuery(1)}&searchType="+searchType+"&keyword="+keyword;
+google.load("visualization", "1", {packages:["corechart"]});
+
+function draw_time_chart(info){
+	var res_arr = [["\uc2dc","\uc811\uc18d\uc790"]];
+	var temp_arr = [];
+	for(var i=0;i<24;i++){
+		temp_arr.push(info[i][0]);
+		temp_arr.push(Number(info[i][1]));
+		res_arr.push(temp_arr);
+		temp_arr=[];
+	}
+	
+	var data = google.visualization.arrayToDataTable(res_arr);
+	var options = {
+		  title: '시간별통계'
+	};
+	var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
+	
+	chart.draw(data, options);
+}
+
+function draw_date_chart(info){
+	var res_arr = [["\uc77c\uc790\ubcc4","\uc811\uc18d\uc790"]];
+	var temp_arr = [];
+
+	for(var i=0;i<$(info).size();i++){
+		temp_arr.push(info[i][0]);
+		temp_arr.push(Number(info[i][1]));
+		res_arr.push(temp_arr);
+		temp_arr=[];
+	}
+	
+	var data = google.visualization.arrayToDataTable(res_arr);
+	var options = {
+		  title: '날짜별통계'
+	};
+	var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
+	
+	chart.draw(data, options);
+}
+function draw_dayofweek_chart(info){
+	var res_arr = [["\uc694\uc77c","\uc811\uc18d\uc790"]];
+	var temp_arr = [];
+	
+	for(var i=0;i<$(info).size();i++){
+		temp_arr.push(info[i][0]);
+		temp_arr.push(Number(info[i][1]));
+		res_arr.push(temp_arr);
+		temp_arr=[];
+	}
+	/* [["\uc694\uc77c","\uc811\uc18d\uc790"],["\uc77c",480],["\uc6d4",926],["\ud654",697],
+													["\uc218",580],["\ubaa9",473], ["\uae08",458],["\ud1a0",389]] */
+	var data = google.visualization.arrayToDataTable(res_arr);
+	var options = {
+		  title: '요일별통계'
+	};
+	var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+	
+	chart.draw(data, options);
+}
+function draw_month_chart(info){
+	var res_arr = [["\uc6d4\ubcc4","\uc811\uc18d\uc790"]];
+	var temp_arr = [];
+	
+	for(var i=0;i<$(info).size();i++){
+		temp_arr.push(info[i][0]);
+		temp_arr.push(Number(info[i][1]));
+		res_arr.push(temp_arr);
+		temp_arr=[];
+	}
+	/* [["\uc6d4\ubcc4","\uc811\uc18d\uc790"],["2018-06",4],["2018-07",3447],
+													["2018-08",5920],["2018-09",5221],["2018-10",5508],["2018-11",5870],["2018-12",5441]] */
+	var data = google.visualization.arrayToDataTable(res_arr);
+	var options = {
+		  title: '월별통계'
+	};
+	var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
+	
+	chart.draw(data, options);
+}
+function draw_year_chart(info){
+	var res_arr = [["\ub144\ubcc4","\uc811\uc18d\uc790"]];
+	var temp_arr = [];
+	
+	for(var i=0;i<$(info).size();i++){
+		temp_arr.push(info[i][0]);
+		temp_arr.push(Number(info[i][1]));
+		res_arr.push(temp_arr);
+		temp_arr=[];
+	}
+	
+	var data = google.visualization.arrayToDataTable(res_arr);
+	/* [["\ub144\ubcc4","\uc811\uc18d\uc790"],["2018",31411],["2019",49834]] */
+	var options = {
+		  title: '년도별통계'
+	};
+	var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
+	
+	chart.draw(data, options);
+}
+
+function draw_browser_chart(info){
+	var res_arr = [["\ube0c\ub77c\uc6b0\uc838\ubcc4\ud1b5\uacc4","\uc811\uc18d\uc790"]];
+	var temp_arr = [];
+	
+	for(var i=0;i<$(info).size();i++){
+		temp_arr.push(info[i][0]);
+		temp_arr.push(Number(info[i][1]));
+		res_arr.push(temp_arr);
+		temp_arr=[];
+	}
+	
+	var data = google.visualization.arrayToDataTable(res_arr);
+	/* [["\ube0c\ub77c\uc6b0\uc838\ubcc4\ud1b5\uacc4","\uc811\uc18d\uc790"],
+													["Chrome",54], ["FireFox",3],["Gecko",29],["Mozilla",2],["MSIE 10.0",2],
+													["MSIE 11",11], ["MSIE 8",2],["MSIE 9",3],["Robot",1],["unknown",7]] */
+	var options = {
+		  title: '브라우저별통계'
+	};
+	var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+	
+	chart.draw(data, options);
+}
+
+function draw_os_chart(info){
+	var res_arr = [["OS\ud1b5\uacc4","\uc811\uc18d\uc790"]];
+	var temp_arr = [];
+	
+	for(var i=0;i<$(info).size();i++){
+		temp_arr.push(info[i][0]);
+		temp_arr.push(Number(info[i][1]));
+		res_arr.push(temp_arr);
+		temp_arr=[];
+	}
+	
+	var data = google.visualization.arrayToDataTable(res_arr);
+	/* [["OS\ud1b5\uacc4","\uc811\uc18d\uc790"],["Linux",46],
+													["MAC",29],["Mozilla",8], ["Robot",3],["unknown",7],["Windows 7",14],
+													["Windows 8",2], ["Windows Vista",1],["Windows XP",4]] */
+	var options = {
+		  title: 'OS별통계'
+	};
+	var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+	
+	chart.draw(data, options);
+}
+
+function sttGet(type, d1, d2){
+	$.ajax({
+		url:"${pageContext.request.contextPath}/admin/menu07_01InfoGet/"+type+"/"+d1+"/"+d2,
+		type:"get",
+		contentType : "application/json; charset=UTF-8",
+		dataType:"json",
+		async:false,
+		success:function(json){
+			//console.log(json);
+			if(type == "time"){
+				draw_time_chart(json);
+			}else if(type == "date"){
+				draw_date_chart(json);
+			}else if(type == "dayofweek"){
+				draw_dayofweek_chart(json);
+			}else if(type == "month"){
+				draw_month_chart(json);
+			}else if(type == "year"){
+				draw_year_chart(json);
+			}else if(type == "browser"){
+				draw_browser_chart(json);
+			}else if(type == "os"){
+				draw_os_chart(json);
+			}
+		},
+		error:function(request,status,error){
+			console.log("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+		}
 	});
-	 
-	$(document).on("click", ".t_link", function(e){
-		e.preventDefault();
-		var link = $(this).prop("href").split("&");
-		var k = link[3].split("=");
-		var keyword = encodeURIComponent(k[1]);
-		location.href=link[0]+"&"+link[1]+"&"+link[2]+"&keyword="+keyword+"&"+link[4];
+};
+
+$(function(){
+	google.setOnLoadCallback(draw_time_chart);
+	
+	$(".search_t_box100").datepicker({
+		changeMonth: true, 
+		changeYear: true,
+		dayNames: ['월요일', '화요일', '수요일', '목요일', '금요일', '토요일', '일요일'],
+		dayNamesMin: ['월', '화', '수', '목', '금', '토', '일'], 
+		monthNamesShort: ['1','2','3','4','5','6','7','8','9','10','11','12'],
+		monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
+		dateFormat: "yy-mm-dd"
+    });
+	
+	var ndate = new Date();
+	var year = ndate.getFullYear();
+	var month = ndate.getMonth()+1;
+	var date = ndate.getDate();
+	$("#start_monthy_key > option[value='"+year+"']").prop("selected", true);
+	$("#end_monthy_key > option[value='"+year+"']").prop("selected", true);
+	$("#start_monthm_key > option[value='1']").prop("selected", true);
+	$("#end_monthm_key > option[value='12']").prop("selected", true);
+	
+	$("#start_year_key > option[value='"+year+"']").prop("selected", true);
+	$("#end_year_key > option[value='"+year+"']").prop("selected", true);
+	
+	month = (month > 9) ? month+"":"0"+month;
+	date = (date > 9) ? date+"":"0"+date;
+	
+	$(".search_t_box100").val(year+"-"+month+"-"+date);
+	
+	sttGet("time", year+"-"+month+"-"+date, year+"-"+month+"-"+date);
+	
+	$("#select_key").change(function(){
+		var sel_type = $(this).val();
+		$(".search_span").css("display", "none");
+		$("#"+sel_type+"_span").css("display", "inline-block");
 	});
 	
-    $(document).on("click", ".board_paging > a",function(e){
-		e.preventDefault();
-		var link = $(this).prop("href").split("keyword=");
-		location.href=link[0]+"keyword="+encodeURIComponent(link[1]);
+	$(".search_btn").click(function(){
+		var searchType = $("#select_key").val();
+		var s_d = "";
+		var e_d = "";
+		if(searchType == "time"){
+			s_d = $("#start_time_key").val();
+			e_d = $("#end_time_key").val();
+			sttGet(searchType, s_d, e_d);
+		}else if(searchType == "date"){
+			s_d = $("#start_day_key").val();
+			e_d = $("#end_day_key").val();
+			sttGet(searchType, s_d, e_d);
+		}else if(searchType == "dayofweek"){
+			s_d = $("#start_weekend_key").val();
+			e_d = $("#end_weekend_key").val();
+			sttGet(searchType, s_d, e_d);
+		}else if(searchType == "month"){
+			s_d = $("#start_monthy_key").val()+"-"+$("#start_monthm_key").val()+"-01";
+			e_d = $("#end_monthy_key").val()+"-"+$("#end_monthm_key").val()+"-31";
+			sttGet(searchType, s_d, e_d);
+		}else if(searchType == "year"){
+			s_d = $("#start_year_key").val()+"-01-01";
+			e_d = $("#end_year_key").val()+"-12-31";
+			sttGet(searchType, s_d, e_d);
+		}else if(searchType == "browser"){
+			s_d = $("#start_browser_key").val();
+			e_d = $("#end_browser_key").val();
+			sttGet(searchType, s_d, e_d);
+		}else if(searchType == "os"){
+			s_d = $("#start_os_key").val();
+			e_d = $("#end_os_key").val();
+			sttGet(searchType, s_d, e_d);
+		}
 	});
 });
 </script>
@@ -61,117 +302,212 @@ $(function(){
 			<jsp:include page="include/rightTop.jsp"></jsp:include><!-- 오른쪽 상단 -->
 
 			<div class="naviText_area">
-				<h1>이벤트 목록</h1>
+				<h1>트래픽분석</h1>
 
 				<ul class="navi_area">
 					<li>관리자메인&nbsp;&gt;&nbsp;</li>
-					<li>이벤트 관리&nbsp;&gt;&nbsp;</li>
-					<li>이벤트 목록</li>
+					<li>마케팅분석&nbsp;&gt;&nbsp;</li>
+					<li>트래픽분석</li>
 				</ul>
 			</div>
 			
 			<div class="main_bottom_area">
 				<div class="list_area">
 					<div class="list_box">
-						<div class="board_top">
-							<form name="search" onsubmit="return false;">
+						<div class="board_top" style="margin-right:100px">
 								<div class="search_area">
 									<input type="hidden" name="search" value="Y">
-									<input type="hidden" name="select_site_code" value="{$select_site_code}">
 									<select name="select_key" id="select_key" class="search_sel">
-										<option value="">전체</option>
-										<option value="t" ${cri.searchType=='t'?'selected':''}>제목</option>
-									</select>						
-									<input type="text" name="input_key" class="search_t_box" value="">
-									<input type="button" name="submit_btn" value="검색" class="search_btn cursor" id="searchBtn">
+										<option value="time">시간별통계</option>
+										<option value="date">일자별통계</option>
+										<option value="dayofweek">요일별통계</option>
+										<option value="month">월별통계</option>
+										<option value="year">년별통계</option>
+										<option value="browser">브라우져별통계</option>
+										<option value="os">OS통계</option>
+									</select>
+									<!-- 시간별통계 -->
+									<span id="time_span" class="search_span">
+										<input type="text" name="start_time_key" id="start_time_key" class="search_t_box100" value="" autocomplete="off">~
+										<input type="text" name="end_time_key" id="end_time_key" class="search_t_box100" value="" autocomplete="off">
+									</span>
+			
+									<!-- 일자별통계 -->
+									<span id="date_span" class="search_span">
+										<input type="text" name="start_day_key" id="start_day_key" class="search_t_box100" value="" autocomplete="off">~
+										<input type="text" name="end_day_key" id="end_day_key" class="search_t_box100" value="" autocomplete="off">
+									</span>
+			
+									<!-- 요일별통계 -->
+									<span id="dayofweek_span" class="search_span">
+										<input type="text" name="start_weekend_key" id="start_weekend_key" class="search_t_box100" value="" autocomplete="off">~
+										<input type="text" name="end_weekend_key" id="end_weekend_key" class="search_t_box100" value="" autocomplete="off">
+									</span>
+			
+									<!-- 월별통계 -->
+									<span id="month_span" class="search_span">
+										<select name="start_monthy_key" id="start_monthy_key" class="search_sel_70">
+											<option value="2016">2016</option>
+											<option value="2017">2017</option>
+											<option value="2018">2018</option>
+											<option value="2019">2019</option>
+											<option value="2020">2020</option>
+											<option value="2021">2021</option>
+											<option value="2022">2022</option>
+											<option value="2023">2023</option>
+											<option value="2024">2024</option>
+											<option value="2025">2025</option>
+											<option value="2026">2026</option>
+											<option value="2027">2027</option>
+											<option value="2028">2028</option>
+											<option value="2029">2029</option>
+											<option value="2030">2030</option>
+											<option value="2031">2031</option>
+											<option value="2032">2032</option>
+											<option value="2033">2033</option>
+											<option value="2034">2034</option>
+											<option value="2035">2035</option>
+											<option value="2036">2036</option>
+											<option value="2037">2037</option>
+											<option value="2038">2038</option>
+											<option value="2039">2039</option>
+											<option value="2040">2040</option>
+										</select>
+										<select name="start_monthm_key" id="start_monthm_key" class="search_sel_70">
+											<option value="01">1</option>
+											<option value="02">2</option>
+											<option value="03">3</option>
+											<option value="04">4</option>
+											<option value="05">5</option>
+											<option value="06">6</option>
+											<option value="07">7</option>
+											<option value="08">8</option>
+											<option value="09">9</option>
+											<option value="10">10</option>
+											<option value="11">11</option>
+											<option value="12">12</option>
+										</select>~
+										<select name="end_monthy_key" id="end_monthy_key" class="search_sel_70">
+											<option value="2016">2016</option>
+											<option value="2017">2017</option>
+											<option value="2018">2018</option>
+											<option value="2019">2019</option>
+											<option value="2020">2020</option>
+											<option value="2021">2021</option>
+											<option value="2022">2022</option>
+											<option value="2023">2023</option>
+											<option value="2024">2024</option>
+											<option value="2025">2025</option>
+											<option value="2026">2026</option>
+											<option value="2027">2027</option>
+											<option value="2028">2028</option>
+											<option value="2029">2029</option>
+											<option value="2030">2030</option>
+											<option value="2031">2031</option>
+											<option value="2032">2032</option>
+											<option value="2033">2033</option>
+											<option value="2034">2034</option>
+											<option value="2035">2035</option>
+											<option value="2036">2036</option>
+											<option value="2037">2037</option>
+											<option value="2038">2038</option>
+											<option value="2039">2039</option>
+											<option value="2040">2040</option>
+										</select>							
+										<select name="end_monthm_key" id="end_monthm_key" class="search_sel_70">
+											<option value="01">1</option>
+											<option value="02">2</option>
+											<option value="03">3</option>
+											<option value="04">4</option>
+											<option value="05">5</option>
+											<option value="06">6</option>
+											<option value="07">7</option>
+											<option value="08">8</option>
+											<option value="09">9</option>
+											<option value="10">10</option>
+											<option value="11">11</option>
+											<option value="12">12</option>
+										</select>		
+									</span>
+			
+									<!-- 년별통계 -->
+									<span id="year_span" class="search_span">
+										<select name="start_year_key" id="start_year_key" class="search_sel">
+											<option value="2016">2016</option>
+											<option value="2017">2017</option>
+											<option value="2018">2018</option>
+											<option value="2019">2019</option>
+											<option value="2020">2020</option>
+											<option value="2021">2021</option>
+											<option value="2022">2022</option>
+											<option value="2023">2023</option>
+											<option value="2024">2024</option>
+											<option value="2025">2025</option>
+											<option value="2026">2026</option>
+											<option value="2027">2027</option>
+											<option value="2028">2028</option>
+											<option value="2029">2029</option>
+											<option value="2030">2030</option>
+											<option value="2031">2031</option>
+											<option value="2032">2032</option>
+											<option value="2033">2033</option>
+											<option value="2034">2034</option>
+											<option value="2035">2035</option>
+											<option value="2036">2036</option>
+											<option value="2037">2037</option>
+											<option value="2038">2038</option>
+											<option value="2039">2039</option>
+											<option value="2040">2040</option>
+										</select>							~
+										<select name="end_year_key" id="end_year_key" class="search_sel">
+											<option value="2016">2016</option>
+											<option value="2017">2017</option>
+											<option value="2018">2018</option>
+											<option value="2019">2019</option>
+											<option value="2020">2020</option>
+											<option value="2021">2021</option>
+											<option value="2022">2022</option>
+											<option value="2023">2023</option>
+											<option value="2024">2024</option>
+											<option value="2025">2025</option>
+											<option value="2026">2026</option>
+											<option value="2027">2027</option>
+											<option value="2028">2028</option>
+											<option value="2029">2029</option>
+											<option value="2030">2030</option>
+											<option value="2031">2031</option>
+											<option value="2032">2032</option>
+											<option value="2033">2033</option>
+											<option value="2034">2034</option>
+											<option value="2035">2035</option>
+											<option value="2036">2036</option>
+											<option value="2037">2037</option>
+											<option value="2038">2038</option>
+											<option value="2039">2039</option>
+											<option value="2040">2040</option>
+										</select>
+									</span>
+			
+									<!-- 브라우져별통계 -->
+									<span id="browser_span" class="search_span">
+										<input type="text" name="start_browser_key" id="start_browser_key" class="search_t_box100" value="" autocomplete="off">~
+										<input type="text" name="end_browser_key" id="end_browser_key" class="search_t_box100" value="" autocomplete="off">
+									</span>
+			
+									<!-- OS통계 -->
+									<span id="os_span" class="search_span">
+										<input type="text" name="start_os_key" id="start_os_key" class="search_t_box100" value="" autocomplete="off">~
+										<input type="text" name="end_os_key" id="end_os_key" class="search_t_box100" value="" autocomplete="off">
+									</span>
+			
+									<button type="button" name="submit_btn" class="search_btn cursor">검색</button>
 								</div>
-							</form>
-						</div>
+						</div><br>
 			
-						<form name="event_list" id="event_list">
-							<table class="list_table">
-								<colgroup>
-									<col width="4%">
-			                        <col width="7%">
-									<col width="20%">
-			                        <col width="10%">
-			                        <col width="20%">
-									<col width="10%">
-								</colgroup>
-								<tr class="cont">
-									<th><input type="checkbox" id="selectall"></th>
-			                        <th>출력유무</th>
-									<th>이벤트명</th>
-			                        <!--th>문의목록</th-->
-									<th>이벤트일자</th>
-									<th>등록일자</th>
-								</tr>
-								<c:choose>
-									<c:when test="${fn:length(list) ==0 }">
-										<tr><td colspan="5">등록된 게시물이 없습니다.</td></tr>
-									</c:when>
-									<c:otherwise>
-										<c:set var="num" value="${pageMaker.totalCount - ((pageMaker.cri.page -1) *10)}"></c:set>
-									        <c:forEach var="item" items="${list}">
-												<tr class="cont">
-													<td><input type="checkbox" name="" value="${item.no}"></td>
-													<c:choose>
-														<c:when test="${item.use_state == 'o'}">
-															<td><img src="${pageContext.request.contextPath}/resources/img/admin/ck_img_on.png" class="cursor vimg" id="delflag_2036"></td>
-														</c:when>
-														<c:otherwise>
-															<td><img src="${pageContext.request.contextPath}/resources/img/admin/ck_img_none.png" class="cursor vimg" id="ismain_2036"></td>
-														</c:otherwise>
-													</c:choose>
-													<td>
-														<a class="t_link" href="${pageContext.request.contextPath}/admin/menu03_01update${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}">
-															<img src="${pageContext.request.contextPath}/resources/uploadEvent/${item.thumb_stored}" height="100px">
-															${item.title}
-														</a>
-													</td>
-													<td>${item.start_date} ~ ${item.end_date}</td>
-													<td>${item.regdate}</td>
-												</tr>
-												<c:set var="num" value="${num-1}"></c:set>	
-											</c:forEach>
-									</c:otherwise>
-								</c:choose>
-							</table>
-						</form>
+						<div id="chart_div" style="width:100%; height:600px;"></div>
 					</div>
-			
-					<div class="btn_area">
-						<p class="btn_left">
-							<button type="button" class="btn_gray">선택삭제</button>
-						</p>
-						<p class="btn_right">
-							<button type="button" class="btn_black" onclick="location.href='${pageContext.request.contextPath}/admin/menu03_01register'">등록</button>
-						</p>
-					</div>
-			
-					<!-- 페이징 시작 -->
-					<div class="board_paging no_print">
-						<a href="${pageMaker.makeSearch(1)}" class="direction">&lt;&lt;</a>
-						<c:if test="${!pageMaker.prev}"><!-- 이전페이지가 존재하지 않는경우 -->
-							<a href="${pageMaker.makeSearch(pageMaker.cri.page)}" class="direction">&lt;</a>
-						</c:if>
-						<c:if test="${pageMaker.prev}"><!-- 이전페이지가 존재하는 경우 -->
-							<a href="${pageMaker.makeSearch(pageMaker.startPage-1)}" class="direction">&lt;</a>
-						</c:if>
-						<c:forEach begin="${pageMaker.startPage}" end="${pageMaker.endPage}" var="idx">
-							<a href="${pageMaker.makeSearch(idx)}" ${pageMaker.cri.page == idx? 'class=on':''}>${idx}</a>
-						</c:forEach>
-						<c:if test="${pageMaker.next}"><!-- 뒤에페이지가 존재하는경우 -->
-							<a href="${pageMaker.makeSearch(pageMaker.endPage+1)}" class="direction">&gt;</a>
-						</c:if>
-						<c:if test="${!pageMaker.next}"><!-- 뒤에 페이지가 존재하지 않는 경우 -->
-							<a href="${pageMaker.makeSearch(pageMaker.cri.page)}" class="direction">&gt;</a>
-						</c:if>
-						<a href="${pageMaker.makeSearch(pageMaker.finalPage+1)}" class="direction">&gt;&gt;</a>
-					</div>	<!-- 페이징 끝 -->
 				</div>
 			</div><!-- main_bottom_area end -->
-			
 		</div><!-- admin_right 끝 -->
     </div><!-- container 끝 -->
 

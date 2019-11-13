@@ -17,72 +17,36 @@
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/jquery-ui-1.11.1.js"></script><!-- #jquery UI  -->
 <!-- ************************************************************************************************* -->
 <!-- jQuery UI CSS파일 -->
-<link rel="stylesheet" href="http://code.jquery.com/ui/1.8.18/themes/base/jquery-ui.css" type="text/css" />
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.8.18/themes/base/jquery-ui.css" type="text/css" />  
 <!-- ************************************************************************************************* -->
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/function.admin.js"></script><!-- # 필수 함수 -->
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/function.default.js"></script><!-- # 필수 함수 -->
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/function.validate.js"></script><!-- # 필수 함수 -->
 <link href="https://ajax.googleapis.com/ajax/static/modules/gviz/1.0/core/tooltip.css" rel="stylesheet" type="text/css">
 <script>
-function deleteUploadImg(no, type){
-	var info = {no:no, type:type};
-	$.ajax({
-		url:"${pageContext.request.contextPath}/admin/menu01_02uploadImgDelete",
-		type:"post",
-		data:JSON.stringify(info),
-		contentType : "application/json; charset=UTF-8",
-		dataType:"text",
-		async:false,
-		success:function(json){
-			console.log(json);
-		},
-		error:function(request,status,error){
-			console.log("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
-		}
-	});
-}
-
 $(function(){
+	$.ajaxSetup({cache:false});
 	
-	var ndate = new Date();
-	var year = ndate.getFullYear();
-	var month = ndate.getMonth()+1;
-	var date = ndate.getDate();
-	
-	month = (month > 9) ? month+"":"0"+month;
-	date = (date > 9) ? date+"":"0"+date;
-	
-	$("#regdate").val(year+"-"+month+"-"+date);
-	
-	$("#regdate").datepicker({
+	$( "#regdate" ).datepicker({
 		changeMonth: true, 
 		changeYear: true,
 		dayNames: ['월요일', '화요일', '수요일', '목요일', '금요일', '토요일', '일요일'],
-		dayNamesMin: ['월', '화', '수', '목', '금', '토', '일'], 
-		monthNamesShort: ['1','2','3','4','5','6','7','8','9','10','11','12'],
+		dayNamesMin: ['월', '화', '수', '목', '금', '토', '일'],
+		monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
 		monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
 		dateFormat: "yy-mm-dd"
     });
 	
-	var c_type = "${item.clinic_type}";
-	$("#b_tap > option[value='"+c_type+"']").prop("selected", true);
+	$("#result").click(function(){
+		alert($("input[name='regdate']").val());
+	});
 	
 	//예외처리
 	$("#form1").submit(function(){
-		var clinic_type = $("select[name='clinic_type']").val();
-		var writer = $(".write_table tr td > input[name='writer']").val();
-		var regdate = $(".write_table tr td > input[name='regdate']").val();
-		var cnt = $(".write_table tr td > input[name='cnt']").val();
-		var title = $(".write_table tr td > input[name='title']").val();
-		var content = $(".write_table tr td > textarea[name='content']").val();
-		var b_img = $(".write_table tr td > div > input[name='img_before']").val();
-		var a_img = $(".write_table tr td > div > input[name='img_after']").val();		
-		
-		if($("input[name='writer']").val()==""){
+		if($("input[name='writer']").val()==""||$("input[name='writer']").val()==null){
 			alert("작성자를 입력해주세요.");
 			return false;
-		}
-		if($("input[name='title']").val()==""){
+		}else if($("input[name='title']").val()==""||$("input[name='title']").val()==null){
 			alert("제목을 입력해주세요.");
 			return false;
 		}
@@ -92,60 +56,22 @@ $(function(){
 		var no = $("input[name='no']").val();
 		var target = urlArr[0]+"keyword="+keyword+"&no="+no;
 		$(this).prop("action", target);
-	});
-	
-	$("#img_b").click(function(){
-		var no = $("#form1 > input[name='no']").val();
-		deleteUploadImg(no, "before");
-		$(this).parent().html("<input type='file' name='img_before'>");
-		$("#imgBeforeChange").val("o");
-	});
-	
-	$("#img_a").click(function(){
-		var no = $("#form1 > input[name='no']").val();
-		deleteUploadImg(no, "after");
-		$(this).parent().html("<input type='file' name='img_after'>");
-		$("#imgAfterChange").val("o");
-	});
+	})
 	
 	$("#delBtn").click(function(){
 		var no = $("input[name='no']").val();
 		
 		$.ajax({
-			url:"${pageContext.request.contextPath}/admin/menu01_02delete/"+no,
+			url:"${pageContext.request.contextPath}/admin/menu01_01delete/"+no,
 			type:"get",
 			dataType:"text",
 			async:false,
 			success:function(json){
-				location.href="${pageContext.request.contextPath}/admin/menu01_02";
+				location.href="${pageContext.request.contextPath}/admin/menu01_01";
 			} 
 		});
-	});
-	
-	$(document).on("click", "#downBtn_before", function(e){
-		e.preventDefault();
-		var href = $(this).prop("href");
-		var f_origin = $("input[name='img_before']").val();
-		var fileName = encodeURIComponent(f_origin);
-		var f_stored = $("input[name='img_before_stored']").val();
-		var downName =  encodeURIComponent(f_stored);
 		
-		href += "&fileName="+fileName+"&downName="+downName;
-		location.href= href;
 	});
-	
-	$(document).on("click", "#downBtn_after", function(e){
-		e.preventDefault();
-		var href = $(this).prop("href");
-		var f_origin = $("input[name='img_after']").val();
-		var fileName = encodeURIComponent(f_origin);
-		var f_stored = $("input[name='img_after_stored']").val();
-		var downName =  encodeURIComponent(f_stored);
-		
-		href += "&fileName="+fileName+"&downName="+downName;
-		location.href= href;
-	});
-	
 });
 </script>
 </head>
@@ -162,43 +88,53 @@ $(function(){
 			<jsp:include page="include/rightTop.jsp"></jsp:include><!-- 오른쪽 상단 -->
 
 			<div class="naviText_area">
-				<h1>시술전/후사진</h1>
+				<h1>공지사항</h1>
 
 				<ul class="navi_area">
 					<li>관리자메인&nbsp;&gt;&nbsp;</li>
 					<li>게시판관리&nbsp;&gt;&nbsp;</li>
-					<li>시술전/후사진</li>
+					<li>공지사항</li>
 				</ul>
 			</div>
 			
 			<script type="text/javascript" src="${pageContext.request.contextPath}/resources/ckeditorFull/ckeditor.js"></script>
 			
 			<div class="main_bottom_area">
-				<form name="board" id="form1" method="post" enctype="multipart/form-data" action="${pageContext.request.contextPath}/admin/menu01_02update${pageMaker.makeSearch(pageMaker.cri.page)}">
+				<form id="form1" method="post" action="${pageContext.request.contextPath}/admin/menu01_01update${pageMaker.makeSearch(pageMaker.cri.page)}">
 					<input type="hidden" name="no" value="${item.no}">
-					<input type="hidden" name="use_state" value="${item.use_state}">
 					<div class="write_area">
 						<div class="write_box">
-							<table class="write_table">
+							<table class="write_table" cellpadding="0">
 								<colgroup>
 									<col width="11%">
 									<col width="*">
 								</colgroup>
 								<tr class="cont">
-									<td class="title">분류</td>
+									<td class="title">사용유무</td>
 									<td>
-										<select name="clinic_type" id="b_tap" class="search_sel">
-											<option value="동안·탄력 클리닉">동안·탄력 클리닉</option>
-											<option value="레이저클리닉">레이저클리닉</option>
-											<option value="흉터클리닉">흉터클리닉</option>
-											<option value="눈·코 성형">눈·코 성형</option>
-											<option value="프리미엄 쁘띠클리닉">프리미엄 쁘띠클리닉</option>
-											<option value="체형클리닉">체형클리닉</option>
-											<option value="두피클리닉">두피클리닉</option>
-										</select>
+										<c:if test="${item.use_state == 'o'}">
+											<label><input type="radio" name="use_state" id="b_notice1" value="o" checked="checked"><i></i>사용</label>&nbsp;&nbsp;&nbsp;&nbsp;
+											<label><input type="radio" name="use_state" id="b_notice2" value="x"><i></i>미사용</label>&nbsp;&nbsp;&nbsp;&nbsp;
+										</c:if>
+										<c:if test="${item.use_state == 'x'}">
+											<label><input type="radio" name="use_state" id="b_notice1" value="o"><i></i>사용</label>&nbsp;&nbsp;&nbsp;&nbsp;
+											<label><input type="radio" name="use_state" id="b_notice2" value="x" checked="checked"><i></i>미사용</label>&nbsp;&nbsp;&nbsp;&nbsp;
+										</c:if>
 									</td>
 								</tr>
-										
+								<tr class="cont">
+									<td class="title">공지</td>
+									<td>
+										<c:if test="${item.top_state == 'o'}">
+											<label><input type="radio" name="top_state" id="b_notice1" value="o" checked="checked"><i></i>공지</label>&nbsp;&nbsp;&nbsp;&nbsp;
+											<label><input type="radio" name="top_state" id="b_notice2" value="x"><i></i>일반</label>&nbsp;&nbsp;&nbsp;&nbsp;
+										</c:if>
+										<c:if test="${item.top_state == 'x'}">
+											<label><input type="radio" name="top_state" id="b_notice1" value="o"><i></i>공지</label>&nbsp;&nbsp;&nbsp;&nbsp;
+											<label><input type="radio" name="top_state" id="b_notice2" value="x" checked="checked"><i></i>일반</label>&nbsp;&nbsp;&nbsp;&nbsp;
+										</c:if>
+									</td>
+								</tr>
 								<tr class="cont">
 									<td class="title">작성자</td>
 									<td>
@@ -229,64 +165,26 @@ $(function(){
 										<textarea id="b_content" name="content">${item.content}</textarea>
 									</td>
 								</tr>
-								<tr class="cont">
-									<td class="title">첨부파일</td>
-									<td id="attach">
-										<input type="hidden" id="imgBeforeChange" name="imgBeforeChange" value="x">
-										<input type="hidden" id="imgAfterChange" name="imgAfterChange"value="x">
-										<!-- 시술 전 사진 -->
-										<c:choose>
-											<c:when test="${item.img_before_origin == ''}">
-												<div><input type="file" name="img_before"></div>
-											</c:when>
-											<c:otherwise>
-												<div>
-													<a id="downBtn_before" href="${pageContext.request.contextPath}/admin/filedown?dPath=uploadBeforeAfter">${item.img_before_origin}</a>
-													<img id="img_b" src="${pageContext.request.contextPath}/resources/img/admin/icon_x.png" class="vimg cursor">
-													<input type="hidden" name="img_before" value="${item.img_before_origin}">
-													<input type="hidden" name="img_before_stored" value="${item.img_before_stored}">
-												</div>
-											</c:otherwise>
-										</c:choose>
-										<!-- 시술 후 사진 -->
-										<c:choose>
-											<c:when test="${item.img_after_origin == ''}">
-												<div><input type="file" name="img_after"></div>
-											</c:when>
-											<c:otherwise>
-												<div class="marginT10">
-													<a id="downBtn_after" href="${pageContext.request.contextPath}/admin/filedown?dPath=uploadBeforeAfter">${item.img_after_origin}</a>
-													<img id="img_a" src="${pageContext.request.contextPath}/resources/img/admin/icon_x.png" class="vimg cursor">
-													<input type="hidden" name="img_after" value="${item.img_after_origin}">
-													<input type="hidden" name="img_after_stored" value="${item.img_after_stored}">
-												</div>
-											</c:otherwise>
-										</c:choose>
-										<br>
-									</td>
-								</tr>
 							</table>
-						</div><!-- write_box end -->
+						</div>
 				
 						<div class="btn_area">
 							<p class="btn_left">
-								<button type="button" class="btn_gray" onclick="location.href='${pageContext.request.contextPath}/admin/menu01_02'">리스트</button>
+								<button type="button" class="btn_gray" onclick="location.href='${pageContext.request.contextPath}/admin/menu01_01'">리스트</button>
 							</p>
 							<p class="btn_right">
 								<input type="submit" class="btn_black" value="수정">&nbsp;
 								<button type="button" class="btn_red" id="delBtn">삭제</button>
-								<button type="button" class="btn_gray" onclick="location.href='${pageContext.request.contextPath}/admin/menu01_02'">취소</button>
+								<button type="button" class="btn_gray" onclick="location.href='${pageContext.request.contextPath}/admin/menu01_01'">취소</button>
 							</p>
 						</div>
-					</div><!-- write_area end -->
+				
+					</div>
 				</form>
-			</div><!-- main_bottom_area end -->
-			
+			</div>
 			
 			<script type="text/javascript">
-				$(function(){
-					CKEDITOR.replace('b_content', {filebrowserUploadUrl:"/admin/imgUpload/beforeAfter", width:'100%', height:'300px'});
-				});
+					CKEDITOR.replace('b_content',{filebrowserUploadUrl:"/admin/imgUpload/notice", width:'100%', height:'500px'});
 			</script>
 			
 		</div><!-- admin_right 끝 -->
@@ -296,6 +194,7 @@ $(function(){
         <div class="f_contents nanum_n">COPYRIGHT ⓒ <span class="txt_blue_b nanum_b">다니엘성형외과의원 진료과목 피부과</span> ALL RIGHT RESERVED</div>
     </div>
 </div><!-- wrap 끝 -->
+
 
 </body>
 </html>
