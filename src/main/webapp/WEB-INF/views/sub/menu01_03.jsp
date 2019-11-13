@@ -11,6 +11,7 @@
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/style.common.css" />
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/jquery-1.12.4.min.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/common.js"></script>
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=a138ae905491c723bbbe9ca2383eac3f&libraries=drawing"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0, viewport-fit=cover">
 <style type="text/css">
 html{
@@ -36,9 +37,46 @@ section{
 	width: 100%;
 	height: 100%;
 }
+button{
+	padding: 5px 10px;
+	background: #efefef;
+	border: 1px solid lightgray;
+	display: block;
+	width: 120px;
+	margin: 0 auto;
+	border-radius: 3px;
+}
 @media only screen and (min-width:1200px){
+	
 	.section1{
-		background: red;
+		background: #faf9f6;
+	}
+	.section1 > .inner > .aside_wrap2{
+		width: 100%;
+		height: 100%;
+	}
+	.aside_top{
+		width: 100%;
+		height: 60%;
+		background: url("${pageContext.request.contextPath}/resources/img/content/menu01_04banner04.jpg") no-repeat;
+		background-size: cover;
+		background-position: center;
+	}
+	.aside_bottom{
+		width: 1200px;
+	    margin: 0 auto;
+	    display: flex;
+	    flex-wrap: wrap;
+	    justify-content: space-between;
+	    padding: 50px 70px;
+	}
+	.aside_bottom > .as_b_div > h3{
+		font-size: 25px;
+	}
+	
+	
+	.section2{
+		background: #f7f4ea;
 	}
 	.aside_wrap{
 		width: 1000px;
@@ -64,41 +102,22 @@ section{
 		width: 60%;
 		float: right;
 	}
-	.aside_right > .map{
+	.aside_right > #map{
 		width: 100%;
 		height: 500px;
-		background: #fff;
 		
 	}
 	
-	.section2{
-		background: green;
+	.section3{
+		background: url("${pageContext.request.contextPath}/resources/img/content/out1.jpg") no-repeat;
+		background-size: cover;
+		background-position: center;
 	}
-	.section2 > .inner > .aside_wrap2{
-		width: 100%;
-		height: 100%;
-	}
-	.aside_top{
-		width: 100%;
-		height: 60%;
-		background: blue;
-	}
-	.aside_bottom{
-		width: 1200px;
-	    margin: 0 auto;
-	    display: flex;
-	    flex-wrap: wrap;
-	    justify-content: space-between;
-	    padding: 50px 70px;
-	}
-	.aside_bottom > .as_b_div > h3{
-		font-size: 25px;
-	}
-	
 	.s3_txt{
 		position: absolute;
 		top: 30%;
-		left: 30%;
+		right: 10%;
+		display: none;
 	}
 	.s3_txt > p{
 		line-height: 25px;
@@ -112,7 +131,33 @@ section{
 @media only screen and (min-width:768px) and (max-width:1199px){
 	
 	.section1{
-		background: red;
+		background: #faf9f6;
+	}
+	.section1 > .inner > .aside_wrap2{
+		width: 100%;
+		height: 100%;
+	}
+	.aside_top{
+		width: 100%;
+		height: 60%;
+		background: url("${pageContext.request.contextPath}/resources/img/content/menu01_04banner04.jpg") no-repeat;
+		background-size: cover;
+		background-position: center;
+	}
+	.aside_bottom{
+		width: 768px;
+	    margin: 0 auto;
+	    display: flex;
+	    flex-wrap: wrap;
+	    justify-content: space-between;
+	    padding: 50px 10px;
+	}
+	.aside_bottom > .as_b_div > h3{
+		font-size: 25px;
+	}
+	
+	.section2{
+		background: #f7f4ea;
 	}
 	
 	.aside_wrap{
@@ -139,42 +184,23 @@ section{
 		width: 50%;
 		float: right;
 	}
-	.aside_right > .map{
+	.aside_right > #map{
 		width: 100%;
 		height: 500px;
 		background: #fff;
 		
 	}
-	
-	.section2{
-		background: green;
+	.section3{
+		background: url("${pageContext.request.contextPath}/resources/img/content/out1.jpg") no-repeat;
+		background-size: cover;
+		background-position: center;
 	}
-	.section2 > .inner > .aside_wrap2{
-		width: 100%;
-		height: 100%;
-	}
-	.aside_top{
-		width: 100%;
-		height: 60%;
-		background: blue;
-	}
-	.aside_bottom{
-		width: 768px;
-	    margin: 0 auto;
-	    display: flex;
-	    flex-wrap: wrap;
-	    justify-content: space-between;
-	    padding: 50px 10px;
-	}
-	.aside_bottom > .as_b_div > h3{
-		font-size: 25px;
-	}
-	
 	.s3_txt{
+		display: none;
 		position: absolute;
 		top: 30%;
-		left: 30%;
-	}
+		left: 10%;
+	} 
 	.s3_txt > p{
 		line-height: 25px;
 	}
@@ -185,7 +211,36 @@ section{
 }
 @media only screen and (min-width:320px) and (max-width:767px){	
 	.section1{
-		background: red;
+		background: #faf9f6;
+	}
+	.section1 > .inner > .aside_wrap2{
+		width: 100%;
+		height: 100%;
+	}
+	.aside_top{
+		width: 100%;
+		height: 40%;
+		background: url("${pageContext.request.contextPath}/resources/img/content/menu01_04banner04.jpg") no-repeat;
+		background-size: cover;
+		background-position: center
+	}
+	.aside_bottom{
+		width: 97%;
+	    margin: 0 auto;
+	    overflow: hidden;
+	}
+	.aside_bottom > .as_b_div{
+		display: inline-block;
+	}
+	.aside_bottom > .as_b_div:nth-child(odd){
+		width: 58%;
+	}
+	.aside_bottom > .as_b_div > h3{
+		font-size: 20px;
+	}
+	
+	.section2{
+		background: #f7f4ea;
 		
 	}
 	.aside_wrap{
@@ -209,41 +264,21 @@ section{
 		width: 100%;
 		padding-top: 20px;
 	}
-	.aside_right > .map{
+	.aside_right > #map{
 		width: 100%;
 		height: 400px;
 		background: #fff;
 		
 	}
 	
-	.section2{
-		background: green;
-	}
-	.section2 > .inner > .aside_wrap2{
-		width: 100%;
-		height: 100%;
-	}
-	.aside_top{
-		width: 100%;
-		height: 40%;
-		background: blue;
-	}
-	.aside_bottom{
-		width: 97%;
-	    margin: 0 auto;
-	    overflow: hidden;
-	}
-	.aside_bottom > .as_b_div{
-		display: inline-block;
-	}
-	.aside_bottom > .as_b_div:nth-child(odd){
-		width: 58%;
-	}
-	.aside_bottom > .as_b_div > h3{
-		font-size: 20px;
-	}
 	
+	.section3{
+		background: url("${pageContext.request.contextPath}/resources/img/content/out1.jpg") no-repeat;
+		background-size: cover;
+		background-position: center;
+	}
 	.s3_txt{
+		display:none;
 		position: absolute;
 		top: 20%;
 		left: 2%;
@@ -272,22 +307,8 @@ $(function(){
 	<div id="menu-bg"></div>
 	<jsp:include page="../include/quickMenu.jsp"></jsp:include>
 	<div id="main" class="scroll-container">
+		
 		<section class="section1">
-			<div class="inner">
-				<div class="aside_wrap">
-					<div class="aside_left">
-						<h2>오시는 길</h2>
-						<p>주소: 대구광역시 수성구 범어천로3 (구.아서원)</p>
-						<p>주차: 건물 뒷편 전용 주차공간</p>
-						<p>지하철: 도시철도 3호선 어린이 회관역, 도보3분</p>
-					</div>
-					<div class="aside_right">
-						<div class="map"></div>
-					</div>
-				</div><!-- aside_wrap end -->
-			</div>
-		</section>
-		<section class="section2">
 			<div class="inner">
 				<div class="aside_wrap2">
 					<div class="aside_top">
@@ -304,22 +325,89 @@ $(function(){
 							<h3>CS Center</h3>
 							<p><a href="tel:1800-5475">1800-5475</a></p>
 							<p><a href="tel:053-721-7531">053-721-7531</a></p>
-							<button>전화연결</button>
+							<a href="tel:1800-5475"><button>전화연결</button></a>
 						</div>
 						<div class="as_b_div">
 							<h3>온라인상담</h3>
-							<p>Kakao: prive</p>
-							<p>온라인: 온라인상담</p>
-							<button>카카오상담</button>
+							<p><a href="http://www.kakao.com/">Kakao: prive</a></p>
+							<p><a href="${pageContext.request.contextPath}/menu08_01">온라인: 온라인상담</a></p>
+							<a href="http://www.kakao.com/"><button>카카오상담</button></a>
 						</div>
 						<div class="as_b_div">
 							<h3>SNS</h3>
-							<p><a href="">Instagram: @prive</a></p>
-							<p><a href="">Youtube: 프라이브피부과</a></p>
-							<p><a href="">Blog: 프라이브피부과</a></p>
+							<p><a href="https://www.instagram.com/priveskin/">Instagram: @prive</a></p>
+							<p><a href="https://www.youtube.com/channel/UCcoqaopSJHt4Ndh5Z8_MFkg">Youtube: 프라이브피부과</a></p>
+							<p><a href="https://blog.naver.com/priveskin">Blog: 프라이브피부과</a></p>
 						</div>
 					</div>
 				</div>
+			</div>
+		</section>
+		<section class="section2">
+			<div class="inner">
+				<div class="aside_wrap">
+					<div class="aside_left">
+						<h2>오시는 길</h2>
+						<p>주소: 대구광역시 수성구 범어천로3 (구.아서원)</p>
+						<p>주차: 건물 뒷편 전용 주차공간</p>
+						<p>지하철: 도시철도 3호선 어린이 회관역, 도보3분</p>
+						<p>버스: 어린이회관건너1 정류장 도보2분(100-1, 234, 814)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;어린이회관건너2 정류장 도보3분(204)
+					</div>
+					<div class="aside_right">
+						<div id="map"></div>
+						<script>
+							var container = document.getElementById('map');
+							var options = {
+								center: new daum.maps.LatLng(35.847282, 128.624027),
+								level: 3
+							};
+					
+							var map = new daum.maps.Map(container, options);
+							
+							// 마커가 표시될 위치입니다 
+							var markerPosition  = new daum.maps.LatLng(35.847282, 128.624027); 
+		
+							// 마커를 생성합니다
+							var marker = new daum.maps.Marker({
+							    position: markerPosition
+							});
+		
+							// 마커가 지도 위에 표시되도록 설정합니다
+							marker.setMap(map);
+							
+							// 마커에 커서가 오버됐을 때 마커 위에 표시할 인포윈도우를 생성합니다.
+							var iwContent = '<div style="padding-left:19px; padding-top:2px; color:#3353a2; font-size:15px; font-weight:bold;">프라이브피부과</div>'; // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+		
+							// 인포윈도우를 생성합니다
+							var infowindow = new daum.maps.InfoWindow({
+							    content : iwContent
+							});
+							
+							// 마커에 마우스오버 이벤트를 등록합니다
+							daum.maps.event.addListener(marker, 'mouseover', function() {
+							  // 마커에 마우스오버 이벤트가 발생하면 인포윈도우를 마커위에 표시합니다
+							    infowindow.open(map, marker);
+							});
+		
+							// 마커에 마우스아웃 이벤트를 등록합니다
+							daum.maps.event.addListener(marker, 'mouseout', function() {
+							    // 마커에 마우스아웃 이벤트가 발생하면 인포윈도우를 제거합니다
+							    infowindow.close();
+							});
+							
+							daum.maps.event.addListener(marker, 'click', function() {
+							  // 마커에 마우스오버 이벤트가 발생하면 인포윈도우를 마커위에 표시합니다
+							    infowindow.open(map, marker);
+							});
+							
+							// 마커에 마우스아웃 이벤트를 등록합니다
+							daum.maps.event.addListener(map, 'click', function() {
+							    // 마커에 마우스아웃 이벤트가 발생하면 인포윈도우를 제거합니다
+							    infowindow.close();
+							});
+						</script>
+					</div>
+				</div><!-- aside_wrap end -->
 			</div>
 		</section>
 		<section class="section3">

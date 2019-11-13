@@ -41,7 +41,7 @@ section{
 }
 @media only screen and (min-width:1200px){
 	.section1{
-		background: red;
+		background: #e5ddc9;
 	}
 	.s1_txt{
 		position: absolute;
@@ -53,7 +53,7 @@ section{
 	}
 	
 	.section2{
-		background: green;
+		background: #f3efe3;
 	}
 	.banner_wrap{
 		position: absolute;
@@ -90,7 +90,7 @@ section{
 @media only screen and (min-width:768px) and (max-width:1199px){
 	
 	.section1{
-		background: red;
+		background: #e5ddc9;
 	}
 	
 	.s1_txt{
@@ -103,7 +103,7 @@ section{
 	}
 	
 	.section2{
-		background: green;
+		background: #f3efe3;
 	}
 	.banner_wrap{
 		position: absolute;
@@ -138,7 +138,7 @@ section{
 }
 @media only screen and (min-width:320px) and (max-width:767px){	
 	.section1{
-		background: red;
+		background: #e5ddc9;
 		
 	}
 	.s1_txt{
@@ -152,7 +152,7 @@ section{
 	}
 	
 	.section2{
-		background: green;
+		background: #f3efe3;
 	}
 	.banner_wrap{
 		position: absolute;

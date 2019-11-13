@@ -38,7 +38,8 @@ section{
 }
 @media only screen and (min-width:1200px){
 	.section1{
-		background: red;
+		background: url("${pageContext.request.contextPath}/resources/img/content/out1.jpg") no-repeat;
+		background-size: cover;
 	}
 	.s1_txt{
 		position: absolute;
@@ -46,6 +47,10 @@ section{
 		left: 20%;
 		width: 100%;
 		max-width: 530px;
+		padding: 20px;
+		border-radius: 10px;
+		background: url("${pageContext.request.contextPath}/resources/img/common/bg.png") no-repeat;
+		background-size: cover;
 	}
 	.s1_txt > h1{
 		font-size: 40px;
@@ -55,7 +60,7 @@ section{
 	}
 	
 	.section2{
-		background: green;
+		
 	}
 	.s2_txt{
 		position: absolute;
@@ -87,7 +92,8 @@ section{
 }
 @media only screen and (min-width:768px) and (max-width:1199px){
 	.section1{
-		background: red;
+		background: url("${pageContext.request.contextPath}/resources/img/content/out1.jpg") no-repeat;
+		background-size: cover;
 	}
 	.s1_txt{
 		position: absolute;
@@ -95,6 +101,10 @@ section{
 		left: 10%;
 		width: 100%;
 		max-width: 410px;
+		padding: 20px;
+		border-radius: 10px;
+		background: url("${pageContext.request.contextPath}/resources/img/common/bg.png") no-repeat;
+		background-size: cover;
 	}
 	.s1_txt > h1{
 		font-size: 40px;
@@ -104,7 +114,7 @@ section{
 	}
 	
 	.section2{
-		background: green;
+		
 	}
 	.s2_txt{
 		position: absolute;
@@ -134,7 +144,8 @@ section{
 }
 @media only screen and (min-width:320px) and (max-width:767px){	
 	.section1{
-		background: red;
+		background: url("${pageContext.request.contextPath}/resources/img/content/out1.jpg") no-repeat;
+		background-size: cover;
 	}
 	.s1_txt{
 		position: absolute;
@@ -142,6 +153,10 @@ section{
 		left: 2%;
 		width: 100%;
 		max-width: 400px;
+		padding: 20px;
+		border-radius: 10px;
+		background: url("${pageContext.request.contextPath}/resources/img/common/bg.png") no-repeat;
+		background-size: cover;
 	}
 	.s1_txt > h1{
 		font-size: 30px;
@@ -151,7 +166,6 @@ section{
 	}
 	
 	.section2{
-		background: green;
 		height: 140%;
 	}
 	.s2_txt{

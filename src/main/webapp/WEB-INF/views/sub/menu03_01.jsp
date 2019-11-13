@@ -41,7 +41,7 @@ section{
 }
 @media only screen and (min-width:1200px){
 	.section1{
-		background: red;
+		background: #e5ddc9;
 	}
 	.s1_txt{
 		position: absolute;
@@ -53,12 +53,12 @@ section{
 	}
 	
 	.section2{
-		background: green;
+		background: #f3efe3;
 	}
 	.s2_txt{
 		position: absolute; 
 		width: 1200px;
-		top: 30%;
+		top: 20%;
 		left: 50%;
 		margin-left: -600px;
 	}
@@ -97,7 +97,7 @@ section{
 	}
 	
 	.section3{
-		background: gray;
+		background: #fff;
 		height: 130%;
 	}
 	.s3_txt{
@@ -131,7 +131,7 @@ section{
 }
 @media only screen and (min-width:768px) and (max-width:1199px){
 	.section1{
-		background: red;
+		background: #e5ddc9;
 	}
 	.s1_txt{
 		position: absolute;
@@ -143,11 +143,11 @@ section{
 	}
 	
 	.section2{
-		background: green;
+		background: #f3efe3;
 	}
 	.s2_txt{
 		position: absolute; 
-		top: 20%;
+		top: 15%;
 		left: 10%;
 	}
 	.s3_txt > h2{
@@ -185,7 +185,7 @@ section{
 	}
 	
 	.section3{
-		background: gray;
+		background: #fff;
 		height: 120%;
 	}
 	.s3_txt{
@@ -216,7 +216,7 @@ section{
 }
 @media only screen and (min-width:320px) and (max-width:767px){	
 	.section1{
-		background: red;
+		background: #e5ddc9;
 	}
 	.s1_txt{
 		position: absolute;
@@ -228,11 +228,11 @@ section{
 	}
 	
 	.section2{
-		background: green;
+		background: #f3efe3;
 	}
 	.s2_txt{
 		position: absolute; 
-		top: 20%;
+		top: 17%;
 		left: 2%;
 		width: 95%;
 	}
@@ -271,7 +271,7 @@ section{
 	}
 	 
 	.section3{
-		background: gray;
+		background: #fff;
 		height: 120%;
 	}
 	.s3_txt{

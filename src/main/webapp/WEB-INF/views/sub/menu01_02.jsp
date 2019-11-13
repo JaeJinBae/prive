@@ -38,12 +38,12 @@ section{
 }
 @media only screen and (min-width:1200px){
 	.section1{
-		background: red;
+		background: #e5ddc9;
 	}
 	
 	
 	.section2{
-		background: green;
+		background: #f3efe3;
 	}
 	
 	.aside_wrap{
@@ -93,11 +93,11 @@ section{
 @media only screen and (min-width:768px) and (max-width:1199px){
 	
 	.section1{
-		background: red;
+		background: #e5ddc9;
 	}
 	
 	.section2{
-		background: green;
+		background: #f3efe3;
 	}
 	.aside_wrap{
 		width: 768px;
@@ -141,12 +141,12 @@ section{
 }
 @media only screen and (min-width:320px) and (max-width:767px){	
 	.section1{
-		background: red;
+		background: #e5ddc9;
 		height: 140%;
 	}
 	
 	.section2{
-		background: green;
+		background: #f3efe3;
 		height: 140%;
 	}
 	.aside_wrap{
