@@ -23,10 +23,12 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.webaid.domain.AdviceVO;
 import com.webaid.domain.NoticeVO;
 import com.webaid.domain.PageMaker;
+import com.webaid.domain.PopupVO;
 import com.webaid.domain.SearchCriteria;
 import com.webaid.domain.StatisticVO;
 import com.webaid.service.AdviceService;
 import com.webaid.service.NoticeService;
+import com.webaid.service.PopupService;
 import com.webaid.service.StatisticService;
 
 /**
@@ -46,9 +48,14 @@ public class HomeController {
 	@Autowired
 	private StatisticService sService;
 	
+	@Autowired
+	private PopupService pService;
+	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Locale locale, Model model) {
 		logger.info("main get");
+		
+		List<PopupVO> list = pService.selectAll();
 		
 		return "main/index";
 	}
@@ -236,9 +243,6 @@ public class HomeController {
 	public String menu08_01updatePOST(MultipartHttpServletRequest mtfReq, int page, @ModelAttribute("cri") SearchCriteria cri, RedirectAttributes rtts) throws Exception {
 		logger.info("menu08_01update POST");
 		
-		
-		
-		
 		AdviceVO vo = new AdviceVO();
 		AdviceVO prevVO = aService.selectOne(Integer.parseInt(mtfReq.getParameter("no")));
 		
@@ -253,8 +257,6 @@ public class HomeController {
 		vo.setReply(prevVO.getReply());
 		vo.setReply_date(prevVO.getReply_date());
 		vo.setMemo(prevVO.getMemo());
-		
-	
 		
 		aService.update(vo);
 		

@@ -42,19 +42,46 @@ section{
 @media only screen and (min-width:1200px){
 	.section1{
 		background: #e5ddc9;
+		height: 130%;
 	}
 	.s1_txt{
 		position: absolute;
-		top: 30%;
-		left: 20%;
+		width: 80%;
+		top: 25%;
+		left: 50%;
+		margin-left: -40%;
 	}
 	.s1_txt > p{
 		line-height: 25px;
+		font-size: 17px;
+		float:left;
+		padding-top: 80px;
+	}
+	.s1_txt > img{
+		float: right;
+		width: 50%;
+	}
+	.s1_txt > p > span{
+		display: inline-block;
+		font-size: 25px;
+		font-weight: 700;
 	}
 	
 	.section2{
 		background: #f3efe3;
 	}
+	.s2_txt{
+		position: absolute;
+		top: 10%;
+		left: 20%;
+	}
+	.s2_txt > h2{
+		font-size: 40px;
+	}
+	.s2_txt > p{
+		font-size: 17px;
+	}
+	
 	.banner_wrap{
 		position: absolute;
 		bottom: 40px;
@@ -105,6 +132,12 @@ section{
 	.section2{
 		background: #f3efe3;
 	}
+	.s2_txt{
+		position: absolute;
+		top: 20%;
+		left: 30%;
+	}
+	
 	.banner_wrap{
 		position: absolute;
 		bottom: 40px;
@@ -153,6 +186,12 @@ section{
 	
 	.section2{
 		background: #f3efe3;
+		height: 80%;
+	}
+	.s2_txt{
+		position: absolute;
+		top: 10%;
+		left: 15%;
 	}
 	.banner_wrap{
 		position: absolute;
@@ -200,7 +239,7 @@ $(function(){
 	}) */
 	
 	$(".banner").slick({
-		centerMode: true,
+		centerMode: false,
 		arrow: true,
 		  centerPadding: '60px',
 		  infinite: false,
@@ -240,30 +279,35 @@ $(function(){
 			<div class="inner">
 				<div class="s1_txt">
 					<p>
-						프라이브는<br><br>
+						<span>프라이브</span>는<br><br>
 						
-						오리지널 레이저와 정품 팁을 사용합니다.<br>
+						<strong>오리지널 레이저와 정품 팁을 사용</strong>합니다.<br>
 						최신의 하이엔드 레이저는 강력하고 안전합니다.<br>
 						엄선한 명품레이저와 프리미엄 제품들을 사용하며, 정품 정량을 약속합니다.<br><br>
 						
-						두 명의 피부과 전문의가 직접 시술합니다.<br>
+						<strong>두 명의 피부과 전문의가 직접 시술</strong>합니다.<br>
 						피부과전문의는 대한민국 의사의 단 2%인 것을 알고 계시나요<br>
 						피부를 가장 잘 아는 전문의가 안전하게 시술합니다.<br><br>
 						
-						시술 전 한 분 한 분과 충분한 상담 후 시술 플랜을 구성합니다.<br>
+						시술 전 한 분 한 분과 <strong>충분한 상담 후 시술 플랜을 구성</strong>합니다.<br>
 						‘나’에게 어울리는 자연스러운 아름다움을 추구합니다.<br>
 						미적인 요소만을 위한 것이 아닌 자연스럽고 건강한 아름다움을 추구합니다.<br><br>
 						 
-						청결을 최우선으로 합니다.<br>
+						<strong>청결을 최우선</strong>으로 합니다.<br>
 						기본을 지킵니다.<br>
 						일회용 해면을 사용하며, 철저한 위생관리와 멸균시스템으로<br>
 						안전하고 믿을 수 있는 치료를 약속합니다.
 					</p>
+					<img src="${pageContext.request.contextPath}/resources/img/content/menu01_04_s1_img.jpg">
 				</div>
 			</div> 
 		</section>
 		<section class="section2">
 			<div class="inner">
+				<div class="s2_txt">
+					<h2>Prive Space</h2>
+					<p><strong>"특별한 공간, 특별한 시간 프라이브피부과"</strong></p>
+				</div>
 				<div class="banner_wrap">
 					<div class="banner">
 						<div><img src="${pageContext.request.contextPath}/resources/img/content/menu01_04banner01.jpg"></div>

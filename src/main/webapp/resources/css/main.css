@@ -68,10 +68,11 @@
 	}
 	.main_slider_wrap  .main_slider .slider_img img{
 		max-width: none;
-		height: 90%;
+		height: 70%;
 		position: absolute;
-		bottom:0;
-		right:0;
+		bottom: 5%;
+		right: 7%;
+		border-radius: 10%;
 	}
 	.main_slider_wrap  .main_slider .slider_img .s_num{
 		position: absolute;

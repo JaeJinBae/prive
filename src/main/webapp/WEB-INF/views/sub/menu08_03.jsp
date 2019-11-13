@@ -48,6 +48,10 @@ section{
 	}
 	.s1_txt{
 		margin-bottom: 50px;
+		text-align: center;
+	}
+	.s1_txt > h2{
+		font-size: 40px;
 	}
 	
 	/**********************************************************************
@@ -90,7 +94,7 @@ section{
 	#board-pagenation{width:100%; max-width:1200px; margin:30px auto 100px auto; text-align:center;}
 	#board-pagenation a{position:relative; display:inline-block; width:35px; height:35px; line-height:35px; border:1px solid #ddd; font-size:1em; color:#333; margin:0 2px; box-sizing:border-box;}
 	#board-pagenation a:hover{text-decoration:underline;}
-	#board-pagenation a.on{background:#172b4d; border:1px solid #172b4d; color:#fff; font-weight:700;}
+	#board-pagenation a.on{background:#5b5b5b; border:1px solid #5b5b5b; color:#fff; font-weight:700;}
 	/**********************************************************************/
 	
 	
@@ -101,7 +105,7 @@ section{
 	.search-box{width:640px; height:35px; margin:0 auto 100px auto;}
 	.search-box select, .search-box input, .search-box button{float:left; box-sizing:border-box; display:inline-block; height:35px; line-height:35px; font-size:13px;}
 	.search-box input[type="text"]{width:68%; margin:0 1%; border:1px solid #cfd1d4; text-align:left; padding:0 10px; background:url(../img/board/search.png) no-repeat 98% center; background-size:20px;}
-	.search-box button{width:15%; background:#172b4d; color:#fff; font-weight:700; cursor:pointer;}
+	.search-box button{width:15%; background:#5b5b5b; color:#fff; font-weight:700; cursor:pointer;}
 	.search-box select{width:15%; border:1px solid #cfd1d4; cursor:pointer; padding:0 10px; background:url(../img/common/arrow.png) no-repeat 98% center;}
 	/**********************************************************************/
 	
@@ -124,6 +128,10 @@ section{
 	}
 	.s1_txt{
 		margin-bottom: 50px;
+		text-align: center;
+	}
+	.s1_txt > h2{
+		font-size: 35px;
 	}
 	/**********************************************************************
 	* Descript : 버튼 스타일
@@ -165,7 +173,7 @@ section{
 	#board-pagenation{width:100%; max-width:1200px; margin:30px auto 100px auto; text-align:center;}
 	#board-pagenation a{position:relative; display:inline-block; width:35px; height:35px; line-height:35px; border:1px solid #ddd; font-size:1em; color:#333; margin:0 2px; box-sizing:border-box;}
 	#board-pagenation a:hover{text-decoration:underline;}
-	#board-pagenation a.on{background:#172b4d; border:1px solid #172b4d; color:#fff; font-weight:700;}
+	#board-pagenation a.on{background:#5b5b5b; border:1px solid #5b5b5b; color:#fff; font-weight:700;}
 	/**********************************************************************/
 	
 	
@@ -176,7 +184,7 @@ section{
 	.search-box{width:640px; height:35px; margin:0 auto 100px auto;}
 	.search-box select, .search-box input, .search-box button{float:left; box-sizing:border-box; display:inline-block; height:35px; line-height:35px; font-size:13px;}
 	.search-box input[type="text"]{width:68%; margin:0 1%; border:1px solid #cfd1d4; text-align:left; padding:0 10px; background:url(../img/board/search.png) no-repeat 98% center; background-size:20px;}
-	.search-box button{width:15%; background:#172b4d; color:#fff; font-weight:700; cursor:pointer;}
+	.search-box button{width:15%; background:#5b5b5b; color:#fff; font-weight:700; cursor:pointer;}
 	.search-box select{width:15%; border:1px solid #cfd1d4; cursor:pointer; padding:0 10px; background:url(../img/common/arrow.png) no-repeat 98% center;}
 	/**********************************************************************/
 	
@@ -215,7 +223,7 @@ section{
 	#board-pagenation{width:100%; max-width:1200px; margin:30px auto; text-align:center;}
 	#board-pagenation a{position:relative; display:inline-block; width:35px; height:35px; line-height:35px; font-size:1em; color:#333; margin:0 2px; box-sizing:border-box; border:1px solid #eee;}
 	#board-pagenation a:hover{text-decoration:underline;}
-	#board-pagenation a.on{color:#fff; font-weight:700; background:#222; border:1px solid #222;}
+	#board-pagenation a.on{color:#fff; font-weight:700; background:#5b5b5b; border:1px solid #5b5b5b;}
 	/**********************************************************************/
 	
 	
@@ -226,7 +234,7 @@ section{
 	.search-box{width:100%; max-width:640px; height:35px; margin:0 auto 25px auto;}
 	.search-box select, .search-box input, .search-box button{float:left; box-sizing:border-box; display:inline-block; height:35px; line-height:35px; font-size:13px;}
 	.search-box input[type="text"]{width:58%; margin:0 1%; border:1px solid #cfd1d4; text-align:left; padding:0 10px; background:url(../../img/board/search.png) no-repeat 98% center; background-size:20px;}
-	.search-box button{width:15%; background:#525c5d; color:#fff; font-weight:700; cursor:pointer;}
+	.search-box button{width:15%; background:#5b5b5b; color:#fff; font-weight:700; cursor:pointer;}
 	.search-box select{width:25%; border:1px solid #cfd1d4; cursor:pointer; padding:0 10px; background:url(../../img/common/arrow.png) no-repeat 98% center;}
 	/**********************************************************************/
 	

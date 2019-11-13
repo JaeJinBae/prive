@@ -13,10 +13,13 @@
 ***********************************************************************/
 @import url(../css/style.font.css);
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800');
+
+@import url(../font/nanumsquare/nanumsquare.css);
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
 /**********************************************************************/
 
 *{
-	font-family: sans-serif;
+	font-family: NanumSquare;
 }
 /**********************************************************************
 * Descript : header 메뉴 스타일

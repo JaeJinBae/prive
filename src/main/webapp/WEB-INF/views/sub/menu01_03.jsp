@@ -238,9 +238,13 @@ button{
 	.aside_bottom > .as_b_div > h3{
 		font-size: 20px;
 	}
+	button{
+		margin: 0;
+	}
 	
 	.section2{
 		background: #f7f4ea;
+		height: 130%;
 		
 	}
 	.aside_wrap{
@@ -249,7 +253,7 @@ button{
 	}
 	.aside_left{
 		width: 100%;
-		padding-top: 110px;
+		padding-top: 50px;
 	}
 	.aside_left > h2{ 
 		font-size: 25px;
@@ -351,7 +355,7 @@ $(function(){
 						<p>주소: 대구광역시 수성구 범어천로3 (구.아서원)</p>
 						<p>주차: 건물 뒷편 전용 주차공간</p>
 						<p>지하철: 도시철도 3호선 어린이 회관역, 도보3분</p>
-						<p>버스: 어린이회관건너1 정류장 도보2분(100-1, 234, 814)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;어린이회관건너2 정류장 도보3분(204)
+						<p>버스: 어린이회관건너1 정류장 도보2분(100-1, 234, 814)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;어린이회관건너2 정류장 도보3분(204)
 					</div>
 					<div class="aside_right">
 						<div id="map"></div>

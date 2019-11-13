@@ -41,30 +41,56 @@ section{
 }
 @media only screen and (min-width:1200px){
 	.section1{
-		background: #e5ddc9;
+		/* background: #e5ddc9; */
+		background: url("${pageContext.request.contextPath}/resources/img/content/menu07_top_bg.jpg") no-repeat;
+		background-size: cover;
+		background-position: center;
 	}
 	.s1_txt{
 		position: absolute;
-		bottom: 10%;
-		left: 10%;
+		top: 30%;
+		left: 18%;
+		color: #efefef;
 	}
 	.s1_txt > h2{
 		font-size: 30px;
+	}
+	.s1_txt > p{
+		font-size: 17px;
 	}
 	
 	.section2{
 		background: #f3efe3;
 	}
-	.s2_txt{
+	.s2_content_wrap{
 		position: absolute; 
-		width: 1200px;
-		top: 30%;
+		width: 80%;
+		top: 18%;
 		left: 50%;
-		margin-left: -600px;
+		margin-left: -40%;
 	}
-	.s3_txt > h2{
+	.s2_txt{
+		float:left;
+		width: 40%;
+		padding-top:100px;
+	}
+	.s2_txt > h2{
 		font-size: 30px;
+		margin-bottom: 60px;
 	}
+	.s2_txt > p{
+		line-height: 35px;
+		font-size: 17px;
+	}
+	.s2_img{
+		float:right;
+		width: 50%;
+	}
+	.s2_img > img{
+		border-radius: 10%;
+		width: 100%;
+	}
+	
 	.banner_wrap{
 		position: absolute;
 		width: 1200px;
@@ -131,7 +157,10 @@ section{
 }
 @media only screen and (min-width:768px) and (max-width:1199px){
 	.section1{
-		background: #e5ddc9;
+		/* background: #e5ddc9; */
+		background: url("${pageContext.request.contextPath}/resources/img/content/menu07_top_bg.jpg") no-repeat;
+		background-size: cover;
+		background-position: center;
 	}
 	.s1_txt{
 		position: absolute;
@@ -216,7 +245,10 @@ section{
 }
 @media only screen and (min-width:320px) and (max-width:767px){	
 	.section1{
-		background: #e5ddc9;
+		/* background: #e5ddc9; */
+		background: url("${pageContext.request.contextPath}/resources/img/content/menu07_top_bg.jpg") no-repeat;
+		background-size: cover;
+		background-position: center;
 	}
 	.s1_txt{
 		position: absolute;
@@ -388,24 +420,18 @@ $(function(){
 		</section>
 		<section class="section2">
 			<div class="inner">
-				<div class="inner">
+				<div class="s2_content_wrap">
 					<div class="s2_txt">
-						<h2>Beauty balance / 리프팅, 컨투어</h2>
+						<h2>퍼스널스킨케어</h2>
 						<p>
 							프리미엄 제품들과 함께 자연스럽고 건강하게 아름다워지는 자신과<br>
 							만날 수 있는 감동을, 새롭고 근사한 경험들을 선물해드리고 싶습니다.
 						</p>
-					</div><!-- s1_txt end -->
-					<div class="banner_wrap">
-						<div class="banner">
-							<div class=""><img src="${pageContext.request.contextPath}/resources/img/content/menu02_01banner01.jpg"></div>
-							<div class=""><img src="${pageContext.request.contextPath}/resources/img/content/menu02_01banner01.jpg"></div>
-							<div class=""><img src="${pageContext.request.contextPath}/resources/img/content/menu02_01banner01.jpg"></div>
-							<div class=""><img src="${pageContext.request.contextPath}/resources/img/content/menu02_01banner01.jpg"></div>
-							<div class=""><img src="${pageContext.request.contextPath}/resources/img/content/menu02_01banner01.jpg"></div>
-						</div>
 					</div>
-				</div>
+					<div class="s2_img">
+						<img src="${pageContext.request.contextPath}/resources/img/main/mainBanner06.jpg">
+					</div>
+				</div><!-- s1_txt end -->
 			</div>
 		</section>
 		<!-- footer -->

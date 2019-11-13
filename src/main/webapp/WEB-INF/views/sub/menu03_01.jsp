@@ -41,30 +41,55 @@ section{
 }
 @media only screen and (min-width:1200px){
 	.section1{
-		background: #e5ddc9;
+		/* background: #e5ddc9; */
+		background: url("${pageContext.request.contextPath}/resources/img/content/menu03_top_bg.jpg") no-repeat;
+		background-size: cover;
+		background-position: center;
 	}
 	.s1_txt{
 		position: absolute;
 		bottom: 10%;
-		left: 10%;
+		left: 13%;
 	}
 	.s1_txt > h2{
 		font-size: 30px;
+	}
+	.s1_txt > p{
+		font-size: 17px;
 	}
 	
 	.section2{
 		background: #f3efe3;
 	}
-	.s2_txt{
+	.s2_content_wrap{
 		position: absolute; 
-		width: 1200px;
-		top: 20%;
+		width: 80%;
+		top: 18%;
 		left: 50%;
-		margin-left: -600px;
+		margin-left: -40%;
 	}
-	.s3_txt > h2{
+	.s2_txt{
+		float:left;
+		width: 40%;
+		padding-top:100px;
+	}
+	.s2_txt > h2{
 		font-size: 30px;
+		margin-bottom: 60px;
 	}
+	.s2_txt > p{
+		line-height: 35px;
+		font-size: 17px;
+	}
+	.s2_img{
+		float:right;
+		width: 50%;
+	}
+	.s2_img > img{
+		border-radius: 10%;
+		width: 100%;
+	}
+	
 	.banner_wrap{
 		position: absolute;
 		width: 1200px;
@@ -102,8 +127,8 @@ section{
 	}
 	.s3_txt{
 		position: absolute;
-		top: 20%;
-		left: 10%;
+		top: 13%;
+		left: 10%; 
 	}
 	.s3_txt > h2{
 		font-size: 30px;
@@ -131,7 +156,10 @@ section{
 }
 @media only screen and (min-width:768px) and (max-width:1199px){
 	.section1{
-		background: #e5ddc9;
+		/* background: #e5ddc9; */
+		background: url("${pageContext.request.contextPath}/resources/img/content/menu03_top_bg.jpg") no-repeat;
+		background-size: cover;
+		background-position: center;
 	}
 	.s1_txt{
 		position: absolute;
@@ -216,7 +244,10 @@ section{
 }
 @media only screen and (min-width:320px) and (max-width:767px){	
 	.section1{
-		background: #e5ddc9;
+		/* background: #e5ddc9; */
+		background: url("${pageContext.request.contextPath}/resources/img/content/menu03_top_bg.jpg") no-repeat;
+		background-size: cover;
+		background-position: center;
 	}
 	.s1_txt{
 		position: absolute;
@@ -388,33 +419,27 @@ $(function(){
 		</section>
 		<section class="section2">
 			<div class="inner">
-				<div class="inner">
+				<div class="s2_content_wrap">
 					<div class="s2_txt">
-						<h2>화이트닝, 점</h2>
-						<p>
-							prive는 피부컨디션에 맞춰 과하지 않게<br>
-							스킨밸런스를 찾아가는것에서 시작된<br>
-							한층 업그레이드된 프리미엄 피부과입니다.<br><br>
-							
-							Life balance x skin balancing<br>
-							"피부에 라이프스타일을 표현하다"<br>
-							prive는 시간이 흘러도 빛이나는 얼굴,<br>
-							그리고 어디에서나 주목받는 피부,<br>
-							최상의 피부컨디션으로 아름다운 당신의 첫인상이<br>
-							더 돋보일 수 있도록 일상을 함께합니다.
+					<h2>화이트닝, 점</h2>
+					<p>
+						prive는 피부컨디션에 맞춰 과하지 않게<br>
+						스킨밸런스를 찾아가는것에서 시작된<br>
+						한층 업그레이드된 프리미엄 피부과입니다.<br><br>
+						
+						Life balance x skin balancing<br>
+						"피부에 라이프스타일을 표현하다"<br>
+						prive는 시간이 흘러도 빛이나는 얼굴,<br>
+						그리고 어디에서나 주목받는 피부,<br>
+						최상의 피부컨디션으로 아름다운 당신의 첫인상이<br>
+						더 돋보일 수 있도록 일상을 함께합니다.
 
-						</p>
-					</div><!-- s1_txt end -->
-					<div class="banner_wrap">
-						<div class="banner">
-							<div class=""><img src="${pageContext.request.contextPath}/resources/img/content/menu02_01banner01.jpg"></div>
-							<div class=""><img src="${pageContext.request.contextPath}/resources/img/content/menu02_01banner01.jpg"></div>
-							<div class=""><img src="${pageContext.request.contextPath}/resources/img/content/menu02_01banner01.jpg"></div>
-							<div class=""><img src="${pageContext.request.contextPath}/resources/img/content/menu02_01banner01.jpg"></div>
-							<div class=""><img src="${pageContext.request.contextPath}/resources/img/content/menu02_01banner01.jpg"></div>
-						</div>
+					</p>
 					</div>
-				</div>
+					<div class="s2_img">
+						<img src="${pageContext.request.contextPath}/resources/img/main/mainBanner02.jpg">
+					</div>
+				</div><!-- s1_txt end -->
 			</div>
 		</section>
 		<section class="section3">
@@ -433,7 +458,7 @@ $(function(){
 									피부 조직의 손상을 최소화하여 시술 후 딱지나 레이저로 인한 상처가 없어 일상생활에 전혀 지장을 주지 않는 안전한 시술입니다.
 									기미, 잡티, 피부톤 등 색소치료와 모공축소, 피부결개선, 홍조개선 등의 효과가 있습니다.
  								</p>
-								<img src="${pageContext.request.contextPath}/resources/img/content/equip_test.png">
+								<img src="${pageContext.request.contextPath}/resources/img/content/revlites.png">
 							</div>
 							<div class="equip">
 								<h3>CO2</h3>
@@ -441,7 +466,7 @@ $(function(){
 									Co2레이저는 10600nm의 파장으로 주로 얼굴의 점이나 사마귀, 쥐젖 등을 제거할 때 사용되는 레이저 입니다.
 									레이저를 이용하여 직접적인 제거를 하는 시술이므로 사용자의 숙련된 술기가 요구되며, 1mm 이하의 단위로 정확하고 세밀한 시술이 필요합니다. 
  								</p>
-								<img src="${pageContext.request.contextPath}/resources/img/content/equip_test.png">
+								<img src="${pageContext.request.contextPath}/resources/img/content/co2.png">
 							</div>
 							<div class="equip">
 								<h3>젠틀맥스</h3>
@@ -450,7 +475,7 @@ $(function(){
 									Long pulse 1064nm 와 Long pulse 755nm를 동시에 구현하는 장비로 잔주름개선,
 									피부탄력과 동시에 전반적인 피부결개선, 홍조 개선까지 다양한 시술을 선보이는 레이저입니다.
  								</p>
-								<img src="${pageContext.request.contextPath}/resources/img/content/equip_test.png">
+								<img src="${pageContext.request.contextPath}/resources/img/content/gentlemax.png">
 							</div>
 						</div>
 					</div>

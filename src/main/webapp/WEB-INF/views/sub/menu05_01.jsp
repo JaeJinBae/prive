@@ -41,30 +41,55 @@ section{
 }
 @media only screen and (min-width:1200px){
 	.section1{
-		background: #e5ddc9;
+		/* background: #e5ddc9; */
+		background: url("${pageContext.request.contextPath}/resources/img/content/menu05_top_bg.jpg") no-repeat;
+		background-size: cover;
+		background-position: center;
 	}
 	.s1_txt{
 		position: absolute;
 		bottom: 10%;
-		left: 10%;
+		left: 13%;
 	}
 	.s1_txt > h2{
 		font-size: 30px;
+	}
+	.s1_txt > p{
+		font-size: 17px;
 	}
 	
 	.section2{
 		background: #f3efe3;
 	}
-	.s2_txt{
+	.s2_content_wrap{
 		position: absolute; 
-		width: 1200px;
-		top: 30%;
+		width: 80%;
+		top: 18%;
 		left: 50%;
-		margin-left: -600px;
+		margin-left: -40%;
 	}
-	.s3_txt > h2{
+	.s2_txt{
+		float:left;
+		width: 40%;
+		padding-top:100px;
+	}
+	.s2_txt > h2{
 		font-size: 30px;
+		margin-bottom: 60px;
 	}
+	.s2_txt > p{
+		line-height: 35px;
+		font-size: 17px;
+	}
+	.s2_img{
+		float:right;
+		width: 50%;
+	}
+	.s2_img > img{
+		border-radius: 10%;
+		width: 100%;
+	}
+	
 	.banner_wrap{
 		position: absolute;
 		width: 1200px;
@@ -102,7 +127,7 @@ section{
 	}
 	.s3_txt{
 		position: absolute;
-		top: 20%;
+		top: 13%;
 		left: 10%;
 	}
 	.s3_txt > h2{
@@ -131,7 +156,10 @@ section{
 }
 @media only screen and (min-width:768px) and (max-width:1199px){
 	.section1{
-		background: #e5ddc9;
+		/* background: #e5ddc9; */
+		background: url("${pageContext.request.contextPath}/resources/img/content/menu05_top_bg.jpg") no-repeat;
+		background-size: cover;
+		background-position: center;
 	}
 	.s1_txt{
 		position: absolute;
@@ -216,7 +244,10 @@ section{
 }
 @media only screen and (min-width:320px) and (max-width:767px){	
 	.section1{
-		background: #e5ddc9;
+		/* background: #e5ddc9; */
+		background: url("${pageContext.request.contextPath}/resources/img/content/menu05_top_bg.jpg") no-repeat;
+		background-size: cover;
+		background-position: center;
 	}
 	.s1_txt{
 		position: absolute;
@@ -388,7 +419,7 @@ $(function(){
 		</section>
 		<section class="section2">
 			<div class="inner">
-				<div class="inner">
+				<div class="s2_content_wrap">
 					<div class="s2_txt">
 						<h2>볼륨감소</h2>
 						<p>
@@ -401,17 +432,11 @@ $(function(){
 							미적인 요소만을 위한 것이 아닌 자연스럽고<br>
 							건강한 아름다움을 추구합니다.
 						</p>
-					</div><!-- s1_txt end -->
-					<div class="banner_wrap">
-						<div class="banner">
-							<div class=""><img src="${pageContext.request.contextPath}/resources/img/content/menu02_01banner01.jpg"></div>
-							<div class=""><img src="${pageContext.request.contextPath}/resources/img/content/menu02_01banner01.jpg"></div>
-							<div class=""><img src="${pageContext.request.contextPath}/resources/img/content/menu02_01banner01.jpg"></div>
-							<div class=""><img src="${pageContext.request.contextPath}/resources/img/content/menu02_01banner01.jpg"></div>
-							<div class=""><img src="${pageContext.request.contextPath}/resources/img/content/menu02_01banner01.jpg"></div>
-						</div>
 					</div>
-				</div>
+					<div class="s2_img">
+						<img src="${pageContext.request.contextPath}/resources/img/main/mainBanner04.jpg">
+					</div>
+				</div><!-- s1_txt end -->
 			</div>
 		</section>
 		<section class="section3">
@@ -431,7 +456,7 @@ $(function(){
 									FDA의 승인을 받은 안전한 제품입니다.
 									시간이 지날수록 안쪽에서부터 차오르는 자연스러운 볼륨과 탄력회복, 주름개선, 피부재생을 도모하는 동안 리프팅입니다.
  								</p>
-								<img src="${pageContext.request.contextPath}/resources/img/content/equip_test.png">
+								<img src="${pageContext.request.contextPath}/resources/img/content/sculptra.png">
 							</div>
 							<div class="equip">
 								<h3>엘란쎄</h3>
@@ -440,7 +465,7 @@ $(function(){
 									지방이식수술 없이도 시술만으로도 안전하게 볼륨을 표현해내는 엘란쎄입니다.
 									시술 이후 일정기간동안의 자연적인 콜라겐생성유도로 얼굴의 볼륨을 지속해내는 콜라겐재생필러로 인위적이지 않으면서도 자연스러운 FACE 볼륨을 표현하기에 적합한 시술입니다. 
  								</p>
-								<img src="${pageContext.request.contextPath}/resources/img/content/equip_test.png">
+								<img src="${pageContext.request.contextPath}/resources/img/content/ellanse.png">
 							</div>
 						</div>
 					</div>

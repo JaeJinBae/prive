@@ -58,18 +58,22 @@ section{
 	.s1_txt > p{
 		line-height: 25px;
 	}
+	.s1_txt > p > strong{
+		font-size: 17px;
+	}
 	
 	.section2{
-		
+		height: 195%;
 	}
 	.s2_txt{
 		position: absolute;
-		top: 30%;
+		top: 5%;
 		left: 20%;
-		width: 1000px;
+		width: 1100px;
 	}
 	.s2_txt > h1{
 		font-size: 40px;
+		margin-bottom: 80px;
 	}
 	.s2_txt > .cv_div_wrap{
 		width: 100%;
@@ -77,12 +81,35 @@ section{
 		overflow: hidden;
 	}
 	.s2_txt > .cv_div_wrap > .cv_div{
-		float: left;
-		max-width: 50%;
 		width: 100%;
+		height: 400px;
+		overflow: hidden;
 	}
-	.s2_txt > .cv_div_wrap > .cv_div > h4{
-		font-size: 17px;
+	.s2_txt > .cv_div_wrap > .cv_div:nth-child(odd) > .cv_txt{
+		float:left;
+	}
+	.s2_txt > .cv_div_wrap > .cv_div:nth-child(odd) > .cv_img{
+		float:right;
+	}
+	.s2_txt > .cv_div_wrap > .cv_div:nth-child(even) > .cv_txt{
+		float:right;
+	}
+	.s2_txt > .cv_div_wrap > .cv_div:nth-child(even) > .cv_img{
+		float:left;
+	}
+	.gray_bar{
+		display:inline-block;
+		width: 7px;
+		height:23px;
+		background: gray;
+		vertical-align: bottom;
+		margin-right: 10px;
+	}
+	.s2_txt > .cv_div_wrap > .cv_div > .cv_txt > h4{
+		font-size: 20px; 
+	}
+	.s2_txt > .cv_div_wrap > .cv_div > .cv_txt > p{
+		line-height: 25px;
 	}
 	
 	#footer{
@@ -148,11 +175,11 @@ section{
 		background-size: cover;
 	}
 	.s1_txt{
+		width: 82%;
 		position: absolute;
-		top: 30%;
-		left: 2%;
-		width: 100%;
-		max-width: 400px;
+		top: 20%;
+		left: 50%;
+		margin-left: -46%;
 		padding: 20px;
 		border-radius: 10px;
 		background: url("${pageContext.request.contextPath}/resources/img/common/bg.png") no-repeat;
@@ -170,7 +197,7 @@ section{
 	}
 	.s2_txt{
 		position: absolute;
-		top: 20%;
+		top: 10%;
 		left: 2%;
 	} 
 	.s2_txt > h1{
@@ -238,43 +265,63 @@ $(function(){
 					<h1>Prive's Core Value</h1>
 					<div class="cv_div_wrap">
 						<div class="cv_div">
-							<h4>[ 프라이빗함을 더한 여유로운 공간 ]</h4>
-							<p>
-								시술의 중요성을 잘 이해하시는 분들이라 생각하여<br>
-								진료 커뮤니케이션에 집중할 수 있도록<br>
-								프라이빗함을 더했습니다.<br><br>
-								  
-								여유로운 공간에서 시작되는<br>
-								Prive 프리미엄 뷰티 프로그램
-							</p>
+							<div class="cv_txt">
+								<h4><span class="gray_bar"></span>프라이빗함을 더한 여유로운 공간</h4>
+								<p>
+									시술의 중요성을 잘 이해하시는 분들이라 생각하여<br>
+									진료 커뮤니케이션에 집중할 수 있도록<br>
+									프라이빗함을 더했습니다.<br><br>
+									  
+									여유로운 공간에서 시작되는<br>
+									Prive 프리미엄 뷰티 프로그램
+								</p>
+							</div>
+							<div class="cv_img">
+								<img src="${pageContext.request.contextPath}/resources/img/content/menu01_01_s2_img1.jpg">
+							</div>
 						</div><!-- cv_div end --> 
 						<div class="cv_div">
-							<h4>[ 안전한 의료시술 ]</h4>
-							<p>
-								'시술을 가장 잘하는곳'<br>
-								'좋은레이저가 많은병원'으로만 알려지길<br>
-								지향하지 않습니다.<br><br>
+							<div class="cv_txt">
+								<h4><span class="gray_bar"></span>안전한 의료시술</h4>
+								<p>
+									'시술을 가장 잘하는곳'<br>
+									'좋은레이저가 많은병원'으로만 알려지길<br>
+									지향하지 않습니다.<br><br>
+									
+									프라이브는<br>
+									'과하지 않게 그리고 안전하게'<br>
+									피부 본연의 기능회복과<br>
+									스킨밸런스를 높이기 위해 노력합니다. 
+								</p>
+							</div>
+							<div class="cv_img">
+								<img src="${pageContext.request.contextPath}/resources/img/content/menu01_01_s2_img2.jpg">
+							</div>
+						</div><!-- cv_div end -->
+						<div class="cv_div">
+							<div class="cv_txt">
+								<h4><span class="gray_bar"></span>나만을 위한 뷰티 코칭</h4>
+								<p>
+									모든사람의 피부가 같을 순 없습니다.<br>
+									프라이브는 '내 피부 컨디션에 포커스를 맞춘<br>
+									당신을 위한 진료플랜'을 제안합니다.
+								</p>
+							</div>
+							<div class="cv_img">
+							
+							</div>
+						</div><!-- cv_div end -->
+						<div class="cv_div">
+							<div class="cv_txt">
+								<h4><span class="gray_bar"></span>피부과전문의</h4>
+								<p>
+									당신의 피부를 가장 잘 이해 하기위해서<br>
+									프라이브는 '피부과전문의'가 함께합니다.
+								</p>
+							</div>
+							<div class="cv_img">
 								
-								프라이브는<br>
-								'과하지 않게 그리고 안전하게'<br>
-								피부 본연의 기능회복과<br>
-								스킨밸런스를 높이기 위해 노력합니다. 
-							</p>
-						</div><!-- cv_div end -->
-						<div class="cv_div">
-							<h4>[ 나만을 위한 뷰티 코칭 ]</h4>
-							<p>
-								모든사람의 피부가 같을 순 없습니다.<br>
-								프라이브는 '내 피부 컨디션에 포커스를 맞춘<br>
-								당신을 위한 진료플랜'을 제안합니다.
-							</p>
-						</div><!-- cv_div end -->
-						<div class="cv_div">
-							<h4>[ 피부과전문의 ]</h4>
-							<p>
-								당신의 피부를 가장 잘 이해 하기위해서<br>
-								프라이브는 '피부과전문의'가 함께합니다.
-							</p>
+							</div>
 						</div><!-- cv_div end -->
 					</div>
 				</div>
