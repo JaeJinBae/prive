@@ -113,21 +113,24 @@ section{
 	
 }
 @media only screen and (min-width:768px) and (max-width:1199px){
-	
 	.section1{
 		background: #e5ddc9;
+		height: 120%;
 	}
+	
 	
 	.section2{
 		background: #f3efe3;
+		height: 110%;
 	}
+	
 	.aside_wrap{
-		width: 768px;
+		width: 90%;
 		overflow: hidden;
 		position: absolute;
-		top: 20%;
+		top: 25%;
 		left: 50%;
-		margin-left: -384px;
+		margin-left: -45%;
 	}
 	.aside_left{
 		float:left;
@@ -144,39 +147,65 @@ section{
 	.doc_txt{
 		width: 100%;
 	}
-	.doc_letter{
+	.section1 .doc_letter{
 		width: 100%;
-	}
-	.doc_letter > .doc_name{
 		text-align: right;
 	}
-	.doc_yak{
+	.section2 .doc_letter{
 		width: 100%;
+		text-align: left;
+	}
+	.doc_letter > p{
+		line-height: 25px;
+	}
+	.section1 .doc_letter > .doc_name{
+		text-align: right;
+		font-size: 25px;
+		font-weight: 600;
+	}
+	.section2 .doc_letter > .doc_name{
+		text-align: left;
+		font-size: 25px;
+		font-weight: 600;
+	}
+	.section1 .doc_yak{
+		width: 100%;
+		text-align: right;
+	}
+	.section2 .doc_yak{
+		width: 100%;
+		text-align: left;
 	}
 	.doc_yak > p{
 		width: 100%;
-		text-align: right;
+		line-height: 24px;
 	}
+	
+	
+	
 	#footer{
 		height: 30%;
 	}
+	
 }
 @media only screen and (min-width:320px) and (max-width:767px){	
 	.section1{
 		background: #e5ddc9;
-		height: 140%;
+		height: 950px;
 	}
 	
 	.section2{
 		background: #f3efe3;
-		height: 140%;
+		height: 950px;
 	}
+	
 	.aside_wrap{
 		width: 96%;
 		overflow: hidden;
 		position: absolute;
-		top: 10%;
-		left: 2%;
+		top: 15%;
+		left: 50%;
+		margin-left: -48%;
 	}
 	.aside_left{
 		width: 100%;
@@ -191,23 +220,46 @@ section{
 	.doc_txt{
 		width: 100%;
 	}
-	.doc_letter{
+	.section1 .doc_letter{
 		width: 100%;
-	}
-	.doc_letter > .doc_name{
 		text-align: right;
 	}
-	.doc_yak{
+	.section2 .doc_letter{
 		width: 100%;
+		text-align: left;
+	}
+	.doc_letter > p{
+		line-height: 25px;
+	}
+	.section1 .doc_letter > .doc_name{
+		text-align: right;
+		font-size: 25px;
+		font-weight: 600;
+	}
+	.section2 .doc_letter > .doc_name{
+		text-align: left;
+		font-size: 25px;
+		font-weight: 600;
+	}
+	.section1 .doc_yak{
+		width: 100%;
+		text-align: right;
+	}
+	.section2 .doc_yak{
+		width: 100%;
+		text-align: left;
 	}
 	.doc_yak > p{
 		width: 100%;
-		text-align: right;
+		line-height: 24px;
 	}
+	
+	
 	
 	#footer{
 		height: 30%;
 	}
+	
 }
 	
 </style>

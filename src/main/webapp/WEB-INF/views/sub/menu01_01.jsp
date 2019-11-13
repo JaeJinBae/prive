@@ -127,7 +127,7 @@ section{
 		top: 30%;
 		left: 10%;
 		width: 100%;
-		max-width: 410px;
+		max-width: 530px;
 		padding: 20px;
 		border-radius: 10px;
 		background: url("${pageContext.request.contextPath}/resources/img/common/bg.png") no-repeat;
@@ -137,32 +137,48 @@ section{
 		font-size: 40px;
 	}
 	.s1_txt > p{
-		line-height: 22px;
+		line-height: 25px;
+	}
+	.s1_txt > p > strong{
+		font-size: 17px;
 	}
 	
 	.section2{
-		
+		height: 2000px;
 	}
 	.s2_txt{
 		position: absolute;
-		top: 30%;
-		left: 10%;
-	} 
+		top: 5%;
+		left: 20%;
+		width: 768px;
+	}
 	.s2_txt > h1{
 		font-size: 40px;
+		margin-bottom: 80px;
 	}
 	.s2_txt > .cv_div_wrap{
-		width: 768px;
+		width: 100%;
 		margin: 0 auto;
 		overflow: hidden;
 	}
 	.s2_txt > .cv_div_wrap > .cv_div{
-		float: left;
-		max-width: 50%;
 		width: 100%;
+		margin-bottom: 90px;
 	}
-	.s2_txt > .cv_div_wrap > .cv_div > h4{
-		font-size: 17px;
+	
+	.gray_bar{
+		display:inline-block;
+		width: 7px;
+		height:23px;
+		background: gray;
+		vertical-align: bottom;
+		margin-right: 10px;
+	}
+	.s2_txt > .cv_div_wrap > .cv_div > .cv_txt > h4{
+		font-size: 20px; 
+	}
+	.s2_txt > .cv_div_wrap > .cv_div > .cv_txt > p{
+		line-height: 25px;
 	}
 	
 	#footer{
@@ -193,15 +209,18 @@ section{
 	}
 	
 	.section2{
-		height: 140%;
+		height: 1567px;
 	}
 	.s2_txt{
+		width: 98%;
 		position: absolute;
-		top: 10%;
-		left: 2%;
-	} 
+		top: 5%;
+		left: 50%;
+		margin-left: -49%;
+		
+	}
 	.s2_txt > h1{
-		font-size: 30px;
+		font-size: 35px;
 	}
 	.s2_txt > .cv_div_wrap{
 		width: 100%;
@@ -209,12 +228,23 @@ section{
 		overflow: hidden;
 	}
 	.s2_txt > .cv_div_wrap > .cv_div{
-		float: left;
-		max-width: 100%;
 		width: 100%;
+		margin-bottom: 90px;
 	}
-	.s2_txt > .cv_div_wrap > .cv_div > h4{
-		font-size: 17px;
+	
+	.gray_bar{
+		display:inline-block;
+		width: 7px;
+		height:23px;
+		background: gray;
+		vertical-align: bottom;
+		margin-right: 10px;
+	}
+	.s2_txt > .cv_div_wrap > .cv_div > .cv_txt > h4{
+		font-size: 20px; 
+	}
+	.s2_txt > .cv_div_wrap > .cv_div > .cv_txt > p{
+		line-height: 25px;
 	}
 	
 	#footer{

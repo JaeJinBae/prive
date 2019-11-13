@@ -164,30 +164,56 @@ section{
 	}
 	.s1_txt{
 		position: absolute;
-		bottom: 10%;
-		left: 10%;
+		top: 30%;
+		left: 18%;
+		color: #efefef;
 	}
 	.s1_txt > h2{
 		font-size: 30px;
 	}
+	.s1_txt > p{
+		font-size: 17px;
+	}
 	
 	.section2{
 		background: #f3efe3;
+		height: 80%
+	}
+	.s2_content_wrap{
+		position: absolute; 
+		width: 96%;
+		top: 18%;
+		left: 50%;
+		margin-left: -48%;
 	}
 	.s2_txt{
-		position: absolute; 
-		top: 20%;
-		left: 10%;
+		float:left;
+		width: 42%;
+		padding-top:15px;
 	}
-	.s3_txt > h2{
+	.s2_txt > h2{
 		font-size: 30px;
+		margin-bottom: 60px;
 	}
+	.s2_txt > p{
+		line-height: 35px;
+		font-size: 17px;
+	}
+	.s2_img{
+		float:right;
+		width: 50%;
+	}
+	.s2_img > img{
+		border-radius: 10%;
+		width: 100%;
+	}
+	
 	.banner_wrap{
 		position: absolute;
-		width: 94%;
+		width: 1200px;
 		bottom: 40px;
 		left: 50%;
-		margin-left: -47%;
+		margin-left: -600px;
 		
 		
 		/* height:40%; */
@@ -215,11 +241,11 @@ section{
 	
 	.section3{
 		background: #fff;
-		height: 120%;
+		height: 1140px;
 	}
 	.s3_txt{
 		position: absolute;
-		top: 10%;
+		top: 13%;
 		left: 10%;
 	}
 	.s3_txt > h2{
@@ -227,10 +253,10 @@ section{
 	}
 	.banner_wrap2{
 		position: absolute;
-		width: 96%; 
+		width: 86%; 
 		bottom: 0; 
 		left: 50%;
-		margin-left: -48%;
+		margin-left: -43%;
 		
 	}
 	.equip{
@@ -238,7 +264,9 @@ section{
 	}
 	.equip > p{
 		line-height: 22px;
+		height: 175px;
 	}
+	
 	#footer{
 		height: 30%;
 	}
