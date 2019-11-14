@@ -446,6 +446,7 @@ $(function(){
 		centerMode: false,
 		centerPadding: '40px'
 	}) */
+	
 });
 </script>
 </head>
