@@ -97,7 +97,7 @@ section{
 }
 @media only screen and (min-width:768px) and (max-width:1199px){
 	.section1{
-		padding-top: 150px;
+		padding-top: 200px;
 	}
 	.inner{
 		width: 768px;
@@ -106,8 +106,51 @@ section{
 	.s1_txt{
 		margin-bottom: 50px;
 	}
+	.s1_txt > h2{
+		text-align: center;
+		font-size: 30px;
+	}
 	.m-list{
 		display: none;
+	}
+	.check-password{
+		width: 650px;
+		margin: 0 auto;
+		margin-bottom: 200px;
+		background: #efefef;
+		text-align: center;
+	}
+	.check-password > h3{
+		text-align: center;
+		background: #333333;
+		color: #fff;
+		padding: 10px;
+	}
+	.check-password > p{
+		text-align: center;
+	}
+	.check-password > input{
+		width: 300px;
+		margin: 0 auto;
+	}
+	
+	.btn-group-center{
+		width: 100%;
+		text-align: center;
+		margin-top: 40px;
+		padding-bottom: 30px;
+	}
+	.inner1{
+		width: 100%;
+	}
+	.btn-submit{
+		padding: 12px 23px;
+		background: #e5ddc9;
+		border: 1px solid lightgray;
+	}
+	.btn-cancel{
+		padding: 12px 23px;
+		border: 1px solid lightgray;
 	}
 	
 	
@@ -117,11 +160,60 @@ section{
 }
 @media only screen and (min-width:320px) and (max-width:767px){	
 	.section1{
-		padding: 0 5px;
-		padding-top: 100px;
+		padding-top: 40%;
 	}
-	.pc-list{
+	.inner{
+		width: 96%;
+		margin: 0 auto;
+	}
+	.s1_txt{
+		margin-bottom: 50px;
+	}
+	.s1_txt > h2{
+		text-align: center;
+		font-size: 25px;
+	}
+	.m-list{
 		display: none;
+	}
+	.check-password{
+		width: 100%;
+		margin: 0 auto;
+		margin-bottom: 100px;
+		background: #efefef;
+		text-align: center;
+	}
+	.check-password > h3{
+		text-align: center;
+		background: #333333;
+		color: #fff;
+		padding: 10px;
+	}
+	.check-password > p{
+		text-align: center;
+	}
+	.check-password > input{
+		width: 300px;
+		margin: 0 auto;
+	}
+	
+	.btn-group-center{
+		width: 100%;
+		text-align: center;
+		margin-top: 40px;
+		padding-bottom: 30px;
+	}
+	.inner1{
+		width: 100%;
+	}
+	.btn-submit{
+		padding: 12px 23px;
+		background: #e5ddc9;
+		border: 1px solid lightgray;
+	}
+	.btn-cancel{
+		padding: 12px 23px;
+		border: 1px solid lightgray;
 	}
 	 
 	#footer{ 
