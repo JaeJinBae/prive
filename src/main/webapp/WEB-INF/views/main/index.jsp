@@ -56,7 +56,7 @@ $(function(){
 			<div class="inner">
 				<div id="video_wrap">
 					<video id="main_video" muted="" loop="" playsinline="" autoplay="">
-						<source src="${pageContext.request.contextPath}/resources/video/video2.mp4" type="video/mp4">
+						<source src="${pageContext.request.contextPath}/resources/video/video2_resize.mp4" type="video/mp4">
 					</video>
 				</div>
 				<div class="s1_txt">
