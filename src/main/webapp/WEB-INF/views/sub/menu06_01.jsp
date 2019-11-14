@@ -48,7 +48,7 @@ section{
 	}
 	.s1_txt{
 		position: absolute;
-		bottom: 10%;
+		top: 50%;
 		left: 13%;
 	}
 	.s1_txt > h2{
@@ -503,7 +503,7 @@ $(function(){
 									전신마취없이 비교적 간편하게 시술 받을 수 있고, 통증이나 회복에 대한 부담이 적고 결과를 바로 확인할 수 있다는 장점들 때문에 수술적 성형에 대한 부담을 가진 환자분에게 좋은 대안이 되고 있습니다.
 									얼굴 전체의 밸런스를 맞추어 매력적인 실루엣을 시술합니다. 이마, 관자놀이, 콧대, 코끝, 턱끝, 눈밑, 볼, 팔자주름 등에 시술할 수 있습니다.
  								</p>
-								<img src="${pageContext.request.contextPath}/resources/img/content/filer.png">
+								<img src="${pageContext.request.contextPath}/resources/img/content/menu06_equip1.png">
 							</div>
 							<div class="equip">
 								<h3>보톡스</h3>
@@ -513,7 +513,7 @@ $(function(){
 									인체에 해를 끼치지 않을 정도의 소량의 보툴리눔 독소 성분을 이용하여 표정주름이 과도하게 잡는 근육을 일시적으로 마비시키고, 턱 근육이나 종아리, 승모근 등에 보톡스를 주입하면 근육 축소 효과를 얻을 수 있습니다.
 									이마주름, 콧등주름, 미간주름, 눈가주름, 사각턱, 승모근, 종아리, 겨드랑이 다한증 등 광범위하게 사용할 수 있습니다.
  								</p>
-								<img src="${pageContext.request.contextPath}/resources/img/content/botox.png">
+								<img src="${pageContext.request.contextPath}/resources/img/content/menu06_equip2.png">
 							</div>
 							<div class="equip">
 								<h3>실리프팅</h3>
@@ -523,7 +523,7 @@ $(function(){
 									PLLA성분이 자가 콜라겐 생성을 유도하여 손실된 볼륨을 회복시켜 주고, 특허받은 원추(꼬깔콘)형태의 기술로 강력한 고정력 및 빠른 리프팅 효과를 기대할 수 있습니다.
 									기존 리프팅 시술보다 지속기간이 길며, 실의 굵기가 가늘고 부드러워 피부 속에서 이물감과 통증이 적은 것이 장점입니다.
  								</p>
-								<img src="${pageContext.request.contextPath}/resources/img/content/sil.png">
+								<img src="${pageContext.request.contextPath}/resources/img/content/menu06_equip3.png">
 							</div>
 							<div class="equip">
 								<h3>윤곽주사</h3>
@@ -533,7 +533,7 @@ $(function(){
 									비대칭 얼굴형 개선, 얼굴라인 교정, 작은얼굴, 탄력증진의 효과가 있습니다.
 									수술이 아닌 주사 시술이기 때문에 회복기간이 필요 없으며 바로 일상 생활이 가능합니다. 
  								</p>
-								<img src="${pageContext.request.contextPath}/resources/img/content/equip_test.png">
+								<img src="${pageContext.request.contextPath}/resources/img/content/menu06_equip4.png">
 							</div>
 						</div>
 					</div>

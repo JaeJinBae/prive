@@ -458,7 +458,7 @@ $(function(){
 						</p>
 					</div>
 					<div class="s2_img">
-						<img src="${pageContext.request.contextPath}/resources/img/main/mainBanner03.png">
+						<img src="${pageContext.request.contextPath}/resources/img/main/mainBanner03.jpg">
 					</div>
 				</div><!-- s1_txt end -->
 			</div>
@@ -478,7 +478,7 @@ $(function(){
 									Long pulse 1064nm 와 Long pulse 755nm를 동시에 구현하는 장비로 잔주름개선,
 									피부탄력과 동시에 전반적인 피부결개선, 홍조 개선까지 다양한 시술을 선보이는 레이저입니다.
  								</p>
-								<img src="${pageContext.request.contextPath}/resources/img/content/gentlemax.png">
+								<img src="${pageContext.request.contextPath}/resources/img/content/menu04_equip1.png">
 							</div>
 							<div class="equip">
 								<h3>레블라이트</h3>
@@ -488,7 +488,7 @@ $(function(){
 									피부 조직의 손상을 최소화하여 시술 후 딱지나 레이저로 인한 상처가 없어 일상생활에 전혀 지장을 주지 않는 안전한 시술입니다.
 									기미, 잡티, 피부톤 등 색소치료와 모공축소, 피부결개선, 홍조개선 등의 효과가 있습니다.
  								</p>
-								<img src="${pageContext.request.contextPath}/resources/img/content/revlites.png">
+								<img src="${pageContext.request.contextPath}/resources/img/content/menu04_equip2.png">
 							</div>
 							<div class="equip">
 								<h3>CO2</h3>
@@ -496,7 +496,7 @@ $(function(){
 									Co2레이저는 10600nm의 파장으로 주로 얼굴의 점이나 사마귀, 쥐젖 등을 제거할 때 사용되는 레이저 입니다.
 									레이저를 이용하여 직접적인 제거를 하는 시술이므로 사용자의 숙련된 술기가 요구되며, 1mm 이하의 단위로 정확하고 세밀한 시술이 필요합니다. 
  								</p>
-								<img src="${pageContext.request.contextPath}/resources/img/content/co2.png">
+								<img src="${pageContext.request.contextPath}/resources/img/content/menu04_equip3.png">
 							</div>
 							<div class="equip">
 								<h3>튠페이스</h3>
@@ -505,7 +505,7 @@ $(function(){
 									샷 수보다 중요한것은 피부 속에 전달되는 에너지 입니다. 특허받은 40.68MHz 에너지를 프락셔널 방식으로 정확하고 균일하게 전달, 베큠기술력으로 에너지를 집속하여 짧은 시간에 더 강력한 에너지를 전달합니다.
  									아이스컨텍 쿨링 방식으로 아프지 않고, 통증없이 편안하게! 3단계 깊이 조절로 피부타입에 맞게 정확한 시술과 오랜지속효과를 자랑합니다.
  								</p>
-								<img src="${pageContext.request.contextPath}/resources/img/content/tuneface.png">
+								<img src="${pageContext.request.contextPath}/resources/img/content/menu04_equip4.png">
 							</div>
 						</div>
 					</div>

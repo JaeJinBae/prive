@@ -209,7 +209,7 @@ section{
 	}
 	
 	.section2{
-		height: 1567px;
+		height: 2000px;
 	}
 	.s2_txt{
 		width: 98%;
@@ -325,7 +325,7 @@ $(function(){
 								</p>
 							</div>
 							<div class="cv_img">
-								<img src="${pageContext.request.contextPath}/resources/img/content/menu01_01_s2_img2.jpg">
+								<img src="${pageContext.request.contextPath}/resources/img/content/menu01_01_s2_img2.JPG">
 							</div>
 						</div><!-- cv_div end -->
 						<div class="cv_div">
@@ -338,7 +338,7 @@ $(function(){
 								</p>
 							</div>
 							<div class="cv_img">
-							
+								<img src="${pageContext.request.contextPath}/resources/img/content/menu01_01_s2_img3.jpg">
 							</div>
 						</div><!-- cv_div end -->
 						<div class="cv_div">
@@ -350,7 +350,7 @@ $(function(){
 								</p>
 							</div>
 							<div class="cv_img">
-								
+								<img src="${pageContext.request.contextPath}/resources/img/content/menu01_01_s2_img4.jpg">
 							</div>
 						</div><!-- cv_div end -->
 					</div>

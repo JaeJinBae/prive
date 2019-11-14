@@ -91,7 +91,7 @@ $(function(){
 							<p class="s_more_btn"><a href="${pageContext.request.contextPath}/">더보기</a></p>
 						</div>
 						<div class="slider_img">
-							<img src="${pageContext.request.contextPath}/resources/img/main/mainBanner03.png">
+							<img src="${pageContext.request.contextPath}/resources/img/main/mainBanner03.jpg">
 							<p class="s_num">3</p>
 							<h2 class="s_title">맨즈케어</h2>
 							<p class="s_content">당신의 가장 멋진모습, 프라이브 맨즈케어</p>

@@ -511,7 +511,7 @@ $(function(){
 									1년에 1회씩 지속적으로 받는다면 새로운 콜라겐이 20% 증가하게 되며, 1년에 1회 정도 울쎄라 시술을 하는 것만으로도 탄력저하를 예방할 수 있습니다. 반복적으로 시술하면 콜라겐이 점차 축적되면서 탄력이 개선되며 노화가 억제됩니다.
 	
 									</p>
-								<img src="${pageContext.request.contextPath}/resources/img/content/ulthera.png">
+								<img src="${pageContext.request.contextPath}/resources/img/content/menu02_equip1.png">
 							</div>
 							<div class="equip">
 								<h3>슈링크</h3>
@@ -520,7 +520,7 @@ $(function(){
 									노화로 인해 고탄력이 떨어지고 처진 얼굴의 피부층과 SMAS(피부 근막)층을 강화시켜 3단계에 걸친 리프팅 효과와 더불어 탄력 개선 탁월한 효과를 선보입니다.
 									피부 손상을 최소화하여 피부 속 1.5~4.5mm 깊이에 정확하고 강한 초음파에너지를 집속시키는 시술로 스킨 리프팅과 탄력, 주름을 개선합니다.
 									</p>
-								<img src="${pageContext.request.contextPath}/resources/img/content/sulink.png">
+								<img src="${pageContext.request.contextPath}/resources/img/content/menu02_equip2.png">
 							</div>
 							<div class="equip">
 								<h3>써마지</h3>
@@ -529,7 +529,7 @@ $(function(){
 									 피부속 콜라겐 섬유의 변성과 수축을 일으켜 콜라겐 재생 및 주름 개선 효과를 보입니다.
 									진피 조직에 열을 발생시키는 써마지 원리를 사용하여 고주파 에너지를 전달하고, 열이 전달 되는 동안에 쿨링펄스를 통해 안전하게 피부 표면을 보호합니다.
 									</p>
-								<img src="${pageContext.request.contextPath}/resources/img/content/thermage.png">
+								<img src="${pageContext.request.contextPath}/resources/img/content/menu02_equip3.png">
 							</div>
 							<div class="equip">
 								<h3>튠페이스</h3>
@@ -538,14 +538,14 @@ $(function(){
 									샷 수보다 중요한것은 피부 속에 전달되는 에너지 입니다. 특허받은 40.68MHz 에너지를 프락셔널 방식으로 정확하고 균일하게 전달, 베큠기술력으로 에너지를 집속하여 짧은 시간에 더 강력한 에너지를 전달합니다.
 										아이스컨텍 쿨링 방식으로 아프지 않고, 통증없이 편안하게! 3단계 깊이 조절로 피부타입에 맞게 정확한 시술과 오랜지속효과를 자랑합니다.
 									</p>
-								<img src="${pageContext.request.contextPath}/resources/img/content/tuneface.png">
+								<img src="${pageContext.request.contextPath}/resources/img/content/menu02_equip4.png">
 							</div>
 							<div class="equip">
 								<h3>코레지</h3>
 								<p>
 									기존의 고주파 장비와는 달리, 콜라겐 변성이나 발열치료 방식과는 다르게 직접적으로 세포, 세포외 물질들에 공명파를 전달하여, 활성인자의 세포활설화를 통해 세포재생을 직접적으로 유도하여 피부를 건강하게 재탄생 시켜주는 코레지 입니다.
 									</p>
-								<img src="${pageContext.request.contextPath}/resources/img/content/corage.png">
+								<img src="${pageContext.request.contextPath}/resources/img/content/menu02_equip5.png">
 							</div>
 							<div class="equip">
 								<h3>젠틀맥스</h3>
@@ -553,7 +553,7 @@ $(function(){
 									젠틀맥스프로는  칸델라사의 FDA 승인을 받은 프리미엄 레이저 장비로로 안정성과 효과적인 측면에서 모두 국제적인 승인을 레이저입니다.
 									Long pulse 1064nm 와 Long pulse 755nm를 동시에 구현하는 장비로 잔주름개선, 피부탄력과 동시에 전반적인 피부결개선, 홍조 개선까지 다양한 시술을 선보이는 레이저입니다.
 									</p>
-								<img src="${pageContext.request.contextPath}/resources/img/content/gentlemax.png">
+								<img src="${pageContext.request.contextPath}/resources/img/content/menu02_equip6.png">
 							</div>
 							<div class="equip">
 								<h3>실루엣소프트</h3>
@@ -563,7 +563,7 @@ $(function(){
 									PLLA성분이 자가 콜라겐 생성을 유도하여 손실된 볼륨을 회복시켜 주고, 특허받은 원추(꼬깔콘)형태의 기술로 강력한 고정력 및 빠른 리프팅 효과를 기대할 수 있습니다.
 									기존 리프팅 시술보다 지속기간이 길며, 실의 굵기가 가늘고 부드러워 피부 속에서 이물감과 통증이 적은 것이 장점입니다. 
 									</p>
-								<img src="${pageContext.request.contextPath}/resources/img/content/sil.png">
+								<img src="${pageContext.request.contextPath}/resources/img/content/menu02_equip7.png">
 							</div>
 						</div>
 					</div>

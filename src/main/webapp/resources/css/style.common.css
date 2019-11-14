@@ -366,10 +366,13 @@
 	#m-header{
 		display: block;
 	}
-	
+	#footer{
+		height:33%;
+	}
 	.footer-wrap{
 		width: 100%;
 		margin: 0 auto;
+		padding-top:10px;
 	}
 	.footer-wrap > .foot{
 		/* width: 25%;
@@ -427,6 +430,7 @@
 	}
 	.f_bottom p{
 		font-size: 13px;
+		margin: 0;
 	}
 }
 
@@ -464,7 +468,7 @@
 		height: 30px;
 		padding: 10px;
 		border-radius: 50%;
-		background: #efefef;
+		/* background: #efefef; */
 		text-align: center;
 		margin-left: 10px;
 	}

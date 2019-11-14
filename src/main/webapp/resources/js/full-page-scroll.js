@@ -207,7 +207,7 @@
 			var position = this.defaults.currentPosition * 100;
 			var footerPosition = (this.defaults.footer-1) * 100;
 			if(position == footerPosition){
-				position = position-70;
+				position = position-68;
 			}
 			
 			this.defaults.container.style.webkitTransform = 'translateY(-' + position + '%)';

@@ -497,6 +497,15 @@ $(function(){
 					<div class="banner_wrap2">
 						<div class="equip_banner">
 							<div class="equip">
+								<h3>젠틀맥스</h3>
+								<p>
+									젠틀맥스프로는  칸델라사의 FDA 승인을 받은 프리미엄 레이저 장비로로 안정성과 효과적인 측면에서 모두 국제적인 승인을 레이저입니다.
+									Long pulse 1064nm 와 Long pulse 755nm를 동시에 구현하는 장비로 잔주름개선,
+									피부탄력과 동시에 전반적인 피부결개선, 홍조 개선까지 다양한 시술을 선보이는 레이저입니다.
+ 								</p>
+								<img src="${pageContext.request.contextPath}/resources/img/content/menu03_equip1.png">
+							</div>
+							<div class="equip">
 								<h3>레블라이트</h3>
 								<p>
 									레블라이트SI는 미국 사이노슈어사의 프리미엄 색소레이저로 1064nm 파장을 이용해 얼굴의 색소를 제거하는데 효과적입니다.
@@ -504,7 +513,7 @@ $(function(){
 									피부 조직의 손상을 최소화하여 시술 후 딱지나 레이저로 인한 상처가 없어 일상생활에 전혀 지장을 주지 않는 안전한 시술입니다.
 									기미, 잡티, 피부톤 등 색소치료와 모공축소, 피부결개선, 홍조개선 등의 효과가 있습니다.
  								</p>
-								<img src="${pageContext.request.contextPath}/resources/img/content/revlites.png">
+								<img src="${pageContext.request.contextPath}/resources/img/content/menu03_equip2.png">
 							</div>
 							<div class="equip">
 								<h3>CO2</h3>
@@ -512,16 +521,7 @@ $(function(){
 									Co2레이저는 10600nm의 파장으로 주로 얼굴의 점이나 사마귀, 쥐젖 등을 제거할 때 사용되는 레이저 입니다.
 									레이저를 이용하여 직접적인 제거를 하는 시술이므로 사용자의 숙련된 술기가 요구되며, 1mm 이하의 단위로 정확하고 세밀한 시술이 필요합니다. 
  								</p>
-								<img src="${pageContext.request.contextPath}/resources/img/content/co2.png">
-							</div>
-							<div class="equip">
-								<h3>젠틀맥스</h3>
-								<p>
-									젠틀맥스프로는  칸델라사의 FDA 승인을 받은 프리미엄 레이저 장비로로 안정성과 효과적인 측면에서 모두 국제적인 승인을 레이저입니다.
-									Long pulse 1064nm 와 Long pulse 755nm를 동시에 구현하는 장비로 잔주름개선,
-									피부탄력과 동시에 전반적인 피부결개선, 홍조 개선까지 다양한 시술을 선보이는 레이저입니다.
- 								</p>
-								<img src="${pageContext.request.contextPath}/resources/img/content/gentlemax.png">
+								<img src="${pageContext.request.contextPath}/resources/img/content/menu03_equip3.png">
 							</div>
 						</div>
 					</div>

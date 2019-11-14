@@ -48,8 +48,8 @@ section{
 	}
 	.s1_txt{
 		position: absolute;
-		bottom: 10%;
-		left: 13%;
+		bottom: 30%;
+		right: 13%;
 	}
 	.s1_txt > h2{
 		font-size: 30px;
@@ -163,8 +163,8 @@ section{
 	}
 	.s1_txt{
 		position: absolute;
-		bottom: 10%;
-		left: 10%;
+		bottom: 25%;
+		right: 7%;
 	}
 	.s1_txt > h2{
 		font-size: 30px;
@@ -502,7 +502,7 @@ $(function(){
 									FDA의 승인을 받은 안전한 제품입니다.
 									시간이 지날수록 안쪽에서부터 차오르는 자연스러운 볼륨과 탄력회복, 주름개선, 피부재생을 도모하는 동안 리프팅입니다.
  								</p>
-								<img src="${pageContext.request.contextPath}/resources/img/content/sculptra.png">
+								<img src="${pageContext.request.contextPath}/resources/img/content/menu05_equip1.png">
 							</div>
 							<div class="equip">
 								<h3>엘란쎄</h3>
@@ -511,7 +511,7 @@ $(function(){
 									지방이식수술 없이도 시술만으로도 안전하게 볼륨을 표현해내는 엘란쎄입니다.
 									시술 이후 일정기간동안의 자연적인 콜라겐생성유도로 얼굴의 볼륨을 지속해내는 콜라겐재생필러로 인위적이지 않으면서도 자연스러운 FACE 볼륨을 표현하기에 적합한 시술입니다. 
  								</p>
-								<img src="${pageContext.request.contextPath}/resources/img/content/ellanse.png">
+								<img src="${pageContext.request.contextPath}/resources/img/content/menu05_equip2.png">
 							</div>
 						</div>
 					</div>
