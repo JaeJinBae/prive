@@ -17,40 +17,22 @@
 					</ul>
 				</li>
 				<li class="gnb">
-					<span class="gnb-txt">리프팅</span>
-					<ul class="lnb-wrap">
-						<li class="lnb"><a href="${pageContext.request.contextPath}/menu02_01">리프팅</a></li>
-					</ul>
+					<a href="${pageContext.request.contextPath}/menu02_01"><span class="gnb-txt">리프팅</span></a>
 				</li>
 				<li class="gnb">
-					<span class="gnb-txt">스킨밸런스</span>
-					<ul class="lnb-wrap">
-						<li class="lnb"><a href="${pageContext.request.contextPath}/menu03_01">화이트닝, 점</a></li>
-					</ul>
+					<a href="${pageContext.request.contextPath}/menu03_01"><span class="gnb-txt">스킨밸런스</span></a>
 				</li>
 				<li class="gnb">
-					<span class="gnb-txt">맨즈케어</span>
-					<ul class="lnb-wrap">
-						<li class="lnb"><a href="${pageContext.request.contextPath}/menu04_01">맨즈케어</a></li>
-					</ul>
+					<a href="${pageContext.request.contextPath}/menu04_01"><span class="gnb-txt">맨즈케어</span></a>
 				</li>
 				<li class="gnb">
-					<span class="gnb-txt">볼륨</span>
-					<ul class="lnb-wrap">
-						<li class="lnb"><a href="${pageContext.request.contextPath}/menu05_01">볼륨감소</a></li>
-					</ul>
+					<a href="${pageContext.request.contextPath}/menu05_01"><span class="gnb-txt">볼륨</span></a>
 				</li>
 				<li class="gnb">
-					<span class="gnb-txt">소프트성형</span>
-					<ul class="lnb-wrap">
-						<li class="lnb"><a href="${pageContext.request.contextPath}/menu06_01">Beauty balance</a></li>
-					</ul>
+					<a href="${pageContext.request.contextPath}/menu06_01"><span class="gnb-txt">소프트성형</span></a>
 				</li>
 				<li class="gnb">
-					<span class="gnb-txt">메디컬스킨케어</span>
-					<ul class="lnb-wrap">
-						<li class="lnb"><a href="${pageContext.request.contextPath}/menu07_01">퍼스널스킨케어</a></li>
-					</ul>
+					<a href="${pageContext.request.contextPath}/menu07_01"><span class="gnb-txt">메디컬스킨케어</span></a>
 				</li>
 				<li class="gnb">
 					<span class="gnb-txt">커뮤니티</span>

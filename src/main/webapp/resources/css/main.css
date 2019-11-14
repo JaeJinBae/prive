@@ -375,6 +375,7 @@
 		font-size: 30px;
 	}
 	.s2_txt > p{
+		display: none;
 		line-height: 1.65;
 	}
 	

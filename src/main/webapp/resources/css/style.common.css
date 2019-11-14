@@ -80,7 +80,12 @@
 .pc-menu-wrap > .gnb-wrap > .gnb > .lnb-wrap > .lnb > a{
 	color: #fff;
 }
-
+.pc-menu-wrap > .gnb-wrap:hover > .gnb > a{
+	color: #fff;
+	transition-duration: 200ms;
+	transition-property: color;
+	transition-timing-function: ease;
+}
 #m-header{
 	width: 100%;
 }
@@ -463,14 +468,9 @@
 	
 	}
 	#quick-menu > ul > li{
-		float: right;
-		width: 30px;
-		height: 30px;
-		padding: 10px;
-		border-radius: 50%;
-		/* background: #efefef; */
+		width: 45px;
+		margin: 10px;
 		text-align: center;
-		margin-left: 10px;
 	}
 	#quick-menu > ul > li > a{
 		width: 100%;
