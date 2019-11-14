@@ -41,7 +41,7 @@ section{
 }
 @media only screen and (min-width:1200px){
 	.section1{
-		background: #e5ddc9;
+		background: #f3efe3;
 		height: 130%;
 	}
 	.s1_txt{
@@ -60,15 +60,16 @@ section{
 	.s1_txt > img{
 		float: right;
 		width: 50%;
+		border-radius: 13px;
 	}
 	.s1_txt > p > span{
 		display: inline-block;
-		font-size: 25px;
+		font-size: 20px;
 		font-weight: 700;
 	}
 	
 	.section2{
-		background: #f3efe3;
+		background: #e5ddc9;
 	}
 	.s2_txt{
 		position: absolute;

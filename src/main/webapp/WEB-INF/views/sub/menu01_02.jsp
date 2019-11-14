@@ -45,7 +45,6 @@ section{
 	
 	.section2{
 		background: #f3efe3;
-		height: 110%;
 	}
 	
 	.aside_wrap{
@@ -55,6 +54,9 @@ section{
 		top: 25%;
 		left: 50%;
 		margin-left: -600px;
+	}
+	.section2 .aside_wrap{
+		top: 15%;
 	}
 	.aside_left{
 		float:left;

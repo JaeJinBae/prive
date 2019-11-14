@@ -46,6 +46,11 @@ section{
 	}
 	.s1_txt{
 		margin-bottom: 50px;
+		text-align: center;
+	}
+	.s1_txt > h2{
+		font-size: 35px;
+		margin-bottom: 100px;
 	}
 	.board-notice-view{width:100%;border-top: 2px solid gray;}
 	.board-notice-view thead{background:#f8f8f8; border-top:2px solid #858585; border-bottom:1px solid #cfd1d4;}
@@ -103,7 +108,7 @@ section{
 }
 @media only screen and (min-width:768px) and (max-width:1199px){
 	.section1{
-		padding-top: 300px;
+		padding-top: 150px;
 	}
 	.inner{
 		width: 95%;
@@ -112,7 +117,14 @@ section{
 	}
 	.s1_txt{
 		margin-bottom: 50px;
+		text-align: center;
 	}
+	.s1_txt > h2{
+		font-size: 30px;
+		margin-bottom: 100px; 
+	}
+	
+	
 	.board-notice-view{width:100%;border-top: 2px solid gray;}
 	.board-notice-view thead{background:#f8f8f8; border-top:2px solid #858585; border-bottom:1px solid #cfd1d4;}
 	.board-notice-view thead th{text-align:center; font-size:14px; font-weight:700; color:#222; padding:15px 0;}
@@ -170,7 +182,13 @@ section{
 	.section1{
 		
 	}
-	
+	.s1_txt{
+		margin-bottom: 50px;
+		text-align: center;
+	}
+	.s1_txt > h2{
+		font-size: 25px; 
+	}
 	
 	 
 	#footer{ 

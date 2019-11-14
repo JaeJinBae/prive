@@ -46,6 +46,11 @@ section{
 	}
 	.s1_txt{
 		margin-bottom: 50px;
+		text-align: center;
+	}
+	.s1_txt > h2{
+		font-size: 35px;
+		margin-bottom: 100px;
 	}
 	.m-list{
 		display: none;
@@ -105,10 +110,11 @@ section{
 	}
 	.s1_txt{
 		margin-bottom: 50px;
+		text-align: center;
 	}
 	.s1_txt > h2{
-		text-align: center;
 		font-size: 30px;
+		margin-bottom: 100px; 
 	}
 	.m-list{
 		display: none;
@@ -168,10 +174,10 @@ section{
 	}
 	.s1_txt{
 		margin-bottom: 50px;
+		text-align: center;
 	}
 	.s1_txt > h2{
-		text-align: center;
-		font-size: 25px;
+		font-size: 25px; 
 	}
 	.m-list{
 		display: none;

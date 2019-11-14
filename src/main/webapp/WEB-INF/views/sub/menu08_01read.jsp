@@ -47,6 +47,11 @@ section{
 	}
 	.s1_txt{
 		margin-bottom: 50px;
+		text-align: center;
+	}
+	.s1_txt > h2{
+		font-size: 35px;
+		margin-bottom: 100px;
 	}
 	.m{
 		display: none;
@@ -107,6 +112,11 @@ section{
 	}
 	.s1_txt{
 		margin-bottom: 50px;
+		text-align: center;
+	}
+	.s1_txt > h2{
+		font-size: 30px;
+		margin-bottom: 100px; 
 	}
 	.m{
 		display: none;
@@ -138,7 +148,7 @@ section{
 	/**********************************************************************
 	* Descript : 버튼 스타일
 	***********************************************************************/
-	.btn-group {display:inline-block; width:100%; height:36px; margin:25px 0; text-align:right;}
+	.btn-group {display:inline-block; width:100%; height:36px; margin:25px 0; text-align:right;margin-bottom: 100px;}
 	.btn-group-center {display:inline-block; width:100%; height:36px; margin:25px 0; text-align:center;}
 	button.btn, a.btn{display:inline-block; width:100px; height:36px; line-height:36px; vertical-align:middle; font-size:13px; font-weighT:700; box-sizing:border-box; text-align:center;}
 	button.btn:hover, a.btn:hover{text-decoration:none;}
@@ -164,7 +174,15 @@ section{
 	.pc{
 		display: none;
 	}
-	.board-counsel-view{width:100%;border-top: 2px solid gray; }
+	
+	.s1_txt{
+		margin-bottom: 50px;
+		text-align: center;
+	}
+	.s1_txt > h2{
+		font-size: 25px; 
+	}
+	.board-counsel-view{width:100%;}
 	.board-counsel-view ul.full{border-top:2px solid #858585;}
 	.board-counsel-view ul li{position:relative;}
 	
@@ -198,7 +216,7 @@ section{
 	 /**********************************************************************
 	* Descript : 버튼 스타일
 	***********************************************************************/
-	.btn-group {display:inline-block; width:100%; height:36px; margin:25px 0; text-align:right;}
+	.btn-group {display:inline-block; width:100%; height:36px; margin:25px 0; text-align:right;margin-bottom:100px;}
 	.btn-group-center {display:inline-block; width:100%; height:36px; margin:25px 0; text-align:center;}
 	button.btn, a.btn{display:inline-block; width:100px; height:36px; line-height:36px; vertical-align:middle; font-size:13px; font-weighT:700; box-sizing:border-box; text-align:center;}
 	button.btn:hover, a.btn:hover{text-decoration:none;}

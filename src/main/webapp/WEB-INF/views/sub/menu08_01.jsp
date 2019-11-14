@@ -46,6 +46,11 @@ section{
 	}
 	.s1_txt{
 		margin-bottom: 50px;
+		text-align: center;
+	}
+	.s1_txt > h2{
+		font-size: 35px;
+		margin-bottom: 100px;
 	}
 	.m-list{
 		display: none;
@@ -130,6 +135,11 @@ section{
 	}
 	.s1_txt{
 		margin-bottom: 50px;
+		text-align: center;
+	}
+	.s1_txt > h2{
+		font-size: 30px;
+		margin-bottom: 100px; 
 	}
 	.m-list{
 		display: none;
@@ -211,6 +221,14 @@ section{
 	.pc-list{
 		display: none;
 	}
+	.s1_txt{
+		margin-bottom: 50px;
+		text-align: center;
+	}
+	.s1_txt > h2{
+		font-size: 25px; 
+	}
+	
 	 /**********************************************************************
 * Descript : 페이징 스타일
 ***********************************************************************/
@@ -226,7 +244,7 @@ section{
 /**********************************************************************
 * Descript : 검색 폼 스타일
 ***********************************************************************/
-.search-box{width:100%; max-width:640px; height:35px; margin:0 auto 25px auto;}
+.search-box{width:100%; max-width:640px; height:35px; margin:0 auto 80px auto;}
 .search-box select, .search-box input, .search-box button{float:left; box-sizing:border-box; display:inline-block; height:35px; line-height:35px; font-size:13px;}
 .search-box input[type="text"]{width:58%; margin:0 1%; border:1px solid #cfd1d4; text-align:left; padding:0 10px; background:url(../../img/board/search.png) no-repeat 98% center; background-size:20px;}
 .search-box button{width:15%; background:#525c5d; color:#fff; font-weight:700; cursor:pointer;}
