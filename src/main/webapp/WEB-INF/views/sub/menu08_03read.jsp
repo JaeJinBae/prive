@@ -44,6 +44,9 @@ section{
 		margin: 0 auto;
 		margin-bottom: 100px;
 	}
+	.m{
+		display: none;
+	}
 	.s1_txt{
 		margin-bottom: 50px;
 		text-align: center;
@@ -57,7 +60,7 @@ section{
 	.board-notice-view thead th{text-align:center; font-size:14px; font-weight:700; color:#222; padding:15px 0;}
 	
 	.board-notice-view tbody td{background:#fff;  border-bottom:1px solid #cfd1d4; text-align:center; padding:15px; font-size:13px; line-height:23px;}
-	.board-notice-view tbody td i.notice{display:inline-block; padding:5px; background:#172b4d; color:#fff; border-radius:2px; font-size:11px; font-weight:700;}
+	.board-notice-view tbody td i.notice{display:inline-block; padding:5px; background:gray; color:#fff; border-radius:2px; font-size:11px; font-weight:700;}
 	.board-notice-view tbody td.subject{text-align:left;}
 	.board-notice-view tbody td.subject a{color:#222;}
 	.board-notice-view tbody td.date{font-size:12px;}
@@ -70,19 +73,7 @@ section{
 	.prev-next-list ul li{background:#fff;  border-bottom:1px solid #cfd1d4; text-align:left; padding:10px 15px; font-size:13px; line-height:23px;}
 	.prev-next-list ul li span{display:inline-block; width:100px; font-weight:700; text-align:center;}
 	.prev-next-list ul li a{display:inline-block; width:calc(100% - 105px); box-sizing:border-box; padding:0 25px; color:#222;}
-	/**********************************************************************/
-	
-	
-	/**********************************************************************
-	* Descript : 페이징 스타일
-	***********************************************************************/
-	#board-pagenation{width:100%;}
-	#board-pagenation{width:100%; max-width:1200px; margin:30px auto 100px auto; text-align:center;}
-	#board-pagenation a{position:relative; display:inline-block; width:35px; height:35px; line-height:35px; border:1px solid #ddd; font-size:1em; color:#333; margin:0 2px; box-sizing:border-box;}
-	#board-pagenation a:hover{text-decoration:underline;}
-	#board-pagenation a.on{background:#172b4d; border:1px solid #172b4d; color:#fff; font-weight:700;}
-	/**********************************************************************/
-	
+	/**********************************************************************/	
 	
 	/**********************************************************************
 	* Descript : 버튼 스타일
@@ -91,11 +82,11 @@ section{
 	.btn-group-center {display:inline-block; width:100%; height:36px; margin:25px 0; text-align:center;}
 		button.btn, a.btn{display:inline-block; width:100px; height:36px; line-height:36px; vertical-align:middle; font-size:13px; font-weighT:700; box-sizing:border-box; text-align:center;}
 		button.btn:hover, a.btn:hover{text-decoration:none;}
-		.btn-list{background:#172b4d; color:#fff;}
-		.btn-submit{background:#172b4d; color:#fff;}
+		.btn-list{background:gray; color:#fff;}
+		.btn-submit{background:gray; color:#fff;}
 		.btn-my-list{background:#333; color:#fff;}
 		.btn-del{background:#f4f4f4; border:1px solid #ccc; color:#222;}
-		.btn-update{background:#172b4d; color:#fff;}
+		.btn-update{background:gray; color:#fff;}
 		.btn-view-list{background:#858585; color:#fff;}
 		.btn-cancel{background:#cbcbcb; color:#fff;}
 	
@@ -115,6 +106,9 @@ section{
 		margin: 0 auto;
 		margin-bottom: 100px;
 	}
+	.m{
+		display: none;
+	}
 	.s1_txt{
 		margin-bottom: 50px;
 		text-align: center;
@@ -130,7 +124,7 @@ section{
 	.board-notice-view thead th{text-align:center; font-size:14px; font-weight:700; color:#222; padding:15px 0;}
 	
 	.board-notice-view tbody td{background:#fff;  border-bottom:1px solid #cfd1d4; text-align:center; padding:15px; font-size:13px; line-height:23px;}
-	.board-notice-view tbody td i.notice{display:inline-block; padding:5px; background:#172b4d; color:#fff; border-radius:2px; font-size:11px; font-weight:700;}
+	.board-notice-view tbody td i.notice{display:inline-block; padding:5px; background:gray; color:#fff; border-radius:2px; font-size:11px; font-weight:700;}
 	.board-notice-view tbody td.subject{text-align:left;}
 	.board-notice-view tbody td.subject a{color:#222;}
 	.board-notice-view tbody td.date{font-size:12px;}
@@ -143,19 +137,7 @@ section{
 	.prev-next-list ul li{background:#fff;  border-bottom:1px solid #cfd1d4; text-align:left; padding:10px 15px; font-size:13px; line-height:23px;}
 	.prev-next-list ul li span{display:inline-block; width:100px; font-weight:700; text-align:center;}
 	.prev-next-list ul li a{display:inline-block; width:calc(100% - 105px); box-sizing:border-box; padding:0 25px; color:#222;}
-	/**********************************************************************/
-	
-	
-	/**********************************************************************
-	* Descript : 페이징 스타일
-	***********************************************************************/
-	#board-pagenation{width:100%;}
-	#board-pagenation{width:100%; max-width:1200px; margin:30px auto 100px auto; text-align:center;}
-	#board-pagenation a{position:relative; display:inline-block; width:35px; height:35px; line-height:35px; border:1px solid #ddd; font-size:1em; color:#333; margin:0 2px; box-sizing:border-box;}
-	#board-pagenation a:hover{text-decoration:underline;}
-	#board-pagenation a.on{background:#172b4d; border:1px solid #172b4d; color:#fff; font-weight:700;}
-	/**********************************************************************/
-	
+	/**********************************************************************/	
 	
 	/**********************************************************************
 	* Descript : 버튼 스타일
@@ -164,11 +146,11 @@ section{
 	.btn-group-center {display:inline-block; width:100%; height:36px; margin:25px 0; text-align:center;}
 		button.btn, a.btn{display:inline-block; width:100px; height:36px; line-height:36px; vertical-align:middle; font-size:13px; font-weighT:700; box-sizing:border-box; text-align:center;}
 		button.btn:hover, a.btn:hover{text-decoration:none;}
-		.btn-list{background:#172b4d; color:#fff;}
-		.btn-submit{background:#172b4d; color:#fff;}
+		.btn-list{background:gray; color:#fff;}
+		.btn-submit{background:gray; color:#fff;}
 		.btn-my-list{background:#333; color:#fff;}
 		.btn-del{background:#f4f4f4; border:1px solid #ccc; color:#222;}
-		.btn-update{background:#172b4d; color:#fff;}
+		.btn-update{background:gray; color:#fff;}
 		.btn-view-list{background:#858585; color:#fff;}
 		.btn-cancel{background:#cbcbcb; color:#fff;}
 	
@@ -182,6 +164,9 @@ section{
 	.section1{
 		
 	}
+	.pc{
+		display: none;
+	}
 	.s1_txt{
 		margin-bottom: 50px;
 		text-align: center;
@@ -190,6 +175,41 @@ section{
 		font-size: 25px; 
 	}
 	
+	.board-notice-view{width:100%; }
+	.board-notice-view ul.full{border-top:2px solid #858585;}
+	.board-notice-view ul li{}
+	.board-notice-view ul li div.title{padding:15px; border-bottom:1px solid #cfd1d4; color:#222; background:#eee; font-size:1em; line-height:1.5em; font-weight:700;}
+	.board-notice-view ul li p.info{position:relative;  padding:15px; border-bottom:1px solid #cfd1d4;}
+	.board-notice-view ul li p.info i.notice{left:0; top:0; display:inline-block; padding:5px 10px; background:#2ab3bc; color:#fff; font-size:11px; font-weight:700;}
+	.board-notice-view ul li p.info i.name{font-size:12px; color:#777;}
+	.board-notice-view ul li p.info i.date{font-size:12px; color:#777;}
+	.board-notice-view ul li p.info i.hit{font-size:12px; color:#777;}
+	.board-notice-view ul li p.info span.line{display:inline-block; font-size:11px; color:#ccc; padding:0 10px;}
+	.board-notice-view ul li.con{padding:15px; border-bottom:1px solid #cfd1d4; font-size:1em; line-height:1.5em;}
+	.board-notice-view ul li iframe{width:100% !important;}
+	
+	.prev-next-list{width:100%;}
+	.prev-next-list ul{}
+	.prev-next-list ul li{background:#fff;  border-bottom:1px solid #cfd1d4; text-align:left; padding:20px 0; font-size:13px; line-height:13px;}
+	.prev-next-list ul li span{display:inline-block; float:left; width:70px; font-weight:700; text-align:center;}
+	.prev-next-list ul li a{display:inline-block; width:calc(100% - 100px); box-sizing:border-box; color:#222; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
+	 
+	 /**********************************************************************
+	* Descript : 버튼 스타일
+	***********************************************************************/
+	.btn-group {display:inline-block; width:100%; height:36px; margin:25px 0; text-align:center;}
+	.btn-group-center {display:inline-block; width:100%; height:36px; margin:25px 0; text-align:center;}
+		button.btn, a.btn{display:inline-block; width:100px; height:36px; line-height:36px; vertical-align:middle; font-size:13px; font-weighT:700; box-sizing:border-box; text-align:center; margin:5px 0;}
+		button.btn:hover, a.btn:hover{text-decoration:none;}
+		.btn-list{background:gray; color:#fff; width:90% !important;}
+		.btn-submit{background:gray; color:#fff;}
+		.btn-my-list{background:#fff; color:#222; border:1px solid #aaa; width:100% !important;}
+		.btn-del{background:#f4f4f4; border:1px solid #ccc; color:#222;}
+		.btn-update{background:gray; color:#fff;}
+		.btn-view-list{background:#858585; color:#fff;}
+		.btn-cancel{background:#cbcbcb; color:#fff;}
+	
+	/**********************************************************************/
 	 
 	#footer{ 
 		height: 30%;
@@ -224,7 +244,7 @@ $(function(){
 				</div>
 				<div class="formWrap">
 					<!-- 공지사항 게시판 뷰 시작 -->
-					<table class="board-notice-view">
+					<table class="board-notice-view pc">
 						<colgroup>
 							<col style="width: 100px;">
 							<col>
@@ -253,6 +273,20 @@ $(function(){
 							</tr>
 						</tbody>
 					</table>
+					
+					<div class="board-notice-view m">
+						<ul class="full">
+							<li class="subject">	
+								<div class="title"> ${item.title}</div>
+								<p class="info">
+									<!--i class='name'>다</i><span class='line'>|</span--><i class="date">${item.regdate}</i><span class="line">|</span><i class="hit">조회수		${item.cnt}</i>
+								</p>
+							</li>
+							<li class="con">
+								${item.content}
+							</li>
+						</ul>
+					</div>
 					<!-- 공지사항 게시판 뷰 끝 -->
 				</div>
 				<div class="prev-next-list">
