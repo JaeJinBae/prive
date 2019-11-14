@@ -467,7 +467,7 @@ $(function(){
 			<div class="inner">
 				<div class="inner">
 					<div class="s3_txt">
-						<h2>장비/재료</h2>
+						<h2>프라이브 솔루션</h2>
 					</div><!-- s1_txt end -->
 					<div class="banner_wrap2">
 						<div class="equip_banner">
@@ -506,6 +506,15 @@ $(function(){
  									아이스컨텍 쿨링 방식으로 아프지 않고, 통증없이 편안하게! 3단계 깊이 조절로 피부타입에 맞게 정확한 시술과 오랜지속효과를 자랑합니다.
  								</p>
 								<img src="${pageContext.request.contextPath}/resources/img/content/menu04_equip4.png">
+							</div>
+							<div class="equip">
+								<h3>디오레</h3>
+								<p>
+									디오레는 두 가지 레이저 파장 (1550nm, 1927nm)을 동시에 사용하여 표피부터 진피 깊은 곳까지 시술이 가능한 동안 피부재생 레이저 시술입니다.
+									피부상태에 따라 적합한 치료모드를 설정 하여 두 가지 레이저를 함께 병행 시술이 가능하여 레이저 시너지효과를 증폭시키고 빠른 시술이 가능합니다.
+									디오레는 한 번의 시술 만으로도 흉터, 주름은 물론 색소질환 개선에 효과적인 레이저 시술이며, 시술 후 일상생활로 곧바로 복귀가 가능합니다.
+ 								</p>
+								<img src="${pageContext.request.contextPath}/resources/img/content/menu03_equip4.png">
 							</div>
 						</div>
 					</div>

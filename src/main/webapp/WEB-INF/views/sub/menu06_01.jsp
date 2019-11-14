@@ -468,7 +468,7 @@ $(function(){
 			<div class="inner">
 				<div class="s2_content_wrap">
 					<div class="s2_txt">
-						<h2>Beauty balance / 리프팅, 컨투어</h2>
+						<h2>소프트성형 | 리프팅 & 컨투어</h2>
 						<p>
 							prive는 진정성 있는 공감을 바탕으로 당신의 아름다움을 표현합니다.<br><br>
 							
@@ -491,7 +491,7 @@ $(function(){
 			<div class="inner">
 				<div class="inner">
 					<div class="s3_txt">
-						<h2>장비/재료</h2>
+						<h2>프라이브 솔루션</h2>
 					</div><!-- s1_txt end -->
 					<div class="banner_wrap2">
 						<div class="equip_banner">

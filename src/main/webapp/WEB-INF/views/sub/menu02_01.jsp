@@ -499,7 +499,7 @@ $(function(){
 		<section class="section3">
 				<div class="inner">
 					<div class="s3_txt">
-						<h2>장비/재료</h2>
+						<h2>프라이브 솔루션</h2>
 					</div><!-- s1_txt end -->
 					<div class="banner_wrap2">
 						<div class="equip_banner">

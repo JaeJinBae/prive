@@ -27,7 +27,7 @@
 #header{
 	position:fixed;
 	width: 100%;
-	top: 20px;
+	top: 18px;
 	z-index: 999;
 }
 #pc-header{
@@ -477,6 +477,7 @@
 	}
 	#quick-menu > ul > li > a > img{
 		width: 100%;
+		border-radius: 8px;
 	}
 	
 /**********************************************************************/

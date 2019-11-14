@@ -492,7 +492,7 @@ $(function(){
 			<div class="inner">
 				<div class="inner">
 					<div class="s3_txt">
-						<h2>장비/재료</h2>
+						<h2>프라이브 솔루션</h2>
 					</div><!-- s1_txt end -->
 					<div class="banner_wrap2">
 						<div class="equip_banner">
@@ -522,6 +522,31 @@ $(function(){
 									레이저를 이용하여 직접적인 제거를 하는 시술이므로 사용자의 숙련된 술기가 요구되며, 1mm 이하의 단위로 정확하고 세밀한 시술이 필요합니다. 
  								</p>
 								<img src="${pageContext.request.contextPath}/resources/img/content/menu03_equip3.png">
+							</div>
+							<div class="equip">
+								<h3>디오레</h3>
+								<p>
+									디오레는 두 가지 레이저 파장 (1550nm, 1927nm)을 동시에 사용하여 표피부터 진피 깊은 곳까지 시술이 가능한 동안 피부재생 레이저 시술입니다.
+									피부상태에 따라 적합한 치료모드를 설정 하여 두 가지 레이저를 함께 병행 시술이 가능하여 레이저 시너지효과를 증폭시키고 빠른 시술이 가능합니다.
+									디오레는 한 번의 시술 만으로도 흉터, 주름은 물론 색소질환 개선에 효과적인 레이저 시술이며, 시술 후 일상생활로 곧바로 복귀가 가능합니다.
+ 								</p>
+								<img src="${pageContext.request.contextPath}/resources/img/content/menu03_equip4.png">
+							</div>
+							<div class="equip">
+								<h3>코레지</h3>
+								<p>
+									기존의 고주파 장비와는 달리, 콜라겐 변성이나 발열치료 방식과는 다르게 직접적으로 세포, 세포외 물질들에 공명파를 전달하여, 활성인자의 세포활설화를 통해 세포재생을 직접적으로 유도하여 피부를 건강하게 재탄생 시켜주는 코레지 입니다.
+ 								</p>
+								<img src="${pageContext.request.contextPath}/resources/img/content/menu03_equip5.png">
+							</div>
+							<div class="equip">
+								<h3>스킨부스터</h3>
+								<p>
+									프라이브 스킨부스터는 피부노화의 원인인 섬유아세포 기능을 되살리는 스킨 리바이탈 솔루션입니다.
+									피부 노화를 방지하고, 푸석한 피부에 윤기있는 피부광채를 만들어주는 탄탄한 피부에너지! 피부복합 재생, 스킨 부스트(NCTF)를 포함한 비외과적 안티에이징 시술입니다.
+									볼라이트, 필로가, 피부줄기세포 배양액 성분의 엑소좀 등 피부과전문의가 엄선한 프리미엄 스킨부스팅 제품들로 라인업을 구성하였습니다. 
+ 								</p>
+								<img src="${pageContext.request.contextPath}/resources/img/content/menu03_equip6.png">
 							</div>
 						</div>
 					</div>

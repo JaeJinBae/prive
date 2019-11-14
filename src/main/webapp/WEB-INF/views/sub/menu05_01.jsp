@@ -489,7 +489,7 @@ $(function(){
 			<div class="inner">
 				<div class="inner">
 					<div class="s3_txt">
-						<h2>장비/재료</h2>
+						<h2>프라이브 솔루션</h2>
 					</div><!-- s1_txt end -->
 					<div class="banner_wrap2">
 						<div class="equip_banner">
@@ -512,6 +512,15 @@ $(function(){
 									시술 이후 일정기간동안의 자연적인 콜라겐생성유도로 얼굴의 볼륨을 지속해내는 콜라겐재생필러로 인위적이지 않으면서도 자연스러운 FACE 볼륨을 표현하기에 적합한 시술입니다. 
  								</p>
 								<img src="${pageContext.request.contextPath}/resources/img/content/menu05_equip2.png">
+							</div>
+							<div class="equip">
+								<h3>벨로테로</h3>
+								<p>
+									아름다운 자신감, 자연스러운 필러
+									프리미엄 HA 벨로테로는 FDA 승인을 받은 필러로 까다로운 스위스 제조 기술로 제품으로 안전하고 자연스러운 효과를 나타내는 만족도가 높은 차세대 프리미엄 제품입니다.
+									피부 밀착에 중요한 응집성이 뛰어나 이물감 없이 울퉁불퉁하지 않은 시술효과를 위한 최적의 필러로 겔을 눌렀을때 원래 형태로 돌아오려는 성질이 우수하여 확실하고 뛰어난 볼륨효과를 나타내는 시술입니다.
+ 								</p>
+								<img src="${pageContext.request.contextPath}/resources/img/content/menu05_equip3.png">
 							</div>
 						</div>
 					</div>
