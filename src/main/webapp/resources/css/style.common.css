@@ -21,6 +21,9 @@
 *{
 	font-family: NanumSquare;
 }
+input[type='password']{
+	font-family: serif;
+}
 /**********************************************************************
 * Descript : header 메뉴 스타일
 ***********************************************************************/
@@ -484,7 +487,7 @@
 	}
 	#quick-menu{
 		position: fixed;
-		bottom: 25px;
+		bottom: 10px;
 		right: 25px;
 		z-index: 9;
 	}

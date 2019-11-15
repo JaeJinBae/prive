@@ -66,7 +66,7 @@ $(function(){
 	})
 	$(window).scroll(function(event){
 		var inner_width = window.innerWidth;
-		alert(inner_width);
+		/* alert(inner_width); */
 		if(inner_width >= 1200){
 			func_header("scroll");
 		}
