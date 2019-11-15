@@ -342,6 +342,8 @@ $(function(){
 							<p><a href="https://www.instagram.com/priveskin/">Instagram: @prive</a></p>
 							<p><a href="https://www.youtube.com/channel/UCcoqaopSJHt4Ndh5Z8_MFkg">Youtube: 프라이브피부과</a></p>
 							<p><a href="https://blog.naver.com/priveskin">Blog: 프라이브피부과</a></p>
+							<p><a href="https://www.facebook.com/%ED%94%84%EB%9D%BC%EC%9D%B4%EB%B8%8C%ED%94%BC%EB%B6%80%EA%B3%BC-113165293400268/">Facebook: 프라이브피부과</a></p>
+							
 						</div>
 					</div>
 				</div>

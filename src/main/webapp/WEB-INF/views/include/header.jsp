@@ -43,6 +43,11 @@
 					</ul>
 				</li>
 			</ul>
+			<div class="sns_icon_wrap">
+				<a href="https://blog.naver.com/priveskin"><img src="${pageContext.request.contextPath}/resources/img/common/icon_b.png"></a>
+				<a href="https://www.instagram.com/priveskin"><img src="${pageContext.request.contextPath}/resources/img/common/icon_i.png"></a>
+				<a href="https://www.facebook.com/%ED%94%84%EB%9D%BC%EC%9D%B4%EB%B8%8C%ED%94%BC%EB%B6%80%EA%B3%BC-113165293400268/"><img src="${pageContext.request.contextPath}/resources/img/common/icon_f.png"></a>
+			</div>
 		</div><!-- pc-menu-wrap -->
 	</div><!-- pc-header end -->
 	<div id="m-header">
@@ -66,40 +71,22 @@
 					</ul>
 				</li>
 				<li class="gnb">
-					<span class="gnb-txt"></span>리프팅<span class="arrow">∨</span>
-					<ul class="lnb-wrap">
-						<li class="lnb"><a href="${pageContext.request.contextPath}/menu02_01">리프팅</a></li>
-					</ul>
+					<a href="${pageContext.request.contextPath}/menu02_01"><span class="gnb-txt">리프팅</span></a>
 				</li>
 				<li class="gnb">
-					<span class="gnb-txt">스킨밸런스</span><span class="arrow">∨</span>
-					<ul class="lnb-wrap">
-						<li class="lnb"><a href="${pageContext.request.contextPath}/menu03_01">화이트닝, 점</a></li>
-					</ul>
+					<a href="${pageContext.request.contextPath}/menu03_01"><span class="gnb-txt">스킨밸런스</span></a>
 				</li>
 				<li class="gnb">
-					<span class="gnb-txt">맨즈케어</span><span class="arrow">∨</span>
-					<ul class="lnb-wrap">
-						<li class="lnb"><a href="${pageContext.request.contextPath}/menu04_01">맨즈케어</a></li>
-					</ul>
+					<a href="${pageContext.request.contextPath}/menu04_01"><span class="gnb-txt">맨즈케어</span></a>
 				</li>
 				<li class="gnb">
-					<span class="gnb-txt">볼륨</span><span class="arrow">∨</span>
-					<ul class="lnb-wrap">
-						<li class="lnb"><a href="${pageContext.request.contextPath}/menu05_01">볼륨감소</a></li>
-					</ul>
+					<a href="${pageContext.request.contextPath}/menu05_01"><span class="gnb-txt">볼륨</span></a>
 				</li>
 				<li class="gnb">
-					<span class="gnb-txt">소프트성형</span><span class="arrow">∨</span>
-					<ul class="lnb-wrap">
-						<li class="lnb"><a href="${pageContext.request.contextPath}/menu06_01">Beauty balance</a></li>
-					</ul>
+					<a href="${pageContext.request.contextPath}/menu06_01"><span class="gnb-txt">소프트성형</span></a>
 				</li>
 				<li class="gnb">
-					<span class="gnb-txt">메디컬스킨케어</span><span class="arrow">∨</span>
-					<ul class="lnb-wrap">
-						<li class="lnb"><a href="${pageContext.request.contextPath}/menu07_01">퍼스널스킨케어</a></li>
-					</ul>
+					<a href="${pageContext.request.contextPath}/menu07_01"><span class="gnb-txt">메디컬스킨케어</span></a>
 				</li>
 				<li class="gnb">
 					<span class="gnb-txt">커뮤니티</span><span class="arrow">∨</span>

@@ -285,16 +285,35 @@ section{
 	
 	.section2{
 		background: #f3efe3;
+		height: 140%;
+	}
+	.s2_content_wrap{
+		position: absolute; 
+		width: 96%;
+		top: 10%;
+		left: 50%;
+		margin-left: -48%;
 	}
 	.s2_txt{
-		position: absolute; 
-		top: 20%;
-		left: 2%;
-		width: 95%;
+		width: 100%;
+		padding-top:15px;
 	}
-	.s3_txt > h2{
-		font-size: 30px;
+	.s2_txt > h2{
+		font-size: 28px;
+		margin-bottom: 60px;
 	}
+	.s2_txt > p{
+		line-height: 25px;
+		font-size: 15px;
+	}
+	.s2_img{
+		width: 100%;
+	}
+	.s2_img > img{
+		border-radius: 10%;
+		width: 100%;
+	}
+	
 	.banner_wrap{
 		position: absolute;
 		width: 94%;
@@ -407,7 +426,7 @@ $(function(){
 		      breakpoint: 767,
 		      settings: {
 		        arrows: true,
-		        centerMode: true,
+		        centerMode: false,
 		        centerPadding: '10px',
 		        slidesToShow: 1
 		      }

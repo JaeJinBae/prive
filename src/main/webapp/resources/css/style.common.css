@@ -25,7 +25,7 @@
 * Descript : header 메뉴 스타일
 ***********************************************************************/
 #header{
-	position: absolute;
+	position: fixed;
 	width: 100%;
 	top: 18px;
 	z-index: 999;
@@ -98,6 +98,10 @@
 }
 #m-header > .logo-wrap > a > img{
 	width: 100%;
+}
+#m-header .gnb-txt{
+	color: #fff;
+	
 }
 /* 햄버거 버튼 스타일 및 트랜지션 */
 .hamburger {
@@ -240,12 +244,22 @@
 		background: url("/prive/resources/img/common/nav-bg-white.png") no-repeat;
 		background-size: cover;
 	}
-	
+	#header{
+		position: absolute;
+	}
 	#pc-header{
 		display: block;
 	}
 	#m-header{
 		display: none;
+	}
+	.sns_icon_wrap{
+		position: absolute;
+		right: 10px;
+		top: 117px;
+	}
+	.sns_icon_wrap > a > img{
+		width: 30px;
 	}
 /* ********************************************************************
   Descript: footer
@@ -386,16 +400,17 @@
 	.footer-wrap{
 		width: 100%;
 		margin: 0 auto;
-		padding-top:10px;
+		padding-top:8px;
 	}
 	.footer-wrap > .foot{
 		/* width: 25%;
 		float: left; */
 	}
 	.footer-wrap > .foot > .f_logo{
-		width: 60%;
+		width: 50%;
 		margin: 0 auto;
-		margin-top: 10px;
+		margin-top: 5px;
+		margin-bottom:5px;
 	}
 	.footer-wrap > .foot > .f_logo > a{
 		display: none;
@@ -428,7 +443,7 @@
 	.f_bottom{
 		width: 100%;
 		text-align: center;
-		margin-top: 15px;
+		margin-top: 10px;
 	}
 	.f_bottom > ul{
 		width: 100%;
@@ -474,19 +489,21 @@
 		z-index: 9;
 	}
 	#quick-menu > ul{
-	
+		overflow: hidden;
 	}
 	#quick-menu > ul > li{
-		width: 45px;
+		/* width: 45px;
 		margin: 10px;
-		text-align: center;
+		text-align: center; */
+		width: 35px;
+		float: left;
+		margin-left: 10px;
 	}
 	#quick-menu > ul > li > a{
 		width: 100%;
 	}
 	#quick-menu > ul > li > a > img{
 		width: 100%;
-		border-radius: 8px;
 	}
 	
 /**********************************************************************/

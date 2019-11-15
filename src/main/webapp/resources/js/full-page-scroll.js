@@ -207,7 +207,13 @@
 			var position = this.defaults.currentPosition * 100;
 			var footerPosition = (this.defaults.footer-1) * 100;
 			if(position == footerPosition){
-				position = position-68;
+				position = position-65;
+			}
+			
+			var inner_width = window.innerWidth;
+			console.log(position);
+			if(inner_width >= 1200){
+				func_header("scroll");
 			}
 			
 			this.defaults.container.style.webkitTransform = 'translateY(-' + position + '%)';

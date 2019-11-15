@@ -467,7 +467,7 @@ $(function(){
 			<div class="inner">
 				<div class="s2_content_wrap">
 					<div class="s2_txt">
-					<h2>화이트닝, 점</h2>
+					<h2>스킨밸런스</h2>
 					<p>
 						prive는 피부컨디션에 맞춰 과하지 않게<br>
 						스킨밸런스를 찾아가는것에서 시작된<br>

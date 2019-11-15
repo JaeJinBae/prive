@@ -14,12 +14,14 @@
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/slick/slick-theme.css"/>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/main.css" />
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/jquery-1.12.4.min.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/common.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/full-page-scroll.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/common.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/slick/slick.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0, viewport-fit=cover">
 <style type="text/css">
-
+.footer-popup-wrap{
+	display: none;
+}
 @media only screen and (min-width:1200px){
 	.footer-popup-wrap{
 		display: none;
@@ -62,6 +64,13 @@ $(function(){
 		autoplaySpeed:3000,
 		dots:false
 	})
+	$(window).scroll(function(event){
+		var inner_width = window.innerWidth;
+		alert(inner_width);
+		if(inner_width >= 1200){
+			func_header("scroll");
+		}
+	});
 });
 </script>
 </head>

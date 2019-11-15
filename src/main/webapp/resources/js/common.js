@@ -1,10 +1,10 @@
 /**
  * 
  */
-function func_header(type){
-	// 제일 처음 함수 실행 될때 가로길이가 1200px이상인지 확인해서 참이면 아래 내용 실행 거짓일 경우 return false
-	
+function func_header(type){	
 	var nowPosition = $(window).scrollTop();
+	console.log(type);
+	console.log($(document).scrollTop());
 	if(type == "scroll"){
 		
 		if(nowPosition >= 100){
@@ -28,6 +28,7 @@ function func_header(type){
 $(function(){
 	$(window).scroll(function(event){
 		var inner_width = window.innerWidth;
+		console.log(inner_width);
 		if(inner_width >= 1200){
 			func_header("scroll");
 		}
