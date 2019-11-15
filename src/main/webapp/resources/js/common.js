@@ -3,8 +3,7 @@
  */
 function func_header(type){	
 	var nowPosition = $(window).scrollTop();
-	console.log(type);
-	console.log($(document).scrollTop());
+	
 	if(type == "scroll"){
 		
 		if(nowPosition >= 100){

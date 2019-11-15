@@ -211,7 +211,6 @@
 			}
 			
 			var inner_width = window.innerWidth;
-			console.log(position);
 			if(inner_width >= 1200){
 				func_header("scroll");
 			}
