@@ -16,45 +16,50 @@ public class PopupDaoImpl implements PopupDao {
 
 	@Autowired
 	private SqlSession session;
-	
+
 	@Override
 	public List<PopupVO> selectAll() {
-		return session.selectList(namespace+".selectAll");
+		return session.selectList(namespace + ".selectAll");
 	}
 
 	@Override
 	public PopupVO selectOne(int no) {
-		return session.selectOne(namespace+".selectOne", no);
+		return session.selectOne(namespace + ".selectOne", no);
+	}
+
+	@Override
+	public List<PopupVO> selectByDate(String select_date) {
+		return session.selectList(namespace + ".selectByDate", select_date);
 	}
 
 	@Override
 	public void insert(PopupVO vo) {
-		session.insert(namespace+".insert", vo);
+		session.insert(namespace + ".insert", vo);
 	}
 
 	@Override
 	public void update(PopupVO vo) {
-		session.update(namespace+".update", vo);
+		session.update(namespace + ".update", vo);
 	}
 
 	@Override
 	public void updateUseState(PopupVO vo) {
-		session.update(namespace+".updateUseState", vo);
+		session.update(namespace + ".updateUseState", vo);
 	}
 
 	@Override
 	public void delete(int no) {
-		session.delete(namespace+".delete", no);
+		session.delete(namespace + ".delete", no);
 	}
 
 	@Override
 	public List<PopupVO> listSearch(SearchCriteria cri) throws Exception {
-		return session.selectList(namespace+".listSearch", cri);
+		return session.selectList(namespace + ".listSearch", cri);
 	}
 
 	@Override
 	public int listSearchCount(SearchCriteria cri) throws Exception {
-		return session.selectOne(namespace+".listSearchCount", cri);
+		return session.selectOne(namespace + ".listSearchCount", cri);
 	}
 
 }

@@ -1,5 +1,7 @@
 package com.webaid.controller;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
@@ -55,7 +57,15 @@ public class HomeController {
 	public String home(Locale locale, Model model) {
 		logger.info("main get");
 		
-		List<PopupVO> list = pService.selectAll();
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+
+        Calendar c1 = Calendar.getInstance();
+        
+        String select_date = sdf.format(c1.getTime());
+		
+		List<PopupVO> list = pService.selectByDate(select_date);
+		
+		model.addAttribute("list", list);
 		
 		return "main/index";
 	}

@@ -371,5 +371,6 @@ $(function(){
 		<jsp:include page="../include/footer.jsp"></jsp:include>
 		<!-- footer end -->
 	</div>
+	<jsp:include page="../include/footer-popup.jsp"></jsp:include>
 </body>
 </html>

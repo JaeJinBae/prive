@@ -5,11 +5,15 @@
 <mapper namespace="com.webaid.mappers.PopupMapper">
 
 	<select id="selectAll" resultType="PopupVO">
-		select * from popup where use_state='o' order by no desc
+		select * from popup where use_state='Y' order by no desc
 	</select>
 	
 	<select id="selectOne" resultType="PopupVO">
 		select * from popup where no=#{no}
+	</select>
+	
+	<select id="selectByDate" resultType="PopupVO">
+		select * from popup where date(#{select_date}) &gt;= date(startdate) and date(#{select_date}) &lt;= date(enddate)
 	</select>
 	
 	<insert id="insert">

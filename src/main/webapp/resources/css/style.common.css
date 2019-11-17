@@ -321,6 +321,63 @@ input[type='password']{
 	.f_bottom p{
 		font-size: 13px;
 	}
+	
+	/* footer-popup */
+	.footer-bg{
+		display: none;
+		position: fixed;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		background: #333;
+		opacity: 0.7;
+		z-index: 999;
+	}
+	.footer-popup-wrap{
+		display: none;
+		width: 600px;
+		height: auto;
+		position: fixed;
+		top: 13%;
+		left: 50%;
+		margin-left: -300px; 
+		background: #fff;
+		z-index: 9999;
+	}
+	.f_popup{
+		display: none;
+	}
+	.f_p_title{
+		width: 100%;
+		position: relative;
+	}
+	.f_p_title > h4{
+		margin: 0;
+		width: 100%;
+		font-size: 25px;
+		text-align: center;
+		padding: 20px 0;
+	}
+	.f_p_title > p{
+		position: absolute;
+		top: 0;
+		right: 0;
+		font-size: 25px;
+		font-weight: bold;
+		cursor: pointer;
+		margin: 0;
+		padding: 20px;
+		background: #efefef;
+	}
+	.f_p_content{
+		width: 100%;
+	}
+	.f_p_content > textarea{
+		width: 94%;
+		height: 300px;
+		resize: none;
+		padding: 0 16px;
+	}
 }
 @media only screen and (min-width:768px) and (max-width:1199px){
 	#pc-header{
@@ -387,6 +444,63 @@ input[type='password']{
 	.f_bottom p{
 		font-size: 13px;
 		margin-bottom:0;
+	}
+	
+	/* footer-popup */
+	.footer-bg{
+		display: none;
+		position: fixed;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		background: #333;
+		opacity: 0.7;
+		z-index: 999;
+	}
+	.footer-popup-wrap{
+		display: none;
+		width: 600px;
+		height: auto;
+		position: fixed;
+		top: 13%;
+		left: 50%;
+		margin-left: -300px; 
+		background: #fff;
+		z-index: 9999;
+	}
+	.f_popup{
+		display: none;
+	}
+	.f_p_title{
+		width: 100%;
+		position: relative;
+	}
+	.f_p_title > h4{
+		margin: 0;
+		width: 100%;
+		font-size: 25px;
+		text-align: center;
+		padding: 20px 0;
+	}
+	.f_p_title > p{
+		position: absolute;
+		top: 0;
+		right: 0;
+		font-size: 25px;
+		font-weight: bold;
+		cursor: pointer;
+		margin: 0;
+		padding: 20px;
+		background: #efefef;
+	}
+	.f_p_content{
+		width: 100%;
+	}
+	.f_p_content > textarea{
+		width: 94%;
+		height: 300px;
+		resize: none;
+		padding: 0 16px;
 	}
 	
 }
@@ -463,6 +577,61 @@ input[type='password']{
 	.f_bottom p{
 		font-size: 13px;
 		margin: 0;
+	}
+	
+	/* footer-popup */
+	.footer-bg{
+		display: none;
+		position: fixed;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		background: #333;
+		opacity: 0.7;
+		z-index: 999;
+	}
+	.footer-popup-wrap{
+		display: none;
+		width: 100%;
+		height: auto;
+		position: fixed;
+		top: 13%;
+		background: #fff;
+		z-index: 9999;
+	}
+	.f_popup{
+		display: none;
+	}
+	.f_p_title{
+		width: 100%;
+		position: relative;
+	}
+	.f_p_title > h4{
+		margin: 0;
+		width: 100%;
+		font-size: 25px;
+		text-align: center;
+		padding: 20px 0;
+	}
+	.f_p_title > p{
+		position: absolute;
+		top: 0;
+		right: 0;
+		font-size: 25px;
+		font-weight: bold;
+		cursor: pointer;
+		margin: 0;
+		padding: 20px;
+		background: #efefef;
+	}
+	.f_p_content{
+		width: 100%;
+	}
+	.f_p_content > textarea{
+		width: 94%;
+		height: 300px;
+		resize: none;
+		padding: 0 16px;
 	}
 }
 

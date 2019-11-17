@@ -8,6 +8,7 @@ import com.webaid.domain.SearchCriteria;
 public interface PopupDao {
 	public List<PopupVO> selectAll();
 	public PopupVO selectOne(int no);
+	public List<PopupVO> selectByDate(String select_date);
 	public void insert(PopupVO vo);
 	public void update(PopupVO vo);
 	public void updateUseState(PopupVO vo);

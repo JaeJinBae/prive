@@ -14,10 +14,15 @@ public class PopupServiceImpl implements PopupService {
 
 	@Autowired
 	private PopupDao dao;
-	
+
 	@Override
 	public List<PopupVO> selectAll() {
 		return dao.selectAll();
+	}
+
+	@Override
+	public List<PopupVO> selectByDate(String select_date) {
+		return dao.selectByDate(select_date);
 	}
 
 	@Override
