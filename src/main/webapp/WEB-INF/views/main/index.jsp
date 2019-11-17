@@ -38,10 +38,40 @@
 	}
 }
 @media only screen and (min-width:768px) and (max-width:1199px){
-	
+	.main-popup{
+		position: fixed;
+		z-index: 9999;
+		background: #efefef;
+	}
+	.popup-btn{
+		width: 100%;
+		background: #efefef;
+	}
+	.popup-btn > p{
+		margin: 0;
+		padding: 20px 0;
+		text-align: center;
+		cursor: pointer;
+		
+	}
 }
 @media only screen and (min-width:320px) and (max-width:767px){	
-	
+	.main-popup{
+		position: fixed;
+		z-index: 9999;
+		background: #efefef;
+	}
+	.popup-btn{
+		width: 100%;
+		background: #efefef;
+	}
+	.popup-btn > p{
+		margin: 0;
+		padding: 20px 0;
+		text-align: center;
+		cursor: pointer;
+		
+	}
 }
 </style>
 <script>
@@ -69,14 +99,14 @@ $(function(){
 </head>
 <body>
 	<!-- popup -->
-	<div class="main-popup" style="top:30px;left:100px;">
+	<%-- <div class="main-popup" style="top:30px;left:100px;">
 		<div class="popup-content">
 			<img style="width:300px;" src="${pageContext.request.contextPath}/resources/uploadPopup/popuptest.png">
 		</div>
 		<div class="popup-btn">
 			<p>닫 기</p>
 		</div>
-	</div>
+	</div> --%>
 	<c:if test="${fn:length(list) != 0}">
 		<c:forEach var="item" items="${list}">
 			<div class="main-popup" style="left:${item.p_left}px;top:${item.p_top}px;">
