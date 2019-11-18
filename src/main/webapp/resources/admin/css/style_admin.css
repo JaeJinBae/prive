@@ -79,8 +79,8 @@ table tr.sorting-row td {background-color: #EFEFEF;}
 .bg_sky { background-color:#1DBCEE;}
 .txt_b { font-weight:bold;}
 .txt_blue_n { color:#00b6ed; font-weight:normal;}
-.txt_blue_b { color:#00b6ed; font-weight:bold;}
-.txt_red_n { color:#ff3c30; font-weight:normal; }
+.txt_blue_b { color:#00b6ed; font-weight:bold; vertical-align: text-bottom;}
+.txt_red_n { color:#ff3c30; font-weight:normal;}
 .txt_red_b { color:#ff3c30; font-weight:bold; }
 .txt_666_n { color:#666; font-weight:normal;}
 .txt_666_n { color:#666; font-weight:bold;}

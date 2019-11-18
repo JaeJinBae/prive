@@ -193,19 +193,19 @@ section{
 @media only screen and (min-width:320px) and (max-width:767px){	
 	.section1{
 		background: #e5ddc9;
-		height: 950px;
+		height: 225%;
 	}
 	
 	.section2{
 		background: #f3efe3;
-		height: 950px;
+		height: 225%;
 	}
 	
 	.aside_wrap{
 		width: 96%;
 		overflow: hidden;
 		position: absolute;
-		top: 15%;
+		top: 8%;
 		left: 50%;
 		margin-left: -48%;
 	}
@@ -255,7 +255,17 @@ section{
 		width: 100%;
 		line-height: 24px;
 	}
-	
+	.section2 .aside_wrap{
+		height: 100%;
+	}
+	.section2 .aside_left{
+		position: absolute;
+		bottom:200px;
+	}
+	.section2 .aside_right{
+		position: absolute;
+		top: 0;
+	}
 	
 	
 	#footer{
@@ -283,7 +293,7 @@ $(function(){
 				<div class="aside_wrap">
 					<div class="aside_left">
 						<div class="doc_img">
-							
+							<img src="${pageContext.request.contextPath}/resources/img/content/doctor1.jpg">
 						</div>
 					</div>
 					<div class="aside_right">
@@ -366,7 +376,7 @@ $(function(){
 					</div>
 					<div class="aside_right">
 						<div class="doc_img">
-							
+							<img src="${pageContext.request.contextPath}/resources/img/content/doctor2.jpg">
 						</div>
 					</div>
 				</div><!-- aside_wrap end -->
