@@ -387,7 +387,7 @@ input[type='password']{
     	padding: 15px 0;
 	}
 	.active-menu{
-		background: url(/prive/resources/img/common/nav-bg-white.png) no-repeat;
+		background: url("/resources/img/common/nav-bg-white.png") no-repeat;
     	background-size: cover;
 	}
 	#pc-header{
@@ -526,7 +526,7 @@ input[type='password']{
     	padding: 15px 0;
 	}
 	.active-menu{
-		background: url(/prive/resources/img/common/nav-bg-white.png) no-repeat;
+		background: url("/resources/img/common/nav-bg-white.png") no-repeat;
     	background-size: cover;
 	}
 	#footer{
