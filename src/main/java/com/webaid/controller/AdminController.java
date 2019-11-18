@@ -268,6 +268,15 @@ public class AdminController {
 		return "redirect:/admin/menu01_01update";
 	}
 	
+	@RequestMapping(value="/menu01_01delete/{no}", method=RequestMethod.GET)
+	public String menu01_01delete(@PathVariable("no") int no){
+		logger.info("advice delete");
+		
+		aService.delete(no);
+		
+		return "redirect:/admin/menu01_01";
+	}
+	
 	@RequestMapping(value = "/menu01_02", method = RequestMethod.GET)
 	public String menu01_02(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
 		logger.info("menu01_02 GET");
@@ -417,6 +426,15 @@ public class AdminController {
 		rtts.addAttribute("page", page);
 		
 		return "redirect:/admin/menu02_01update";
+	}
+	
+	@RequestMapping(value="/menu02_01delete/{no}", method=RequestMethod.GET)
+	public String menu02_01delete(@PathVariable("no") int no){
+		logger.info("popup delete");
+		
+		pService.delete(no);
+		
+		return "redirect:/admin/menu02_01";
 	}
 	
 	@RequestMapping(value = "/menu03_01", method = RequestMethod.GET)

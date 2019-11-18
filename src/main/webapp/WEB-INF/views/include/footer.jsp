@@ -14,7 +14,7 @@
 					<p>대구광역시 수성구 범어천로3 (구.아서원)</p>
 					<p>대표: 김인용 외1명 | 사업자번호: 660-61-00332</p>
 					<p>TEL: <a href="tel:1800-5475">1800-5475</a> / <a href="tel:053-721-7531">053-721-7531</a></p>
-					<p>FAX: 053-000-0000 | E-mail: priveskin@naver.com</p>
+					<p>FAX: 053-721-7532 | E-mail: priveskin@naver.com</p>
 				</div>
 			</div>
 			<div class="foot">

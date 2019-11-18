@@ -22,8 +22,15 @@
 @media only screen and (min-width:1200px){
 	.main-popup{
 		position: fixed;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
 		z-index: 9999;
 		background: #efefef;
+	}
+	.popup-content img{
+		max-width: 700px !important;
+		max-height: 700px !important;
 	}
 	.popup-btn{
 		width: 100%;
@@ -32,7 +39,7 @@
 	.popup-btn > p{
 		margin: 0;
 		padding: 20px 0;
-		text-align: center;
+		text-align: center; 
 		cursor: pointer;
 		
 	}
@@ -40,8 +47,15 @@
 @media only screen and (min-width:768px) and (max-width:1199px){
 	.main-popup{
 		position: fixed;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
 		z-index: 9999;
 		background: #efefef;
+	}
+	.popup-content img{
+		max-width: 700px !important;
+		max-height: 700px !important;
 	}
 	.popup-btn{
 		width: 100%;
@@ -57,9 +71,16 @@
 }
 @media only screen and (min-width:320px) and (max-width:767px){	
 	.main-popup{
+		width: 89%;
 		position: fixed;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
 		z-index: 9999;
 		background: #efefef;
+	}
+	.popup-content img{
+		width: 100%;
 	}
 	.popup-btn{
 		width: 100%;
@@ -99,9 +120,9 @@ $(function(){
 </head>
 <body>
 	<!-- popup -->
-	<%-- <div class="main-popup" style="top:30px;left:100px;">
+	<%-- <div class="main-popup" style="">
 		<div class="popup-content">
-			<img style="width:300px;" src="${pageContext.request.contextPath}/resources/uploadPopup/popuptest.png">
+			<img src="${pageContext.request.contextPath}/resources/uploadPopup/popuptest.png">
 		</div>
 		<div class="popup-btn">
 			<p>닫 기</p>
@@ -109,7 +130,7 @@ $(function(){
 	</div> --%>
 	<c:if test="${fn:length(list) != 0}">
 		<c:forEach var="item" items="${list}">
-			<div class="main-popup" style="left:${item.p_left}px;top:${item.p_top}px;">
+			<div class="main-popup">
 				<div class="popup-content">
 					${item.content}
 				</div>

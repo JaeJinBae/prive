@@ -9,8 +9,8 @@
 		<li><a href="https://www.instagram.com/priveskin"><img src="${pageContext.request.contextPath}/resources/img/common/icon_insta_bl.png"></a></li>
 		<li><a href="https://www.facebook.com/%ED%94%84%EB%9D%BC%EC%9D%B4%EB%B8%8C%ED%94%BC%EB%B6%80%EA%B3%BC-113165293400268/"><img src="${pageContext.request.contextPath}/resources/img/common/icon_facebook_bl.png"></a></li> --%>
 		
-		<li><a href="tel:1800-5475"><img src="/prive/resources/img/common/icon_call3.png"></a></li>
-		<li><a href="http://pf.kakao.com/_HbkxkT/chat"><img src="/prive/resources/img/common/icon_kakao3.png"></a></li>
-		<li><a href="${pageContext.request.contextPath}/menu08_01"><img src="/prive/resources/img/common/icon_sangdam3.png" style="border-radius:8px;"></a></li>
+		<li><a href="tel:1800-5475"><img src="${pageContext.request.contextPath}/resources/img/common/icon_call3.png"></a></li>
+		<li><a href="http://pf.kakao.com/_HbkxkT/chat"><img src="${pageContext.request.contextPath}/resources/img/common/icon_kakao3.png"></a></li>
+		<li><a href="${pageContext.request.contextPath}/menu08_01"><img src="${pageContext.request.contextPath}/resources/img/common/icon_sangdam3.png" style="border-radius:8px;"></a></li>
 	</ul>
 </div>

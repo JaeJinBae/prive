@@ -117,12 +117,12 @@
 	}
 	.slick-prev{
 		left:360px;
-		background: url("/prive/resources/img/main/arrow_l.png") no-repeat;
+		background: url("/resources/img/main/arrow_l.png") no-repeat;
 		background-size: contain;
 	}
 	.slick-next{
 		left: 435px;
-		background: url("/prive/resources/img/main/arrow_r.png") no-repeat;
+		background: url("/resources/img/main/arrow_r.png") no-repeat;
 		background-size: contain;
 	}
 	.imgNav{
@@ -140,7 +140,7 @@
 		
 	}
 	.main_s3{
-		background: url("/prive/resources/img/main/main_s3.jpg") no-repeat;
+		background: url("/resources/img/main/main_s3.jpg") no-repeat;
 		background-size: cover;
 		background-position: center center;
 	}
@@ -292,12 +292,12 @@
 	}
 	.slick-prev{
 		left:46px;
-		background: url("/prive/resources/img/main/arrow_l.png") no-repeat;
+		background: url("/resources/img/main/arrow_l.png") no-repeat;
 		background-size: contain;
 	}
 	.slick-next{
 		left: 120px;
-		background: url("/prive/resources/img/main/arrow_r.png") no-repeat;
+		background: url("/resources/img/main/arrow_r.png") no-repeat;
 		background-size: contain;
 	}
 	
@@ -306,7 +306,7 @@
 		
 	}
 	.main_s3{
-		background: url("/prive/resources/img/main/main_s3.jpg") no-repeat;
+		background: url("/resources/img/main/main_s3.jpg") no-repeat;
 		background-size: cover;
 		background-position: center center;
 	}
@@ -459,12 +459,12 @@
 	}
 	.slick-prev{
 		left:20px;
-		background: url("/prive/resources/img/main/arrow_l.png") no-repeat;
+		background: url("/resources/img/main/arrow_l.png") no-repeat;
 		background-size: contain;
 	}
 	.slick-next{
 		left: 73px;
-		background: url("/prive/resources/img/main/arrow_r.png") no-repeat;
+		background: url("/resources/img/main/arrow_r.png") no-repeat;
 		background-size: contain;
 	}
 	
@@ -472,7 +472,7 @@
 		
 	}
 	.main_s3{
-		background: url("/prive/resources/img/main/main_s3.jpg") no-repeat;
+		background: url("/resources/img/main/main_s3.jpg") no-repeat;
 		background-size: cover;
 		background-position: center center;
 	}

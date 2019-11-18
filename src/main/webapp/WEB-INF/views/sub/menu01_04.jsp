@@ -100,12 +100,12 @@ section{
 	}
 	.slick-prev{
 		right:15% !important;
-		background: url("/prive/resources/img/main/arrow_l.png") no-repeat;
+		background: url("${pageContext.request.contextPath}/resources/img/main/arrow_l.png") no-repeat;
 		background-size: contain;
 	}
 	.slick-next{
 		right: 10%;
-		background: url("/prive/resources/img/main/arrow_r.png") no-repeat;
+		background: url("${pageContext.request.contextPath}/resources/img/main/arrow_r.png") no-repeat;
 		background-size: contain;
 	}
 	
@@ -176,12 +176,12 @@ section{
 	}
 	.slick-prev{
 		right:15% !important;
-		background: url("/prive/resources/img/main/arrow_l.png") no-repeat;
+		background: url("${pageContext.request.contextPath}/resources/img/main/arrow_l.png") no-repeat;
 		background-size: contain;
 	}
 	.slick-next{
 		right: 10%;
-		background: url("/prive/resources/img/main/arrow_r.png") no-repeat;
+		background: url("${pageContext.request.contextPath}/resources/img/main/arrow_r.png") no-repeat;
 		background-size: contain;
 	}
 	
@@ -251,12 +251,12 @@ section{
 	}
 	.slick-prev{
 		right:25% !important;
-		background: url("/prive/resources/img/main/arrow_l.png") no-repeat;
+		background: url("${pageContext.request.contextPath}/resources/img/main/arrow_l.png") no-repeat;
 		background-size: contain;
 	}
 	.slick-next{
 		right: 10%;
-		background: url("/prive/resources/img/main/arrow_r.png") no-repeat;
+		background: url("${pageContext.request.contextPath}/resources/img/main/arrow_r.png") no-repeat;
 		background-size: contain;
 	}
 	

@@ -11,7 +11,7 @@
 					<span class="gnb-txt">Prvie 소개</span>
 					<ul class="lnb-wrap">
 						<li class="lnb"><a href="${pageContext.request.contextPath}/menu01_01">Prive란?</a></li>
-						<li class="lnb"><a href="${pageContext.request.contextPath}/menu01_02">피부과전문 의료진</a></li>
+						<li class="lnb"><a href="${pageContext.request.contextPath}/menu01_02">의료진 소개</a></li>
 						<li class="lnb"><a href="${pageContext.request.contextPath}/menu01_03">진료시간/위치</a></li>
 						<li class="lnb"><a href="${pageContext.request.contextPath}/menu01_04">Prive공간</a></li>
 					</ul>
@@ -38,7 +38,7 @@
 					<span class="gnb-txt">커뮤니티</span>
 					<ul class="lnb-wrap">
 						<li class="lnb"><a href="${pageContext.request.contextPath}/menu08_01">온라인상담</a></li>
-						<li class="lnb"><a href="">카카오상담</a></li>
+						<li class="lnb"><a href="http://pf.kakao.com/_HbkxkT/chat">카카오상담</a></li>
 						<li class="lnb"><a href="${pageContext.request.contextPath}/menu08_03">공지사항</a></li>
 					</ul>
 				</li>
@@ -65,7 +65,7 @@
 					<span class="gnb-txt">Prvie 소개</span><span class="arrow">∨</span>
 					<ul class="lnb-wrap">
 						<li class="lnb"><a href="${pageContext.request.contextPath}/menu01_01">Prive란?</a></li>
-						<li class="lnb"><a href="${pageContext.request.contextPath}/menu01_02">피부과전문 의료진</a></li>
+						<li class="lnb"><a href="${pageContext.request.contextPath}/menu01_02">의료진 소개</a></li>
 						<li class="lnb"><a href="${pageContext.request.contextPath}/menu01_03">진료시간/위치</a></li>
 						<li class="lnb"><a href="${pageContext.request.contextPath}/menu01_04">Prive공간</a></li>
 					</ul>

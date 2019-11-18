@@ -84,6 +84,21 @@ $(function(){
 		href += "&fileName="+fileName+"&downName="+downName;
 		location.href= href;
 	});
+	
+	$("#delBtn").click(function(){
+		var no = $("input[name='no']").val();
+		
+		$.ajax({
+			url:"${pageContext.request.contextPath}/admin/menu01_01delete/"+no,
+			type:"get",
+			dataType:"text",
+			async:false,
+			success:function(json){
+				location.href="${pageContext.request.contextPath}/admin/menu01_01";
+			} 
+		});
+		
+	});
 });
 </script>
 </head>
@@ -213,7 +228,7 @@ $(function(){
 							<p class="btn_right">
 								<input type="submit" class="btn_black" value="수정">
 				
-								<button type="button" class="btn_red" onclick="">삭제</button>
+								<button type="button" class="btn_red" id="delBtn">삭제</button>
 								<button type="button" class="btn_gray" onclick="">취소</button>
 							</p>
 						</div>

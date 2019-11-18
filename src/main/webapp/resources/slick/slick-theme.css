@@ -89,13 +89,13 @@
 .slick-prev:before
 {
     content:"";
-    background: url("/prive/resources/img/main/arrow_l.png") no-repeat;
+    background: url("/resources/img/main/arrow_l.png") no-repeat;
 	background-size: contain;
 }
 [dir='rtl'] .slick-prev:before
 {
     content:"";
-    background: url("/prive/resources/img/main/arrow_r.png") no-repeat;
+    background: url("/resources/img/main/arrow_r.png") no-repeat;
 	background-size: contain;
 }
 
@@ -111,13 +111,13 @@
 .slick-next:before
 {
     content:"";
-    background: url("/prive/resources/img/main/arrow_r.png") no-repeat;
+    background: url("/resources/img/main/arrow_r.png") no-repeat;
 	background-size: contain;
 }
 [dir='rtl'] .slick-next:before
 {
     content:"";
-    background: url("/prive/resources/img/main/arrow_l.png") no-repeat;
+    background: url("/resources/img/main/arrow_l.png") no-repeat;
 	background-size: contain;
 }
 

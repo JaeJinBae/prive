@@ -244,7 +244,7 @@ input[type='password']{
 		top: -83px !important;	
 	}
 	.white-bg{
-		background: url("/prive/resources/img/common/nav-bg-white.png") no-repeat;
+		background: url("/resources/img/common/nav-bg-white.png") no-repeat;
 		background-size: cover;
 	}
 	#header{
@@ -380,6 +380,16 @@ input[type='password']{
 	}
 }
 @media only screen and (min-width:768px) and (max-width:1199px){
+	#header{
+		/* background: url(/prive/resources/img/common/nav-bg-white.png) no-repeat;
+    	background-size: cover; */
+    	top:0;
+    	padding: 15px 0;
+	}
+	.active-menu{
+		background: url(/prive/resources/img/common/nav-bg-white.png) no-repeat;
+    	background-size: cover;
+	}
 	#pc-header{
 		display: none;
 	}
@@ -510,6 +520,14 @@ input[type='password']{
 	}
 	#m-header{
 		display: block;
+	}
+	#header{
+		top:0;
+    	padding: 15px 0;
+	}
+	.active-menu{
+		background: url(/prive/resources/img/common/nav-bg-white.png) no-repeat;
+    	background-size: cover;
 	}
 	#footer{
 		height:33%;
