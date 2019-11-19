@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>프라이브 피부과</title>
+<title>프라이브 피부과의원</title>
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-152756473-1"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -292,7 +292,7 @@ $(function(){
 						
 						여유로움이 가득한 공간에서<br>
 						리프팅, 피부탄력을 위한 시간을 경험하세요.<br><br>
-						프라이브피부과.
+						프라이브피부과의원.
 					</p>
 				</div><!-- s1_txt end -->
 			</div>

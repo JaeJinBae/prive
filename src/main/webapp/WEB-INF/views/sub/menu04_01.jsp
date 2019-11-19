@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>프라이브 피부과</title>
+<title>프라이브 피부과의원</title>
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-152756473-1"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -481,7 +481,7 @@ $(function(){
 							최적의 남자피부관리 프로그램<br><br>
 							
 							멋있고 깔끔한 인상을 만나볼 시간,<br>
-							프라이브피부과 Men's care를 소개합니다.
+							프라이브피부과의원 Men's care를 소개합니다.
 						</p>
 					</div>
 					<div class="s2_img">
