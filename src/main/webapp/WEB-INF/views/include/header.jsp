@@ -8,7 +8,7 @@
 		<div class="pc-menu-wrap">
 			<ul class="gnb-wrap">
 				<li class="gnb">
-					<span class="gnb-txt">Prvie 소개</span>
+					<span class="gnb-txt">Prive 소개</span>
 					<ul class="lnb-wrap">
 						<li class="lnb"><a href="${pageContext.request.contextPath}/menu01_01">Prive란?</a></li>
 						<li class="lnb"><a href="${pageContext.request.contextPath}/menu01_02">의료진 소개</a></li>

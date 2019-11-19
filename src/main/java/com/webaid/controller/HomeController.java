@@ -54,9 +54,17 @@ public class HomeController {
 	private PopupService pService;
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String home(Locale locale, Model model) {
+	public String home(HttpServletRequest req, Model model) {
 		logger.info("main get");
 		
+		String referer = (String)req.getHeader("REFERER");
+		if(referer.equals("null")){
+			referer = "직접 또는 즐겨찾기";
+		}else if(referer.indexOf("prive.co.kr")>-1){
+			referer = "-";
+		}else if(referer.indexOf("prive.co.kr") <= -1){
+			referer = "-";
+		}
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 
         Calendar c1 = Calendar.getInstance();
@@ -66,6 +74,7 @@ public class HomeController {
 		List<PopupVO> list = pService.selectByDate(select_date);
 		
 		model.addAttribute("list", list);
+		model.addAttribute("referer", referer);
 		
 		return "main/index";
 	}

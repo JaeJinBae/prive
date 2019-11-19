@@ -8,6 +8,14 @@
 <head>
 <meta charset="UTF-8">
 <title>프라이브 피부과</title>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-152756473-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-152756473-1');
+</script>
 <meta name="naver-site-verification" content="d53046e7ecfe442e3b973c1baeb37ec7fc75031d"/>
 <meta name="description" content="특별한 공간, 특별한 시간 프라이브피부과">
 <meta property="og:type" content="website">
@@ -184,42 +192,42 @@ $(function(){
 							<p class="s_num">1</p>
 							<h2 class="s_title">리프팅</h2>
 							<p class="s_content">하이엔드 레이저, 새롭게 탄력을 표현합니다.</p>
-							<p class="s_more_btn"><a href="${pageContext.request.contextPath}/">더보기</a></p>
+							<p class="s_more_btn"><a href="${pageContext.request.contextPath}/menu02_01">더보기</a></p>
 						</div>
 						<div class="slider_img">
 							<img src="${pageContext.request.contextPath}/resources/img/main/mainBanner02.jpg">
 							<p class="s_num">2</p>
 							<h2 class="s_title">스킨밸런스</h2>
 							<p class="s_content">근본적으로 과하지않게 피부밸런스를 찾아갑니다.</p>
-							<p class="s_more_btn"><a href="${pageContext.request.contextPath}/">더보기</a></p>
+							<p class="s_more_btn"><a href="${pageContext.request.contextPath}/menu03_01">더보기</a></p>
 						</div>
 						<div class="slider_img">
 							<img src="${pageContext.request.contextPath}/resources/img/main/mainBanner03.jpg">
 							<p class="s_num">3</p>
 							<h2 class="s_title">맨즈케어</h2>
 							<p class="s_content">당신의 가장 멋진모습, 프라이브 맨즈케어</p>
-							<p class="s_more_btn"><a href="${pageContext.request.contextPath}/">더보기</a></p>
+							<p class="s_more_btn"><a href="${pageContext.request.contextPath}/menu04_01">더보기</a></p>
 						</div>
 						<div class="slider_img">
 							<img src="${pageContext.request.contextPath}/resources/img/main/mainBanner04.jpg">
 							<p class="s_num">4</p>
 							<h2 class="s_title">볼륨</h2>
 							<p class="s_content">좋은재료로 더 건강하게 아름다움을 채웁니다.</p>
-							<p class="s_more_btn"><a href="${pageContext.request.contextPath}/">더보기</a></p>
+							<p class="s_more_btn"><a href="${pageContext.request.contextPath}/menu05_01">더보기</a></p>
 						</div>
 						<div class="slider_img">
 							<img src="${pageContext.request.contextPath}/resources/img/main/mainBanner05.jpg">
 							<p class="s_num">5</p>
 							<h2 class="s_title">소프트성형</h2>
 							<p class="s_content">더 아름다워진 나자신과 만나는 시간. 소프트성형</p>
-							<p class="s_more_btn"><a href="${pageContext.request.contextPath}/">더보기</a></p>
+							<p class="s_more_btn"><a href="${pageContext.request.contextPath}/menu06_01">더보기</a></p>
 						</div>
 						<div class="slider_img">
 							<img src="${pageContext.request.contextPath}/resources/img/main/mainBanner06.jpg">
 							<p class="s_num">6</p>
 							<h2 class="s_title">메디컬스킨케어</h2>
 							<p class="s_content">프리미엄제품으로 더 특별한 스킨케어시간</p>
-							<p class="s_more_btn"><a href="${pageContext.request.contextPath}/">더보기</a></p>
+							<p class="s_more_btn"><a href="${pageContext.request.contextPath}/menu07_01">더보기</a></p>
 						</div>
 					</div>
 				</div>
