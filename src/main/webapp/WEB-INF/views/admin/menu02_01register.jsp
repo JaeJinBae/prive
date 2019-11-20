@@ -94,6 +94,10 @@ $(function(){
 						<div class="write_box">
 							<input type="hidden" name="no" value="0">
 							<input type="hidden" id="regdate" name="regdate" value="">
+							<input type="hidden" class="w_form_s" id="p_sun" name="orderno" value="0">
+							<input type="hidden" name="output_type" id="t_mode1" value="common" checked="checked">
+							<input type="hidden" class="w_form_s" name="p_left" value="0">
+							<input type="hidden" class="w_form_s" name="p_top" value="0">
 			
 							<table class="write_table" cellpadding="0">
 								<colgroup>
@@ -107,8 +111,11 @@ $(function(){
 								</tr> -->
 								<tr class="cont">
 									<td class="title">출력종류</td>
-									<td><input type="radio" name="output_type" id="t_mode1" value="pc" checked="checked"><label for="t_mode1"><i></i>웹</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-									<input type="radio" name="output_type" id="t_mode2" value="mobile"> <label for="t_mode2"><i></i>모바일</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+									<td>
+										<!-- <input type="radio" name="output_type" id="t_mode1" value="pc" checked="checked"><label for="t_mode1"><i></i>웹</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+										<input type="radio" name="output_type" id="t_mode2" value="mobile"> <label for="t_mode2"><i></i>모바일</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
+										공통
+									</td>
 								</tr>
 								<tr class="cont">
 									<td class="title">출력기간</td>
@@ -117,18 +124,19 @@ $(function(){
 										<input type="text" id="enddate" class="w_form_s" name="enddate" value="" autocomplete="off">
 									</td>
 								</tr>
-								<tr class="cont">
+								<!-- <tr class="cont">
 									<td class="title">출력순서</td>
 									<td>
 										<input type="text" class="w_form_s" id="p_sun" name="orderno" value="0" element-name="출력순서">
 									</td>
-								</tr>
+								</tr> -->
 								<tr class="cont">
 									<td class="title">위치</td>
 									<td>
-										X : <input type="text" class="w_form_s" name="p_left" value="0" valid="none,number" element-name="위치">
+										<!-- X : <input type="text" class="w_form_s" name="p_left" value="0" valid="none,number" element-name="위치">
 										Y : <input type="text" class="w_form_s" name="p_top" value="0" valid="none,number" element-name="위치">
-										(미입력시 X : 0, Y : 0 으로 입력됩니다)
+										(미입력시 X : 0, Y : 0 으로 입력됩니다) -->
+										중앙정렬
 									</td>
 								</tr>
 								<!-- <tr class="cont" id="tr_width">

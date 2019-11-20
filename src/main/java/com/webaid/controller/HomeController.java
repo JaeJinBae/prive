@@ -209,6 +209,7 @@ public class HomeController {
 		vo.setReply("");
 		vo.setMemo("");
 		vo.setReply_date("");
+		vo.setAccess_url(mtfReq.getParameter("access_url"));
 		
 		aService.insert(vo);
 		

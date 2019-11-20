@@ -252,6 +252,7 @@ $(function(){
 					<input type="hidden" name="secret" id="secret" value="o">
 						<input type="hidden" name="regdate" id="regdate">
 						<input type="hidden" name="phone" id="phone">
+						<input type="hidden" name="access_url" id="access_url">
 						<table class="board-cousel-form">							
 							<tr>
 								<th scope="row">이름</th>

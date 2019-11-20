@@ -85,7 +85,7 @@ $(function(){
 									<col width="15%">
 									<col width="8%">
 									<col width="8%">
-									<col width="8%">
+									<%-- <col width="8%"> --%>
 									<col width="8%">
 									<%-- <col width="5%"> --%>
 								</colgroup>
@@ -97,7 +97,7 @@ $(function(){
 									<th>출력기간</th>
 									<th>팝업창종류</th>
 									<th>출력종류</th>
-									<th>출력순서</th>
+									<!-- <th>출력순서</th> -->
 									<th>등록일</th>
 									<!-- <th>보기</th> -->
 								</tr>
@@ -123,11 +123,9 @@ $(function(){
 												<td><a href="${pageContext.request.contextPath}/admin/menu02_01update${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}">레이어</a></td>
 												<td>
 													<a href="${pageContext.request.contextPath}/admin/menu02_01update${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}">
-														<c:if test="${item.output_type == 'pc'}">PC</c:if>
-														<c:if test="${item.output_type == 'mobile'}">MOBILE</c:if>
+														공통
 													</a>
 												</td>
-												<td><a href="${pageContext.request.contextPath}/admin/menu02_01update${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}">${item.orderno}</a></td>
 												<td>${item.regdate}</td>
 												<%-- <td><img src="${pageContext.request.contextPath}/resources/admin/img/icon_view.jpg" class="cursor"></td> --%>
 												<%-- <td><img src="${pageContext.request.contextPath}/resources/admin/img/icon_view.jpg" class="cursor" onclick="vpopup_it('layer', '38')"></td> --%>

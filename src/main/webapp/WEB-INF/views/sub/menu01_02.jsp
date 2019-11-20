@@ -243,12 +243,12 @@ section{
 	}
 	.section1 .doc_letter > .doc_name{
 		text-align: right;
-		font-size: 25px;
+		font-size: 22px;
 		font-weight: 600;
 	}
 	.section2 .doc_letter > .doc_name{
 		text-align: left;
-		font-size: 25px;
+		font-size: 22px;
 		font-weight: 600;
 	}
 	.section1 .doc_yak{
@@ -268,7 +268,7 @@ section{
 	}
 	.section2 .aside_left{
 		position: absolute;
-		bottom:200px;
+		bottom:180px;
 	}
 	.section2 .aside_right{
 		position: absolute;

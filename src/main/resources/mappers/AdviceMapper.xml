@@ -13,7 +13,7 @@
 	</select>
 	
 	<insert id="insert">
-		insert into advice values(0, #{name}, #{phone}, #{regdate}, #{email}, #{state}, #{secret}, #{pw}, #{title}, #{content}, #{reply}, #{memo}, #{reply_date})
+		insert into advice values(0, #{name}, #{phone}, #{regdate}, #{email}, #{state}, #{secret}, #{pw}, #{title}, #{content}, #{reply}, #{memo}, #{access_url}, #{reply_date})
 	</insert>
 	
 	<update id="update">

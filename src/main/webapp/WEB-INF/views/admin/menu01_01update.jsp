@@ -216,6 +216,10 @@ $(function(){
 									<td class="title">답변일</td>
 									<td>${item.reply_date}<input type="hidden" name="reply_date" value="${item.reply_date}"></td>
 								</tr>
+								<tr class="cont">
+									<td class="title">경로</td>
+									<td>${item.access_url}</td>
+								</tr>
 							</table>
 							
 						</div>

@@ -512,6 +512,24 @@ $(function(){
 					<div class="banner_wrap2">
 						<div class="equip_banner">
 							<div class="equip">
+								<h3>튠페이스</h3>
+								<p>
+									피부탄력을 튜닝하라!
+									샷 수보다 중요한것은 피부 속에 전달되는 에너지 입니다. 특허받은 40.68MHz 에너지를 프락셔널 방식으로 정확하고 균일하게 전달, 베큠기술력으로 에너지를 집속하여 짧은 시간에 더 강력한 에너지를 전달합니다.
+										아이스컨텍 쿨링 방식으로 아프지 않고, 통증없이 편안하게! 3단계 깊이 조절로 피부타입에 맞게 정확한 시술과 오랜지속효과를 자랑합니다.
+									</p>
+								<img src="${pageContext.request.contextPath}/resources/img/content/menu02_equip4.png">
+							</div>
+							<div class="equip">
+								<h3>써마지</h3>
+								<p>
+									Thermage FLX는 고주파 전류를 이용하여 조직의 응고로 눈가 및 안면상 주름의 비침습적인 탁월한 치료 입니다.
+									 피부속 콜라겐 섬유의 변성과 수축을 일으켜 콜라겐 재생 및 주름 개선 효과를 보입니다.
+									진피 조직에 열을 발생시키는 써마지 원리를 사용하여 고주파 에너지를 전달하고, 열이 전달 되는 동안에 쿨링펄스를 통해 안전하게 피부 표면을 보호합니다.
+									</p>
+								<img src="${pageContext.request.contextPath}/resources/img/content/menu02_equip3.png">
+							</div>
+							<div class="equip">
 								<h3>울쎄라</h3>
 								<p>
 									울쎄라는 고강도 집적초음파를 이용하여 피부 표면은 건드리지 않고 3-4.5mm 깊이의 피하지방층과 표층근건막계층(SMAS)에 열에너지를 전달하여 피부 재생세포를 자극해
@@ -529,24 +547,6 @@ $(function(){
 									피부 손상을 최소화하여 피부 속 1.5~4.5mm 깊이에 정확하고 강한 초음파에너지를 집속시키는 시술로 스킨 리프팅과 탄력, 주름을 개선합니다.
 									</p>
 								<img src="${pageContext.request.contextPath}/resources/img/content/menu02_equip2.png">
-							</div>
-							<div class="equip">
-								<h3>써마지</h3>
-								<p>
-									Thermage FLX는 고주파 전류를 이용하여 조직의 응고로 눈가 및 안면상 주름의 비침습적인 탁월한 치료 입니다.
-									 피부속 콜라겐 섬유의 변성과 수축을 일으켜 콜라겐 재생 및 주름 개선 효과를 보입니다.
-									진피 조직에 열을 발생시키는 써마지 원리를 사용하여 고주파 에너지를 전달하고, 열이 전달 되는 동안에 쿨링펄스를 통해 안전하게 피부 표면을 보호합니다.
-									</p>
-								<img src="${pageContext.request.contextPath}/resources/img/content/menu02_equip3.png">
-							</div>
-							<div class="equip">
-								<h3>튠페이스</h3>
-								<p>
-									피부탄력을 튜닝하라!
-									샷 수보다 중요한것은 피부 속에 전달되는 에너지 입니다. 특허받은 40.68MHz 에너지를 프락셔널 방식으로 정확하고 균일하게 전달, 베큠기술력으로 에너지를 집속하여 짧은 시간에 더 강력한 에너지를 전달합니다.
-										아이스컨텍 쿨링 방식으로 아프지 않고, 통증없이 편안하게! 3단계 깊이 조절로 피부타입에 맞게 정확한 시술과 오랜지속효과를 자랑합니다.
-									</p>
-								<img src="${pageContext.request.contextPath}/resources/img/content/menu02_equip4.png">
 							</div>
 							<div class="equip">
 								<h3>코레지</h3>

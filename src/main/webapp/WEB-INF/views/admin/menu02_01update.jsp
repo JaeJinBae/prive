@@ -52,11 +52,7 @@ $(function(){
 			$("input[name='link']").val(" ");
 		}
 	});
-	if($("#outputType").val() == "pc"){
-		$("#t_mode1").prop("checked", true);
-	}else{
-		$("#t_mode2").prop("checked", true);
-	}
+	
 	
 	if($("#useState").val() == "Y"){
 		$("#p_delflag1").prop("checked", true);
@@ -113,6 +109,8 @@ $(function(){
 							<input type="hidden" id="regdate" name="regdate" value="${item.regdate}">
 							<input type="hidden" id="outputType" value="${item.output_type}">
 							<input type="hidden" id="useState" value="${item.use_state}">
+							<input type="hidden" class="w_form_s" name="p_left" value="0">
+							<input type="hidden" class="w_form_s" name="p_top" value="0">
 							
 							<table class="write_table" cellpadding="0">
 								<colgroup>
@@ -127,8 +125,9 @@ $(function(){
 								<tr class="cont">
 									<td class="title">출력종류</td>
 									<td>
-										<input type="radio" name="output_type" id="t_mode1" value="pc" checked="checked"><label for="t_mode1"><i></i>웹</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-										<input type="radio" name="output_type" id="t_mode2" value="mobile"> <label for="t_mode2"><i></i>모바일</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+										<!-- <input type="radio" name="output_type" id="t_mode1" value="pc" checked="checked"><label for="t_mode1"><i></i>웹</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+										<input type="radio" name="output_type" id="t_mode2" value="mobile"> <label for="t_mode2"><i></i>모바일</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
+										공통
 									</td>
 								</tr>
 								<tr class="cont">
@@ -138,18 +137,19 @@ $(function(){
 										<input type="text" id="enddate" class="w_form_s" name="enddate" value="${item.enddate}" autocomplete="off">
 									</td>
 								</tr>
-								<tr class="cont" style="display:none;">
+								<%-- <tr class="cont" style="display:none;">
 									<td class="title">출력순서</td>
 									<td>
 										<input type="text" class="w_form_s" id="p_sun" name="orderno" value="${item.orderno}" element-name="출력순서">
 									</td>
-								</tr>
+								</tr> --%>
 								<tr class="cont">
 									<td class="title">위치</td>
 									<td>
-										X : <input type="text" class="w_form_s" name="p_left" value="${item.p_left}" valid="none,number" element-name="위치">
+										<%-- X : <input type="text" class="w_form_s" name="p_left" value="${item.p_left}" valid="none,number" element-name="위치">
 										Y : <input type="text" class="w_form_s" name="p_top" value="${item.p_top}" valid="none,number" element-name="위치">
-										(미입력시 X : 0, Y : 0 으로 입력됩니다)
+										(미입력시 X : 0, Y : 0 으로 입력됩니다) --%>
+										중앙정렬
 									</td>
 								</tr>
 								<!-- <tr class="cont" id="tr_width">
