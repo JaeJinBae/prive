@@ -87,16 +87,20 @@
 }
 @media only screen and (min-width:320px) and (max-width:767px){	
 	.main-popup{
-		width: 89%;
+		width: 88%;
 		position: fixed;
-		top: 50%;
+		bottom: 50%;
 		left: 50%;
-		transform: translate(-50%, -50%);
+		transform: translate(-50%, 50%);
 		z-index: 9999;
 		background: #efefef;
 	}
+	.main-popup p{
+		margin: 0;
+	}
 	.popup-content img{
 		width: 100%;
+		height: auto;
 	}
 	.popup-btn{
 		width: 100%;
@@ -107,7 +111,6 @@
 		padding: 20px 0;
 		text-align: center;
 		cursor: pointer;
-		
 	}
 }
 </style>
@@ -148,7 +151,7 @@ $(function(){
 		<c:forEach var="item" items="${list}">
 			<div class="main-popup">
 				<div class="popup-content">
-					${item.content}
+					<a href="${item.link}">${item.content}</a>
 				</div>
 				<div class="popup-btn">
 					<p>닫 기</p>
