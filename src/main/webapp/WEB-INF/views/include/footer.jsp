@@ -6,7 +6,7 @@
 			<div class="foot">
 				<div class="f_logo">
 					<a class="f_m_logo" href="${pageContext.request.contextPath}/"><img src="${pageContext.request.contextPath}/resources/img/m/main/logo-tr.png"></a>
-					<a href="${pageContext.request.contextPath}/"><img src="${pageContext.request.contextPath}/resources/img/main/logo2.png"></a>
+					<a href="${pageContext.request.contextPath}/"><img src="${pageContext.request.contextPath}/resources/img/main/logo.png"></a>
 				</div>
 			</div>
 			<div class="foot">
