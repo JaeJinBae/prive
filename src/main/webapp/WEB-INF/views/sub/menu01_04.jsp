@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>프라이브 피부과의원</title>
+<title>프라이브 피부과</title>
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-152756473-1"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -355,7 +355,7 @@ $(function(){
 			<div class="inner">
 				<div class="s2_txt">
 					<h2>Prive Space</h2>
-					<p><strong>"특별한 공간, 특별한 시간 프라이브피부과의원"</strong></p>
+					<p><strong>"특별한 공간, 특별한 시간 프라이브피부과"</strong></p>
 				</div>
 				<div class="banner_wrap">
 					<div class="banner">

@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>프라이브 피부과의원</title>
+<title>프라이브 피부과</title>
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-152756473-1"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -309,7 +309,7 @@ $(function(){
 							<div class="doc_letter">
 								<p>
 									안녕하세요.<br>
-									프라이브피부과의원 대표원장 김인용입니다.<br><br>
+									프라이브피부과 대표원장 김인용입니다.<br><br>
 									
 									많은 병원들이 환자 중심, 환자 존중을 외치지만<br>
 									너무 바쁘게 돌아가는 시스템 속에서<br> 
@@ -327,9 +327,9 @@ $(function(){
 									나만의 공간에서 기분 좋은 경험을 할 수 있을 것입니다.<br><br>
 									
 									오직 당신만을 위한 시간과 공간,<br>
-									프라이브피부과의원과 함께해주셔 감사합니다.<br><br> 
+									프라이브피부과와 함께해주셔 감사합니다.<br><br> 
 								</p>
-								<p class="doc_name">프라이브피부과의원 대표원장 김인용</p>
+								<p class="doc_name">프라이브피부과 대표원장 김인용</p>
 							</div><!-- doc_letter end -->
 							<div class="doc_yak">
 								<p>
@@ -369,7 +369,7 @@ $(function(){
 									저희 프라이브의 이야기와 열정에 대해 공유하게 되어 기쁩니다.<br><br> 
 									감사합니다.<br><br>
 								</p>
-								<p class="doc_name">프라이브피부과의원 대표원장 권현정</p>
+								<p class="doc_name">프라이브피부과 대표원장 권현정</p>
 							</div><!-- doc_letter end -->
 							<div class="doc_yak">
 								<p>

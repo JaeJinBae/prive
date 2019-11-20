@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>프라이브 피부과의원</title>
+<title>프라이브 피부과</title>
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-152756473-1"></script>
 <script>
   window.dataLayer = window.dataLayer || [];

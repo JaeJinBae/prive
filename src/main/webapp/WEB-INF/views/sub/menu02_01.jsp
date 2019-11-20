@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>프라이브 피부과의원</title>
+<title>프라이브 피부과</title>
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-152756473-1"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -480,7 +480,7 @@ $(function(){
 					<div class="s2_txt">
 						<h2>리프팅</h2>
 						<p>
-							<strong>특별한 공간,  특별한 시간 프라이브피부과의원</strong><br>
+							<strong>특별한 공간,  특별한 시간 프라이브피부과</strong><br>
 							프라이브의 리프팅·탄력 시술은 당신이 이미 가지고 있던,<br>
 							하지만 감춰져 있던 가장 자연스러운 아름다움을 표현합니다.<br><br>
 							

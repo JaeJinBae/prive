@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>프라이브 피부과의원</title>
+<title>프라이브 피부과</title>
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-152756473-1"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -19,7 +19,7 @@
 <meta name="naver-site-verification" content="d53046e7ecfe442e3b973c1baeb37ec7fc75031d"/>
 <meta name="description" content="특별한 공간, 특별한 시간 프라이브피부과">
 <meta property="og:type" content="website">
-<meta property="og:title" content="프라이브피부과의원">
+<meta property="og:title" content="프라이브피부과">
 <meta property="og:description" content="특별한 공간, 특별한 시간 프라이브피부과">
 <meta property="og:image" content="http://www.prive.co.kr/logo.png">
 <meta property="og:url" content="http://www.prive.co.kr">
@@ -172,7 +172,7 @@ $(function(){
 				</div>
 				<div class="s1_txt">
 					<h2>프라이브 피부과</h2>
-					<p>프라이브피부과의원은 의료미용시술 보편화에서 벗어나 미용의료시술, <br>피부 안티에이징 분야를 특화하여 PRIVE만의 1:1 퍼스널 피부 컨설팅으로 <br>온전히 나를 위한 맞춤 의료 뷰티 서비스 “프리미엄 의료뷰티프로그램"을 제공합니다.</p>
+					<p>프라이브피부과는 의료미용시술 보편화에서 벗어나 미용의료시술, <br>피부 안티에이징 분야를 특화하여 PRIVE만의 1:1 퍼스널 피부 컨설팅으로 <br>온전히 나를 위한 맞춤 의료 뷰티 서비스 “프리미엄 의료뷰티프로그램"을 제공합니다.</p>
 				</div>
 			</div>
 		</section>
