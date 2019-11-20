@@ -22,6 +22,23 @@
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/admin/js/function.default.js"></script><!-- # 필수 함수 -->
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/admin/js/function.validate.js"></script><!-- # 필수 함수 -->
 <link href="https://ajax.googleapis.com/ajax/static/modules/gviz/1.0/core/tooltip.css" rel="stylesheet" type="text/css">
+<style>
+.access_url_wrap{
+	position: relative;
+}
+.access_url_wrap > span{
+	cursor: pointer;
+}
+.access_url_wrap > p{
+	display: none;
+	position: absolute;
+	bottom: 0;
+	right:0;
+	padding: 25px 15px;
+	background: #efefef;
+	border: 1px solid gray;
+}
+</style>
 <script>
 $(function(){
 	 $("#searchBtn").click(function(){
@@ -78,6 +95,14 @@ $(function(){
 		var k = link[3].split("=");
 		var keyword = encodeURIComponent(k[1]);
 		location.href=link[0]+"&"+link[1]+"&"+link[2]+"&keyword="+keyword+"&"+link[4];
+	});
+	
+	$(document).on("click", ".access_url_wrap > span", function(){
+		$(".access_url_wrap > p").css("display","none");
+		$(this).parent().find("p").css("display","block");
+	});
+	$(document).on("mouseout", ".access_url_wrap > p", function(){
+		$(this).css("display","none");
 	});
 	
     $(document).on("click", ".board_paging > a",function(e){
@@ -172,7 +197,10 @@ $(function(){
 													<td><a class="t_link" href="${pageContext.request.contextPath}/admin/menu01_01update${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}">${item.phone}</a></td>
 													<td>${item.regdate}</td>
 													<td><a class="t_link" href="${pageContext.request.contextPath}/admin/menu01_01update${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}">${item.state}</a></td>
-													<td><a href="javascript:;" id="tooltip_2474" onclick="tooltip_it('2474')">보기</a></td>
+													<td class="access_url_wrap">
+														<span>보기</span>
+														<p>${item.access_url}</p>
+													</td>
 													<td>${item.reply_date}</td>
 												</tr>
 												<c:set var="num" value="${num-1}"></c:set>	
