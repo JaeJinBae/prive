@@ -53,6 +53,12 @@ function log_analytics(val1){
 	 
 	var _nasa={};
 	_nasa["cnv"] = wcs.cnv(val1,"1"); // 전환유형, 전환가치 설정해야함. 설치매뉴얼 참고 
+	
+	if (!wcs_add) var wcs_add={};
+	wcs_add["wa"] = "s_314181f9fe48";
+	if (!_nasa) var _nasa={};
+	wcs.inflow();
+	wcs_do(_nasa);
 }
 
 if (!wcs_add) var wcs_add={};
