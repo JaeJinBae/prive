@@ -16,6 +16,7 @@ $(function(){
 		<dt><a href="javascript:;">게시판관리</a></dt>
 		<dd><a href="${pageContext.request.contextPath}/admin/menu01_01">상담관리</a></dd>
 		<dd><a href="${pageContext.request.contextPath}/admin/menu01_02">공지사항</a></dd>
+		<dd><a href="${pageContext.request.contextPath}/admin/menu01_03">프라이브미디어</a></dd>
 	</dl>
 	<dl>
 		<dt><a href="javascript:;">기타관리</a></dt>

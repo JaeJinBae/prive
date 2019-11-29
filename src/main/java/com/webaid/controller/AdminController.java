@@ -39,6 +39,7 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.webaid.domain.AdviceVO;
+import com.webaid.domain.MediaVO;
 import com.webaid.domain.NoticeVO;
 import com.webaid.domain.PageMaker;
 import com.webaid.domain.PopupVO;
@@ -46,6 +47,7 @@ import com.webaid.domain.SearchCriteria;
 import com.webaid.domain.StatisticSelectDateVO;
 import com.webaid.domain.StatisticVO;
 import com.webaid.service.AdviceService;
+import com.webaid.service.MediaService;
 import com.webaid.service.NoticeService;
 import com.webaid.service.PopupService;
 import com.webaid.service.StatisticService;
@@ -61,6 +63,9 @@ public class AdminController {
 	
 	@Autowired
 	private NoticeService nService;
+	
+	@Autowired
+	private MediaService mService;
 	
 	@Autowired
 	private AdviceService aService;
@@ -150,6 +155,8 @@ public class AdminController {
 			innerUploadPath = "resources/uploadPopup/";
 		}else if(btype.equals("advice")){
 			innerUploadPath = "resources/uploadAdvice/";
+		}else if(btype.equals("media")){
+			innerUploadPath = "resources/uploadMedia/";
 		}
 		
 		String uploadPath = (req.getSession().getServletContext().getRealPath("/")) + innerUploadPath;
@@ -355,6 +362,86 @@ public class AdminController {
 		nService.delete(no);
 		
 		return "redirect:/admin/menu01_02";
+	}
+	
+	@RequestMapping(value = "/menu01_03", method = RequestMethod.GET)
+	public String menu01_03(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
+		logger.info("menu01_03 GET");
+		
+		List<MediaVO> list = mService.listSearchAll(cri);
+		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(mService.listSearchCountAll(cri));
+		pageMaker.setFinalPage(mService.listSearchCountAll(cri));
+		
+		model.addAttribute("list", list);
+		model.addAttribute("pageMaker", pageMaker);
+		
+		return "admin/menu01_03";
+	}
+	
+	@RequestMapping(value = "/menu01_03register", method = RequestMethod.GET)
+	public String menu01_03register(Model model) {
+		logger.info("menu01_03register GET");
+		
+		return "admin/menu01_03register";
+	}
+	
+	@RequestMapping(value = "/menu01_03register", method = RequestMethod.POST)
+	public String menu01_03registerPost(MediaVO vo) throws IOException {
+		logger.info("menu01_03register POST");
+		
+		System.out.println(vo);
+		mService.insert(vo);
+		
+		return "redirect:/admin/menu01_03";
+	}
+	
+	@RequestMapping(value = "/menu01_03update", method = RequestMethod.GET)
+	public String menu01_03update(int no, @ModelAttribute("cri") SearchCriteria cri, Model model, HttpServletRequest req) throws Exception {
+		logger.info("menu01_03update GET");
+		
+		MediaVO vo = mService.selectOne(no);
+
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(mService.listSearchCountAll(cri));
+
+		model.addAttribute("item", vo);
+		model.addAttribute("pageMaker", pageMaker);
+		
+		return "admin/menu01_03update";
+	}
+	
+	@RequestMapping(value = "/menu01_03update", method = RequestMethod.POST)
+	public String menu01_03updatePOST(MediaVO vo, int page, @ModelAttribute("cri") SearchCriteria cri, RedirectAttributes rtts, Model model, HttpServletRequest req) throws Exception {
+		logger.info("menu01_03update POST");
+		
+		mService.update(vo);
+
+		rtts.addAttribute("no", vo.getNo());
+
+		PageMaker pageMaker = new PageMaker();
+
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(page);
+		pageMaker.setTotalCount(mService.listSearchCountAll(cri));
+
+		rtts.addAttribute("page", page);
+		
+		return "redirect:/admin/menu01_03update";
+	}
+	
+	@RequestMapping(value="/menu01_03delete/{no}", method=RequestMethod.GET)
+	public String menu01_03delete(@PathVariable("no") int no){
+		logger.info("menu01_03 delete");
+		
+		mService.delete(no);
+		
+		return "redirect:/admin/menu01_03";
 	}
 	
 	@RequestMapping(value = "/menu02_01", method = RequestMethod.GET)

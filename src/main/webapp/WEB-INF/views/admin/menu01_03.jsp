@@ -21,8 +21,8 @@
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/admin/js/function.admin.js"></script><!-- # 필수 함수 -->
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/admin/js/function.default.js"></script><!-- # 필수 함수 -->
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/admin/js/function.validate.js"></script><!-- # 필수 함수 -->
-<link href="https://ajax.googleapis.com/ajax/static/modules/gviz/1.0/core/tooltip.css" rel="stylesheet" type="text/css">
 <script>
+
 $(function(){
 	//게시판 검색
     $("#searchBtn").click(function(){
@@ -30,21 +30,7 @@ $(function(){
 		var searchType = encodeURIComponent(s);
 		var k=$("input[name='input_key']").val();
 		var keyword = encodeURIComponent(k);
-		location.href="${pageContext.request.contextPath}/admin/menu01_02${pageMaker.makeQuery(1)}&searchType="+searchType+"&keyword="+keyword;
-	});
-	
-	$(document).on("click", ".t_link", function(e){
-		e.preventDefault();
-		var link = $(this).prop("href").split("&");
-		var k = link[3].split("=");
-		var keyword = encodeURIComponent(k[1]);
-		location.href=link[0]+"&"+link[1]+"&"+link[2]+"&keyword="+keyword+"&"+link[4];
-	});
-	
-    $(document).on("click", ".board_paging > a",function(e){
-		e.preventDefault();
-		var link = $(this).prop("href").split("keyword=");
-		location.href=link[0]+"keyword="+encodeURIComponent(link[1]);
+		location.href="${pageContext.request.contextPath}/admin/menu01_03${pageMaker.makeQuery(1)}&searchType="+searchType+"&keyword="+keyword;
 	});
 });
 </script>
@@ -62,12 +48,12 @@ $(function(){
 			<jsp:include page="include/rightTop.jsp"></jsp:include><!-- 오른쪽 상단 -->
 
 			<div class="naviText_area">
-				<h1>공지사항</h1>
+				<h1>프라이브미디어</h1>
 
 				<ul class="navi_area">
 					<li>관리자메인&nbsp;&gt;&nbsp;</li>
 					<li>게시판관리&nbsp;&gt;&nbsp;</li>
-					<li>공지사항</li>
+					<li>프라이브미디어</li>
 				</ul>
 			</div>
 			
@@ -100,7 +86,7 @@ $(function(){
 							<table class="list_table">
 								<colgroup>
 									<col width="3%">
-									<%-- <col width="5%"> --%>
+									<col width="5%">
 			                        <col width="6%">
 									<col width="4%">
 									<col width="*">
@@ -111,7 +97,7 @@ $(function(){
 								</colgroup>
 								<tr class="cont">
 									<th><input type="checkbox" id="selectall"></th>
-									<!-- <th>사용유무</th> -->
+									<th>사용유무</th>
 			                        <th>메인노출유무</th>
 									<th>번호</th>
 									<th>제목</th>
@@ -120,38 +106,6 @@ $(function(){
 									<th>파일</th>
 									<th>조회</th>
 								</tr>
-								<c:if test="${pageMaker.cri.page == 1}">
-									<c:if test="${fn:length(topList) != 0}">
-										<c:forEach var="item" items="${topList}">
-											<tr class="cont">
-												<td><input type="checkbox" name="" value="${item.no}"></td>
-												<%-- <c:choose>
-													<c:when test="${item.use_state == 'o'}">
-														<td>
-															<img src="${pageContext.request.contextPath}/resources/img/admin/ck_img_on.png" class="cursor vimg" id="delflag_2036">
-														</td>
-													</c:when>
-													<c:otherwise>
-														<td>
-					                                     	<img src="${pageContext.request.contextPath}/resources/img/admin/ck_img_none.png" class="cursor vimg" id="ismain_2036">
-					                                     </td>
-													</c:otherwise>
-												</c:choose> --%>
-												<td>
-			                                     	<img src="${pageContext.request.contextPath}/resources/admin/img/ck_img_none.png" class="cursor vimg" id="ismain_2036">
-			                                     </td>
-												<td><i class="ico notice">공지</i></td>
-												<td>
-													<a class="t_link" href="${pageContext.request.contextPath}/admin/menu01_02update${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}"><p class="title"> ${item.title}</p></a>
-												</td>
-												<td>${item.writer}</td>
-												<td>${item.regdate}</td>
-												<td></td>
-												<td>${item.cnt}</td>
-											</tr>	
-										</c:forEach>
-									</c:if>
-								</c:if>
 								<c:choose>
 									<c:when test="${fn:length(list) ==0 }">
 										<tr><td colspan="9">등록된 게시물이 없습니다.</td></tr>
@@ -161,17 +115,17 @@ $(function(){
 									        <c:forEach var="item" items="${list}">
 												<tr class="cont">
 													<td><input type="checkbox" name="" value="${item.no}"></td>
-													<%-- <c:choose>
+													<c:choose>
 														<c:when test="${item.use_state == 'o'}">
-															<td><img src="${pageContext.request.contextPath}/resources/img/admin/ck_img_on.png" class="cursor vimg" id="delflag_2036"></td>
+															<td><img src="${pageContext.request.contextPath}/resources/admin/img/ck_img_on.png" class="cursor vimg" id="delflag_2036"></td>
 														</c:when>
 														<c:otherwise>
-															<td><img src="${pageContext.request.contextPath}/resources/img/admin/ck_img_none.png" class="cursor vimg" id="ismain_2036"></td>
+															<td><img src="${pageContext.request.contextPath}/resources/admin/img/ck_img_none.png" class="cursor vimg" id="ismain_2036"></td>
 														</c:otherwise>
-													</c:choose> --%>
+													</c:choose>
 													<td><img src="${pageContext.request.contextPath}/resources/admin/img/ck_img_none.png" class="cursor vimg" id="ismain_2036"></td>
 													<td><i class="ico notice">${num}</i></td>
-													<td><a class="t_link" href="${pageContext.request.contextPath}/admin/menu01_02update${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}"><p class="title"> ${item.title}</p></a></td>
+													<td><a href="${pageContext.request.contextPath}/admin/menu01_03update${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}"><p class="title"> ${item.title}</p></a></td>
 													<td>${item.writer}</td>
 													<td>${item.regdate}</td>
 													<td></td>
@@ -187,11 +141,11 @@ $(function(){
 			
 					<div class="btn_area">
 						<p class="btn_left">
-							<!-- <button type="button" class="btn_gray">선택삭제</button>
-							<button type="button" class="btn_gray">게시물이동</button> -->
+							<button type="button" class="btn_gray">선택삭제</button>
+							<button type="button" class="btn_gray">게시물이동</button>
 						</p>
 						<p class="btn_right">
-							<button type="button" class="btn_black" onclick="location.href='${pageContext.request.contextPath}/admin/menu01_02register'">등록</button>
+							<button type="button" class="btn_black" onclick="location.href='${pageContext.request.contextPath}/admin/menu01_03register'">등록</button>
 						</p>
 					</div>
 			
@@ -216,13 +170,13 @@ $(function(){
 						<a href="${pageMaker.makeSearch(pageMaker.finalPage+1)}" class="direction">&gt;&gt;</a>
 					</div>	<!-- 페이징 끝 -->
 				</div>
-			</div><!-- main_bottom_area 끝 -->
-			
-		</div><!-- admin_right 끝 -->
-    </div><!-- container 끝 -->
+			</div>
+		</div><!-- admin_right -->
+	</div><!-- container end -->
 
-    <jsp:include page="include/footer.jsp"></jsp:include>
+	<jsp:include page="include/footer.jsp"></jsp:include>
 </div><!-- wrap 끝 -->
+
 
 </body>
 </html>

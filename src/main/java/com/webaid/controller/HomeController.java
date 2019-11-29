@@ -23,12 +23,14 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.webaid.domain.AdviceVO;
+import com.webaid.domain.MediaVO;
 import com.webaid.domain.NoticeVO;
 import com.webaid.domain.PageMaker;
 import com.webaid.domain.PopupVO;
 import com.webaid.domain.SearchCriteria;
 import com.webaid.domain.StatisticVO;
 import com.webaid.service.AdviceService;
+import com.webaid.service.MediaService;
 import com.webaid.service.NoticeService;
 import com.webaid.service.PopupService;
 import com.webaid.service.StatisticService;
@@ -46,6 +48,9 @@ public class HomeController {
 	
 	@Autowired
 	private NoticeService nService;
+	
+	@Autowired
+	private MediaService mService;
 	
 	@Autowired
 	private StatisticService sService;
@@ -342,6 +347,48 @@ public class HomeController {
 		model.addAttribute("pageMaker", pageMaker);
 		
 		return "sub/menu08_03read";
+	}
+	
+	@RequestMapping(value = "/menu08_04", method = RequestMethod.GET)
+	public String menu08_04(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
+		logger.info("menu08_04 get");
+		
+		List<MediaVO> list = mService.listSearch(cri);
+		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(mService.listSearchCount(cri));
+		pageMaker.setFinalPage(mService.listSearchCount(cri));
+		
+		model.addAttribute("list", list);
+		model.addAttribute("pageMaker", pageMaker);
+		
+		return "sub/menu08_04";
+	}
+	
+	@RequestMapping(value = "/menu08_04read", method = RequestMethod.GET)
+	public String menu08_04read(int no, @ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
+		logger.info("menu08_04read GET");
+		
+		MediaVO vo=mService.selectOne(no);
+		MediaVO beforeVO = mService.selectBefore(no);
+		MediaVO afterVO = mService.selectAfter(no);
+		
+		mService.updateCnt(no);
+		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(mService.listSearchCount(cri));
+		pageMaker.setFinalPage(mService.listSearchCount(cri));
+		
+		model.addAttribute("item", vo);
+		model.addAttribute("beforeItem", beforeVO);
+		model.addAttribute("afterItem", afterVO);
+		model.addAttribute("pageMaker", pageMaker);
+		
+		return "sub/menu08_04read";
 	}
 	
 	@RequestMapping(value="/statisticRegister", method=RequestMethod.POST)
