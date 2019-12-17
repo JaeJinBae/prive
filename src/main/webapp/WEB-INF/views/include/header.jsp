@@ -93,7 +93,7 @@
 					<span class="gnb-txt">커뮤니티</span><span class="arrow">∨</span>
 					<ul class="lnb-wrap">
 						<li class="lnb"><a href="${pageContext.request.contextPath}/menu08_01">온라인상담</a></li>
-						<li class="lnb"><a href="">카카오상담</a></li>
+						<li class="lnb"><a href="http://pf.kakao.com/_HbkxkT/chat">카카오상담</a></li>
 						<li class="lnb"><a href="${pageContext.request.contextPath}/menu08_03">공지사항</a></li>
 						<li class="lnb"><a href="${pageContext.request.contextPath}/menu08_04">프라이브미디어</a></li>
 					</ul>

@@ -24,6 +24,8 @@
 <meta property="og:image" content="http://www.prive.co.kr/logo.png">
 <meta property="og:url" content="http://www.prive.co.kr">
 <link rel="canonical" href="http://www.prive.co.kr">
+<link rel="apple-touch-icon" href="http://www.prive.co.kr/logo.png"/>
+<link rel="shortcut icon" href="http://www.prive.co.kr/logo.png"/>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/full-page-scroll.css" />
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/style.common.css" />
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/slick/slick.css"/>
