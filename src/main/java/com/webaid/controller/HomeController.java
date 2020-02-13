@@ -84,6 +84,20 @@ public class HomeController {
 		return "main/index";
 	}
 	
+	@RequestMapping(value = "/landing", method = RequestMethod.GET)
+	public String landing() {
+		logger.info("menu01_01 get");
+		
+		return "landing/web/index";
+	}
+	
+	@RequestMapping(value = "/mlanding", method = RequestMethod.GET)
+	public String mlanding() {
+		logger.info("menu01_01 get");
+		
+		return "landing/m/index";
+	}
+	
 	@RequestMapping(value = "/menu01_01", method = RequestMethod.GET)
 	public String menu01_01(Locale locale, Model model) {
 		logger.info("menu01_01 get");

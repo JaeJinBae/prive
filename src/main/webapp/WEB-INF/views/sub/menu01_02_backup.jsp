@@ -47,13 +47,12 @@ section{
 @media only screen and (min-width:1200px){
 	.section1{
 		background: #e5ddc9;
-		min-height: 150%;
+		height: 120%;
 	}
 	
 	
 	.section2{
 		background: #f3efe3;
-		min-height: 135%;
 	}
 	
 	.aside_wrap{
@@ -114,7 +113,6 @@ section{
 	.doc_yak > p{
 		width: 100%;
 		line-height: 24px;
-		margin-top: -20px;
 	}
 	
 	
@@ -127,22 +125,20 @@ section{
 @media only screen and (min-width:768px) and (max-width:1199px){
 	.section1{
 		background: #e5ddc9;
-		height: 130%;
-		min-height: 1340px
+		height: 120%;
 	}
 	
 	
 	.section2{
 		background: #f3efe3;
-		height: 130%;
-		min-height: 1200px;
+		height: 110%;
 	}
 	
 	.aside_wrap{
 		width: 90%;
 		overflow: hidden;
 		position: absolute;
-		top: 170px;
+		top: 25%;
 		left: 50%;
 		margin-left: -45%;
 	}
@@ -193,7 +189,6 @@ section{
 	.doc_yak > p{
 		width: 100%;
 		line-height: 24px;
-		margin-top: -20px;
 	}
 	
 	
@@ -206,12 +201,12 @@ section{
 @media only screen and (min-width:320px) and (max-width:767px){	
 	.section1{
 		background: #e5ddc9;
-		height: 1750px;
+		height: 225%;
 	}
 	
 	.section2{
 		background: #f3efe3;
-		height: 1760px;
+		height: 225%;
 	}
 	
 	.aside_wrap{
@@ -267,7 +262,6 @@ section{
 	.doc_yak > p{
 		width: 100%;
 		line-height: 24px;
-		margin-top: -20px;
 	}
 	.section2 .aside_wrap{
 		height: 100%;
@@ -339,23 +333,11 @@ $(function(){
 							</div><!-- doc_letter end -->
 							<div class="doc_yak">
 								<p>
-									<strong>피부과전문의</strong><br><br>
-									현) 프라이브피부과 대표원장<br>
-									현) 악센트프라임 키닥터<br>
-									현) Thermage 키닥터<br>
-									현) 엘란쎄 키닥터<br>
-									현) 실루엣소프트 키닥터<br><br>
-									
-									전) 애플피부과원장<br><br>
-									
-									대구가톨릭대학교 의과대학 졸업<br>
-									대구가톨릭대학교병원 인턴/피부과 레지던트 수료<br>
+									<strong>피부과전문의</strong><br>
 									대한피부과학회 정회원<br>
-									대한피부과의사회 정회원<br>
-									대한피부레이저학회 정회원<br>
-									대한피부항노화연구회 정회원<br>
-									대한여드름학회 정회원<br>
 									대한미용피부외과학회 정회원<br>
+									대한피부항노화연구회 정회원<br>
+									대한피부과의사회 정회원<br>
 								</p>
 							</div><!-- doc_yak end -->
 						</div><!-- doc_txt end -->
@@ -391,21 +373,11 @@ $(function(){
 							</div><!-- doc_letter end -->
 							<div class="doc_yak">
 								<p>
-									<strong>피부과전문의</strong><br><br>
-									현) 프라이브피부과 대표원장<br>
-									현) 악센트프라임 키닥터<br>
-									현) Thermage 키닥터<br><br>
-									
-									전) 로제피부과 원장<br><br>
-									
-									대구가톨릭대학교 의과대학 졸업<br>
-									대구가톨릭대학교병원 인턴/피부과 레지던트 수료<br>
+									<strong>피부과전문의</strong><br>
 									대한피부과학회 정회원<br>
-									대한피부과의사회 정회원<br>
 									대한피부레이저학회 정회원<br>
 									대한피부항노화연구회 정회원<br>
-									대한여드름학회 정회원<br>
-									대한미용피부외과학회 정회원<br>
+									대한피부과의사회 정회원<br>
 								</p>
 							</div><!-- doc_yak end -->
 						</div><!-- doc_txt end -->
