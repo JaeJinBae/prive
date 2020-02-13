@@ -13,6 +13,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.mobile.device.Device;
+import org.springframework.mobile.device.DeviceUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -70,6 +72,7 @@ public class HomeController {
 		}else if(referer.indexOf("prive.co.kr") <= -1){
 			referer = "-";
 		}*/
+		
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 
         Calendar c1 = Calendar.getInstance();
@@ -84,18 +87,35 @@ public class HomeController {
 		return "main/index";
 	}
 	
-	@RequestMapping(value = "/landing", method = RequestMethod.GET)
-	public String landing() {
-		logger.info("menu01_01 get");
+	@RequestMapping(value = "/landing1", method = RequestMethod.GET)
+	public String landing(HttpServletRequest req) {
+		logger.info("landing1 get");
 		
-		return "landing/web/index";
-	}
-	
-	@RequestMapping(value = "/mlanding", method = RequestMethod.GET)
-	public String mlanding() {
-		logger.info("menu01_01 get");
+		Device device=DeviceUtils.getCurrentDevice(req);
+		String deviceType="unknown";
 		
-		return "landing/m/index";
+		if(device == null){
+			deviceType="unknown";
+			logger.info("디바이스타입= "+deviceType);
+			SearchCriteria cri = new SearchCriteria();
+
+			return "landing/web/index";
+		}
+		if(device.isMobile()){
+			deviceType="mobile";
+			logger.info("디바이스타입= "+deviceType);			
+			return "landing/m/index";
+		}else if(device.isTablet()){
+			deviceType="mobile";
+			logger.info("디바이스타입= "+deviceType);			
+			return "landing/m/index";
+		}else{
+			deviceType="normal";
+			logger.info("디바이스타입= "+deviceType);
+			
+			return "landing/web/index";
+		}
+		
 	}
 	
 	@RequestMapping(value = "/menu01_01", method = RequestMethod.GET)
