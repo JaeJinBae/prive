@@ -17,24 +17,22 @@ import org.springframework.mobile.device.Device;
 import org.springframework.mobile.device.DeviceUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.multipart.MultipartHttpServletRequest;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.webaid.domain.AdviceVO;
-import com.webaid.domain.MediaVO;
-import com.webaid.domain.NoticeVO;
-import com.webaid.domain.PageMaker;
+import com.webaid.domain.HospitalTimeVO;
 import com.webaid.domain.PopupVO;
 import com.webaid.domain.SearchCriteria;
 import com.webaid.domain.StatisticVO;
 import com.webaid.service.AdviceService;
+import com.webaid.service.ClinicService;
+import com.webaid.service.HospitalTimeService;
 import com.webaid.service.MediaService;
 import com.webaid.service.NoticeService;
 import com.webaid.service.PopupService;
+import com.webaid.service.ReservationService;
 import com.webaid.service.StatisticService;
 
 /**
@@ -59,6 +57,15 @@ public class HomeController {
 	
 	@Autowired
 	private PopupService pService;
+	
+	@Autowired
+	private ClinicService cService;
+	
+	@Autowired
+	private ReservationService rService;
+	
+	@Autowired
+	private HospitalTimeService htService;
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(HttpServletRequest req, Model model) {
@@ -123,6 +130,15 @@ public class HomeController {
 		logger.info("menu06_01 get");
 		
 		return "sub2/menu06_01";
+	}
+	
+	@RequestMapping(value="/menu06_01timeByDow/{dow}", method=RequestMethod.POST)
+	public ResponseEntity<HospitalTimeVO> menu06_01timeGet(@PathVariable("dow")String dow){
+		ResponseEntity<HospitalTimeVO> entity = null;
+		HospitalTimeVO vo = htService.selectByDow(dow);
+		
+		entity = new ResponseEntity<HospitalTimeVO>(vo, HttpStatus.OK);
+		return entity;
 	}
 	
 	/*@RequestMapping(value = "/menu01_01", method = RequestMethod.GET)
