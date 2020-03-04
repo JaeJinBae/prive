@@ -118,7 +118,14 @@ public class HomeController {
 		
 	}
 	
-	@RequestMapping(value = "/menu01_01", method = RequestMethod.GET)
+	@RequestMapping(value = "/menu06_01", method = RequestMethod.GET)
+	public String menu06_01(Locale locale, Model model) {
+		logger.info("menu06_01 get");
+		
+		return "sub2/menu06_01";
+	}
+	
+	/*@RequestMapping(value = "/menu01_01", method = RequestMethod.GET)
 	public String menu01_01(Locale locale, Model model) {
 		logger.info("menu01_01 get");
 		
@@ -423,7 +430,9 @@ public class HomeController {
 		model.addAttribute("pageMaker", pageMaker);
 		
 		return "sub/menu08_04read";
-	}
+	}*/
+	
+	
 	
 	@RequestMapping(value="/statisticRegister", method=RequestMethod.POST)
 	public ResponseEntity<String> statisticRegister(@RequestBody Map<String, String> info){
