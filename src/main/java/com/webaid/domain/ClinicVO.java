@@ -2,8 +2,8 @@ package com.webaid.domain;
 
 public class ClinicVO {
 	private int no;
-	private String kind1;
-	private String kind2;
+	private int kind1;
+	private String kind1nm;
 	private String name;
 	private String code;
 	private String price;
@@ -20,20 +20,20 @@ public class ClinicVO {
 		this.no = no;
 	}
 
-	public String getKind1() {
+	public int getKind1() {
 		return kind1;
 	}
 
-	public void setKind1(String kind1) {
+	public void setKind1(int kind1) {
 		this.kind1 = kind1;
 	}
 
-	public String getKind2() {
-		return kind2;
+	public String getKind1nm() {
+		return kind1nm;
 	}
 
-	public void setKind2(String kind2) {
-		this.kind2 = kind2;
+	public void setKind1nm(String kind1nm) {
+		this.kind1nm = kind1nm;
 	}
 
 	public String getName() {
@@ -62,7 +62,7 @@ public class ClinicVO {
 
 	@Override
 	public String toString() {
-		return "ClinicVO [no=" + no + ", kind1=" + kind1 + ", kind2=" + kind2 + ", name=" + name + ", code=" + code
+		return "ClinicVO [no=" + no + ", kind1=" + kind1 + ", kind1nm=" + kind1nm + ", name=" + name + ", code=" + code
 				+ ", price=" + price + "]";
 	}
 

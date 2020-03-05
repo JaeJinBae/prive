@@ -5,7 +5,7 @@
 <mapper namespace="com.webaid.mappers.ClinicMapper">
 
 	<select id="selectAll" resultType="ClinicVO">
-		select * from clinic where use_state='Y' order by no desc
+		select * from clinic order by no desc
 	</select>
 	
 	<select id="selectOne" resultType="ClinicVO">
@@ -13,11 +13,11 @@
 	</select>
 	
 	<insert id="insert">
-		insert into clinic values(0, #{kind1}, #{kind2}, #{name}, #{code}, #{price})
+		insert into clinic values(0, #{kind1}, #{kind1nm}, #{name}, #{code}, #{price})
 	</insert>
 	
 	<update id="update">
-		update clinic set kind1=#{kind1}, kind2=#{kind2}, name=#{name}, code=#{code}, price=#{price} where no=#{no}
+		update clinic set kind1=#{kind1}, kind1=#{kind1nm}, name=#{name}, code=#{code}, price=#{price} where no=#{no}
 	</update>
 	
 	<delete id="delete">
