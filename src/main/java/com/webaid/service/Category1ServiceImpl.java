@@ -5,33 +5,33 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.webaid.domain.ClinicVO;
+import com.webaid.domain.Category1VO;
 import com.webaid.domain.SearchCriteria;
-import com.webaid.persistence.ClinicDao;
+import com.webaid.persistence.Category1Dao;
 
 @Service
-public class ClinicServiceImpl implements ClinicService {
+public class Category1ServiceImpl implements Category1Service {
 
 	@Autowired
-	private ClinicDao dao;
+	private Category1Dao dao;
 	
 	@Override
-	public List<ClinicVO> selectAll() {
+	public List<Category1VO> selectAll() {
 		return dao.selectAll();
 	}
 
 	@Override
-	public ClinicVO selectOne(int no) {
+	public Category1VO selectOne(int no) {
 		return dao.selectOne(no);
 	}
 
 	@Override
-	public void insert(ClinicVO vo) {
+	public void insert(Category1VO vo) {
 		dao.insert(vo);
 	}
 
 	@Override
-	public void update(ClinicVO vo) {
+	public void update(Category1VO vo) {
 		dao.update(vo);
 	}
 
@@ -41,7 +41,7 @@ public class ClinicServiceImpl implements ClinicService {
 	}
 
 	@Override
-	public List<ClinicVO> listSearch(SearchCriteria cri) {
+	public List<Category1VO> listSearch(SearchCriteria cri) {
 		return dao.listSearch(cri);
 	}
 

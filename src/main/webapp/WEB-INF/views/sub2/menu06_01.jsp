@@ -52,11 +52,16 @@ section{
 	.section1{
 		padding-top: 300px;
 	}
-	.inner{
-		position: relative;
-		width: 1200px;
-		margin: 0 auto;
-		
+	#reserve {
+	    display: inline-block;
+	    width: 100%;
+	    padding: 50px 0;
+	}
+	.inner {
+	    position: relative;
+	    max-width: 1200px;
+	    margin: 0 auto;
+	    box-sizing: border-box;
 	}
 	.s1_txt{
 		margin-bottom: 50px;
@@ -150,7 +155,7 @@ function drawTimePicker(dow){
 	var str = "";
 	var temp_h = 0;
 	var temp_m = 0;
-
+	console.log(timeInfo);
 	s_time = timeInfo.start_time;
 	e_time = timeInfo.end_time-30;
 	
@@ -270,11 +275,12 @@ $(function(){
 	<jsp:include page="../include/quickMenu.jsp"></jsp:include>
 	<div id="main" class="scroll-container">
 		<section class="section1">
-			<div class="inner">
-				<div class="s1_txt">
-					<h2>시술예약</h2>
-				</div>
-				<div class="res_wrap">
+			<div id="reserve">
+				<div class="inner">
+					<div class="s1_txt">
+						<h2>시술예약</h2>
+					</div>
+					
 					<div id="surgery-picker">
 						<div class="surgery-title">
 							<span>시술선택</span>
@@ -294,7 +300,7 @@ $(function(){
 								<button rel="surgery-item658" class=" surgery-category">리프팅보톡스</button>
 								<button rel="surgery-item665" class=" surgery-category">비만프로그램</button>
 							</div>
-			
+							
 							<!-- 내용 -->
 							<div class="surgery-option">
 								<div id="surgery-item477" class="surgery-inventory">
@@ -441,394 +447,392 @@ $(function(){
 						</div>
 					</div>
 					<!-- 예약날짜 및 시간선택 끝 -->
-					
-					
-				</div>
+
+				</div><!-- inner end -->
 				
-				<div class="res_wrap2">
-					<!-- 선택된 시술 시작 -->
-					<div id="pop-order">
-						<div class="inner">
-							<div id="pop-order-list">
+			</div>
+			
+			<!-- 선택된 시술 시작 -->
+			<div id="pop-order">
+				<div class="inner">
+					<div id="pop-order-list">
+					</div>
+					<div id="pop-order-btn">
+						<div class="brick">
+							<button class="btn-complete">시술선택 완료</button>
+							<button class="btn-reset">
+								<em>
+									<svg class="svg-inline--fa fa-times fa-w-12" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="times" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+										<path fill="currentColor" d="M323.1 441l53.9-53.9c9.4-9.4 9.4-24.5 0-33.9L279.8 256l97.2-97.2c9.4-9.4 9.4-24.5 0-33.9L323.1 71c-9.4-9.4-24.5-9.4-33.9 0L192 168.2 94.8 71c-9.4-9.4-24.5-9.4-33.9 0L7 124.9c-9.4 9.4-9.4 24.5 0 33.9l97.2 97.2L7 353.2c-9.4 9.4-9.4 24.5 0 33.9L60.9 441c9.4 9.4 24.5 9.4 33.9 0l97.2-97.2 97.2 97.2c9.3 9.3 24.5 9.3 33.9 0z"></path>
+									</svg><!-- <i class="fas fa-times"></i> -->
+								</em>취소
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- 선택된 시술 끝 -->
+			
+			
+			<!-- 정보입력 및 선택시술 예약확인 시작 -->
+			
+			<form name="reserve" id="reserve" method="post" action="" enctype="multipart/form-data" autocomplete="off">
+				<input type="hidden" name="fparam" value="">
+				<input type="hidden" name="distinction" value="proc">
+				<input type="hidden" name="r_pay" id="r_pay" value="">
+				<input type="hidden" name="r_date" id="r_date" value="">
+				<input type="hidden" name="r_time_code" id="r_time_code" value="">
+				<input type="hidden" name="r_time" id="r_time" value="">
+				
+				<div id="order-form">
+					<div class="inner">
+						<div id="order-info">
+							<div class="order-title">
+								<span>정보입력</span>
 							</div>
-							<div id="pop-order-btn">
-								<div class="brick">
-									<button class="btn-complete">시술선택 완료</button>
-									<button class="btn-reset">
-										<em>
-											<svg class="svg-inline--fa fa-times fa-w-12" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="times" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
-												<path fill="currentColor" d="M323.1 441l53.9-53.9c9.4-9.4 9.4-24.5 0-33.9L279.8 256l97.2-97.2c9.4-9.4 9.4-24.5 0-33.9L323.1 71c-9.4-9.4-24.5-9.4-33.9 0L192 168.2 94.8 71c-9.4-9.4-24.5-9.4-33.9 0L7 124.9c-9.4 9.4-9.4 24.5 0 33.9l97.2 97.2L7 353.2c-9.4 9.4-9.4 24.5 0 33.9L60.9 441c9.4 9.4 24.5 9.4 33.9 0l97.2-97.2 97.2 97.2c9.3 9.3 24.5 9.3 33.9 0z"></path>
-											</svg><!-- <i class="fas fa-times"></i> -->
-										</em>취소
-									</button>
+							<div class="order-form">
+								<ul>
+									<li><label for="r_name">고객명</label><input type="text" id="r_name" name="r_name" valid="required" element-name="고객명"></li>
+									<li><label for="r_phone">연락처</label><input type="text" id="r_phone" name="r_phone" valid="required" element-name="연락처"></li>
+									<li><label for="r_email">이메일</label><input type="text" id="r_email" name="r_email" valid="required" element-name="이메일"></li>
+									<li><label for="r_memo">메모</label><input type="text" id="r_memo" name="r_memo"></li>
+								</ul>
+								<div class="agreement">
+									<p><input type="checkbox" id="agree01" name="agree01"><label for="agree01">시술 전 상담이 필요하신 고객님은 체크해주세요.</label></p>
+									<p><input type="checkbox" id="agree02" name="agree02"><label for="agree02"><em>[필수]</em> 서비스 이용 및 예약에 필요한 개인정보 제공에 동의합니다.<button class="agree01" onclick="return false;">약관확인</button></label></p>
+									<p><input type="checkbox" id="agree03" name="agree03"><label for="agree03"><em>[필수]</em> 마케팅 활용에 동의합니다.<button class="agree02" onclick="return false;">약관확인</button></label></p>
+								</div>
+							</div>
+						</div>
+						<div id="order-surgery">
+							<div class="order-title">
+								<span>선택시술</span>
+							</div>
+							<div class="order-inventory">
+								<div class="order-list"></div>
+								<div class="order-price">
+									<p class="txt01">총 예약금액 <em>0</em>원</p>
+									<p class="txt02">(VAT별도)</p>
+									<p class="txt03">* 결제는 내원 시 진행됩니다.</p>
+								</div>
+								<div class="order-date">
+									<p><em>고객님의 예약일시</em> <span id="reserveDate"></span> <span id="reserveTime"></span></p>
+								</div>
+								<div class="order-btn">
+									<!-- 버튼 클릭 시 예약접수완료 레이어팝업(#order-complete)이 나타납니다. -->
+									<button type="button" onclick="ureserve_it('submit');">예약하기</button>
 								</div>
 							</div>
 						</div>
 					</div>
-					<!-- 선택된 시술 끝 -->
-					
-					
-					<!-- 정보입력 및 선택시술 예약확인 시작 -->
-					
-					<form name="reserve" id="reserve" method="post" action="" enctype="multipart/form-data" autocomplete="off">
-						<input type="hidden" name="fparam" value="">
-						<input type="hidden" name="distinction" value="proc">
-						<input type="hidden" name="r_pay" id="r_pay" value="">
-						<input type="hidden" name="r_date" id="r_date" value="">
-						<input type="hidden" name="r_time_code" id="r_time_code" value="">
-						<input type="hidden" name="r_time" id="r_time" value="">
-						
-						<div id="order-form">
-							<div class="inner">
-								<div id="order-info">
-									<div class="order-title">
-										<span>정보입력</span>
-									</div>
-									<div class="order-form">
-										<ul>
-											<li><label for="r_name">고객명</label><input type="text" id="r_name" name="r_name" valid="required" element-name="고객명"></li>
-											<li><label for="r_phone">연락처</label><input type="text" id="r_phone" name="r_phone" valid="required" element-name="연락처"></li>
-											<li><label for="r_email">이메일</label><input type="text" id="r_email" name="r_email" valid="required" element-name="이메일"></li>
-											<li><label for="r_memo">메모</label><input type="text" id="r_memo" name="r_memo"></li>
-										</ul>
-										<div class="agreement">
-											<p><input type="checkbox" id="agree01" name="agree01"><label for="agree01">시술 전 상담이 필요하신 고객님은 체크해주세요.</label></p>
-											<p><input type="checkbox" id="agree02" name="agree02"><label for="agree02"><em>[필수]</em> 서비스 이용 및 예약에 필요한 개인정보 제공에 동의합니다.<button class="agree01" onclick="return false;">약관확인</button></label></p>
-											<p><input type="checkbox" id="agree03" name="agree03"><label for="agree03"><em>[필수]</em> 마케팅 활용에 동의합니다.<button class="agree02" onclick="return false;">약관확인</button></label></p>
-										</div>
-									</div>
-								</div>
-								<div id="order-surgery">
-									<div class="order-title">
-										<span>선택시술</span>
-									</div>
-									<div class="order-inventory">
-										<div class="order-list"></div>
-										<div class="order-price">
-											<p class="txt01">총 예약금액 <em>0</em>원</p>
-											<p class="txt02">(VAT별도)</p>
-											<p class="txt03">* 결제는 내원 시 진행됩니다.</p>
-										</div>
-										<div class="order-date">
-											<p><em>고객님의 예약일시</em> <span id="reserveDate"></span> <span id="reserveTime"></span></p>
-										</div>
-										<div class="order-btn">
-											<!-- 버튼 클릭 시 예약접수완료 레이어팝업(#order-complete)이 나타납니다. -->
-											<button type="button" onclick="ureserve_it('submit');">예약하기</button>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					
-					</form>
-					<!-- 정보입력 및 선택시술 예약확인 끝 -->
-					
-					
-					<!-- 개인정보 제공 및 마케팅 활용 약관 동의 시작 -->
-					<%-- <div id="pop-agreement">
-						<jsp:include page="../include/pcResAgreement.jsp"></jsp:include>
-					</div> --%>
-					<!-- 개인정보 제공 및 마케팅 활용 약관 동의 끝 -->
-					
-					
-					
-					<!-- <iframe id="hidden" name="hiddenifr" style="width:1px; height:1px; border:0;" src="filecreate.php"></iframe> -->
-					<form name="alim" id="alim" method="post" action="">
-						<input type="hidden" name="r_name" id="r_name" value="">
-						<input type="hidden" name="r_phone" id="r_phone" value="">
-						<input type="hidden" name="r_date" id="r_date" value="">
-						<input type="hidden" name="r_time" id="r_time" value="">
-					</form>
-					
-					<script>
-					
-						$(function(){
-					
-							//$("#getCalendar").load("/html/reserve/_calendar.php");
-					
-							//$(".time-picker").load("/html/reserve/_time.php?date=2019-09-02");
-					
-							/*** 시술 카테고리에서 시술 선택 ***/
-							$(".item input:checkbox").click(function(){
-					
-								var category1 = $(this).attr("_category1");
-								var category2 = $(this).attr("_category2");
-								var category3 = $(this).attr("_category3");
-								var category1nm = $(this).attr("_category1nm");
-								var category2nm = $(this).attr("_category2nm");
-								var category3nm = $(this).attr("_category3nm");
-								var name = $(this).attr("_name");
-								var pay = $(this).attr("_pay");
-								var val = $(this).val();
-					
-								if($(this).is(":checked")){
-									$('#pop-order-list').append("<button id='basket"+val+"' name='basket' _seq='"+val+"' _category1='"+category1+"' _category2='"+category2+"' _category3='"+category3+"' _category1nm='"+category1nm+"' _category2nm='"+category2nm+"' _category3nm='"+category3nm+"' _pay='"+pay+"'_name='"+name+"' >"+name+"<em><i class='fas fa-times'></i></em></button>");
-								}else{
-									$("#basket"+val).remove();
-								}
-					
-							});
-					
-							/*** 하단 시술 완료 선택 ***/
-							$(".btn-complete").click(function(){
-					
-								$('.order-list').html("");
-								var total = 0;
-					
-								if($("#pop-order #pop-order-list").html().trim() == ""){
-									alert("선택하신 시술이 없습니다.");
-								}
-					
-								$('#pop-order-list button').each(function (index, item) {
-					
-									var category1 = $(this).attr("_category1");
-									var category2 = $(this).attr("_category2");
-									var category3 = $(this).attr("_category3");
-									var category1nm = $(this).attr("_category1nm");
-									var category2nm = $(this).attr("_category2nm");
-									var category3nm = $(this).attr("_category3nm");
-									var name = $(this).attr("_name");
-									var pay = $(this).attr("_pay");
-									var seq = $(this).attr("_seq");
-					
-									total += Number(pay);
-					
-									$('.order-list').append("<p id='basket"+seq+"' name='basket' _seq='"+seq+"' _category1='"+category1+"' _category2='"+category2+"' _category3='"+category3+"' _category1nm='"+category1nm+"' _category2nm='"+category2nm+"' _category3nm='"+category3nm+"' _pay='"+pay+"'_name='"+name+"'><em>"+category1nm+"</em><span></span>"+category2nm+category3nm+"<em>"+comma(pay)+"원</em></p>");
-									//$("#pop-order-list").html("");
-									//$('#pop-order-list').html("");
-									$(".item input:checkbox").prop("checked",false);
-									$(".surgery-option button.active").removeClass("active");
-									$(".surgery-option ul").hide();
-								});
-					
-								$('#r_pay').val(total);
-								$('.order-price .txt01 > em').html( comma(total) );
-					
-							});
-					
-							/*** 하단 시술 선택 취소 ***/
-							$(document).on("click","#pop-order-list button",function(){
-								$("#category"+$(this).attr("_seq")).prop("checked",false);
-								$("#basket"+$(this).attr("_seq")).remove();
-					
-								$("#category"+$(this).attr("_seq")).parents("div.item").find("button.active").removeClass("active");
-								$("#category"+$(this).attr("_seq")).parents("div.item").find("ul").hide();
-							});
-					
-							/*** 하단 시술 전체 취소 ***/
-							$(".btn-reset").click(function(){
-								$('#pop-order-list').html("");
-								$(".item input:checkbox").prop("checked",false);
-							});
-					
+				</div>
+			
+			</form>
+			<!-- 정보입력 및 선택시술 예약확인 끝 -->
+			
+			
+			<!-- 개인정보 제공 및 마케팅 활용 약관 동의 시작 -->
+			<%-- <div id="pop-agreement">
+				<jsp:include page="../include/pcResAgreement.jsp"></jsp:include>
+			</div> --%>
+			<!-- 개인정보 제공 및 마케팅 활용 약관 동의 끝 -->
+			
+			
+			
+			<!-- <iframe id="hidden" name="hiddenifr" style="width:1px; height:1px; border:0;" src="filecreate.php"></iframe> -->
+			<form name="alim" id="alim" method="post" action="">
+				<input type="hidden" name="r_name" id="r_name" value="">
+				<input type="hidden" name="r_phone" id="r_phone" value="">
+				<input type="hidden" name="r_date" id="r_date" value="">
+				<input type="hidden" name="r_time" id="r_time" value="">
+			</form>
+			
+			<script>
+			
+				$(function(){
+			
+					//$("#getCalendar").load("/html/reserve/_calendar.php");
+			
+					//$(".time-picker").load("/html/reserve/_time.php?date=2019-09-02");
+			
+					/*** 시술 카테고리에서 시술 선택 ***/
+					$(".item input:checkbox").click(function(){
+			
+						var category1 = $(this).attr("_category1");
+						var category2 = $(this).attr("_category2");
+						var category3 = $(this).attr("_category3");
+						var category1nm = $(this).attr("_category1nm");
+						var category2nm = $(this).attr("_category2nm");
+						var category3nm = $(this).attr("_category3nm");
+						var name = $(this).attr("_name");
+						var pay = $(this).attr("_pay");
+						var val = $(this).val();
+			
+						if($(this).is(":checked")){
+							$('#pop-order-list').append("<button id='basket"+val+"' name='basket' _seq='"+val+"' _category1='"+category1+"' _category2='"+category2+"' _category3='"+category3+"' _category1nm='"+category1nm+"' _category2nm='"+category2nm+"' _category3nm='"+category3nm+"' _pay='"+pay+"'_name='"+name+"' >"+name+"<em><i class='fas fa-times'></i></em></button>");
+						}else{
+							$("#basket"+val).remove();
+						}
+			
+					});
+			
+					/*** 하단 시술 완료 선택 ***/
+					$(".btn-complete").click(function(){
+			
+						$('.order-list').html("");
+						var total = 0;
+			
+						if($("#pop-order #pop-order-list").html().trim() == ""){
+							alert("선택하신 시술이 없습니다.");
+						}
+			
+						$('#pop-order-list button').each(function (index, item) {
+			
+							var category1 = $(this).attr("_category1");
+							var category2 = $(this).attr("_category2");
+							var category3 = $(this).attr("_category3");
+							var category1nm = $(this).attr("_category1nm");
+							var category2nm = $(this).attr("_category2nm");
+							var category3nm = $(this).attr("_category3nm");
+							var name = $(this).attr("_name");
+							var pay = $(this).attr("_pay");
+							var seq = $(this).attr("_seq");
+			
+							total += Number(pay);
+			
+							$('.order-list').append("<p id='basket"+seq+"' name='basket' _seq='"+seq+"' _category1='"+category1+"' _category2='"+category2+"' _category3='"+category3+"' _category1nm='"+category1nm+"' _category2nm='"+category2nm+"' _category3nm='"+category3nm+"' _pay='"+pay+"'_name='"+name+"'><em>"+category1nm+"</em><span></span>"+category2nm+category3nm+"<em>"+comma(pay)+"원</em></p>");
+							//$("#pop-order-list").html("");
+							//$('#pop-order-list').html("");
+							$(".item input:checkbox").prop("checked",false);
+							$(".surgery-option button.active").removeClass("active");
+							$(".surgery-option ul").hide();
 						});
-					
-						function ureserve_it($mode){
-					
-							var fm = document.reserve,
-								answer = "";
-					
-							if($mode == "submit"){
-					
-								/*
-								if( !$("#agree01").is(":checked") ){
-									alert("개인정보동의 항목은 필수입니다");
-									$("#agree01").focus();
+			
+						$('#r_pay').val(total);
+						$('.order-price .txt01 > em').html( comma(total) );
+			
+					});
+			
+					/*** 하단 시술 선택 취소 ***/
+					$(document).on("click","#pop-order-list button",function(){
+						$("#category"+$(this).attr("_seq")).prop("checked",false);
+						$("#basket"+$(this).attr("_seq")).remove();
+			
+						$("#category"+$(this).attr("_seq")).parents("div.item").find("button.active").removeClass("active");
+						$("#category"+$(this).attr("_seq")).parents("div.item").find("ul").hide();
+					});
+			
+					/*** 하단 시술 전체 취소 ***/
+					$(".btn-reset").click(function(){
+						$('#pop-order-list').html("");
+						$(".item input:checkbox").prop("checked",false);
+					});
+			
+				});
+			
+				function ureserve_it($mode){
+			
+					var fm = document.reserve,
+						answer = "";
+			
+					if($mode == "submit"){
+			
+						/*
+						if( !$("#agree01").is(":checked") ){
+							alert("개인정보동의 항목은 필수입니다");
+							$("#agree01").focus();
+							return;
+						}*/
+			
+						if( !$("#agree02").is(":checked") ){
+							alert("개인정보동의 항목은 필수입니다");
+							$("#agree02").focus();
+							return;
+						}
+			
+						if( !$("#agree03").is(":checked") ){
+							alert("마케팅 활용 동의 항목은 필수입니다");
+							$("#agree03").focus();
+							return;
+						}
+			
+						if(fm.r_date.value == ""){
+							alert("날짜를 선택하여야 합니다.");
+							return;
+						}
+			
+						if(fm.r_time.value == ""){
+							alert("시간대를 선택하여야 합니다.");
+							return;
+						}
+			
+						if($(".order-list").html() == ""){
+							alert("시술을 선택 하셔야 합니다.");
+							return;
+						}
+			
+						if($("#r_name").val() == ""){
+							alert("고객명을 입력하세요.");
+							return;
+						}
+			
+						if($("#r_phone").val() == ""){
+							alert("연락처를 입력하세요.");
+							return;
+						}
+			
+						if($("#r_email").val() == ""){
+							alert("이메일을 입력하세요.");
+							return;
+						}
+			
+						$("#result_name").html("");
+						$("#result_phone").html("");
+						$("#result_date").html("");
+						$("#result_pay").html("");
+						$("#result_memo").html("");
+						$("#result_category").html("");
+			
+						/* 예약 기본정보 */
+						var reserveJson = new Object();
+						reserveJson.mode = "insert";
+						reserveJson.r_pay = $('#r_pay').val();
+						reserveJson.r_date = $('#r_date').val();
+						reserveJson.r_time_code = $('#r_time_code').val();
+						reserveJson.r_time = $('#r_time').val();
+						reserveJson.r_name = $('#r_name').val();
+						reserveJson.r_phone = $('#r_phone').val();
+						reserveJson.r_email = $('#r_email').val();
+						reserveJson.r_memo = $('#r_memo').val();
+						reserveJson.r_counsel = ($("#agree01").is(":checked")) ? "Y" : "N";
+						var nd = new Date();
+						var ny = nd.getFullYear();
+						var nm = nd.getMonth()+1;
+						nm = (nm>9?'':'0')+nm;
+						var ndd = nd.getDate();
+						ndd = (ndd>9?'':'0')+ndd;
+						reserveJson.r_regdate = ny+"-"+nm+"-"+ndd;
+						
+						var categoryJsonArray = new Array();
+			
+						/* 예약 카테고리 목록 */
+						$("#result_category").html();
+						$('.order-list p').each(function (index, item) {
+			
+							/* var category1 = $(this).attr("_category1");
+							var category2 = $(this).attr("_category2");
+							var category3 = $(this).attr("_category3"); */
+							var category1nm = $(this).attr("_category1nm");
+							var category2nm = $(this).attr("_category2nm");
+							var category3nm = $(this).attr("_category3nm");
+							var name = $(this).attr("_name");
+							var pay = $(this).attr("_pay");
+							var seq = $(this).attr("_seq");
+			
+							var category = new Object();
+							/* category.category1_seq = category1;
+							category.category2_seq = category2;
+							category.category3_seq = category3; */
+							category.category1_nm = category1nm;
+							category.category2_nm = category2nm;
+							category.category3_nm = category3nm;
+							category.category_pay = pay;
+							categoryJsonArray.push(category);
+			
+							$("#result_category").append(category1nm +" "+ category2nm +" "+ category3nm+"<br/><br/>");
+						});
+			
+						reserveJson.categoryList = categoryJsonArray;
+						var sendData = JSON.stringify(reserveJson);
+						//console.log(sendData);
+			
+						$.ajax({
+							url : "${pageContext.request.contextPath}/menu06_01register",
+							type: "POST",
+							data: sendData,
+							dataType:"text",
+							contentType : "application/json; charset=UTF-8",
+							success : function(json){
+			
+								if(json == "JUNGBOK"){
+									alert("예약 하신 시간대에 이미 예약이 되어 있습니다.\n다른시간대를 이용하여 주세요.");
 									return;
-								}*/
-					
-								if( !$("#agree02").is(":checked") ){
-									alert("개인정보동의 항목은 필수입니다");
-									$("#agree02").focus();
+								}else if(json == "OK"){
+									$("#result_name").html($('#r_name').val());
+									$("#result_phone").html($('#r_phone').val());
+									$("#result_date").html($('#r_date').val() + " " + $('#r_time').val());
+									$("#result_pay").html("<em>"+comma($('#r_pay').val())+"</em>");
+									$("#result_memo").html($('#r_memo').val());
+			
+									$('#order-complete').fadeIn();
+			
+									form = document.alim;
+									form.r_name.value = $('#r_name').val();
+									form.r_phone.value = $('#r_phone').val();
+									form.r_date.value = $('#r_date').val();
+									form.r_time.value = $('#r_time').val();
+			
+									form.target = "hiddenifr";
+									console.log(reserveJson);
+									//form.submit();
+									vegasRegister(reserveJson);
+								}else{
+									alert("오류가 발생하였습니다. 관리자에게 문의하여 주세요.");
 									return;
 								}
-					
-								if( !$("#agree03").is(":checked") ){
-									alert("마케팅 활용 동의 항목은 필수입니다");
-									$("#agree03").focus();
-									return;
-								}
-					
-								if(fm.r_date.value == ""){
-									alert("날짜를 선택하여야 합니다.");
-									return;
-								}
-					
-								if(fm.r_time.value == ""){
-									alert("시간대를 선택하여야 합니다.");
-									return;
-								}
-					
-								if($(".order-list").html() == ""){
-									alert("시술을 선택 하셔야 합니다.");
-									return;
-								}
-					
-								if($("#r_name").val() == ""){
-									alert("고객명을 입력하세요.");
-									return;
-								}
-					
-								if($("#r_phone").val() == ""){
-									alert("연락처를 입력하세요.");
-									return;
-								}
-					
-								if($("#r_email").val() == ""){
-									alert("이메일을 입력하세요.");
-									return;
-								}
-					
+							},
+							error: function(request,status,error){
+								//console.log(jqXHR.responseText);
+								console.log("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
 								$("#result_name").html("");
 								$("#result_phone").html("");
 								$("#result_date").html("");
 								$("#result_pay").html("");
 								$("#result_memo").html("");
 								$("#result_category").html("");
-					
-								/* 예약 기본정보 */
-								var reserveJson = new Object();
-								reserveJson.mode = "insert";
-								reserveJson.r_pay = $('#r_pay').val();
-								reserveJson.r_date = $('#r_date').val();
-								reserveJson.r_time_code = $('#r_time_code').val();
-								reserveJson.r_time = $('#r_time').val();
-								reserveJson.r_name = $('#r_name').val();
-								reserveJson.r_phone = $('#r_phone').val();
-								reserveJson.r_email = $('#r_email').val();
-								reserveJson.r_memo = $('#r_memo').val();
-								reserveJson.r_counsel = ($("#agree01").is(":checked")) ? "Y" : "N";
-								var nd = new Date();
-								var ny = nd.getFullYear();
-								var nm = nd.getMonth()+1;
-								nm = (nm>9?'':'0')+nm;
-								var ndd = nd.getDate();
-								ndd = (ndd>9?'':'0')+ndd;
-								reserveJson.r_regdate = ny+"-"+nm+"-"+ndd;
-								
-								var categoryJsonArray = new Array();
-					
-								/* 예약 카테고리 목록 */
-								$("#result_category").html();
-								$('.order-list p').each(function (index, item) {
-					
-									/* var category1 = $(this).attr("_category1");
-									var category2 = $(this).attr("_category2");
-									var category3 = $(this).attr("_category3"); */
-									var category1nm = $(this).attr("_category1nm");
-									var category2nm = $(this).attr("_category2nm");
-									var category3nm = $(this).attr("_category3nm");
-									var name = $(this).attr("_name");
-									var pay = $(this).attr("_pay");
-									var seq = $(this).attr("_seq");
-					
-									var category = new Object();
-									/* category.category1_seq = category1;
-									category.category2_seq = category2;
-									category.category3_seq = category3; */
-									category.category1_nm = category1nm;
-									category.category2_nm = category2nm;
-									category.category3_nm = category3nm;
-									category.category_pay = pay;
-									categoryJsonArray.push(category);
-					
-									$("#result_category").append(category1nm +" "+ category2nm +" "+ category3nm+"<br/><br/>");
-								});
-					
-								reserveJson.categoryList = categoryJsonArray;
-								var sendData = JSON.stringify(reserveJson);
-								//console.log(sendData);
-					
-								$.ajax({
-									url : "${pageContext.request.contextPath}/menu06_01register",
-									type: "POST",
-									data: sendData,
-									dataType:"text",
-									contentType : "application/json; charset=UTF-8",
-									success : function(json){
-					
-										if(json == "JUNGBOK"){
-											alert("예약 하신 시간대에 이미 예약이 되어 있습니다.\n다른시간대를 이용하여 주세요.");
-											return;
-										}else if(json == "OK"){
-											$("#result_name").html($('#r_name').val());
-											$("#result_phone").html($('#r_phone').val());
-											$("#result_date").html($('#r_date').val() + " " + $('#r_time').val());
-											$("#result_pay").html("<em>"+comma($('#r_pay').val())+"</em>");
-											$("#result_memo").html($('#r_memo').val());
-					
-											$('#order-complete').fadeIn();
-					
-											form = document.alim;
-											form.r_name.value = $('#r_name').val();
-											form.r_phone.value = $('#r_phone').val();
-											form.r_date.value = $('#r_date').val();
-											form.r_time.value = $('#r_time').val();
-					
-											form.target = "hiddenifr";
-											console.log(reserveJson);
-											//form.submit();
-											vegasRegister(reserveJson);
-										}else{
-											alert("오류가 발생하였습니다. 관리자에게 문의하여 주세요.");
-											return;
-										}
-									},
-									error: function(request,status,error){
-										//console.log(jqXHR.responseText);
-										console.log("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
-										$("#result_name").html("");
-										$("#result_phone").html("");
-										$("#result_date").html("");
-										$("#result_pay").html("");
-										$("#result_memo").html("");
-										$("#result_category").html("");
-									} 
-								});
-					
-								/*** 예약하기 - 완료 레이어창 ***/
-								//$('#order-complete').fadeIn();
-					
-							}
-						}
-						
-						
-						// 달력에서 날짜 선택시 그 날짜의 시간대 가져온다.
-						function onCalDate(dow, selDate){
-							console.log($(".date_"+selDate).hasClass("closed"));
-							$(".calDate").removeClass('selected');
-							$(".time-picker").html("");
-							$("#reserveDate").html("");
-							$("#reserveTime").html("");
-							$("#r_date").val("");
-							$("#r_time_code").val("");
-							$("#r_time").val("");
-					
-							if(!$(".date_"+selDate).hasClass("closed")){
-								$(".date_"+selDate).addClass('selected');
-								$("#reserveDate").html(selDate);
-								drawTimePicker(dow)
-								$("#r_date").val(selDate);
-							}else{
-								alert("홈페이지 시술예약은 당일이나, 1일전 예약 불가합니다.\n유선상으로 문의하여 주시기 바랍니다");
-							}
-						}
-					
-						// 달력에서 날짜 선택시 그 날짜의 시간대 가져온다.
-						function onCalTime(mode, selTimeCode, selTimeVal){
-							if(mode==""){
-								$("#reserveTime").html(selTimeVal);
-								$("#r_time_code").val(selTimeCode);
-								$("#r_time").val(selTimeVal);
-							}else{
-								alert("홈페이지 시술예약은 당일이나, 1일전 예약 불가합니다.\n유선상으로 문의하여 주시기 바랍니다");
-								return false;
-							}
-						}
-					</script>
-				</div>
-			</div><!-- inner end -->
+							} 
+						});
+			
+						/*** 예약하기 - 완료 레이어창 ***/
+						//$('#order-complete').fadeIn();
+			
+					}
+				}
+				
+				
+				// 달력에서 날짜 선택시 그 날짜의 시간대 가져온다.
+				function onCalDate(dow, selDate){
+					console.log($(".date_"+selDate).hasClass("closed"));
+					$(".calDate").removeClass('selected');
+					$(".time-picker").html("");
+					$("#reserveDate").html("");
+					$("#reserveTime").html("");
+					$("#r_date").val("");
+					$("#r_time_code").val("");
+					$("#r_time").val("");
+			
+					if(!$(".date_"+selDate).hasClass("closed")){
+						$(".date_"+selDate).addClass('selected');
+						$("#reserveDate").html(selDate);
+						drawTimePicker(dow)
+						$("#r_date").val(selDate);
+					}else{
+						alert("홈페이지 시술예약은 당일이나, 1일전 예약 불가합니다.\n유선상으로 문의하여 주시기 바랍니다");
+					}
+				}
+			
+				// 달력에서 날짜 선택시 그 날짜의 시간대 가져온다.
+				function onCalTime(mode, selTimeCode, selTimeVal){
+					if(mode==""){
+						$("#reserveTime").html(selTimeVal);
+						$("#r_time_code").val(selTimeCode);
+						$("#r_time").val(selTimeVal);
+					}else{
+						alert("홈페이지 시술예약은 당일이나, 1일전 예약 불가합니다.\n유선상으로 문의하여 주시기 바랍니다");
+						return false;
+					}
+				}
+			</script>
 		</section>
 		<!-- footer -->
 		<jsp:include page="../include/footer.jsp"></jsp:include>
