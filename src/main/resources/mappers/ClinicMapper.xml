@@ -17,7 +17,7 @@
 	</insert>
 	
 	<update id="update">
-		update clinic set kind1=#{kind1}, kind1=#{kind1nm}, name=#{name}, code=#{code}, price=#{price} where no=#{no}
+		update clinic set kind1=#{kind1}, kind1nm=#{kind1nm}, name=#{name}, code=#{code}, price=#{price} where no=#{no}
 	</update>
 	
 	<delete id="delete">

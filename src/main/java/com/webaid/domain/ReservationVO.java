@@ -2,14 +2,17 @@ package com.webaid.domain;
 
 public class ReservationVO {
 	private int no;
+	private String regdate;
+	private String clinic_list;
+	private int price;
+	private String counseling;
+	private String res_date;
+	private String res_time;
 	private String name;
 	private String phone;
-	private String content;
-	private String reservationdate;
-	private String price;
+	private String email;
 	private String memo;
-	private String state;
-	private String regdate;
+	private String res_state;
 
 	public ReservationVO() {
 		super();
@@ -21,6 +24,54 @@ public class ReservationVO {
 
 	public void setNo(int no) {
 		this.no = no;
+	}
+
+	public String getRegdate() {
+		return regdate;
+	}
+
+	public void setRegdate(String regdate) {
+		this.regdate = regdate;
+	}
+
+	public String getClinic_list() {
+		return clinic_list;
+	}
+
+	public void setClinic_list(String clinic_list) {
+		this.clinic_list = clinic_list;
+	}
+
+	public int getPrice() {
+		return price;
+	}
+
+	public void setPrice(int price) {
+		this.price = price;
+	}
+
+	public String getCounseling() {
+		return counseling;
+	}
+
+	public void setCounseling(String counseling) {
+		this.counseling = counseling;
+	}
+
+	public String getRes_date() {
+		return res_date;
+	}
+
+	public void setRes_date(String res_date) {
+		this.res_date = res_date;
+	}
+
+	public String getRes_time() {
+		return res_time;
+	}
+
+	public void setRes_time(String res_time) {
+		this.res_time = res_time;
 	}
 
 	public String getName() {
@@ -39,28 +90,12 @@ public class ReservationVO {
 		this.phone = phone;
 	}
 
-	public String getContent() {
-		return content;
+	public String getEmail() {
+		return email;
 	}
 
-	public void setContent(String content) {
-		this.content = content;
-	}
-
-	public String getReservationdate() {
-		return reservationdate;
-	}
-
-	public void setReservationdate(String reservationdate) {
-		this.reservationdate = reservationdate;
-	}
-
-	public String getPrice() {
-		return price;
-	}
-
-	public void setPrice(String price) {
-		this.price = price;
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 	public String getMemo() {
@@ -71,27 +106,21 @@ public class ReservationVO {
 		this.memo = memo;
 	}
 
-	public String getState() {
-		return state;
+	public String getRes_state() {
+		return res_state;
 	}
 
-	public void setState(String state) {
-		this.state = state;
-	}
-
-	public String getRegdate() {
-		return regdate;
-	}
-
-	public void setRegdate(String regdate) {
-		this.regdate = regdate;
+	public void setRes_state(String res_state) {
+		this.res_state = res_state;
 	}
 
 	@Override
 	public String toString() {
-		return "ReservationVO [no=" + no + ", name=" + name + ", phone=" + phone + ", content=" + content
-				+ ", reservationdate=" + reservationdate + ", price=" + price + ", memo=" + memo + ", state=" + state
-				+ ", regdate=" + regdate + "]";
+		return "ReservationVO [no=" + no + ", regdate=" + regdate + ", clinic_list=" + clinic_list + ", price=" + price
+				+ ", counseling=" + counseling + ", res_date=" + res_date + ", res_time=" + res_time + ", name=" + name
+				+ ", phone=" + phone + ", email=" + email + ", memo=" + memo + ", res_state=" + res_state + "]";
 	}
+
+	
 
 }

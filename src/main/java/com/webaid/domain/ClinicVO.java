@@ -6,7 +6,7 @@ public class ClinicVO {
 	private String kind1nm;
 	private String name;
 	private String code;
-	private String price;
+	private int price;
 
 	public ClinicVO() {
 		super();
@@ -52,11 +52,11 @@ public class ClinicVO {
 		this.code = code;
 	}
 
-	public String getPrice() {
+	public int getPrice() {
 		return price;
 	}
 
-	public void setPrice(String price) {
+	public void setPrice(int price) {
 		this.price = price;
 	}
 

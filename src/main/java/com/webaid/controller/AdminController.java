@@ -39,17 +39,25 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.webaid.domain.AdviceVO;
+import com.webaid.domain.Category1VO;
+import com.webaid.domain.ClinicVO;
+import com.webaid.domain.HospitalTimeVO;
 import com.webaid.domain.MediaVO;
 import com.webaid.domain.NoticeVO;
 import com.webaid.domain.PageMaker;
 import com.webaid.domain.PopupVO;
+import com.webaid.domain.ReservationVO;
 import com.webaid.domain.SearchCriteria;
 import com.webaid.domain.StatisticSelectDateVO;
 import com.webaid.domain.StatisticVO;
 import com.webaid.service.AdviceService;
+import com.webaid.service.Category1Service;
+import com.webaid.service.ClinicService;
+import com.webaid.service.HospitalTimeService;
 import com.webaid.service.MediaService;
 import com.webaid.service.NoticeService;
 import com.webaid.service.PopupService;
+import com.webaid.service.ReservationService;
 import com.webaid.service.StatisticService;
 
 /**
@@ -75,6 +83,18 @@ public class AdminController {
 	
 	@Autowired
 	private PopupService pService;
+	
+	@Autowired
+	private HospitalTimeService htService;
+	
+	@Autowired
+	private ClinicService cService;
+	
+	@Autowired
+	private ReservationService resService;
+	
+	@Autowired
+	private Category1Service c1Service;
 	
 	
 	@RequestMapping(value = "", method = RequestMethod.GET)
@@ -878,47 +898,237 @@ public class AdminController {
 		return "admin/menu03_02";
 	}
 	
-	/*@ResponseBody
-	@RequestMapping("/imgUpload")
-	public Map<String, Object> noticeUpload(HttpServletRequest req, @RequestParam MultipartFile upload, Model model)
-			throws Exception {
-		logger.info("image upload!!!!!");
+	
+	
+	//================메뉴5(예약관리)=============================
+	
+	@RequestMapping(value = "/menu05_01", method = RequestMethod.GET)
+	public String menu05_01(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
+		logger.info("menu05_01 GET");
+		
+		List<ReservationVO> list = resService.listSearch(cri);
+		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(resService.listSearchCount(cri));
+		pageMaker.setFinalPage(resService.listSearchCount(cri));
+		
+		model.addAttribute("list", list);
+		model.addAttribute("pageMaker", pageMaker);
+		return "admin/menu05_01";
+	}
+	
+	@RequestMapping(value = "/menu05_01update", method = RequestMethod.GET)
+	public String menu05_01update(int no, @ModelAttribute("cri") SearchCriteria cri, Model model, HttpServletRequest req) throws Exception {
+		logger.info("menu05_01update GET");
+		
+		ReservationVO vo = resService.selectOne(no);
 
-		// http body
-		OutputStream out = null;
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(resService.listSearchCount(cri));
 
-		Map<String, Object> map = new HashMap<String, Object>();
+		model.addAttribute("item", vo);
+		model.addAttribute("pageMaker", pageMaker);
+		return "admin/menu05_01update";
+	}
+	
+	@RequestMapping(value = "/menu05_01update", method = RequestMethod.POST)
+	public String menu05_01updatePOST(MultipartHttpServletRequest mtfReq, int page, @ModelAttribute("cri") SearchCriteria cri, RedirectAttributes rtts) throws Exception {
+		logger.info("menu05_01update POST");
+		
+		ReservationVO vo = new ReservationVO();
+		
+		vo.setNo(Integer.parseInt(mtfReq.getParameter("no")));
+		vo.setName(mtfReq.getParameter("name"));
+		vo.setPhone(mtfReq.getParameter("phone"));
+		vo.setEmail(mtfReq.getParameter("email"));
+		vo.setMemo(mtfReq.getParameter("memo"));
+		vo.setRes_state(mtfReq.getParameter("res_state"));
+		
+		resService.update(vo);
+		
+		rtts.addAttribute("no", mtfReq.getParameter("no"));
 
-		// 오리지날 파일명
-		String originalName = upload.getOriginalFilename();
+		PageMaker pageMaker = new PageMaker();
 
-		// 랜덤이름 생성(중복 방지용)
-		UUID uid = UUID.randomUUID();
-		String savedName = uid.toString() + "_" + originalName;
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(page);
+		pageMaker.setTotalCount(resService.listSearchCount(cri));
 
-		// 업로드한 파일 이름
-		String fileName = savedName;
-
-		// 바이트 배열로 변환
-		byte[] bytes = upload.getBytes();
-
-		// 이미지를 업로드할 디렉토리(배포경로로 설정)
-		String innerUploadPath = "resources/uploadNotice/";
-		String uploadPath = (req.getSession().getServletContext().getRealPath("/")) + innerUploadPath;
-		logger.info(uploadPath);
-
-		out = new FileOutputStream(new File(uploadPath + fileName));// 서버에 파일 저장
-		// 서버에 저장됨
-		out.write(bytes);
-
-		String fileUrl = "/" + innerUploadPath + fileName;
-
-		System.out.println(fileUrl);
-
-		map.put("uploaded", 1);
-		map.put("fileName", fileName);
-		map.put("url", fileUrl);
-
-		return map;
-	}*/
+		rtts.addAttribute("page", page);
+		return "redirect:/admin/menu05_01update";
+	}
+	
+	@RequestMapping(value="/menu05_01delete/{no}", method=RequestMethod.GET)
+	public String menu05_01delete(@PathVariable("no") int no){
+		logger.info("clinicResList delete");
+		
+		resService.delete(no);
+		
+		return "redirect:/admin/menu05_01";
+	}
+	
+	@RequestMapping(value = "/menu05_02", method = RequestMethod.GET)
+	public String menu05_02(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
+		logger.info("menu05_02 GET");
+		
+		List<ClinicVO> list = cService.listSearch(cri);
+		List<Category1VO> c1List = c1Service.selectAll();
+		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(cService.listSearchCount(cri));
+		pageMaker.setFinalPage(cService.listSearchCount(cri));
+		
+		model.addAttribute("list", list);
+		model.addAttribute("category1List", c1List);
+		model.addAttribute("pageMaker", pageMaker);
+		return "admin/menu05_02";
+	}
+	
+	@RequestMapping(value = "/menu05_category_register", method = RequestMethod.POST)
+	public String menu05_category_registerPost(MultipartHttpServletRequest mtfReq, Model model) throws IOException {
+		logger.info("menu05_category_register POST");
+		
+		Category1VO vo = new Category1VO();
+		
+		vo.setNo(0);
+		vo.setName(mtfReq.getParameter("categorynm"));
+		
+		c1Service.insert(vo);
+		return "redirect:/admin/menu05_02";
+	}
+	
+	@RequestMapping(value = "/menu05_category_update", method = RequestMethod.POST)
+	public String menu05_category_updatePost(MultipartHttpServletRequest mtfReq, Model model) throws IOException {
+		logger.info("menu05_category_update POST");
+		
+		Category1VO vo = new Category1VO();
+		
+		vo.setNo(Integer.parseInt(mtfReq.getParameter("no")));
+		vo.setName(mtfReq.getParameter("name"));
+		
+		c1Service.update(vo);
+		return "redirect:/admin/menu05_02";
+	}
+	
+	@RequestMapping(value = "/menu05_clinic_register", method = RequestMethod.POST)
+	public String menu05_clinic_registerPost(MultipartHttpServletRequest mtfReq, Model model) throws IOException {
+		logger.info("menu05_clinic_register POST");
+		
+		ClinicVO vo = new ClinicVO();
+		
+		vo.setNo(0);
+		vo.setKind1(Integer.parseInt(mtfReq.getParameter("kind1")));
+		vo.setKind1nm(mtfReq.getParameter("kind1nm"));
+		vo.setName(mtfReq.getParameter("name"));
+		vo.setCode(mtfReq.getParameter("code"));
+		vo.setPrice(Integer.parseInt(mtfReq.getParameter("price")));
+		
+		cService.insert(vo);
+		return "redirect:/admin/menu05_02";
+	}
+	
+	@RequestMapping(value = "/menu05_clinic_update", method = RequestMethod.POST)
+	public String menu05_clinic_updatePOST(MultipartHttpServletRequest mtfReq, RedirectAttributes rtts) throws Exception {
+		logger.info("menu05_clinic_update POST");
+		
+		ClinicVO vo = new ClinicVO();
+		
+		vo.setNo(Integer.parseInt(mtfReq.getParameter("no")));
+		vo.setKind1(Integer.parseInt(mtfReq.getParameter("kind1")));
+		vo.setKind1nm(mtfReq.getParameter("kind1nm"));
+		vo.setName(mtfReq.getParameter("name"));
+		vo.setCode(mtfReq.getParameter("code"));
+		vo.setPrice(Integer.parseInt(mtfReq.getParameter("price")));
+		
+		cService.update(vo);
+		
+		return "redirect:/admin/menu05_02";
+	}
+	
+	@RequestMapping(value = "/menu05_03", method = RequestMethod.GET)
+	public String menu05_03(Model model) throws Exception {
+		logger.info("menu05_03");
+		
+		List<HospitalTimeVO> list = htService.selectAll();
+		
+		int mon_start = list.get(0).getStart_time();
+		int mon_end = list.get(0).getEnd_time();
+		int tue_start = list.get(1).getStart_time();
+		int tue_end = list.get(1).getEnd_time();
+		int wed_start = list.get(2).getStart_time();
+		int wed_end = list.get(2).getEnd_time();
+		int thu_start = list.get(3).getStart_time();
+		int thu_end = list.get(3).getEnd_time();
+		int fri_start = list.get(4).getStart_time();
+		int fri_end = list.get(4).getEnd_time();
+		int sat_start = list.get(5).getStart_time();
+		int sat_end = list.get(5).getEnd_time();
+		
+		model.addAttribute("mon_s", mon_start);
+		model.addAttribute("mon_e", mon_end);
+		model.addAttribute("tue_s", tue_start);
+		model.addAttribute("tue_e", tue_end);
+		model.addAttribute("wed_s", wed_start);
+		model.addAttribute("wed_e", wed_end);
+		model.addAttribute("thu_s", thu_start);
+		model.addAttribute("thu_e", thu_end);
+		model.addAttribute("fri_s", fri_start);
+		model.addAttribute("fri_e", fri_end);
+		model.addAttribute("sat_s", sat_start);
+		model.addAttribute("sat_e", sat_end);
+		return "admin/menu05_03";
+	}
+	
+	@RequestMapping(value = "/menu05_03update", method = RequestMethod.POST)
+	public String menu05_03updatePOST(MultipartHttpServletRequest mtfReq, RedirectAttributes rtts) throws Exception {
+		logger.info("menu05_03update POST");
+		
+		int mon_start = (Integer.parseInt(mtfReq.getParameter("mon_start_hour"))*60)+Integer.parseInt(mtfReq.getParameter("mon_start_minute"));
+		int mon_end = (Integer.parseInt(mtfReq.getParameter("mon_end_hour"))*60)+Integer.parseInt(mtfReq.getParameter("mon_end_minute"));
+		int tue_start = (Integer.parseInt(mtfReq.getParameter("tue_start_hour"))*60)+Integer.parseInt(mtfReq.getParameter("tue_start_minute"));
+		int tue_end = (Integer.parseInt(mtfReq.getParameter("tue_end_hour"))*60)+Integer.parseInt(mtfReq.getParameter("tue_end_minute"));
+		int wed_start = (Integer.parseInt(mtfReq.getParameter("wed_start_hour"))*60)+Integer.parseInt(mtfReq.getParameter("wed_start_minute"));
+		int wed_end = (Integer.parseInt(mtfReq.getParameter("wed_end_hour"))*60)+Integer.parseInt(mtfReq.getParameter("wed_end_minute"));
+		int thu_start = (Integer.parseInt(mtfReq.getParameter("thu_start_hour"))*60)+Integer.parseInt(mtfReq.getParameter("thu_start_minute"));
+		int thu_end = (Integer.parseInt(mtfReq.getParameter("thu_end_hour"))*60)+Integer.parseInt(mtfReq.getParameter("thu_end_minute"));
+		int fri_start =( Integer.parseInt(mtfReq.getParameter("fri_start_hour"))*60)+Integer.parseInt(mtfReq.getParameter("fri_start_minute"));
+		int fri_end = (Integer.parseInt(mtfReq.getParameter("fri_end_hour"))*60)+Integer.parseInt(mtfReq.getParameter("fri_end_minute"));
+		int sat_start = (Integer.parseInt(mtfReq.getParameter("sat_start_hour"))*60)+Integer.parseInt(mtfReq.getParameter("sat_start_minute"));
+		int sat_end = (Integer.parseInt(mtfReq.getParameter("sat_end_hour"))*60)+Integer.parseInt(mtfReq.getParameter("sat_end_minute"));
+		
+		List<Integer> timeList = new ArrayList<Integer>();
+		timeList.add(mon_start);
+		timeList.add(mon_end);
+		timeList.add(tue_start);
+		timeList.add(tue_end);
+		timeList.add(wed_start);
+		timeList.add(wed_end);
+		timeList.add(thu_start);
+		timeList.add(thu_end);
+		timeList.add(fri_start);
+		timeList.add(fri_end);
+		timeList.add(sat_start);
+		timeList.add(sat_end);
+		
+		int k= 0;
+		
+		for(int i=1; i<7; i++){
+			HospitalTimeVO vo = new HospitalTimeVO();
+			vo.setNo(i);
+			vo.setStart_time(timeList.get(k));
+			k++;
+			vo.setEnd_time(timeList.get(k));
+			k++;
+			htService.update(vo);
+			System.out.println(vo);
+		}
+		
+		return "redirect:/admin/menu05_03";
+	}
 }

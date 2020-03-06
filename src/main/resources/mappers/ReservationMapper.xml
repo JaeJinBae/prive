@@ -20,7 +20,7 @@
 		delete from reservation where no=#{no}
 	</delete>
 	
-	<select id="listSearchAll" resultType="ReservationVO">
+	<select id="listSearch" resultType="ReservationVO">
 		select * from reservation where no>0 <include refid="search"></include> order by no desc, regdate desc limit #{pageStart},#{perPageNum}
 	</select>
 	
@@ -33,7 +33,7 @@
 		</if>
 	</sql>
 	
-	<select id="listSearchCountAll" resultType="int">
+	<select id="listSearchCount" resultType="int">
 		select count(no) from reservation where no>0 <include refid="search"></include>
 	</select>
 	

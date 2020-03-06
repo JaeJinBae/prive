@@ -27,4 +27,14 @@ $(function(){
 		<dd><a href="${pageContext.request.contextPath}/admin/menu03_01">트래픽분석</a></dd>
 		<dd><a href="${pageContext.request.contextPath}/admin/menu03_02">유입경로</a></dd>
 	</dl>
+	<dl>
+		<dt><a href="javascript:;">이벤트관리</a></dt>
+		<dd><a href="">이벤트관리</a></dd>
+	</dl>
+	<dl>
+		<dt><a href="javascript:;">예약관리</a></dt>
+		<dd><a href="${pageContext.request.contextPath}/admin/menu05_01">예약 목록</a></dd>
+		<dd><a href="${pageContext.request.contextPath}/admin/menu05_02">시술 카테고리 관리</a></dd>
+		<dd><a href="${pageContext.request.contextPath}/admin/menu05_03">예약 환경설정</a></dd>
+	</dl>
 </div>

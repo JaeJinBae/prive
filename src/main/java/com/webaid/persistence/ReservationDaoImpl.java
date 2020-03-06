@@ -6,7 +6,6 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.webaid.domain.ClinicVO;
 import com.webaid.domain.ReservationVO;
 import com.webaid.domain.SearchCriteria;
 
@@ -44,7 +43,7 @@ public class ReservationDaoImpl implements ReservationDao {
 	}
 
 	@Override
-	public List<ClinicVO> listSearch(SearchCriteria cri) {
+	public List<ReservationVO> listSearch(SearchCriteria cri) {
 		return session.selectList(namespace+".listSearch", cri);
 	}
 
