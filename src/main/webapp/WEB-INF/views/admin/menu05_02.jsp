@@ -136,6 +136,17 @@ $(function(){
 		}
 	});
 	
+	$("#categoryUpdate > .upAddformTableBtnWrap > .btnDelete").click(function(){
+		var categorynm = $("#categoryUpdate > div > table tr > td > input[name='name']").val();
+		var no = $("#categoryUpdate > div > table tr > td > input[name='no']").val();
+		if(categorynm.length < 1){
+			alert("카테고리를 다시 선택해주세요.");
+			return false;
+		}else{
+			location.href="${pageContext.request.contextPath}/admin/menu05_category_delete/"+no;
+		}
+	});
+	
 	$("#clinicRegister > div > table tr > td > select").change(function(){
 		var cno = $(this).val();
 		var cname = $("#clinicRegister > div > table tr > td > select option:selected").text();
@@ -213,6 +224,18 @@ $(function(){
 			return false;
 		}
 	});
+	
+	$("#clinicUpdate > .upAddformTableBtnWrap > .btnDelete").click(function(){
+		var clinicno = $("#clinicUpdate > div > table tr > td > input[name='no']").val();
+		var clinicnm = $("#clinicUpdate > div > table tr > td > input[name='name']").val();
+		
+		if(clinicno.length < 1 || clinicnm.length < 1){
+			alert("시술을 선택해주세요.");
+			return false;
+		}else{
+			location.href="${pageContext.request.contextPath}/admin/menu05_clinic_delete/"+clinicno;
+		}
+	});
 });
 </script>
 
@@ -284,7 +307,7 @@ $(function(){
 						</div><!-- 내용입력 끝 -->
 						<div class="upAddformTableBtnWrap"><!-- 수정, 삭제, 추가 버튼 시작 -->
 							<input type="submit" class="btnUpdate" value="수정">
-							<button type="button">삭제</button>
+							<button type="button" class="btnDelete">삭제</button>
 							<button type="button" onClick="clear_value('categoryUpdate')">취소</button>
 						</div><!-- 수정, 삭제, 추가 버튼 끝 -->
 					</form>
@@ -353,7 +376,7 @@ $(function(){
 						</div><!-- 내용입력 끝 -->
 						<div class="upAddformTableBtnWrap"><!-- 수정, 삭제, 추가 버튼 시작 -->
 							<input type="submit" class="btnUpdate" value="수정">
-							<button type="button">삭제</button>
+							<button type="button" class="btnDelete">삭제</button>
 							<button type="button" onClick="clear_value('clinicUpdate')">취소</button>
 						</div><!-- 수정, 삭제, 추가 버튼 끝 -->
 					</form>

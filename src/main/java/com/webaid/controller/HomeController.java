@@ -22,11 +22,14 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.webaid.domain.Category1VO;
+import com.webaid.domain.ClinicVO;
 import com.webaid.domain.HospitalTimeVO;
 import com.webaid.domain.PopupVO;
 import com.webaid.domain.SearchCriteria;
 import com.webaid.domain.StatisticVO;
 import com.webaid.service.AdviceService;
+import com.webaid.service.Category1Service;
 import com.webaid.service.ClinicService;
 import com.webaid.service.HospitalTimeService;
 import com.webaid.service.MediaService;
@@ -57,6 +60,9 @@ public class HomeController {
 	
 	@Autowired
 	private PopupService pService;
+	
+	@Autowired
+	private Category1Service c1Service;
 	
 	@Autowired
 	private ClinicService cService;
@@ -128,6 +134,9 @@ public class HomeController {
 	@RequestMapping(value = "/menu06_01", method = RequestMethod.GET)
 	public String menu06_01(Locale locale, Model model) {
 		logger.info("menu06_01 get");
+		
+		List<Category1VO> categoryList = c1Service.selectAll();
+		List<ClinicVO> clinicList = cService.selectAll();
 		
 		return "sub2/menu06_01";
 	}

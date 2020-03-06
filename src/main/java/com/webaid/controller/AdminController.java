@@ -1016,6 +1016,14 @@ public class AdminController {
 		return "redirect:/admin/menu05_02";
 	}
 	
+	@RequestMapping(value = "/menu05_category_delete/{no}", method = RequestMethod.GET)
+	public String menu05_category_deletePost(@PathVariable("no") int no, Model model) throws IOException {
+		logger.info("menu05_category_delete POST");
+				
+		c1Service.delete(no);
+		return "redirect:/admin/menu05_02";
+	}
+	
 	@RequestMapping(value = "/menu05_clinic_register", method = RequestMethod.POST)
 	public String menu05_clinic_registerPost(MultipartHttpServletRequest mtfReq, Model model) throws IOException {
 		logger.info("menu05_clinic_register POST");
@@ -1048,6 +1056,14 @@ public class AdminController {
 		
 		cService.update(vo);
 		
+		return "redirect:/admin/menu05_02";
+	}
+	
+	@RequestMapping(value = "/menu05_clinic_delete/{no}", method = RequestMethod.GET)
+	public String menu05_clinic_deletePost(@PathVariable("no") int no, Model model) throws IOException {
+		logger.info("menu05_clinic_delete POST");
+		
+		cService.delete(no);
 		return "redirect:/admin/menu05_02";
 	}
 	
