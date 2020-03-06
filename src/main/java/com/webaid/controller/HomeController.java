@@ -132,12 +132,14 @@ public class HomeController {
 	}
 	
 	@RequestMapping(value = "/menu06_01", method = RequestMethod.GET)
-	public String menu06_01(Locale locale, Model model) {
+	public String menu06_01(Model model) {
 		logger.info("menu06_01 get");
 		
 		List<Category1VO> categoryList = c1Service.selectAll();
 		List<ClinicVO> clinicList = cService.selectAll();
 		
+		model.addAttribute("categoryList", categoryList);
+		model.addAttribute("clinicList", clinicList);
 		return "sub2/menu06_01";
 	}
 	
