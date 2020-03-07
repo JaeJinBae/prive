@@ -53,10 +53,13 @@ $(document).ready( function() {
 	// * 
 	$('.order-btn button').click(function(){
 		//$('#order-complete').fadeIn();
+		$('#pop-agreement').fadeIn();
 	});
 
 	$('button.order-btn-complete').click(function(){
 		$('#order-complete').fadeOut();
+		$('#pop-agreement').fadeOut();
+		location.reload();
 	});
 
 	$('#pop-order-list > button > em').click(function(){

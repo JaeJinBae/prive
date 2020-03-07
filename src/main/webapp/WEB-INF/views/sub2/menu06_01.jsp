@@ -106,7 +106,6 @@ section{
 }
 @media only screen and (min-width:320px) and (max-width:767px){	
 	.section1{
-		padding: 0 5px;
 		padding-top: 100px;
 	}
 	.pc-list{

@@ -260,7 +260,7 @@
 	
 	
 	
-	#pop-agreement{display:none; position:fixed; width:100%; height:100%; left:0; top:0; background:rgba(0,0,0,0.6); z-index:99;}
+	#pop-agreement{display:none; position:fixed; width:100%; height:100%; left:0; top:0; background:rgba(0,0,0,0.6); z-index:98;}
 	#pop-agreement .pop-private,
 	#pop-agreement .pop-marketing{display:none; position:absolute; left:50%; top:50%; transform:translate(-50%, -50%); z-index:1; width:100%;  max-width:640px;  background:#fff;}
 	#pop-agreement .pop-private p,
@@ -486,7 +486,7 @@
 	#pop-order #pop-order-btn{position:relative; box-sizing:border-box; z-index:1;}
 	
 	#pop-order #pop-order-list{width:100%; padding:35px 0 10px 0;}
-	#pop-order #pop-order-list::before{position:absolute; display:inline-block; content:''; left:0; top:0; color:#fff; font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f15c"; font-size:25px;}
+	#pop-order #pop-order-list::before{position:absolute; display:inline-block; content:''; left:5px; top:0; color:#fff; font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f15c"; font-size:25px;}
 	#pop-order #pop-order-list::after{position:absolute; display:inline-block; content:'선택된시술'; left:30px; top:0; font-size:22px; color:#fff; font-weight:700;}
 	
 	#pop-order #pop-order-list button{position:relative; text-align:left; display:inline-block; margin:3px 0; background:rgba(255,255,255,0.1); border:1px solid #8b95a6; font-size:15px; color:#fff; padding:8px 50px 8px 15px; width:100%; cursor:default;}
@@ -503,7 +503,7 @@
 	
 	
 	/* 예약접수 완료 팝업 시작 */
-	#order-complete{display:none; position:fixed; width:100%; height:100%; left:0; top:0; background:rgba(0,0,0,0.6); z-index:99;}
+	#order-complete{display:none; position:absolute; width:100%; height:100%; left:0; top:2500px; background:rgba(0,0,0,0.6); z-index:99;}
 	#order-complete .brick{position:absolute; left:50%; top:50%; transform:translate(-50%, -50%); z-index:1; width:100%; max-width:500px; background:#fff; border-top:2px solid #b18c4c;}
 	
 	#order-complete .order-complete-txt{text-align:center; padding:120px 0 35px 0; background: url(../../img/m/contents/order_complete_bg.png) no-repeat center 25px; background-size:90px;}
@@ -525,7 +525,7 @@
 	
 	
 	#order-complete .order-complete-btn{}
-	#order-complete .order-complete-btn button{float:left; width:50%; display:inline-block; height:75px; line-height:78px; text-align:center; font-size:18px;}
+	#order-complete .order-complete-btn button{float:left; width:100%; display:inline-block; height:75px; line-height:78px; text-align:center; font-size:18px;}
 	#order-complete .order-complete-btn button.order-btn-kakao{background:#f8f8f8; color:#222;}
 	#order-complete .order-complete-btn button.order-btn-kakao img{line-height:73px; margin-right:5px;}
 	#order-complete .order-complete-btn button.order-btn-complete{background:#b18c4c; color:#fff;}
@@ -535,7 +535,7 @@
 	
 	
 	
-	#pop-agreement{display:none; position:fixed; width:100%; height:100%; left:0; top:0; background:rgba(0,0,0,0.6); z-index:99;}
+	#pop-agreement{display:none; position:fixed; width:100%; height:100%; left:0; top:0; background:rgba(0,0,0,0.6); z-index:98;}
 	#pop-agreement .pop-private,
 	#pop-agreement .pop-marketing{display:none; position:absolute; left:50%; top:50%; transform:translate(-50%, -50%); z-index:1; width:90%;  max-width:640px;  background:#fff;}
 	#pop-agreement .pop-private p,
