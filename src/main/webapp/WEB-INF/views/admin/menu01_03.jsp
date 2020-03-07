@@ -139,7 +139,7 @@ $(function(){
 						</form>
 					</div>
 			
-					<div class="btn_area">
+					<div class="btn_area" style="visibility:hidden;">
 						<p class="btn_left">
 							<button type="button" class="btn_gray">선택삭제</button>
 							<button type="button" class="btn_gray">게시물이동</button>

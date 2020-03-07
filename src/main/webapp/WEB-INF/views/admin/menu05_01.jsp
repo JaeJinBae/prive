@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>다니엘성형외과의원 진료과목 피부과</title>
+<title>프라이브 피부과</title>
 <link rel="shortcut icon" href="${pageContext.request.contextPath}/resources/img/favicon.ico">
 <!-- ************************************************************************************************* -->
 <!-- @ = 스타일, # = 자바스크립트 -->
@@ -157,7 +157,7 @@ $(function(){
 						</form>
 					</div>
 			
-					<div class="btn_area">
+					<div class="btn_area" style="visibility:hidden;">
 						<p class="btn_left">
 							<button type="button" class="btn_gray" onclick="">전체 Excel저장</button>
 							<button type="button" class="btn_gray" onclick="">Excel저장</button>
