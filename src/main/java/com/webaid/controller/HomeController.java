@@ -1,9 +1,9 @@
 package com.webaid.controller;
 
+import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.List;
-import java.util.Locale;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
@@ -23,9 +23,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.webaid.domain.Category1VO;
+import com.webaid.domain.CategoryVO;
 import com.webaid.domain.ClinicVO;
 import com.webaid.domain.HospitalTimeVO;
 import com.webaid.domain.PopupVO;
+import com.webaid.domain.ReservationJsonVO;
+import com.webaid.domain.ReservationVO;
 import com.webaid.domain.SearchCriteria;
 import com.webaid.domain.StatisticVO;
 import com.webaid.service.AdviceService;
@@ -149,6 +152,61 @@ public class HomeController {
 		HospitalTimeVO vo = htService.selectByDow(dow);
 		
 		entity = new ResponseEntity<HospitalTimeVO>(vo, HttpStatus.OK);
+		return entity;
+	}
+	
+	@RequestMapping(value = "/menu06_01register", method = RequestMethod.POST)
+	public ResponseEntity<String> menu06_01register(@RequestBody ReservationJsonVO info) {
+		logger.info("menu06_01register");
+		ResponseEntity<String> entity = null;
+		try {
+			DecimalFormat df = new DecimalFormat("###,###");
+			
+			ReservationVO vo = new ReservationVO();
+			vo.setRegdate(info.getR_regdate());
+			vo.setPrice(Integer.parseInt(info.getR_pay()));
+			vo.setCounseling(info.getR_counsel());
+			vo.setRes_date(info.getR_date());
+			vo.setRes_time(info.getR_time());
+			vo.setName(info.getR_name());
+			vo.setPhone(info.getR_phone());
+			vo.setEmail(info.getR_email());
+			vo.setMemo(info.getR_memo());
+			vo.setRes_state("o");
+			
+			List<CategoryVO> categoryList = info.getCategoryList();
+			String str = "";
+			if(categoryList.size() > 0){
+				
+				for(int i=0; i<categoryList.size(); i++){
+					str += categoryList.get(i).getCategory1_nm();
+					str += " > ";
+					str += categoryList.get(i).getCategory2_nm();
+					if(categoryList.get(i).getCategory3_nm().equals("") || categoryList.get(i).getCategory3_nm().isEmpty()){
+						str += " <strong>["+df.format(Integer.parseInt(categoryList.get(i).getCategory_pay()))+"원]</strong>";
+						if(i != categoryList.size()-1){
+							str += "<br>";
+						}
+					}else{
+						str += " > ";
+						str += categoryList.get(i).getCategory3_nm();
+						str += " <strong>["+df.format(Integer.parseInt(categoryList.get(i).getCategory_pay()))+"원]</strong>";
+						if(i != categoryList.size()-1){
+							str += "<br>";
+						}
+					}
+				}
+			}
+			vo.setClinic_list(str);
+			
+			rService.insert(vo);
+			
+			entity = new ResponseEntity<String>("OK", HttpStatus.OK);
+		} catch (Exception e) {
+			e.printStackTrace();
+			entity = new ResponseEntity<String>("NO", HttpStatus.OK);
+		}
+		
 		return entity;
 	}
 	

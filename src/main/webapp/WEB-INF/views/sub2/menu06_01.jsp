@@ -485,13 +485,67 @@ $(function(){
 			<!-- 정보입력 및 선택시술 예약확인 끝 -->
 			
 			
+			<!-- 예약접수 완료 팝업 시작 -->
+			<div id="order-complete">
+				<div class="brick">
+					<div class="order-complete-txt">
+						<p class="txt01"><em>예약접수가 완료</em>되었습니다.</p>
+						<p class="txt02">예약이 확정되면 별도로 연락을 드립니다.</p>
+					</div>
+					<div class="order-complete-form">
+						<table>
+							<caption>예약접수 완료 확인테이블</caption>
+							<tbody>
+								<tr>
+									<th>고객명</th>
+									<td><span id="result_name">손현정</span></td>
+								</tr>
+								<tr>
+									<th>연락처</th>
+									<td><span id="result_phone">010-5555-5555</span></td>
+								</tr>
+								<tr>
+									<th>예약일시</th>
+									<td><span id="result_date">2018.11.16(금) 16:30</span></td>
+								</tr>
+								<tr>
+									<th>선택시술</th>
+									<td><span id="result_category">이마볼륨 3cc 턱필러 1cc 이내</span></td>
+								</tr>
+								<tr>
+									<th>총 예약금액</th>
+									<td>
+										<span id="result_pay"><em>390,000</em></span>(VAT별도)
+									</td>
+								</tr>
+								<tr>
+									<th>메모</th>
+									<td><span id="result_memo">시술전 상담 가능한가요?</span></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="order-complete-cs">
+						<p>
+							예약 변경사항이 있으실 경우 카카오톡 상담<br>
+							혹은 전화문의 바랍니다.
+						</p>
+					</div>
+					<div class="order-complete-btn">
+						<button class="order-btn-complete">예약완료</button>
+						<!-- 예약완료 클릭 시 본 팝업이 사라집니다. -->
+					</div>
+				</div>
+			</div>
+			<!-- 예약접수 완료 팝업 끝 -->
+			
+			
 			<!-- 개인정보 제공 및 마케팅 활용 약관 동의 시작 -->
-			<%-- <div id="pop-agreement">
+			<div id="pop-agreement">
 				<jsp:include page="../include/pcResAgreement.jsp"></jsp:include>
-			</div> --%>
+				<jsp:include page="../include/pcPopPrivate.jsp"></jsp:include>
+			</div>
 			<!-- 개인정보 제공 및 마케팅 활용 약관 동의 끝 -->
-			
-			
 			
 			<!-- <iframe id="hidden" name="hiddenifr" style="width:1px; height:1px; border:0;" src="filecreate.php"></iframe> -->
 			<form name="alim" id="alim" method="post" action="">
@@ -729,7 +783,6 @@ $(function(){
 									form.target = "hiddenifr";
 									console.log(reserveJson);
 									//form.submit();
-									vegasRegister(reserveJson);
 								}else{
 									alert("오류가 발생하였습니다. 관리자에게 문의하여 주세요.");
 									return;
