@@ -5,7 +5,7 @@
 		<div class="logo-wrap">
 			<a href="${pageContext.request.contextPath}/"><img src="${pageContext.request.contextPath}/resources/img/main/logo.png"></a>
 		</div>
-		<div class="pc-menu-wrap">
+		<%-- <div class="pc-menu-wrap">
 			<ul class="gnb-wrap">
 				<li class="gnb">
 					<span class="gnb-txt">Prive 소개</span>
@@ -49,6 +49,67 @@
 				<a href="https://www.instagram.com/priveskin"><img src="${pageContext.request.contextPath}/resources/img/common/icon_i.png"></a>
 				<a href="https://www.facebook.com/%ED%94%84%EB%9D%BC%EC%9D%B4%EB%B8%8C%ED%94%BC%EB%B6%80%EA%B3%BC-113165293400268/"><img src="${pageContext.request.contextPath}/resources/img/common/icon_f.png"></a>
 			</div>
+		</div><!-- pc-menu-wrap --> --%>
+		<div class="pc-menu-wrap">
+			<ul class="gnb-wrap">
+				<li class="gnb">
+					<span class="gnb-txt">Prive 소개</span>
+					<ul class="lnb-wrap">
+						<li class="lnb"><a href="${pageContext.request.contextPath}/menu01_01">Prive란?</a></li>
+						<li class="lnb"><a href="${pageContext.request.contextPath}/menu01_02">의료진 소개</a></li>
+						<li class="lnb"><a href="${pageContext.request.contextPath}/menu01_03">진료시간/위치</a></li>
+						<li class="lnb"><a href="${pageContext.request.contextPath}/menu01_04">Prive공간</a></li>
+					</ul>
+				</li>
+				<li class="gnb">
+					<span class="gnb-txt">시술 및 가격</span>
+					<ul class="lnb-wrap">
+						<li class="lnb"><a href="${pageContext.request.contextPath}/menu02_01">보톡스</a></li>
+						<li class="lnb"><a href="${pageContext.request.contextPath}/menu02_02">필러</a></li>
+						<li class="lnb"><a href="${pageContext.request.contextPath}/menu02_03">윤곽주사</a></li>
+						<li class="lnb"><a href="${pageContext.request.contextPath}/menu02_04">리프팅</a></li>
+						<li class="lnb"><a href="${pageContext.request.contextPath}/menu02_05">실루엣소프트/엘란쎄/스컬트라</a></li>
+						<li class="lnb"><a href="${pageContext.request.contextPath}/menu02_06">스킨부스터</a></li>
+						<li class="lnb"><a href="${pageContext.request.contextPath}/menu02_07">기미/색소/미백</a></li>
+						<li class="lnb"><a href="${pageContext.request.contextPath}/menu02_08">모공/탄력/흉터</a></li>
+						<li class="lnb"><a href="${pageContext.request.contextPath}/menu02_09">피부관리</a></li>
+						<li class="lnb"><a href="${pageContext.request.contextPath}/menu02_10">체형</a></li>
+						<li class="lnb"><a href="${pageContext.request.contextPath}/menu02_11">레이저제모</a></li>
+						<li class="lnb"><a href="${pageContext.request.contextPath}/menu02_12">항산화수액</a></li>
+					</ul>
+				</li>
+				<li class="gnb">
+					<span class="gnb-txt">대표시술</span>
+					<ul class="lnb-wrap">
+						<li class="lnb"><a href="${pageContext.request.contextPath}/menu03_01">울쎄라</a></li>
+						<li class="lnb"><a href="${pageContext.request.contextPath}/menu03_02">써마지</a></li>
+						<li class="lnb"><a href="${pageContext.request.contextPath}/menu03_03">튠페이스</a></li>
+						<li class="lnb"><a href="${pageContext.request.contextPath}/menu03_04">실루엣소프트</a></li>
+						<li class="lnb"><a href="${pageContext.request.contextPath}/menu03_05">남성관리</a></li>
+					</ul>
+				</li>
+				<li class="gnb">
+					<a href="${pageContext.request.contextPath}/menu04_01"><span class="gnb-txt">이벤트</span></a>
+				</li>
+				<li class="gnb">
+					<span class="gnb-txt">프라이브미디어</span>
+					<ul class="lnb-wrap">
+						<li class="lnb"><a href="${pageContext.request.contextPath}/menu05_01">YOUTUBE</a></li>
+						<li class="lnb"><a href="${pageContext.request.contextPath}/menu05_02">PRIVE MAGAZINE</a></li>
+					</ul>
+				</li>
+				<li class="gnb">
+					<a href="${pageContext.request.contextPath}/menu06_01"><span class="gnb-txt">예약</span></a>
+				</li>
+				<li class="gnb">
+					<a href="${pageContext.request.contextPath}/menu07_01"><span class="gnb-txt">온라인상담</span></a>
+				</li>
+			</ul>
+			<div class="sns_icon_wrap">
+				<a href="https://blog.naver.com/priveskin"><img src="${pageContext.request.contextPath}/resources/img/common/icon_b.png"></a>
+				<a href="https://www.instagram.com/priveskin"><img src="${pageContext.request.contextPath}/resources/img/common/icon_i.png"></a>
+				<a href="https://www.facebook.com/%ED%94%84%EB%9D%BC%EC%9D%B4%EB%B8%8C%ED%94%BC%EB%B6%80%EA%B3%BC-113165293400268/"><img src="${pageContext.request.contextPath}/resources/img/common/icon_f.png"></a>
+			</div>
 		</div><!-- pc-menu-wrap -->
 	</div><!-- pc-header end -->
 	<div id="m-header">
@@ -60,7 +121,7 @@
 				<div class="bar"></div>
 			</div>
 		</div>
-		<div class="m-menu-wrap">
+		<%-- <div class="m-menu-wrap">
 			<ul class="gnb-wrap">
 				<li class="gnb">
 					<span class="gnb-txt">Prvie 소개</span><span class="arrow">∨</span>
@@ -99,7 +160,63 @@
 					</ul>
 				</li>
 			</ul>
-		</div><!-- pc-menu-wrap -->
+		</div><!-- m-menu-wrap --> --%>
+		<div class="m-menu-wrap">
+			<ul class="gnb-wrap">
+				<li class="gnb">
+					<span class="gnb-txt">Prvie 소개</span><span class="arrow">∨</span>
+					<ul class="lnb-wrap">
+						<li class="lnb"><a href="${pageContext.request.contextPath}/menu01_01">Prive란?</a></li>
+						<li class="lnb"><a href="${pageContext.request.contextPath}/menu01_02">의료진 소개</a></li>
+						<li class="lnb"><a href="${pageContext.request.contextPath}/menu01_03">진료시간/위치</a></li>
+						<li class="lnb"><a href="${pageContext.request.contextPath}/menu01_04">Prive공간</a></li>
+					</ul>
+				</li>
+				<li class="gnb">
+					<span class="gnb-txt">시술 및 가격</span><span class="arrow">∨</span>
+					<ul class="lnb-wrap">
+						<li class="lnb"><a href="${pageContext.request.contextPath}/menu02_01">보톡스</a></li>
+						<li class="lnb"><a href="${pageContext.request.contextPath}/menu02_02">필러</a></li>
+						<li class="lnb"><a href="${pageContext.request.contextPath}/menu02_03">윤곽주사</a></li>
+						<li class="lnb"><a href="${pageContext.request.contextPath}/menu02_04">리프팅</a></li>
+						<li class="lnb"><a href="${pageContext.request.contextPath}/menu02_05">실루엣소프트/엘란쎄/스컬트라</a></li>
+						<li class="lnb"><a href="${pageContext.request.contextPath}/menu02_06">스킨부스터</a></li>
+						<li class="lnb"><a href="${pageContext.request.contextPath}/menu02_07">기미/색소/미백</a></li>
+						<li class="lnb"><a href="${pageContext.request.contextPath}/menu02_08">모공/탄력/흉터</a></li>
+						<li class="lnb"><a href="${pageContext.request.contextPath}/menu02_09">피부관리</a></li>
+						<li class="lnb"><a href="${pageContext.request.contextPath}/menu02_10">체형</a></li>
+						<li class="lnb"><a href="${pageContext.request.contextPath}/menu02_11">레이저제모</a></li>
+						<li class="lnb"><a href="${pageContext.request.contextPath}/menu02_12">항산화수액</a></li>
+					</ul>
+				</li>
+				<li class="gnb">
+					<span class="gnb-txt">대표시술</span><span class="arrow">∨</span>
+					<ul class="lnb-wrap">
+						<li class="lnb"><a href="${pageContext.request.contextPath}/menu03_01">울쎄라</a></li>
+						<li class="lnb"><a href="${pageContext.request.contextPath}/menu03_02">써마지</a></li>
+						<li class="lnb"><a href="${pageContext.request.contextPath}/menu03_03">튠페이스</a></li>
+						<li class="lnb"><a href="${pageContext.request.contextPath}/menu03_04">실루엣소프트</a></li>
+						<li class="lnb"><a href="${pageContext.request.contextPath}/menu03_05">남성관리</a></li>
+					</ul>
+				</li>
+				<li class="gnb">
+					<a href="${pageContext.request.contextPath}/menu04_01"><span class="gnb-txt">이벤트</span></a>
+				</li>
+				<li class="gnb">
+					<span class="gnb-txt">프라이브미디어</span><span class="arrow">∨</span>
+					<ul class="lnb-wrap">
+						<li class="lnb"><a href="${pageContext.request.contextPath}/menu05_01">YOUTUBE</a></li>
+						<li class="lnb"><a href="${pageContext.request.contextPath}/menu05_02">PRIVE MAGAZINE</a></li>
+					</ul>
+				</li>
+				<li class="gnb">
+					<a href="${pageContext.request.contextPath}/menu06_01"><span class="gnb-txt">예약</span></a>
+				</li>
+				<li class="gnb">
+					<a href="${pageContext.request.contextPath}/menu07_01"><span class="gnb-txt">온라인상담</span></a>
+				</li>
+			</ul>
+		</div><!-- m-menu-wrap -->
 	</div><!-- m-header end -->
 </div><!-- header end -->
 <script>

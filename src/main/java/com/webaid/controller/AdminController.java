@@ -1035,7 +1035,10 @@ public class AdminController {
 		vo.setKind1nm(mtfReq.getParameter("kind1nm"));
 		vo.setName(mtfReq.getParameter("name"));
 		vo.setCode(mtfReq.getParameter("code"));
-		vo.setPrice(Integer.parseInt(mtfReq.getParameter("price")));
+		vo.setPrice_before(Integer.parseInt(mtfReq.getParameter("price_before")));
+		vo.setPrice_after(Integer.parseInt(mtfReq.getParameter("price_after")));
+		vo.setDiscount(mtfReq.getParameter("discount"));
+		vo.setPopular(mtfReq.getParameter("popular"));
 		
 		cService.insert(vo);
 		return "redirect:/admin/menu05_02";
@@ -1052,7 +1055,10 @@ public class AdminController {
 		vo.setKind1nm(mtfReq.getParameter("kind1nm"));
 		vo.setName(mtfReq.getParameter("name"));
 		vo.setCode(mtfReq.getParameter("code"));
-		vo.setPrice(Integer.parseInt(mtfReq.getParameter("price")));
+		vo.setPrice_before(Integer.parseInt(mtfReq.getParameter("price")));
+		vo.setPrice_after(Integer.parseInt(mtfReq.getParameter("price_after")));
+		vo.setDiscount(mtfReq.getParameter("discount"));
+		vo.setPopular(mtfReq.getParameter("popular"));
 		
 		cService.update(vo);
 		

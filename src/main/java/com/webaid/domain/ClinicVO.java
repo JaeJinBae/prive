@@ -6,7 +6,10 @@ public class ClinicVO {
 	private String kind1nm;
 	private String name;
 	private String code;
-	private int price;
+	private int price_before;
+	private int price_after;
+	private String discount;
+	private String popular;
 
 	public ClinicVO() {
 		super();
@@ -52,18 +55,43 @@ public class ClinicVO {
 		this.code = code;
 	}
 
-	public int getPrice() {
-		return price;
+	public int getPrice_before() {
+		return price_before;
 	}
 
-	public void setPrice(int price) {
-		this.price = price;
+	public void setPrice_before(int price_before) {
+		this.price_before = price_before;
+	}
+
+	public int getPrice_after() {
+		return price_after;
+	}
+
+	public void setPrice_after(int price_after) {
+		this.price_after = price_after;
+	}
+
+	public String getDiscount() {
+		return discount;
+	}
+
+	public void setDiscount(String discount) {
+		this.discount = discount;
+	}
+
+	public String getPopular() {
+		return popular;
+	}
+
+	public void setPopular(String popular) {
+		this.popular = popular;
 	}
 
 	@Override
 	public String toString() {
 		return "ClinicVO [no=" + no + ", kind1=" + kind1 + ", kind1nm=" + kind1nm + ", name=" + name + ", code=" + code
-				+ ", price=" + price + "]";
+				+ ", price_before=" + price_before + ", price_after=" + price_after + ", discount=" + discount
+				+ ", popular=" + popular + "]";
 	}
 
 }

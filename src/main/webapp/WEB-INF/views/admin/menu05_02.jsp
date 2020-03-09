@@ -158,29 +158,39 @@ $(function(){
 		var clinicnm = $("#clinicRegister > div > table tr > td > input[name='name']").val();
 		var kind1 = $("#clinicRegister > div > table tr > td > input[name='kind1']").val();
 		var kind1nm = $("#clinicRegister > div > table tr > td > input[name='kind1nm']").val();
-		var price = $("#clinicRegister > div > table tr > td > input[name='price']").val();
+		var clinicnm = $("#clinicRegister > div > table tr > td > input[name='name']").val();
+		var price_before = $("#clinicRegister > div > table tr > td > input[name='price_before']").val();
+		var price_after = $("#clinicRegister > div > table tr > td > input[name='price_after']").val();
+		var discount = $("#clinicRegister > div > table tr > td > label > input[name='discount']:checked").val();
+		var popular = $("#clinicRegister > div > table tr > td > label > input[name='popular']:checked").val();
 		
 		if(kind1 == "0"){
-			alert("카테고리를 선택해주세요.");
+			alert("카테고리를 선택해주세요."); 
 			return false;
 		}
 		if(clinicnm.length < 1){
 			alert("시술 이름은 1자 이상으로 작성해주세요.");
 			return false;
 		}
-		if(price.length < 1){
+		if(price_after.length < 1){
 			alert("가격을 입력해주세요.");
 			return false;
 		}
 	});
 	
 	$(".sel_chk_box").click(function(){
+		/* $("#clinicUpdate > div > table tr > td > label > input[name='discount']").removeAttr("checked");
+		$("#clinicUpdate > div > table tr > td > label > input[name='popular']").removeAttr("checked"); */
+		
 		var no = $(this).val();
 		var kind1 = $(this).parent().find("input[name='kind1']").val();
 		var kind1nm = $(this).parent().find("input[name='kind1nm']").val();
 		var name = $(this).parent().find("input[name='name']").val();
-		var price = $(this).parent().find("input[name='price']").val();
 		var code = $(this).parent().find("input[name='code']").val();
+		var price_before = $(this).parent().find("input[name='price_before']").val();
+		var price_after = $(this).parent().find("input[name='price_after']").val();
+		var discount = $(this).parent().find("input[name='discount']").val();
+		var popular = $(this).parent().find("input[name='popular']").val();
 		
 		$("#clinicUpdate > div > table tr > td > input[name='no']").val(no);
 		$("#clinicUpdate > div > table tr > td > select option[value='"+kind1+"']").attr("selected", true);
@@ -188,7 +198,10 @@ $(function(){
 		$("#clinicUpdate > div > table tr > td > input[name='kind1nm']").val(kind1nm);
 		$("#clinicUpdate > div > table tr > td > input[name='name']").val(name);
 		$("#clinicUpdate > div > table tr > td > input[name='code']").val(code);
-		$("#clinicUpdate > div > table tr > td > input[name='price']").val(price);
+		$("#clinicUpdate > div > table tr > td > input[name='price_before']").val(price_before);
+		$("#clinicUpdate > div > table tr > td > input[name='price_after']").val(price_after);
+		$("#clinicUpdate > div > table tr > td > label > input[name='discount']:input[value='"+discount+"']").attr("checked", true);
+		$("#clinicUpdate > div > table tr > td > label > input[name='popular']:input[value='"+popular+"']").attr("checked", true);
 		
 	});
 	
@@ -205,7 +218,11 @@ $(function(){
 		var clinicnm = $("#clinicUpdate > div > table tr > td > input[name='name']").val();
 		var kind1 = $("#clinicUpdate > div > table tr > td > input[name='kind1']").val();
 		var kind1nm = $("#clinicUpdate > div > table tr > td > input[name='kind1nm']").val();
-		var price = $("#clinicUpdate > div > table tr > td > input[name='price']").val();
+		var code = $("#clinicUpdate > div > table tr > td > input[name='code']").val();
+		var price_before = $("#clinicUpdate > div > table tr > td > input[name='price_before']").val();
+		var price_after = $("#clinicUpdate > div > table tr > td > input[name='price_after']").val();
+		var discount = $("#clinicUpdate > div > table tr > td > label > input[name='discount']:checked").val();
+		var popular = $("#clinicUpdate > div > table tr > td > label > input[name='popular']:checked").val();
 		
 		if(clinicno.length < 1){
 			alert("시술을 선택해주세요.");
@@ -327,16 +344,22 @@ $(function(){
 										<input type="hidden" name="kind1nm" value="">
 										<input type="text" name="name" value="" placeholder="시술명">
 									</td>
-								</tr>
-								<tr>
 									<td class="t_title">코드</td>
 									<td>
 										<input type="text" name="code" value="" placeholder="코드">
 									</td>
 								</tr>
 								<tr>
-									<td class="t_title">시술가격</td>
-									<td><input type="text" name="price" value="">원</td>
+									<td class="t_title">할인전 가격</td>
+									<td><input type="text" name="price_before" value="0">원</td>
+									<td class="t_title">할인후 가격</td>
+									<td><input type="text" name="price_after" value="0">원</td>
+								</tr>
+								<tr>
+									<td class="t_title">할인</td>
+									<td><label><input type="radio" name="discount" value="o">할인</label>&nbsp;&nbsp;<label><input type="radio" name="discount" value="x" checked="checked">미할인</label></td>
+									<td class="t_title">인기시술</td>
+									<td><label><input type="radio" name="popular" value="o">인기시술</label>&nbsp;&nbsp;<label><input type="radio" name="popular" value="x" checked="checked">일반시술</label></td>
 								</tr>
 							</table>
 						</div><!-- 내용입력 끝 -->
@@ -356,21 +379,26 @@ $(function(){
 												<option value="${item.no}">${item.name}</option>
 											</c:forEach>
 										</select> &nbsp;&gt;&nbsp;
-										<input type="hidden" name="no" value="0">
 										<input type="hidden" name="kind1" value="0">
 										<input type="hidden" name="kind1nm" value="">
 										<input type="text" name="name" value="" placeholder="시술명">
 									</td>
-								</tr>
-								<tr>
 									<td class="t_title">코드</td>
 									<td>
 										<input type="text" name="code" value="" placeholder="코드">
 									</td>
 								</tr>
 								<tr>
-									<td class="t_title">시술가격</td>
-									<td><input type="text" name="price" value="">원</td>
+									<td class="t_title">할인전 가격</td>
+									<td><input type="text" name="price_before" value="0">원</td>
+									<td class="t_title">할인후 가격</td>
+									<td><input type="text" name="price_after" value="0">원</td>
+								</tr>
+								<tr>
+									<td class="t_title">할인</td>
+									<td><label><input type="radio" name="discount" value="o">할인</label>&nbsp;&nbsp;<label><input type="radio" name="discount" value="x" checked="checked">미할인</label></td>
+									<td class="t_title">인기시술</td>
+									<td><label><input type="radio" name="popular" value="o">인기시술</label>&nbsp;&nbsp;<label><input type="radio" name="popular" value="x" checked="checked">일반시술</label></td>
 								</tr>
 							</table>
 						</div><!-- 내용입력 끝 -->
@@ -385,22 +413,27 @@ $(function(){
 					<table class="list_table">
 						<colgroup>
 							<col width="3%">
-							<col width="20%">
+							<col width="10%">
 	                        <col width="20%">
-							<col width="20%">
-							<col width="20%">
+							<col width="10%">
+							<col width="10%">
+							<col width="10%">
+							<col width="10%">
 							<col width="10%">
 						</colgroup>
 						<tr class="cont">
 							<th><input type="checkbox" id="selectall"></th>
 							<th>카테고리</th>
 	                        <th>시술명</th>
-							<th>가격</th>
-							<th>코드</th>
+	                        <th>코드</th>
+							<th>할인전 가격</th>
+							<th>할인후 가격</th>
+							<th>할인</th>
+							<th>인기시술</th>
 						</tr>
 						<c:choose>
 							<c:when test="${fn:length(list) ==0 }">
-								<tr><td colspan="5">등록된 게시물이 없습니다.</td></tr>
+								<tr><td colspan="8">등록된 게시물이 없습니다.</td></tr>
 							</c:when>
 							<c:otherwise>
 								<c:forEach var="item" items="${list}">
@@ -410,14 +443,25 @@ $(function(){
 											<input type="hidden" name="kind1" value="${item.kind1}">
 											<input type="hidden" name="kind1nm" value="${item.kind1nm}">
 											<input type="hidden" name="name" value="${item.name}">
-											<input type="hidden" name="price" value="${item.price}">
 											<input type="hidden" name="code" value="${item.code}">
+											<input type="hidden" name="price_before" value="${item.price_before}">
+											<input type="hidden" name="price_after" value="${item.price_after}">
+											<input type="hidden" name="discount" value="${item.discount}">
+											<input type="hidden" name="popular" value="${item.popular}">
 										</td>
 										<td>${item.kind1nm}</td>
 										<td>${item.name}</td>
-										<td><fmt:formatNumber value="${item.price}" pattern="#,###.##"/>원</td>
 										<td>${item.code}</td>
-										
+										<td><fmt:formatNumber value="${item.price_before}" pattern="#,###.##"/>원</td>
+										<td><fmt:formatNumber value="${item.price_after}" pattern="#,###.##"/>원</td>
+										<td>
+											<c:if test="${item.discount == 'o'}">할인</c:if>
+											<c:if test="${item.discount == 'x'}">미할인</c:if>
+										</td>
+										<td>
+											<c:if test="${item.popular == 'o'}">인기시술</c:if>
+											<c:if test="${item.popular == 'x'}">일반시술</c:if>
+										</td>
 									</tr>
 								</c:forEach>
 							</c:otherwise>

@@ -13,11 +13,11 @@
 	</select>
 	
 	<insert id="insert">
-		insert into clinic values(0, #{kind1}, #{kind1nm}, #{name}, #{code}, #{price})
+		insert into clinic values(0, #{kind1}, #{kind1nm}, #{name}, #{code}, #{price_before}, #{price_after}, #{discount}, #{popular})
 	</insert>
 	
 	<update id="update">
-		update clinic set kind1=#{kind1}, kind1nm=#{kind1nm}, name=#{name}, code=#{code}, price=#{price} where no=#{no}
+		update clinic set kind1=#{kind1}, kind1nm=#{kind1nm}, name=#{name}, code=#{code}, price_before=#{price_before}, price_after=#{price_after}, discount=#{discount}, popular=#{popular} where no=#{no}
 	</update>
 	
 	<delete id="delete">
