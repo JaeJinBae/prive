@@ -25,6 +25,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.webaid.domain.Category1VO;
 import com.webaid.domain.CategoryVO;
 import com.webaid.domain.ClinicVO;
+import com.webaid.domain.EventVO;
 import com.webaid.domain.HospitalTimeVO;
 import com.webaid.domain.PopupVO;
 import com.webaid.domain.ReservationJsonVO;
@@ -34,6 +35,7 @@ import com.webaid.domain.StatisticVO;
 import com.webaid.service.AdviceService;
 import com.webaid.service.Category1Service;
 import com.webaid.service.ClinicService;
+import com.webaid.service.EventService;
 import com.webaid.service.HospitalTimeService;
 import com.webaid.service.MediaService;
 import com.webaid.service.NoticeService;
@@ -75,6 +77,9 @@ public class HomeController {
 	
 	@Autowired
 	private HospitalTimeService htService;
+	
+	@Autowired
+	private EventService eService;
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(HttpServletRequest req, Model model) {
@@ -168,12 +173,19 @@ public class HomeController {
 	@RequestMapping(value = "/menu06_01", method = RequestMethod.GET)
 	public String menu06_01(Model model) {
 		logger.info("menu06_01 get");
-		
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+
+        Calendar c1 = Calendar.getInstance();
+        
+        String select_date = sdf.format(c1.getTime());
+        
 		List<Category1VO> categoryList = c1Service.selectAll();
 		List<ClinicVO> clinicList = cService.selectAll();
+		List<EventVO> eventList = eService.selectByDate(select_date);
 		
 		model.addAttribute("categoryList", categoryList);
 		model.addAttribute("clinicList", clinicList);
+		model.addAttribute("eventList", eventList);
 		return "sub2/menu06_01";
 	}
 	

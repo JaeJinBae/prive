@@ -41,6 +41,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.webaid.domain.AdviceVO;
 import com.webaid.domain.Category1VO;
 import com.webaid.domain.ClinicVO;
+import com.webaid.domain.EventVO;
 import com.webaid.domain.HospitalTimeVO;
 import com.webaid.domain.MediaVO;
 import com.webaid.domain.NoticeVO;
@@ -53,6 +54,7 @@ import com.webaid.domain.StatisticVO;
 import com.webaid.service.AdviceService;
 import com.webaid.service.Category1Service;
 import com.webaid.service.ClinicService;
+import com.webaid.service.EventService;
 import com.webaid.service.HospitalTimeService;
 import com.webaid.service.MediaService;
 import com.webaid.service.NoticeService;
@@ -83,6 +85,9 @@ public class AdminController {
 	
 	@Autowired
 	private PopupService pService;
+	
+	@Autowired
+	private EventService eService;
 	
 	@Autowired
 	private HospitalTimeService htService;
@@ -898,7 +903,168 @@ public class AdminController {
 		return "admin/menu03_02";
 	}
 	
+	//================메뉴4(이벤트)============================
+	@RequestMapping(value = "/menu04_01", method = RequestMethod.GET)
+	public String menu04_01(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
+		logger.info("menu04_01 GET");
+		
+		List<EventVO> list = eService.listSearch(cri);
+		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(eService.listSearchCount(cri));
+		pageMaker.setFinalPage(eService.listSearchCount(cri));
+		
+		model.addAttribute("list", list);
+		model.addAttribute("pageMaker", pageMaker);
+		return "admin/menu04_01";
+	}
 	
+	@RequestMapping(value = "/menu04_01register", method = RequestMethod.GET)
+	public String menu04_01register(Model model) {
+		logger.info("menu04_01register GET");
+		
+		return "admin/menu04_01register";
+	}
+	
+	@RequestMapping(value = "/menu04_01register", method = RequestMethod.POST)
+	public String menu04_01registerPost(MultipartHttpServletRequest mtfReq, Model model) throws IOException {
+		logger.info("menu04_01register POST");
+		
+		EventVO vo = new EventVO();
+		
+		vo.setNo(0);
+		vo.setRegdate(mtfReq.getParameter("regdate"));
+		vo.setTitle(mtfReq.getParameter("title"));
+		vo.setStart_date(mtfReq.getParameter("start_date"));
+		vo.setEnd_date(mtfReq.getParameter("end_date"));
+		vo.setPrice(Integer.parseInt(mtfReq.getParameter("price")));
+		vo.setContent(mtfReq.getParameter("content"));
+		
+		//이미지 업로드
+		String innerUploadPath = "resources/uploadEvent/";
+		String path = (mtfReq.getSession().getServletContext().getRealPath("/")) + innerUploadPath;
+		String fileName = "";
+		String storedFileName = "";
+		
+		Iterator<String> files = mtfReq.getFileNames();
+		mtfReq.getFileNames();
+		while(files.hasNext()){
+			String uploadFile = files.next();
+			
+			MultipartFile mFile = mtfReq.getFile(uploadFile);
+			fileName = mFile.getOriginalFilename();
+			if(fileName.length() == 0){
+				storedFileName = "";
+			}else{
+				storedFileName = System.currentTimeMillis()+"_"+fileName;
+			}
+			
+			vo.setThumb_origin(fileName);
+			vo.setThumb_stored(storedFileName);
+			
+			try {
+				mFile.transferTo(new File(path+storedFileName));
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}//이미지 업로드 끝
+		System.out.println(vo);
+		eService.insert(vo);
+		return "redirect:/admin/menu04_01";
+	}
+	
+	@RequestMapping(value = "/menu04_01update", method = RequestMethod.GET)
+	public String menu04_01update(int no, @ModelAttribute("cri") SearchCriteria cri, Model model, HttpServletRequest req) throws Exception {
+		logger.info("menu04_01update GET");
+		
+		EventVO vo = eService.selectOne(no);
+
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(eService.listSearchCount(cri));
+
+		model.addAttribute("item", vo);
+		model.addAttribute("pageMaker", pageMaker);
+		return "admin/menu04_01update";
+	}
+	
+	@RequestMapping(value = "/menu04_01update", method = RequestMethod.POST)
+	public String menu04_01updatePOST(MultipartHttpServletRequest mtfReq, int page, @ModelAttribute("cri") SearchCriteria cri, RedirectAttributes rtts) throws Exception {
+		logger.info("menu04_01update POST");
+		
+		//이미지 업로드
+		String innerUploadPath = "resources/uploadEvent/";
+		String path = (mtfReq.getSession().getServletContext().getRealPath("/")) + innerUploadPath;
+		String fileName = "";
+		String storedFileName = "";
+		
+		Iterator<String> files = mtfReq.getFileNames();
+		mtfReq.getFileNames();
+		while(files.hasNext()){
+			String uploadFile = files.next();
+			
+			MultipartFile mFile = mtfReq.getFile(uploadFile);
+			fileName = mFile.getOriginalFilename();
+			if(fileName.length() == 0){
+				storedFileName = "";
+			}else{
+				storedFileName = System.currentTimeMillis()+"_"+fileName;
+			}
+			
+			try {
+				mFile.transferTo(new File(path+storedFileName));
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		//이미지 업로드 끝
+		
+		String thumbState = mtfReq.getParameter("thumbState");
+		
+		
+		EventVO vo = new EventVO();
+		EventVO prevVO = eService.selectOne(Integer.parseInt(mtfReq.getParameter("no")));
+		
+		vo.setNo(Integer.parseInt(mtfReq.getParameter("no")));
+		vo.setTitle(mtfReq.getParameter("title"));
+		vo.setStart_date(mtfReq.getParameter("start_date"));
+		vo.setEnd_date(mtfReq.getParameter("end_date"));
+		vo.setPrice(Integer.parseInt(mtfReq.getParameter("price")));
+		vo.setContent(mtfReq.getParameter("content"));
+		
+		if(thumbState.equals("o")){
+			vo.setThumb_origin(fileName);
+			vo.setThumb_stored(storedFileName);
+		}else{
+			vo.setThumb_origin(prevVO.getThumb_origin());
+			vo.setThumb_stored(prevVO.getThumb_stored());
+		}
+		
+		eService.update(vo);
+		
+		rtts.addAttribute("no", mtfReq.getParameter("no"));
+
+		PageMaker pageMaker = new PageMaker();
+
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(page);
+		pageMaker.setTotalCount(eService.listSearchCount(cri));
+
+		rtts.addAttribute("page", page);
+		return "redirect:/admin/menu04_01update";
+	}
+	
+	@RequestMapping(value="/menu04_01delete/{no}", method=RequestMethod.GET)
+	public String menu04_01delete(@PathVariable("no") int no){
+		logger.info("event delete");
+		
+		eService.delete(no);
+		
+		return "redirect:/admin/menu04_01";
+	}
 	
 	//================메뉴5(예약관리)=============================
 	

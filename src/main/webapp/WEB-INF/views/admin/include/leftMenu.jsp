@@ -29,7 +29,7 @@ $(function(){
 	</dl>
 	<dl>
 		<dt><a href="javascript:;">이벤트관리</a></dt>
-		<dd><a href="">이벤트관리</a></dd>
+		<dd><a href="${pageContext.request.contextPath}/admin/menu04_01">이벤트관리</a></dd>
 	</dl>
 	<dl>
 		<dt><a href="javascript:;">예약관리</a></dt>

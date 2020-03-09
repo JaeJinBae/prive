@@ -291,6 +291,7 @@ $(function(){
 							<!-- 시술선택 탭(relsurgery-item$$ == #surgery-item$$ 만 매칭하면 탭기능이 활성화 됩니다. 스크립트는 sub.js에 들어있습니다.) -->
 							<!-- 코드가 너무길어져서 탭내용은 1개만 넣어두었습니다. -->
 							<div class="surgery-tab">
+								<button rel="surgery-item477" class=" active surgery-category">EVENT</button>
 								<button rel="surgery-item477" class=" active surgery-category">필러</button>
 								<c:forEach var="item" items="${categoryList}">
 									<button rel="surgery-item${item.no}" class="surgery-category">${item.name}</button>
@@ -299,17 +300,22 @@ $(function(){
 							
 							<!-- 내용 -->
 							<div class="surgery-option">
+								<div id="surgery-item000" class="surgery-inventory">
+									<c:forEach var="item" items="${eventList}">
+										<div class="item"><input type="checkbox" id="category${item.no}" value="${item.no}" _category1="000" _category1nm="event" _category2="${item.no}" _pay="${item.price_after}" _category2nm="${item.name}" _category3="" _category3nm="" _name="${item.name}" name="category"><label for="category${item.no}">${item.name}<em>${item.price}원</em></label></div>
+									</c:forEach>
+								</div>
 								<div id="surgery-item0" class="surgery-inventory">
 								<c:set var="idx" value="0"/>
 								<c:forEach var="item" items="${clinicList}">
 									<c:choose>
 										<c:when test="${item.kind1 == idx}">
-											<div class="item"><input type="checkbox" id="category${item.no}" value="${item.no}" _category1="${item.kind1}" _category1nm="${item.kind1nm}" _category2="${item.no}" _pay="${item.price}" _category2nm="${item.name}" _category3="" _category3nm="" _name="${item.name}" name="category"><label for="category${item.no}">${item.name }<em>${item.price}원</em></label></div>
+											<div class="item"><input type="checkbox" id="category${item.no}" value="${item.no}" _category1="${item.kind1}" _category1nm="${item.kind1nm}" _category2="${item.no}" _pay="${item.price_after}" _category2nm="${item.name}" _category3="" _category3nm="" _name="${item.name}" name="category"><label for="category${item.no}">${item.name }<em>${item.price_after}원</em></label></div>
 										</c:when>
 										<c:otherwise>
 											</div>
 											<div id="surgery-item${item.kind1}" class="surgery-inventory">
-												<div class="item"><input type="checkbox" id="category${item.no}" value="${item.no}" _category1="${item.kind1}" _category1nm="${item.kind1nm}" _category2="${item.no}" _pay="${item.price}" _category2nm="${item.name}" _category3="" _category3nm="" _name="${item.name}" name="category"><label for="category${item.no}">${item.name }<em>${item.price}원</em></label></div>
+												<div class="item"><input type="checkbox" id="category${item.no}" value="${item.no}" _category1="${item.kind1}" _category1nm="${item.kind1nm}" _category2="${item.no}" _pay="${item.price_after}" _category2nm="${item.name}" _category3="" _category3nm="" _name="${item.name}" name="category"><label for="category${item.no}">${item.name }<em>${item.price_after}원</em></label></div>
 											<c:set var="idx" value="${item.kind1}"/>
 										</c:otherwise>
 									</c:choose>
