@@ -265,6 +265,8 @@ $(function(){
 	var cname = "date_"+dateFull;
 	$(".date_"+dateFull).addClass('closed');
 	
+	var nUrl = window.location.href;
+	
 });
 </script>
 </head>
@@ -291,7 +293,7 @@ $(function(){
 							<!-- 시술선택 탭(relsurgery-item$$ == #surgery-item$$ 만 매칭하면 탭기능이 활성화 됩니다. 스크립트는 sub.js에 들어있습니다.) -->
 							<!-- 코드가 너무길어져서 탭내용은 1개만 넣어두었습니다. -->
 							<div class="surgery-tab">
-								<button rel="surgery-item000" class="active surgery-category">EVENT</button>
+								<button rel="surgery-item000" class="surgery-category">EVENT</button>
 								<button rel="surgery-item477" class="surgery-category">필러</button>
 								<c:forEach var="item" items="${categoryList}">
 									<button rel="surgery-item${item.no}" class="surgery-category">${item.name}</button>

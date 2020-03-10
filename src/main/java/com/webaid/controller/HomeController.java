@@ -21,6 +21,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.webaid.domain.Category1VO;
 import com.webaid.domain.CategoryVO;
@@ -185,13 +186,12 @@ public class HomeController {
 		model.addAttribute("eventList", eventList);
 		return "sub2/menu04_01";
 	}
-	
 	@RequestMapping(value = "/menu06_01", method = RequestMethod.GET)
-	public String menu06_01(Model model) {
+	public String menu06_01(Model model, @RequestParam(value="kind1no", required=false, defaultValue="0") int kind1no, @RequestParam(value="no", required=false, defaultValue="0") int no) {
 		logger.info("menu06_01 get");
-		
+		System.out.println(no);
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-
+		
         Calendar c1 = Calendar.getInstance();
         
         String select_date = sdf.format(c1.getTime());

@@ -210,7 +210,7 @@ $(function(){
 									<p class="txt_content">${item.content}</p>
 									<h3 class="txt_price"><fmt:formatNumber value="${item.price}" pattern="#,###" />원</h3>
 								</div>
-								<p class="resbtn">예약하기</p>
+								<p class="resbtn"><a href="${pageContext.request.contextPath}/menu06_01?kind1no=1&no=${item.no}">예약하기</a></p>
 							</div>
 						</c:forEach>
 					</div>
