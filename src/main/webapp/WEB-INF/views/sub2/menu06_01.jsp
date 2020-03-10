@@ -291,8 +291,8 @@ $(function(){
 							<!-- 시술선택 탭(relsurgery-item$$ == #surgery-item$$ 만 매칭하면 탭기능이 활성화 됩니다. 스크립트는 sub.js에 들어있습니다.) -->
 							<!-- 코드가 너무길어져서 탭내용은 1개만 넣어두었습니다. -->
 							<div class="surgery-tab">
-								<button rel="surgery-item477" class=" active surgery-category">EVENT</button>
-								<button rel="surgery-item477" class=" active surgery-category">필러</button>
+								<button rel="surgery-item000" class="active surgery-category">EVENT</button>
+								<button rel="surgery-item477" class="surgery-category">필러</button>
 								<c:forEach var="item" items="${categoryList}">
 									<button rel="surgery-item${item.no}" class="surgery-category">${item.name}</button>
 								</c:forEach>
@@ -302,7 +302,7 @@ $(function(){
 							<div class="surgery-option">
 								<div id="surgery-item000" class="surgery-inventory">
 									<c:forEach var="item" items="${eventList}">
-										<div class="item"><input type="checkbox" id="category${item.no}" value="${item.no}" _category1="000" _category1nm="event" _category2="${item.no}" _pay="${item.price_after}" _category2nm="${item.name}" _category3="" _category3nm="" _name="${item.name}" name="category"><label for="category${item.no}">${item.name}<em>${item.price}원</em></label></div>
+										<div class="item"><input type="checkbox" id="category${item.no}" value="${item.no}" _category1="000" _category1nm="event" _category2="${item.no}" _pay="${item.price}" _category2nm="${item.title}" _category3="" _category3nm="" _name="${item.title}" name="category"><label for="category${item.no}">${item.title}<em>${item.price}원</em></label></div>
 									</c:forEach>
 								</div>
 								<div id="surgery-item0" class="surgery-inventory">

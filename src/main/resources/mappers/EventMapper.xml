@@ -12,7 +12,7 @@
 		select * from event where no=#{no}
 	</select>
 	
-	<select id="selectByDate" resultType="FixOffVO">
+	<select id="selectByDate" resultType="EventVO">
 		select * from event where date(start_date) <![CDATA[<=]]> date(#{select_date}) and date(end_date) <![CDATA[>=]]> date(#{select_date})
 	</select>
 	
