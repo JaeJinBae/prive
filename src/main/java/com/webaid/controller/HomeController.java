@@ -170,6 +170,22 @@ public class HomeController {
 		
 	}
 	
+	@RequestMapping(value = "/menu04_01", method = RequestMethod.GET)
+	public String menu04_01(Model model) {
+		logger.info("menu04_01 get");
+		
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+
+        Calendar c1 = Calendar.getInstance();
+        
+        String select_date = sdf.format(c1.getTime());
+        
+		List<EventVO> eventList = eService.selectByDate(select_date);
+		
+		model.addAttribute("eventList", eventList);
+		return "sub2/menu04_01";
+	}
+	
 	@RequestMapping(value = "/menu06_01", method = RequestMethod.GET)
 	public String menu06_01(Model model) {
 		logger.info("menu06_01 get");
