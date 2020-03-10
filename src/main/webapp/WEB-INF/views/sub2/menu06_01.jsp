@@ -266,7 +266,29 @@ $(function(){
 	$(".date_"+dateFull).addClass('closed');
 	
 	var nUrl = window.location.href;
-	
+	if(nUrl.indexOf("kind1no") > 0){
+		var urlArr = nUrl.split("?")[1].split("&");
+		var kind1no = urlArr[0].split("=")[1];
+		var kind1nm = $("button[rel='surgery-item"+kind1no+"']").text();
+		var clinicno= urlArr[1].split("=")[1];
+		var tag_id;
+		var clinicnm;
+		var clinicprice;
+		if(kind1nm == "EVENT"){
+			tag_id = "#category0"+clinicno;
+		}else{
+			tag_id = "#category"+clinicno;
+		}
+		clinicnm = $(tag_id).attr("_name");
+		clinicprice = $(tag_id).attr("_pay");
+		
+		$("button[rel='surgery-item"+kind1no+"']").addClass("active");
+		$("#surgery-item"+kind1no).css("display", "block");
+		$(tag_id).attr("checked", true);
+		$('#pop-order-list').append("<button id='basket"+clinicno+"' name='basket' _seq='"+clinicno+"' _category1='"+kind1no+"' _category2='"+clinicno+"' _category3='' _category1nm='"+kind1nm+"' _category2nm='"+clinicnm+"' _category3nm='' _pay='"+clinicprice+"'_name='"+clinicnm+"' >"+clinicnm+"<em><i class='fas fa-times'></i></em></button>");
+	}else{
+		
+	}
 });
 </script>
 </head>
@@ -304,7 +326,7 @@ $(function(){
 							<div class="surgery-option">
 								<div id="surgery-item000" class="surgery-inventory">
 									<c:forEach var="item" items="${eventList}">
-										<div class="item"><input type="checkbox" id="category${item.no}" value="${item.no}" _category1="000" _category1nm="event" _category2="${item.no}" _pay="${item.price}" _category2nm="${item.title}" _category3="" _category3nm="" _name="${item.title}" name="category"><label for="category${item.no}">${item.title}<em>${item.price}원</em></label></div>
+										<div class="item"><input type="checkbox" id="category0${item.no}" value="${item.no}" _category1="000" _category1nm="event" _category2="${item.no}" _pay="${item.price}" _category2nm="${item.title}" _category3="" _category3nm="" _name="${item.title}" name="category"><label for="category0${item.no}">${item.title}<em>${item.price}원</em></label></div>
 									</c:forEach>
 								</div>
 								<div id="surgery-item0" class="surgery-inventory">
