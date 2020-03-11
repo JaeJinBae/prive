@@ -212,18 +212,25 @@ $(function(){
 				</div>
 				<div class="content_wrap">
 					<div class="slider_wrap">
-						<c:forEach var="item" items="${eventList}">
-							<div class="slider">
-								<div class="thumb"><img src="${pageContext.request.contextPath}/resources/uploadEvent/2003_event03.jpg"></div>
-								<div class="txt_wrap">
-									<p class="txt_title">${item.title}</p>
-									<p class="txt_date">${item.start_date} ~ ${item.end_date}</p>
-									<p class="txt_content">${item.content}</p>
-									<h3 class="txt_price"><fmt:formatNumber value="${item.price}" pattern="#,###" />원</h3>
-								</div>
-								<p class="resbtn"><a href="${pageContext.request.contextPath}/menu06_01?kind1no=000&no=${item.no}">예약하기</a></p>
-							</div>
-						</c:forEach>
+						<c:choose>
+							<c:when test="${fn:length(eventList) == 0}">
+								<h3>현재 진행중인 이벤트가 없습니다.</h3>
+							</c:when>
+							<c:otherwise>
+								<c:forEach var="item" items="${eventList}">
+									<div class="slider">
+										<div class="thumb"><img src="${pageContext.request.contextPath}/resources/uploadEvent/2003_event03.jpg"></div>
+										<div class="txt_wrap">
+											<p class="txt_title">${item.title}</p>
+											<p class="txt_date">${item.start_date} ~ ${item.end_date}</p>
+											<p class="txt_content">${item.content}</p>
+											<h3 class="txt_price"><fmt:formatNumber value="${item.price}" pattern="#,###" />원</h3>
+										</div>
+										<p class="resbtn"><a href="${pageContext.request.contextPath}/menu06_01?kind1no=000&no=${item.no}">예약하기</a></p>
+									</div>
+								</c:forEach>
+							</c:otherwise>
+						</c:choose>
 					</div>
 				</div>
 			</div>
