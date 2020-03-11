@@ -47,68 +47,6 @@ section{
 .inner{
 	width: 100%;
 }
-@media only screen and (min-width:1200px){
-	.section1{
-		padding-top: 300px;
-	}
-	.inner {
-	    position: relative;
-	    width: 100%;
-	    margin: 0 auto;
-	    box-sizing: border-box;
-	}
-	.s1_txt{
-		margin-bottom: 50px;
-		text-align: center;
-	}
-	.s1_txt > h2{
-		font-size: 35px;
-		margin-bottom: 100px;
-	}
-	#footer{
-		height: 30%;
-	}
-	
-}
-@media only screen and (min-width:768px) and (max-width:1199px){
-	.section1{
-		padding-top: 150px;
-	}
-	.inner{
-		width: 100%;
-		margin: 0 auto;
-	}
-	.s1_txt{
-		margin-bottom: 50px;
-		text-align: center;
-	}
-	.s1_txt > h2{
-		font-size: 30px;
-		margin-bottom: 100px;
-	}
-	#footer{
-		height: 30%;
-	}
-}
-@media only screen and (min-width:320px) and (max-width:767px){	
-	.section1{
-		padding-top: 100px;
-	}
-	.pc-list{
-		display: none;
-	}
-	.s1_txt{
-		margin-bottom: 50px;
-		text-align: center;
-	}
-	.s1_txt > h2{
-		font-size: 25px; 
-	}
-	
-	#footer{ 
-		height: 30%;
-	}
-}
 .content_wrap{
 	width: 100%;
 	background: #eee;
@@ -179,6 +117,79 @@ section{
 	font-size: 17px;
 	cursor: pointer;
 }
+@media only screen and (min-width:1200px){
+	.section1{
+		padding-top: 300px;
+	}
+	.inner {
+	    position: relative;
+	    width: 100%;
+	    margin: 0 auto;
+	    box-sizing: border-box;
+	}
+	.s1_txt{
+		margin-bottom: 50px;
+		text-align: center;
+	}
+	.s1_txt > h2{
+		font-size: 35px;
+		margin-bottom: 100px;
+	}
+	#footer{
+		height: 30%;
+	}
+	
+}
+@media only screen and (min-width:768px) and (max-width:1199px){
+	.section1{
+		padding-top: 150px;
+	}
+	.inner{
+		width: 100%;
+		margin: 0 auto;
+	}
+	.s1_txt{
+		margin-bottom: 50px;
+		text-align: center;
+	}
+	.s1_txt > h2{
+		font-size: 30px;
+		margin-bottom: 100px;
+	}
+	.content_wrap > .slider_wrap > .slider{
+		width: 355px;
+		margin-left:6px;
+	}
+	
+	#footer{
+		height: 30%;
+	}
+}
+@media only screen and (min-width:320px) and (max-width:767px){	
+	.section1{
+		padding-top: 100px;
+	}
+	.pc-list{
+		display: none;
+	}
+	.s1_txt{
+		margin-bottom: 50px;
+		text-align: center;
+	}
+	.s1_txt > h2{
+		font-size: 25px; 
+	}
+	.content_wrap > .slider_wrap > .slider{
+		width: 95%;
+		margin-left: 0;
+	}
+	
+	
+	#footer{ 
+		height: 30%;
+	}
+}
+
 </style>
 <script>
 $(function(){
