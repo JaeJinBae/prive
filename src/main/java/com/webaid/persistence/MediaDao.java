@@ -14,6 +14,7 @@ public interface MediaDao {
 	public void update(MediaVO vo);
 	public void updateCnt(int no);
 	public void updateUseState(MediaVO vo);
+	public void updateThumb(MediaVO vo);
 	public void delete(int no);
 	public List<MediaVO> listSearch(SearchCriteria cri) throws Exception;
 	public List<MediaVO> listSearchAll(SearchCriteria cri) throws Exception;

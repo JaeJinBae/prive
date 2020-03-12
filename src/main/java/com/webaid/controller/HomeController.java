@@ -1,9 +1,9 @@
 package com.webaid.controller;
 
-import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
@@ -17,20 +17,18 @@ import org.springframework.mobile.device.Device;
 import org.springframework.mobile.device.DeviceUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartHttpServletRequest;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.webaid.domain.Category1VO;
-import com.webaid.domain.CategoryVO;
-import com.webaid.domain.ClinicVO;
-import com.webaid.domain.EventVO;
-import com.webaid.domain.HospitalTimeVO;
+import com.webaid.domain.AdviceVO;
+import com.webaid.domain.MediaVO;
+import com.webaid.domain.NoticeVO;
+import com.webaid.domain.PageMaker;
 import com.webaid.domain.PopupVO;
-import com.webaid.domain.ReservationJsonVO;
-import com.webaid.domain.ReservationVO;
 import com.webaid.domain.SearchCriteria;
 import com.webaid.domain.StatisticVO;
 import com.webaid.service.AdviceService;
@@ -171,7 +169,7 @@ public class HomeController {
 		
 	}
 	
-	@RequestMapping(value = "/menu04_01", method = RequestMethod.GET)
+	/*@RequestMapping(value = "/menu04_01", method = RequestMethod.GET)
 	public String menu04_01(Model model) {
 		logger.info("menu04_01 get");
 		
@@ -268,9 +266,9 @@ public class HomeController {
 		}
 		
 		return entity;
-	}
+	}*/
 	
-	/*@RequestMapping(value = "/menu01_01", method = RequestMethod.GET)
+	@RequestMapping(value = "/menu01_01", method = RequestMethod.GET)
 	public String menu01_01(Locale locale, Model model) {
 		logger.info("menu01_01 get");
 		
@@ -575,7 +573,7 @@ public class HomeController {
 		model.addAttribute("pageMaker", pageMaker);
 		
 		return "sub/menu08_04read";
-	}*/
+	}
 	
 	
 	

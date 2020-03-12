@@ -87,7 +87,7 @@ $(function(){
 			</div>			
 			
 			<div class="main_bottom_area">
-				<form id="form1" method="post"action="${pageContext.request.contextPath}/admin/menu01_03register${pageMaker.makeSearch(pageMaker.cri.page)}">
+				<form id="form1" method="post" enctype="multipart/form-data" action="${pageContext.request.contextPath}/admin/menu01_03register${pageMaker.makeSearch(pageMaker.cri.page)}">
 					<input type="hidden" name="no" value="0">
 					<div class="write_area">
 						<div class="write_box">
@@ -135,6 +135,10 @@ $(function(){
 											CKEDITOR.replace('content',{filebrowserUploadUrl:"${pageContext.request.contextPath}/admin/imgUpload/media",height:500});
 										</script>
 									</td>
+								</tr>
+								<tr class="cont">
+									<td class="title">썸네일 이미지</td>
+									<td id="attach"><div><input type="file" name="thumb"></div></td>
 								</tr>
 							</table>
 						</div><!-- write_box end -->

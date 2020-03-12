@@ -14,7 +14,7 @@ public class MediaServiceImpl implements MediaService {
 
 	@Autowired
 	private MediaDao dao;
-	
+
 	@Override
 	public List<MediaVO> selectAll() {
 		return dao.selectAll();
@@ -53,6 +53,11 @@ public class MediaServiceImpl implements MediaService {
 	@Override
 	public void updateUseState(MediaVO vo) {
 		dao.updateUseState(vo);
+	}
+
+	@Override
+	public void updateThumb(MediaVO vo) {
+		dao.updateThumb(vo);
 	}
 
 	@Override

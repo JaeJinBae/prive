@@ -181,7 +181,7 @@ $(function(){
 									<td><textarea id="content" name="content" style="width:100%;height:100px;border: 1px solid #d8d6d6;">${item.content}</textarea></td>
 								</tr>								
 								<tr class="cont">
-									<td class="title">목록 썸네일 이미지</td>
+									<td class="title">썸네일 이미지</td>
 									<td id="attach">
 										<input type="hidden" id="thumbState" name="thumbState" value="x">
 										<c:choose>

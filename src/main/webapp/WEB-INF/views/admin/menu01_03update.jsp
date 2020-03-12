@@ -148,6 +148,26 @@ $(function(){
 										</script>
 									</td>
 								</tr>
+								<tr class="cont">
+									<td class="title">썸네일 이미지</td>
+									<td id="attach">
+										<input type="hidden" id="thumbState" name="thumbState" value="x">
+										<c:choose>
+											<c:when test="${item.thumb_origin == ''}">
+												<div><input type="file" name="thumb"></div>
+											</c:when>
+											<c:otherwise>
+												<img src="${pageContext.request.contextPath}/resources/uploadMedia/${item.thumb_stored}" height="100px">
+												<div>
+													<a id="downBtn" href="${pageContext.request.contextPath}/admin/filedown?dPath=uploadMedia">${item.thumb_origin}</a>
+													<img id="thumb" src="${pageContext.request.contextPath}/resources/img/admin/icon_x.png" class="vimg cursor">
+													<input type="hidden" name="thumb" value="${item.thumb_origin}">
+													<input type="hidden" name="thumb_stored" value="${item.thumb_stored}">
+												</div>
+											</c:otherwise>
+										</c:choose>
+									</td>
+								</tr>
 							</table>
 						</div>
 						

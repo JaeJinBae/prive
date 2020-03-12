@@ -21,11 +21,11 @@
 	</select>
 	
 	<insert id="insert">
-		insert into media values(0, #{writer}, #{regdate}, #{cnt}, #{title}, #{content}, #{use_state})
+		insert into media values(0, #{writer}, #{regdate}, #{cnt}, #{title}, #{content}, #{use_state}, #{thumb_origin}, #{thumb_stored})
 	</insert>
 	
 	<update id="update">
-		update media set writer=#{writer}, regdate=#{regdate}, cnt=#{cnt}, title=#{title}, content=#{content}, use_state=#{use_state} where no=#{no}
+		update media set writer=#{writer}, regdate=#{regdate}, cnt=#{cnt}, title=#{title}, content=#{content}, use_state=#{use_state}, thumb_origin=#{thumb_origin}, thumb_stored=#{thumb_stored} where no=#{no}
 	</update>
 	
 	<update id="updateCnt">
@@ -34,6 +34,10 @@
 	
 	<update id="updateUseState">
 		update media set use_state=#{use_state} where no=#{no}
+	</update>
+	
+	<update id="updateThumb">
+		update media set thumb_origin=#{thumb_origin}, thumb_stored=#{thumb_stored} where no=#{no}
 	</update>
 	
 	<delete id="delete">

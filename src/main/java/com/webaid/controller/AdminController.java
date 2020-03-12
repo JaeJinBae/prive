@@ -61,6 +61,7 @@ import com.webaid.service.NoticeService;
 import com.webaid.service.PopupService;
 import com.webaid.service.ReservationService;
 import com.webaid.service.StatisticService;
+import com.webaid.util.FileDelete;
 
 /**
  * Handles requests for the application home page.
@@ -415,10 +416,48 @@ public class AdminController {
 	}
 	
 	@RequestMapping(value = "/menu01_03register", method = RequestMethod.POST)
-	public String menu01_03registerPost(MediaVO vo) throws IOException {
+	public String menu01_03registerPost(MultipartHttpServletRequest mtfReq) throws IOException {
 		logger.info("menu01_03register POST");
 		
-		System.out.println(vo);
+		MediaVO vo = new MediaVO();
+		
+		vo.setNo(0);
+		vo.setWriter(mtfReq.getParameter("writer"));
+		vo.setRegdate(mtfReq.getParameter("regdate"));
+		vo.setCnt(Integer.parseInt(mtfReq.getParameter("cnt")));
+		vo.setTitle(mtfReq.getParameter("title"));
+		vo.setContent(mtfReq.getParameter("content"));
+		vo.setUse_state("o");
+		
+		//이미지 업로드
+		String innerUploadPath = "resources/uploadMedia/";
+		String path = (mtfReq.getSession().getServletContext().getRealPath("/")) + innerUploadPath;
+		String fileName = "";
+		String storedFileName = "";
+		
+		Iterator<String> files = mtfReq.getFileNames();
+		mtfReq.getFileNames();
+		while(files.hasNext()){
+			String uploadFile = files.next();
+			
+			MultipartFile mFile = mtfReq.getFile(uploadFile);
+			fileName = mFile.getOriginalFilename();
+			if(fileName.length() == 0){
+				storedFileName = "";
+			}else{
+				storedFileName = System.currentTimeMillis()+"_"+fileName;
+			}
+			
+			vo.setThumb_origin(fileName);
+			vo.setThumb_stored(storedFileName);
+			
+			try {
+				mFile.transferTo(new File(path+storedFileName));
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}//이미지 업로드 끝
+		
 		mService.insert(vo);
 		
 		return "redirect:/admin/menu01_03";
@@ -442,13 +481,60 @@ public class AdminController {
 	}
 	
 	@RequestMapping(value = "/menu01_03update", method = RequestMethod.POST)
-	public String menu01_03updatePOST(MediaVO vo, int page, @ModelAttribute("cri") SearchCriteria cri, RedirectAttributes rtts, Model model, HttpServletRequest req) throws Exception {
+	public String menu01_03updatePOST(MultipartHttpServletRequest mtfReq, int page, @ModelAttribute("cri") SearchCriteria cri, RedirectAttributes rtts) throws Exception {
 		logger.info("menu01_03update POST");
 		
-		mService.update(vo);
+		//이미지 업로드
+		String innerUploadPath = "resources/uploadRealStory/";
+		String path = (mtfReq.getSession().getServletContext().getRealPath("/")) + innerUploadPath;
+		String fileName = "";
+		String storedFileName = "";
+		
+		Iterator<String> files = mtfReq.getFileNames();
+		mtfReq.getFileNames();
+		while(files.hasNext()){
+			String uploadFile = files.next();
+			
+			MultipartFile mFile = mtfReq.getFile(uploadFile);
+			fileName = mFile.getOriginalFilename();
+			if(fileName.length() == 0){
+				storedFileName = "";
+			}else{
+				storedFileName = System.currentTimeMillis()+"_"+fileName;
+			}
+			
+			try {
+				mFile.transferTo(new File(path+storedFileName));
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		//이미지 업로드 끝
+		
+		String thumbState = mtfReq.getParameter("thumbState");
+		
+		
+		MediaVO vo = new MediaVO();
+		MediaVO prevVO = mService.selectOne(Integer.parseInt(mtfReq.getParameter("no")));
+		
+		vo.setNo(Integer.parseInt(mtfReq.getParameter("no")));
+		vo.setWriter(mtfReq.getParameter("writer"));
+		vo.setRegdate(mtfReq.getParameter("regdate"));
+		vo.setCnt(Integer.parseInt(mtfReq.getParameter("cnt")));
+		vo.setTitle(mtfReq.getParameter("title"));
+		vo.setContent(mtfReq.getParameter("content"));
+		vo.setUse_state(mtfReq.getParameter("use_state"));
+		
+		if(thumbState.equals("o")){
+			vo.setThumb_origin(fileName);
+			vo.setThumb_stored(storedFileName);
+		}else{
+			vo.setThumb_origin(prevVO.getThumb_origin());
+			vo.setThumb_stored(prevVO.getThumb_stored());
+		}
 
-		rtts.addAttribute("no", vo.getNo());
-
+		rtts.addAttribute("no", mtfReq.getParameter("no"));
+		
 		PageMaker pageMaker = new PageMaker();
 
 		pageMaker.setCri(cri);
@@ -458,6 +544,39 @@ public class AdminController {
 		rtts.addAttribute("page", page);
 		
 		return "redirect:/admin/menu01_03update";
+	}
+	
+	@RequestMapping(value = "/menu01_03uploadImgDelete", method = RequestMethod.POST)
+	public ResponseEntity<String> menu01_03uploadImgDelete(HttpServletRequest req, @RequestBody Map<String, String> info) {
+		logger.info("menu01_03update POST");
+		ResponseEntity<String> entity = null;
+		
+		int no = Integer.parseInt(info.get("no"));
+		
+		String innerUploadPath = "resources/uploadMedia/";
+		String path = (req.getSession().getServletContext().getRealPath("/")) + innerUploadPath;
+		System.out.println(path);
+		MediaVO prevVO = mService.selectOne(no);
+		FileDelete fd = new FileDelete();
+		
+		MediaVO vo = new MediaVO();
+		vo.setNo(no);
+		
+		try {
+			
+			fd.fileDelete(path, prevVO.getThumb_stored());
+			
+			vo.setThumb_origin("");
+			vo.setThumb_stored("");
+			mService.updateThumb(vo);
+			
+			entity = new ResponseEntity<String>("ok", HttpStatus.OK);
+		} catch (Exception e) {
+			entity = new ResponseEntity<String>("no", HttpStatus.OK);
+			e.printStackTrace();
+		}
+		
+		return entity;
 	}
 	
 	@RequestMapping(value="/menu01_03delete/{no}", method=RequestMethod.GET)
@@ -904,6 +1023,7 @@ public class AdminController {
 	}
 	
 	//================메뉴4(이벤트)============================
+	
 	@RequestMapping(value = "/menu04_01", method = RequestMethod.GET)
 	public String menu04_01(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
 		logger.info("menu04_01 GET");
